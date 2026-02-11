@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="compose.yaml" />
+  </Folder>
+  <Project Path="dawazon2.0/dawazon2.0.csproj" />
+  <Project Path="dawazonBackend/dawazonBackend.csproj" />
+  <Project Path="dawazonPlayWrite/dawazonPlayWrite.csproj" />
+  <Project Path="dawazonTest/dawazonTest.csproj" />
+</Solution>
