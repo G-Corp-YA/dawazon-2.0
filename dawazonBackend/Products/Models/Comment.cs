@@ -9,7 +9,7 @@ public class Comment
     [Required]
     [MaxLength(200)]
     [MinLength(2)]
-    public String Content { get; set; }= String.Empty;
+    public string Content { get; set; }= string.Empty;
     [Required]
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     [Required]

@@ -53,13 +53,33 @@ public class DawazonDbContext : DbContext
             .Property(p => p.Version)
             .IsConcurrencyToken();
 
-        modelBuilder.Entity<Cart>()
-            .OwnsMany(c =>  c.CartLines)
+        modelBuilder.Entity<Cart.Models.Cart>()
+            .OwnsMany(c => c.CartLines, builder =>
+                {
+                    builder.ToTable("CartLines");
+                    builder.WithOwner()
+                        .HasForeignKey("CartId");
+                    builder.Property<string>("CartId");
+                    builder.Property<string>("ProductId");
+                    
+                    builder.HasOne(cl => cl.Product)
+                        .WithMany()
+                        .HasForeignKey(cl => cl.ProductId);
+                    
+                    builder.Property<int>("Quantity");
+                    builder.Property<double>("ProductPrice");
+                    builder.Property<string>("Status");
+                    builder.HasKey("CartId", "ProductId");
+                }
+            );
+
     }
     
     
     public DbSet<Product> Products { get; set; } = null!;
     public DbSet<Category> Categorias { get; set; } = null!;
+
+    public DbSet<Cart.Models.Cart> Carts { get; set; } = null!;
     
   /// <summary>
   /// Inicializa una nueva instancia del contexto de base de datos.
