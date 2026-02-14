@@ -26,13 +26,13 @@ public class Product
     public long CreatorId { get; set; }
     [Required]
     public string CategoryId { get; set; }= string.Empty;
-    public List<Comment> Comments { get; set; } = new();
+    public List<Comment> Comments { get; set; } = [];
     /// <summary>
     /// Propiedad de navegación a la categoría relacionada.
     /// </summary>
     [ForeignKey(nameof(CategoryId))]
     public Category? Category { get; set; }
-    public List<string> Images = new List<string>();
+    public List<string> Images = [];
     [Required]
     public bool IsDeleted { get; set; }
     [Required]

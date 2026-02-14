@@ -70,7 +70,7 @@ public class ProductRepository(ILogger<ProductRepository> logger, DawazonDbConte
     {
         logger.LogDebug("DeleteByIdAsync");
         var found = await db.Products.Where(p=>p.IsDeleted==false &&  p.Id==id).ToListAsync();
-        if (found.FirstOrDefault() != null)
+        if (found.FirstOrDefault() == null) throw new Exception($"Producto {id} no existe");
         {
             var product = found.First();
             product.IsDeleted = true;
@@ -78,8 +78,6 @@ public class ProductRepository(ILogger<ProductRepository> logger, DawazonDbConte
             await db.SaveChangesAsync();
             await db.Products.Entry(product).Reference(p => p.Category).LoadAsync();
         }
-        // cambiar mas adelante
-        throw new Exception($"Producto {id} no existe");
     }
 
     public Task<Product?> GetProductAsync(string id)
@@ -93,25 +91,22 @@ public class ProductRepository(ILogger<ProductRepository> logger, DawazonDbConte
     {
         var productOld= await db.Products.Include(p => p.Category).Include(p => p.Comments)
             .FirstOrDefaultAsync(p => p.Id == id && p.IsDeleted == false);
-        if (productOld != null)
-        {
-            productOld.Stock = product.Stock;
-            productOld.UpdatedAt = DateTime.UtcNow;
-            productOld.CategoryId = product.CategoryId;
-            productOld.Name = product.Name;
-            productOld.Description = product.Description;
-            productOld.Price = product.Price;
-            productOld.Category = product.Category;
-            if (product.Comments.Count > 0)
-                productOld.Comments = product.Comments;
-            if (product.Images.Count > 0)
-                productOld.Images = product.Images;
+        if (productOld == null) return null;
+        productOld.Stock = product.Stock;
+        productOld.UpdatedAt = DateTime.UtcNow;
+        productOld.CategoryId = product.CategoryId;
+        productOld.Name = product.Name;
+        productOld.Description = product.Description;
+        productOld.Price = product.Price;
+        productOld.Category = product.Category;
+        if (product.Comments.Count > 0)
+            productOld.Comments = product.Comments;
+        if (product.Images.Count > 0)
+            productOld.Images = product.Images;
             
-            var updated = db.Products.Update(productOld);
-            
-        }
-
-        return null;
+        var updated = db.Products.Update(productOld);
+        await db.SaveChangesAsync();
+        return updated.Entity;
     }
 
     public async Task<Product?> CreateProductAsync(Product product)

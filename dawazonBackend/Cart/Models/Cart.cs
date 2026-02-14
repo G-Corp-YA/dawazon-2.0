@@ -17,7 +17,7 @@ public class Cart
     public Client Client { get; set; } = new();
 
     [Required] 
-    public List<CartLine> CartLines { get; set; } = new List<CartLine>();
+    public List<CartLine> CartLines { get; set; } = [];
     [Required]
     public int TotalItems {get; set;}
     [Required]
