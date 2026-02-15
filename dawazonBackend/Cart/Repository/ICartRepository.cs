@@ -5,6 +5,7 @@ namespace dawazonBackend.Cart.Repository;
 
 public interface ICartRepository
 {
+    Task<IEnumerable<Models.Cart>> GetAllAsync(FilterCartDto filter);
     Task<bool> UpdateCartLineStatusAsync(string id, string productId, Status status);
     
     Task<IEnumerable<Models.Cart>> FindByUserIdAsync(long userId, FilterCartDto filter);
