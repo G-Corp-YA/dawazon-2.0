@@ -12,6 +12,37 @@ public class CartRepository(
     ILogger<CartRepository> logger
     ): ICartRepository
 {
+    public async Task<IEnumerable<Models.Cart>> GetAllAsync(FilterCartDto filter)
+    {
+        //Iniciamos la query sobre el DbSet de Carts
+        var query = context.Carts.AsQueryable();
+
+        //Aplicar filtros si vienen en el DTO
+        if (!string.IsNullOrEmpty(filter.purchased) && bool.TryParse(filter.purchased, out bool isPurchased))
+        {
+            query = query.Where(c => c.Purchased == isPurchased);
+        }
+
+        // Ordenación basada en las propiedades del DTO
+        bool isDesc = filter.Direction.ToLower() == "desc";
+    
+        query = filter.SortBy.ToLower() switch
+        {
+            "total" => isDesc ? query.OrderByDescending(c => c.Total) : query.OrderBy(c => c.Total),
+            "createdat" => isDesc ? query.OrderByDescending(c => c.CreatedAt) : query.OrderBy(c => c.CreatedAt),
+            "userid" => isDesc ? query.OrderByDescending(c => c.UserId) : query.OrderBy(c => c.UserId),
+            // Por defecto ordenamos por Id
+            _ => isDesc ? query.OrderByDescending(c => c.Id) : query.OrderBy(c => c.Id)
+        };
+
+        // Paginación
+        int skip = filter.Page * filter.Size;
+
+        return await query
+            .Skip(skip)
+            .Take(filter.Size)
+            .ToListAsync();
+    }
     public async Task<bool> UpdateCartLineStatusAsync(string id, string productId, Status status)
     {
         logger.LogInformation($"Actualizando linea de carrito {id} con status {status}");
@@ -60,7 +91,8 @@ public class CartRepository(
         var cart = await context.Carts.Include(c => c.CartLines)
             .FirstOrDefaultAsync(c => c.Id == cartId);
         if(cart == null) return false;
-        cart.CartLines.Remove(cartLine);
+        var lineToRemove = cart.CartLines.FirstOrDefault(cl => cl.ProductId == cartLine.ProductId);
+        if (lineToRemove != null) cart.CartLines.Remove(lineToRemove);        
         context.Carts.Update(cart);
         await context.SaveChangesAsync();
         return true;
@@ -97,7 +129,8 @@ public class CartRepository(
             .ThenInclude(cl => cl.Address).FirstOrDefaultAsync(c => c.Id == id);
         if (oldCart == null) return null;
         oldCart.Client=cart.Client;
-        oldCart.CartLines=cart.CartLines;
+        oldCart.CartLines.Clear();
+        oldCart.CartLines.AddRange(cart.CartLines);
         oldCart.Total=cart.Total;
         oldCart.TotalItems=cart.TotalItems;
         oldCart.Purchased=cart.Purchased;
