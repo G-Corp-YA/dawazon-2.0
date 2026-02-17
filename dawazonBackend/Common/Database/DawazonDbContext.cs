@@ -1,5 +1,8 @@
 ﻿using dawazonBackend.Products.Models;
 using dawazonBackend.Cart.Models;
+using dawazonBackend.Users.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace dawazonBackend.Common.Database;
@@ -8,7 +11,8 @@ namespace dawazonBackend.Common.Database;
 /// Contexto de base de datos para la aplicación ProductApi.
 /// Define las tablas, relaciones y datos iniciales (seeding).
 /// </summary>
-public class DawazonDbContext : DbContext
+public class DawazonDbContext(DbContextOptions<DawazonDbContext> options)
+    : IdentityDbContext<User, IdentityRole<long>, long>(options)
 {
     /// <summary>
     /// Configura el modelo de datos, indices y datos iniciales.
@@ -81,20 +85,12 @@ public class DawazonDbContext : DbContext
 
     public DbSet<Cart.Models.Cart> Carts { get; set; } = null!;
     
-  /// <summary>
-  /// Inicializa una nueva instancia del contexto de base de datos.
-  /// </summary>
-  /// <param name="options">Opciones de configuración del contexto.</param>
-    public DawazonDbContext(DbContextOptions<DawazonDbContext> options)
-        : base(options)
-    { }
-   
         
     /// <summary>
     /// Método privado para sembrar datos de prueba en la base de datos.
     /// </summary>
     /// <param name="modelBuilder">Constructor de modelos.</param>
-    private void SeedData(ModelBuilder modelBuilder)
+    private static void SeedData(ModelBuilder modelBuilder)
     {
 
     }
