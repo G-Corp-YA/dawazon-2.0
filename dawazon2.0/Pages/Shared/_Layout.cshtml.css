@@ -1,48 +1,168 @@
-﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿html {
+  position: relative;
+  min-height: 100%;
+}
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+body {
+  margin-bottom: 60px; 
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #0F1111;
 }
 
 a {
-  color: #0077cc;
+  color: #007185;
+  text-decoration: none;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+a:hover {
+  color: #c7511f;
+  text-decoration: underline;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+header {
+  width: 100%;
+  position: relative;
+  z-index: 1030;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+.bg-custom-dark {
+  background-color: #131921 !important; /* El azul oscuro de Amazon */
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+.bg-custom-secondary {
+  background-color: #232f3e !important; /* El gris azulado de la barra inferior */
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+.nav-link {
+  color: white !important;
+  font-size: 14px;
 }
+
+.nav-link:hover {
+  color: #ccc !important;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 2px #ff9900;
+  border-color: #ff9900;
+}
+
+.btn-search {
+  background-color: #febd69;
+  border: none;
+  color: #333;
+  padding: 0 15px;
+}
+
+.btn-search:hover {
+  background-color: #f3a847;
+}
+
+.profile-img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border: 1px solid #fff;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background: #fff;
+  height: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.img-container {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.img-container img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.price-whole {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.price-symbol {
+  font-size: 0.8rem;
+  vertical-align: super;
+}
+
+.btn-amazon {
+  background-color: #FFD814;
+  border: 1px solid #FCD200;
+  border-radius: 20px;
+  color: #0F1111;
+  font-weight: 500;
+  padding: 5px 15px;
+  text-align: center;
+}
+
+.btn-amazon:hover {
+  background-color: #F7CA00;
+  border-color: #F2C200;
+}
+
+.btn-gradient {
+  background: #ffd814;
+  border: 1px solid #f0c200;
+  color: #0f1111;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 10px 20px;
+}
+
+.users-table {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.users-table thead th {
+  background-color: #F8F9FA;
+  border-bottom: 2px solid #ddd;
+  font-weight: 600;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.status-preparado { background-color: #fff3cd; color: #856404; }
+.status-enviado   { background-color: #cce5ff; color: #004085; }
+.status-entregado { background-color: #d4edda; color: #155724; }
+.status-cancelado { background-color: #f8d7da; color: #721c24; }
 
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  white-space: nowrap;
+  height: 60px;
   line-height: 60px;
+  background-color: #232f3e;
+  color: #ddd;
+}
+
+.footer a {
+  color: #fff;
+  margin-left: 15px;
 }

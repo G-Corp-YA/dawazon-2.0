@@ -1,0 +1,115 @@
+﻿@model dawazon2._0.Models.ProductPageViewModel 
+
+@{
+    ViewData["Title"] = "Home page";
+    var currentPath = Context.Request.Path.Value;
+    bool isMyProductos = currentPath == "/auth/me/products";
+}
+
+<div class="container my-5">
+    <div class="row">
+        <h2 class="mb-4 col-9">Resultados</h2>
+        @if (isMyProductos)
+        {
+            <button class="col-3 btn btn-gradient" onclick="save(this)">
+                añadir producto
+            </button>
+        }
+    </div>
+
+    <div id="grid-productos" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @if (Model.Content == null || !Model.Content.Any())
+        {
+            <div class="alert alert-warning">No se encontraron productos. </div>
+        }
+        else
+        {
+            @foreach (var product in Model.Content)
+            {
+                <div class="col">
+                    <div class="card h-100 p-3 bg-white">
+                        <div class="img-container">
+                            @if (product.Images != null && product.Images.Any())
+                            {
+                                <img src="/files/@product.Images[0]" alt="@product.Name">
+                            }
+                        </div>
+                        <div class="card-body px-0 pb-0">
+                            <div class="product-title">@product.Name</div>
+
+                            <div class="price-container mt-2">
+                                <span class="price-symbol">@product.Price€</span>
+                            </div>
+
+                            @if (product.Stock > 0)
+                            {
+                                <span class="badge bg-success">En stock</span><br>
+                                <span style="font-size: 0.8rem">Stock: @product.Stock</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">AGOTADO</span><br>
+                                <span style="font-size: 0.8rem">No disponible</span>
+                            }
+                            <a href="/products/@product.Id" class="btn btn-amazon">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+    @* Seccion de Paginación *@
+    @if (Model.Content != null && Model.TotalPages > 1)
+    {
+        <div class="row mt-4">
+            <div class="col-12">
+                <nav aria-label="Navegación de páginas">
+                    <ul class="pagination justify-content-center">
+                        @* Botón Primera *@
+                        <li class="page-item @(Model.First ? "disabled" : "")">
+                            <a class="page-link" href="?page=0&sortBy=@Model.SortBy&direction=@Model.Direction" aria-label="Primera">
+                                <span aria-hidden="true">&laquo;&laquo;</span>
+                            </a>
+                        </li>
+
+                        @* Botón Anterior *@
+                        <li class="page-item @(Model.First ? "disabled" : "")">
+                            <a class="page-link" href="?page=@(Model.PageNumber - 1)&sortBy=@Model.SortBy" aria-label="Anterior">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+
+                        @* Info página actual *@
+                        <li class="page-item active">
+                            <span class="page-link">
+                                Página @(Model.PageNumber + 1) de @Model.TotalPages
+                            </span>
+                        </li>
+
+                        @* Botón Siguiente *@
+                        <li class="page-item @(Model.Last ? "disabled" : "")">
+                            <a class="page-link" href="?page=@(Model.PageNumber + 1)&sortBy=@Model.SortBy" aria-label="Siguiente">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center text-muted">
+                <small>
+                    Mostrando @Model.TotalPageElements de @Model.TotalElements productos
+                </small>
+            </div>
+        </div>
+    }
+
+    <script>
+        function save(element) {
+            window.location.href = `/auth/me/products/save`;
+        }
+    </script>
+</div>
