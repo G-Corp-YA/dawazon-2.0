@@ -1,4 +1,4 @@
-﻿using dawazonBackend.Common;
+﻿using dawazonBackend.Common.Error;
 
 namespace dawazonBackend.Stripe.Errors;
 

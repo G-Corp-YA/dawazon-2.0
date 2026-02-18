@@ -1,6 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
-using dawazonBackend.Cart.Errors;
-using dawazonBackend.Common;
+using dawazonBackend.Common.Error;
 using dawazonBackend.Stripe.Errors;
 using Stripe;
 using Stripe.Checkout;
