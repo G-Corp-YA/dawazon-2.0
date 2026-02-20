@@ -3,6 +3,9 @@ using dawazonBackend.Products.Models.Dto;
 
 namespace dawazonBackend.Products.Mapper;
 
+/// <summary>
+/// Clase de utilidad para mapear entre modelos de producto y DTOs.
+/// </summary>
 public static class ProductMapper
 {
     /// <summary>
@@ -58,6 +61,10 @@ public static class ProductMapper
         );
     }
 
+    /// <summary>
+    /// Crea una copia de un ProductRequestDto permitiendo sobrescribir campos específicos.
+    /// Útil para pruebas o transformaciones rápidas.
+    /// </summary>
     public static ProductRequestDto Copy(
         this ProductRequestDto original,
         string? Id = null,

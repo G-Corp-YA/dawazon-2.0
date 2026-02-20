@@ -4,6 +4,10 @@ using MimeKit;
 
 namespace dawazonBackend.Common.Mail;
 
+/// <summary>
+/// Implementación del servicio de correo electrónico utilizando MailKit.
+/// Proporciona funcionalidades tanto para envío inmediato como para encolado en canales.
+/// </summary>
 public class MailKitEmailService(
     IConfiguration configuration,
     ILogger<MailKitEmailService> logger,
@@ -14,6 +18,7 @@ public class MailKitEmailService(
     private readonly ILogger<MailKitEmailService> _logger = logger;
     private readonly Channel<EmailMessage> _emailChannel = emailChannel;
     
+    /// <inheritdoc/>
     public async Task SendEmailAsync(EmailMessage message)
     {
         try
@@ -63,6 +68,7 @@ public class MailKitEmailService(
     }
 
 
+    /// <inheritdoc/>
     public async Task EnqueueEmailAsync(EmailMessage message)
     {
         try

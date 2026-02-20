@@ -6,8 +6,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace dawazonBackend.Products.Repository.Productos;
 
+/// <summary>
+/// Implementación del repositorio de productos utilizando Entity Framework Core.
+/// </summary>
 public class ProductRepository(ILogger<ProductRepository> logger, DawazonDbContext db): IProductRepository
 {
+    /// <inheritdoc/>
     public async Task<(IEnumerable<Product> Items, int TotalCount)> GetAllAsync(FilterDto filter)
     {
         logger.LogDebug("GetAllAsync");
@@ -25,6 +29,7 @@ public class ProductRepository(ILogger<ProductRepository> logger, DawazonDbConte
         return (items, totalCount);
     }
 
+    /// <inheritdoc/>
     public async Task<List<Product>> GetAllByCreatedAtBetweenAsync(DateTime start, DateTime end)
     {
         logger.LogDebug("GetAllByCreatedAtBetweenAsync");
@@ -32,6 +37,7 @@ public class ProductRepository(ILogger<ProductRepository> logger, DawazonDbConte
             .Where(p => p.CreatedAt >= start && p.CreatedAt <= end && p.IsDeleted==false).ToListAsync();
     }
 
+    /// <inheritdoc/>
     public async Task<int> SubstractStockAsync(string id, int amount, long version)
     {
         logger.LogDebug("SubstractStockAsync");
@@ -53,6 +59,7 @@ public class ProductRepository(ILogger<ProductRepository> logger, DawazonDbConte
         return 0;
     }
 
+    /// <inheritdoc/>
     public async Task<(IEnumerable<Product> Items, int TotalCount)> FindAllByCreatorId(long userId, FilterDto filter)
     {
         logger.LogDebug("FindAllByCreatorIdAsync");
@@ -65,6 +72,7 @@ public class ProductRepository(ILogger<ProductRepository> logger, DawazonDbConte
         return (items, totalCount);
     }
 
+    /// <inheritdoc/>
     public async Task DeleteByIdAsync(string id)
     {
         logger.LogDebug("DeleteByIdAsync");
@@ -79,6 +87,7 @@ public class ProductRepository(ILogger<ProductRepository> logger, DawazonDbConte
         }
     }
 
+    /// <inheritdoc/>
     public Task<Product?> GetProductAsync(string id)
     {
         logger.LogDebug("GetProductAsync");
@@ -86,6 +95,7 @@ public class ProductRepository(ILogger<ProductRepository> logger, DawazonDbConte
             .FirstOrDefaultAsync(p => p.Id == id && p.IsDeleted == false);
     }
 
+    /// <inheritdoc/>
     public async Task<Product?> UpdateProductAsync(Product product, string id)
     {
         var productOld= await db.Products.Include(p => p.Category).Include(p => p.Comments)
@@ -108,6 +118,7 @@ public class ProductRepository(ILogger<ProductRepository> logger, DawazonDbConte
         return updated.Entity;
     }
 
+    /// <inheritdoc/>
     public async Task<Product?> CreateProductAsync(Product product)
     {
         logger.LogInformation("Adding Product");

@@ -6,11 +6,19 @@ using Stripe.Checkout;
 
 namespace dawazonBackend.Stripe;
 
+/// <summary>
+/// Servicio para gestionar la integración con la pasarela de pagos Stripe.
+/// </summary>
 public class StripeService : IStripeService
     {
         private readonly string _serverUrl;
         private readonly ILogger<StripeService> _logger;
 
+        /// <summary>
+        /// Inicializa una nueva instancia de <see cref="StripeService"/>.
+        /// </summary>
+        /// <param name="configuration">Configuración de la aplicación.</param>
+        /// <param name="logger">Logger para registrar eventos.</param>
         public StripeService(IConfiguration configuration, ILogger<StripeService> logger)
         {
             StripeConfiguration.ApiKey = configuration["Stripe:Key"];
@@ -18,6 +26,7 @@ public class StripeService : IStripeService
             _logger = logger;
         }
 
+        /// <inheritdoc/>
         public async Task<Result<string, DomainError>> CreateCheckoutSessionAsync(Cart.Models.Cart cart)
         {
             try

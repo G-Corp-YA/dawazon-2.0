@@ -10,7 +10,7 @@ public static class InitializaDatabaAsync
     /// Desarrollo: Elimina y recrea la BD, siembra datos.
     /// Producción: Solo crea tablas si no existen.
     /// </summary>
-    public static void InitializeDatabaseAsync(this WebApplication app)
+    public static async Task InitializeDatabaseAsync(this WebApplication app)
     {
         Log.Information("Inicializando base de datos...");
 
@@ -18,7 +18,7 @@ public static class InitializaDatabaAsync
         var context = scope.ServiceProvider.GetRequiredService<DawazonDbContext>();
         var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
         
-        context.Database.EnsureCreated();
+        await context.Database.EnsureCreatedAsync();
         logger.LogInformation("Base de datos verificada (tablas creadas si no existían)");
         
     }
