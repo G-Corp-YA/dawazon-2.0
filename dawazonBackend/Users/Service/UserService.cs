@@ -11,8 +11,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace dawazonBackend.Users.Service;
 
+/// <summary>
+/// Implementación del servicio de gestión de usuarios.
+/// </summary>
 public class UserService(ILogger<UserService> logger,UserManager<User> userManager): IUserService
 {
+    /// <inheritdoc/>
     public async Task<PageResponseDto<UserDto>> GetAllAsync(FilterDto filters)
     {
         logger.LogInformation("Getting all users");
@@ -49,6 +53,13 @@ public class UserService(ILogger<UserService> logger,UserManager<User> userManag
 
     }
 
+    /// <summary>
+    /// Aplica el ordenamiento a la consulta de usuarios basándose en el campo y dirección especificados.
+    /// </summary>
+    /// <param name="query">La consulta de IQueryable de usuarios.</param>
+    /// <param name="sortBy">El campo por el cual ordenar.</param>
+    /// <param name="direction">La dirección del orden ("asc" o "desc").</param>
+    /// <returns>La consulta con el ordenamiento aplicado.</returns>
     private IQueryable<User> ApplySorting(IQueryable<User> query, string sortBy, string direction)
     {
         var isDescending = direction.Equals("desc", StringComparison.OrdinalIgnoreCase);
@@ -60,6 +71,7 @@ public class UserService(ILogger<UserService> logger,UserManager<User> userManag
         return isDescending ? query.OrderByDescending(keySelector) : query.OrderBy(keySelector);
     }
 
+    /// <inheritdoc/>
     public async Task<Result<UserDto, UserError>> GetByIdAsync(string id)
     {
         logger.LogInformation($"Getting user with id {id}");
@@ -70,6 +82,7 @@ public class UserService(ILogger<UserService> logger,UserManager<User> userManag
             .TapError(_=>logger.LogWarning($"No se encontro usuario con id {id}"));
     }
 
+    /// <inheritdoc/>
     public async Task<Result<UserDto, UserError>> UpdateByIdAsync(long id, UserRequestDto userRequestDto)
     {
         var found = await userManager.Users.Include(u=>u.Client)
@@ -113,6 +126,7 @@ public class UserService(ILogger<UserService> logger,UserManager<User> userManag
         );
     }
 
+    /// <inheritdoc/>
     public async Task BanUserById(string banUserId)
     {
         var found = await userManager.FindByIdAsync(banUserId);

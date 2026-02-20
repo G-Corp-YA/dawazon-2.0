@@ -9,11 +9,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace dawazonBackend.Cart.Repository;
 
+/// <summary>
+/// Implementación del repositorio de carritos utilizando Entity Framework Core.
+/// </summary>
 public class CartRepository(
     DawazonDbContext context,
     ILogger<CartRepository> logger
     ): ICartRepository
 {
+    /// <inheritdoc/>
     public async Task<(IEnumerable<Models.Cart> Items, int TotalCount)> GetAllAsync(FilterCartDto filter)
     {
         var query = context.Carts.AsQueryable();
@@ -49,6 +53,7 @@ public class CartRepository(
         return (items, totalCount);
     }
     
+    /// <inheritdoc/>
     public async Task<double> CalculateTotalEarningsAsync(long? managerId, bool isAdmin)
     {
         logger.LogInformation($"Calculando ganancias totales - Manager: {managerId}, isAdmin: {isAdmin}");
@@ -75,6 +80,7 @@ public class CartRepository(
         // No usamos la propiedad calculada TotalPrice porque EF Core no la puede traducir a SQL.
         return await query.SumAsync(cl => cl.ProductPrice * cl.Quantity);
     }
+    /// <inheritdoc/>
     public async Task<bool> UpdateCartLineStatusAsync(string id, string productId, Status status)
     {
         logger.LogInformation($"Actualizando linea de carrito {id} con status {status}");
@@ -90,11 +96,13 @@ public class CartRepository(
         return true;
     }
 
+    /// <inheritdoc/>
     public Task<IEnumerable<Models.Cart>> FindByUserIdAsync(long userId, FilterCartDto filter)
     {
         throw new NotImplementedException();
     }
 
+    /// <inheritdoc/>
     public async Task<bool> AddCartLineAsync(string cartId, CartLine cartLine)
     {
         logger.LogInformation($"Añadiendo línea de carrito al carrito con ID: {cartId}");
@@ -117,6 +125,7 @@ public class CartRepository(
         return true;
     }
 
+    /// <inheritdoc/>
     public async Task<bool> RemoveCartLineAsync(string cartId, CartLine cartLine)
     {
         logger.LogInformation($"Deletando linea de carrito {cartId}");
@@ -130,6 +139,7 @@ public class CartRepository(
         return true;
     }
 
+    /// <inheritdoc/>
     public async Task<Models.Cart?> FindByUserIdAndPurchasedAsync(long userId, bool purchased)
     {
         logger.LogInformation($"bucando carrito con  ID: {userId} y estatus {purchased}");
@@ -137,6 +147,7 @@ public class CartRepository(
             .ThenInclude(cl => cl.Address).FirstOrDefaultAsync(c => c.UserId == userId && c.Purchased == purchased);
     }
 
+    /// <inheritdoc/>
     public async Task<Models.Cart?> FindCartByIdAsync(string cartId)
     {
         logger.LogInformation($"cartId: {cartId}");
@@ -144,6 +155,7 @@ public class CartRepository(
             .ThenInclude(cl => cl.Address).FirstOrDefaultAsync(c => c.Id == cartId);
     }
 
+    /// <inheritdoc/>
     public async Task<Models.Cart> CreateCartAsync(Models.Cart cart)
     {
         logger.LogInformation($"creando carrito");
@@ -155,6 +167,7 @@ public class CartRepository(
         return saved.Entity;
     }
 
+    /// <inheritdoc/>
     public async Task<Models.Cart?> UpdateCartAsync(string id, Models.Cart cart)
     {
         var oldCart = await context.Carts.Include(c => c.CartLines).Include(c => c.Client)
@@ -174,6 +187,7 @@ public class CartRepository(
         return saved.Entity;
     }
 
+    /// <inheritdoc/>
     public async Task DeleteCartAsync(string id)
     {
         var cart = await context.Carts.FindAsync(id);
@@ -199,6 +213,7 @@ public class CartRepository(
         return isDescending ? query.OrderByDescending(keySelector) : query.OrderBy(keySelector);
     }
     
+    /// <inheritdoc/>
     public async Task<(List<SaleLineDto> Items, int TotalCount)> GetSalesAsLinesAsync(
     long? managerId, 
     bool isAdmin, 

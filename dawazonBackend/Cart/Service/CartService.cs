@@ -17,23 +17,29 @@ using Microsoft.AspNetCore.Identity;
 
 namespace dawazonBackend.Cart.Service
 {
-    public class CartService : ICartService
-    {
-        private readonly IProductRepository _productRepository;
-        private readonly ICartRepository _cartRepository;
-        private readonly UserManager<User> _userManager;
-        private readonly ILogger<CartService> _logger;
-        private readonly IStripeService _stripeService;
-        private readonly IEmailService _mailService;
+/// <summary>
+/// Implementación del servicio de gestión de carritos de compra, ventas y pagos con Stripe.
+/// </summary>
+public class CartService : ICartService
+{
+    private readonly IProductRepository _productRepository;
+    private readonly ICartRepository _cartRepository;
+    private readonly UserManager<User> _userManager;
+    private readonly ILogger<CartService> _logger;
+    private readonly IStripeService _stripeService;
+    private readonly IEmailService _mailService;
 
-        public CartService(
-            IProductRepository productRepository,
-            ICartRepository cartRepository,
-            UserManager<User> userManager,
-            IStripeService stripeService,
-            IEmailService mailService,
-            ILogger<CartService> logger
-            )
+    /// <summary>
+    /// Inicializa una nueva instancia de <see cref="CartService"/>.
+    /// </summary>
+    public CartService(
+        IProductRepository productRepository,
+        ICartRepository cartRepository,
+        UserManager<User> userManager,
+        IStripeService stripeService,
+        IEmailService mailService,
+        ILogger<CartService> logger
+        )
         {
             _productRepository = productRepository;
             _cartRepository = cartRepository;
@@ -43,7 +49,8 @@ namespace dawazonBackend.Cart.Service
             _logger = logger;
         }
 
-        public async Task<PageResponseDto<SaleLineDto>> FindAllSalesAsLinesAsync(long? managerId, bool isAdmin, FilterDto filter)
+    /// <inheritdoc/>
+    public async Task<PageResponseDto<SaleLineDto>> FindAllSalesAsLinesAsync(long? managerId, bool isAdmin, FilterDto filter)
         {
             _logger.LogInformation($"Buscando ventas - Manager: {managerId}, isAdmin: {isAdmin}");
 
@@ -66,12 +73,14 @@ namespace dawazonBackend.Cart.Service
             );
         }
         
-        public async Task<double> CalculateTotalEarningsAsync(long? managerId, bool isAdmin)
+    /// <inheritdoc/>
+    public async Task<double> CalculateTotalEarningsAsync(long? managerId, bool isAdmin)
         {
             return await _cartRepository.CalculateTotalEarningsAsync(managerId, isAdmin);
         }
 
-        public async Task<PageResponseDto<CartResponseDto>> FindAllAsync(long? userId, bool purchased, FilterCartDto filter)
+    /// <inheritdoc/>
+    public async Task<PageResponseDto<CartResponseDto>> FindAllAsync(long? userId, bool purchased, FilterCartDto filter)
         {
             // Deconstruimos la tupla devuelta por el repositorio
             var (itemsEnumerable, totalCount) = await _cartRepository.GetAllAsync(filter);
@@ -95,7 +104,8 @@ namespace dawazonBackend.Cart.Service
             );
         }
 
-        public async Task<Result<CartResponseDto, DomainError>> AddProductAsync(string cartId, string productId)
+    /// <inheritdoc/>
+    public async Task<Result<CartResponseDto, DomainError>> AddProductAsync(string cartId, string productId)
         {
             _logger.LogInformation($"Añadiendo producto {productId} a {cartId}");
             
@@ -121,7 +131,8 @@ namespace dawazonBackend.Cart.Service
             return newCart.Value.ToDto();
         }
 
-        public async Task<CartResponseDto> RemoveProductAsync(string cartId, string productId)
+    /// <inheritdoc/>
+    public async Task<CartResponseDto> RemoveProductAsync(string cartId, string productId)
         {
             _logger.LogInformation($"Eliminando producto del carrito, con ID: {productId}");
             
@@ -133,7 +144,8 @@ namespace dawazonBackend.Cart.Service
             return newCart.Value.ToDto();
         }
 
-        public async Task<Result<CartResponseDto, DomainError>> GetByIdAsync(string id)
+    /// <inheritdoc/>
+    public async Task<Result<CartResponseDto, DomainError>> GetByIdAsync(string id)
         {
             var cart = await _cartRepository.FindCartByIdAsync(id);
             if (cart == null)
@@ -142,7 +154,8 @@ namespace dawazonBackend.Cart.Service
             return cart.ToDto();
         }
 
-        public async Task<Result<CartResponseDto, DomainError>> SaveAsync(Models.Cart entity)
+    /// <inheritdoc/>
+    public async Task<Result<CartResponseDto, DomainError>> SaveAsync(Models.Cart entity)
         {
             foreach (var line in entity.CartLines)
             {
@@ -160,7 +173,8 @@ namespace dawazonBackend.Cart.Service
             return newCart.IsSuccess? newCart.Value.ToDto(): newCart.Error;
         }
 
-        public async Task SendConfirmationEmailAsync(Models.Cart pedido)
+    /// <inheritdoc/>
+    public async Task SendConfirmationEmailAsync(Models.Cart pedido)
         {
             _logger.LogInformation($"Preparando email de confirmación para pedido: {pedido.Id}");
     
@@ -190,7 +204,8 @@ namespace dawazonBackend.Cart.Service
             }
         }
 
-        public async Task<Result<CartResponseDto, DomainError>> UpdateStockWithValidationAsync(string cartId, string productId, int quantity)
+    /// <inheritdoc/>
+    public async Task<Result<CartResponseDto, DomainError>> UpdateStockWithValidationAsync(string cartId, string productId, int quantity)
         {
             if (quantity < 1) return Result.Failure<CartResponseDto, DomainError>(
                 new CartMinQuantityError("La cantidad mínima es 1"));
@@ -220,7 +235,8 @@ namespace dawazonBackend.Cart.Service
             return updatedStockCart.IsSuccess? updatedStockCart.Value.ToDto() : updatedStockCart.Error;
         }
 
-        public async Task<Result<string, DomainError>> CheckoutAsync(string id)
+    /// <inheritdoc/>
+    public async Task<Result<string, DomainError>> CheckoutAsync(string id)
         {
             var entity = await _cartRepository.FindCartByIdAsync(id);
 
@@ -295,7 +311,8 @@ namespace dawazonBackend.Cart.Service
                 new CartNotFoundError($"No se encontró el Carrito con id: {id}."));
         }
 
-        public async Task RestoreStockAsync(string cartId)
+    /// <inheritdoc/>
+    public async Task RestoreStockAsync(string cartId)
         {
             var cart = await _cartRepository.FindCartByIdAsync(cartId);
             if (cart != null) {
@@ -321,12 +338,14 @@ namespace dawazonBackend.Cart.Service
             }
         }
 
-        public async Task DeleteByIdAsync(string id)
+    /// <inheritdoc/>
+    public async Task DeleteByIdAsync(string id)
         {
             await _cartRepository.DeleteCartAsync(id);
         }
 
-        public async Task<Result<CartResponseDto, DomainError>> GetCartByUserIdAsync(long userId)
+    /// <inheritdoc/>
+    public async Task<Result<CartResponseDto, DomainError>> GetCartByUserIdAsync(long userId)
         {
             var cart = await _cartRepository.FindByUserIdAndPurchasedAsync(userId, false);
             
@@ -336,7 +355,8 @@ namespace dawazonBackend.Cart.Service
             return cart.ToDto();
         }
 
-        public async Task<DomainError?> CancelSaleAsync(string ventaId, string productId, long? managerId, bool isAdmin)
+    /// <inheritdoc/>
+    public async Task<DomainError?> CancelSaleAsync(string ventaId, string productId, long? managerId, bool isAdmin)
         {
             var cartResult = await GetByIdAsync(ventaId);
     

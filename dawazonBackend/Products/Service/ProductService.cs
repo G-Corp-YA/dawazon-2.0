@@ -11,6 +11,9 @@ using dawazonBackend.Products.Repository.Productos;
 
 namespace dawazonBackend.Products.Service;
 
+/// <summary>
+/// Implementación del servicio de gestión de productos con soporte para caché y almacenamiento de imágenes.
+/// </summary>
 public class ProductService(
     ICacheService cache,
     IProductRepository repository,
@@ -23,6 +26,7 @@ public class ProductService(
     private readonly TimeSpan _cacheDuration = TimeSpan.FromMinutes(5);
 
 
+    /// <inheritdoc/>
     public async Task<Result<ProductResponseDto, ProductError>> GetByIdAsync(string id)
     {
         logger.LogDebug("Buscando Product con id: {Id}", id);
@@ -46,6 +50,7 @@ public class ProductService(
         return product.ToDto();
     }
 
+    /// <inheritdoc/>
     public async Task<Result<long, ProductError>> GetUserProductIdAsync(string id)
     {
         logger.LogDebug("Obteniendo ID del creador para Product con id: {Id}", id);
@@ -61,6 +66,7 @@ public class ProductService(
         return Result.Success<long, ProductError>(product.CreatorId); 
     }
 
+    /// <inheritdoc/>
     public async Task<Result<PageResponseDto<ProductResponseDto>, ProductError>> GetAllAsync(FilterDto filter)
     {
         logger.LogDebug("Obteniendo listado de Products con filtros");
@@ -85,12 +91,14 @@ public class ProductService(
         return Result.Success<PageResponseDto<ProductResponseDto>, ProductError>(page);
     }
     
+    /// <inheritdoc/>
     public async Task<List<string>> GetAllCategoriesAsync()
     {
         logger.LogDebug("Obteniendo todas las categorías");
         return await categoryRepository.GetCategoriesAsync(); 
     }
     
+    /// <inheritdoc/>
     public async Task<Result<ProductResponseDto, ProductError>> CreateAsync(ProductRequestDto dto)
     {
         logger.LogInformation("Creando nuevo Product: {Name}", dto.Name);
@@ -111,6 +119,7 @@ public class ProductService(
         return savedProduct!.ToDto();
     }
 
+    /// <inheritdoc/>
     public async Task<Result<ProductResponseDto, ProductError>> UpdateAsync(string id, ProductRequestDto dto)
     {
         logger.LogInformation("Actualizando Product con id: {Id}", id);
@@ -139,6 +148,7 @@ public class ProductService(
         return updatedProduct.ToDto();
     }
 
+    /// <inheritdoc/>
     public async Task<Result<ProductResponseDto, ProductError>> PatchAsync(string id, ProductPatchRequestDto dto)
     {
         // Mantenemos tu Patch original
@@ -167,6 +177,7 @@ public class ProductService(
         return foundProduct.ToDto();
     }
 
+    /// <inheritdoc/>
     public async Task<Result<ProductResponseDto, ProductError>> UpdateImageAsync(string id, List<IFormFile> images)
     {
         logger.LogInformation("SERVICE: Actualizando imagen de producto por id: {Id}", id);
@@ -225,6 +236,7 @@ public class ProductService(
         return updatedProduct.ToDto();
     }
 
+    /// <inheritdoc/>
     public async Task<Result<ProductResponseDto, ProductError>> AddCommentAsync(string id, Comment comment)
     {
         logger.LogInformation("Agregando comentario a Product id: {Id}", id);
@@ -244,6 +256,7 @@ public class ProductService(
         return foundProduct.ToDto();
     }
 
+    /// <inheritdoc/>
     public async Task<Result<ProductResponseDto, ProductError>> DeleteAsync(string id)
     {
         logger.LogInformation("Eliminando Product con id: {Id}", id);

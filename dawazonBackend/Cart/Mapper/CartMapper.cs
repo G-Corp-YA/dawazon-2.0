@@ -5,6 +5,9 @@ using System.Linq;
 using dawazonBackend.Cart.Models;
 using dawazonBackend.Cart.Dto;
 
+/// <summary>
+/// Clase de utilidad para mapear entre modelos de carrito, líneas y sus respectivos DTOs.
+/// </summary>
 public static class CartMapper
 {
     /// <summary>
