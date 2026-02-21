@@ -1,0 +1,11 @@
+﻿@page
+@model dawazon2._0.Pages.Auth.Login
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Auth page";
+                       
+    // Capturar errores de TempData (común en MVC para redirecciones)
+    var error = TempData["Error"] as string;
+}

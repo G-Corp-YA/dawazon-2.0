@@ -1,0 +1,109 @@
+﻿@page
+@model dawazon2._0.Pages.Auth.Register
+@{
+    ViewData["Title"] = "Register page";
+    var error = TempData["Error"] as string;
+}
+
+<div class="auth-container">
+    <div class="auth-card">
+        
+        @if (!string.IsNullOrEmpty(error))
+        {
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="bi bi-exclamation-triangle me-2"></i>@error
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+
+        @* En Razor Pages, el formulario apunta a la propia página. 
+           Usamos asp-page-handler para diferenciar la acción *@
+        <form method="post" enctype="@(Model.IsRegister ? "multipart/form-data" : "application/x-www-form-urlencoded")">
+            
+            @if (Model.IsLogin || Model.IsRegister)
+            {
+                <div class="mb-3">
+                    <input type="text" asp-for="UserName" class="form-control auth-input" placeholder="Usuario" required autofocus>
+                </div>
+
+                @if (Model.IsRegister)
+                {
+                    <div class="mb-3">
+                        <input type="email" asp-for="Email" class="form-control auth-input" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" asp-for="Telefono" class="form-control auth-input" placeholder="Teléfono (opcional)">
+                    </div>
+                }
+
+                <div class="input-group mb-3">
+                    <input type="password" asp-for="Password" class="form-control auth-input password-field" placeholder="Contraseña" required>
+                    <span class="input-group-text toggle-password" style="cursor:pointer" onclick="toggleField(this)">
+                        <i class="bi bi-eye-slash"></i>
+                    </span>
+                </div>
+            }
+
+            @if (Model.IsRegister)
+            {
+                <div class="input-group mb-3">
+                    <input type="password" asp-for="ConfirmPassword" class="form-control auth-input password-field" placeholder="Repetir contraseña" required>
+                    <span class="input-group-text toggle-password" style="cursor:pointer" onclick="toggleField(this)">
+                        <i class="bi bi-eye-slash"></i>
+                    </span>
+                </div>
+            }
+
+            @if (Model.IsChangePass)
+            {
+                <div class="input-group mb-3">
+                    <input type="password" asp-for="OldPassword" class="form-control auth-input password-field" placeholder="Antigua contraseña" required>
+                    <span class="input-group-text toggle-password" style="cursor:pointer" onclick="toggleField(this)">
+                        <i class="bi bi-eye-slash"></i>
+                    </span>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" asp-for="NewPassword" class="form-control auth-input password-field" placeholder="Nueva contraseña" required>
+                    <span class="input-group-text toggle-password" style="cursor:pointer" onclick="toggleField(this)">
+                        <i class="bi bi-eye-slash"></i>
+                    </span>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" asp-for="ConfirmPassword" class="form-control auth-input password-field" placeholder="Repetir nueva contraseña" required>
+                    <span class="input-group-text toggle-password" style="cursor:pointer" onclick="toggleField(this)">
+                        <i class="bi bi-eye-slash"></i>
+                    </span>
+                </div>
+            }
+
+            <div class="auth-buttons mt-4">
+                @if (Model.IsLogin)
+                {
+                    @* Para cambiar de "modo", redirigimos a la misma página con distintos parámetros o rutas si lo tienes configurado *@
+                    <a class="btn-auth text-decoration-none text-center pt-2" asp-page="./Register" asp-route-handler="SignUp">Registrarse</a>
+                    <button type="submit" asp-page-handler="SignIn" class="btn-auth">Iniciar sesión</button>
+                }
+                else if (Model.IsRegister)
+                {
+                    <a class="btn-auth text-decoration-none text-center pt-2" asp-page="./Register" asp-route-handler="SignIn">Iniciar sesión</a>
+                    <button type="submit" asp-page-handler="SignUp" class="btn-auth">Registrarse</button>
+                }
+                else if (Model.IsChangePass)
+                {
+                    <a href="/" class="btn-auth text-decoration-none text-center pt-2">Cancelar</a>
+                    <button type="submit" asp-page-handler="ChangePassword" class="btn-auth">Confirmar</button>
+                }
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function toggleField(btn) {
+        const input = btn.previousElementSibling;
+        const icon = btn.querySelector('i');
+        input.type = input.type === 'password' ? 'text' : 'password';
+        icon.classList.toggle('bi-eye-slash');
+        icon.classList.toggle('bi-eye');
+    }
+</script>
