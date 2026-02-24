@@ -1,7 +1,7 @@
 meta {
-  name: 00-Login-Setup
+  name: 00b-Login-Manager-Setup
   type: http
-  seq: 0
+  seq: 0.5
 }
 
 post {
@@ -12,19 +12,19 @@ post {
 
 body:json {
   {
-    "usernameOrEmail": "admin@admin.com",
-    "password": "Admin123!"
+    "usernameOrEmail": "manager@manager.com",
+    "password": "Manager123!"
   }
 }
 
 script:post-response {
   if (res.status === 200) {
-    bru.setEnvVar("adminToken", res.body.token);
+    bru.setEnvVar("managerToken", res.body.token);
   }
 }
 
 tests {
-  test("Setup: Login admin OK", function() {
+  test("Setup: Login como manager OK", function() {
     expect(res.status).to.equal(200);
     expect(res.body).to.have.property("token");
   });

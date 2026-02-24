@@ -16,7 +16,7 @@ auth:bearer {
 
 script:post-response {
   if (res.status === 200 && res.body.id) {
-    bru.setVar("cartId", res.body.id);
+    bru.setEnvVar("cartId", res.body.id);
   }
 }
 

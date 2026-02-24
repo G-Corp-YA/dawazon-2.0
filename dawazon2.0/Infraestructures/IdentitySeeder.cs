@@ -43,6 +43,7 @@ public static class IdentitySeeder
             {
                 adminUser = new User
                 {
+                    Name = "Admin",
                     UserName = "admin@admin.com",
                     Email = "admin@admin.com",
                     EmailConfirmed = true
@@ -65,6 +66,7 @@ public static class IdentitySeeder
             {
                 normalUser = new User
                 {
+                    Name = "User",
                     UserName = "user@user.com",
                     Email = "user@user.com",
                     EmailConfirmed = true
@@ -80,31 +82,32 @@ public static class IdentitySeeder
                     logger.LogError("Error al crear usuario normal: {Errors}",
                         string.Join(", ", result.Errors.Select(e => e.Description)));
                 }
-
-                var managerUser = await userManager.FindByEmailAsync("manager@manager.com");
-                if (managerUser == null)
-                {
-                    managerUser = new User
-                    {
-                        UserName = "manager@manager.com",
-                        Email = "manager@manager.com",
-                        EmailConfirmed = true
-                    };
-                    var resultado = await userManager.CreateAsync(managerUser, "Manager123!");
-                    if (resultado.Succeeded)
-                    {
-                        await userManager.AddToRoleAsync(managerUser, "Manager");
-                        logger.LogInformation("Usuario manager creado correctamente");
-                    }
-                    else
-                    {
-                        logger.LogError("Error al crear usuario manager: {Errors}",
-                            string.Join(", ", resultado.Errors.Select(e => e.Description)));
-                    }
-                }
-
-                logger.LogInformation("Roles y usuarios inicializados correctamente");
             }
+
+            var managerUser = await userManager.FindByEmailAsync("manager@manager.com");
+            if (managerUser == null)
+            {
+                managerUser = new User
+                {
+                    Name = "Manager",
+                    UserName = "manager@manager.com",
+                    Email = "manager@manager.com",
+                    EmailConfirmed = true
+                };
+                var resultado = await userManager.CreateAsync(managerUser, "Manager123!");
+                if (resultado.Succeeded)
+                {
+                    await userManager.AddToRoleAsync(managerUser, "Manager");
+                    logger.LogInformation("Usuario manager creado correctamente");
+                }
+                else
+                {
+                    logger.LogError("Error al crear usuario manager: {Errors}",
+                        string.Join(", ", resultado.Errors.Select(e => e.Description)));
+                }
+            }
+
+            logger.LogInformation("Roles y usuarios inicializados correctamente");
         }
     }
 }

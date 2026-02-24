@@ -11,8 +11,8 @@ delete {
 }
 
 script:pre-request {
-  if (!bru.getVar("newProductId")) {
-    bru.setVar("newProductId", "1");
+  if (!bru.getEnvVar("newProductId")) {
+    bru.setEnvVar("newProductId", "1");
   }
 }
 

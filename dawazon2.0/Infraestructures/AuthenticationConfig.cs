@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using dawazonBackend.Users.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -56,7 +58,9 @@ public static class AuthenticationConfig
                     ValidateAudience = true,
                     ValidAudience = jwtAudience,
                     ValidateLifetime = true,
-                    ClockSkew = TimeSpan.Zero
+                    ClockSkew = TimeSpan.Zero,
+                    NameClaimType = JwtRegisteredClaimNames.Name,
+                    RoleClaimType = ClaimTypes.Role
                 };
             })
             .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>

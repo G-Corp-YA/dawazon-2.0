@@ -24,9 +24,9 @@ params:query {
 script:post-response {
   if (res.status === 200 && res.body.content && res.body.content.length > 0) {
     var nonAdmin = res.body.content.find(function(u) {
-      return u.id && u.id !== bru.getVar("userId");
+      return u.id && u.id !== bru.getEnvVar("userId");
     });
-    if (nonAdmin) bru.setVar("targetUserId", nonAdmin.id);
+    if (nonAdmin) bru.setEnvVar("targetUserId", nonAdmin.id);
   }
 }
 

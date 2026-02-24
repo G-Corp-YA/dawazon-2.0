@@ -27,8 +27,8 @@ body:json {
 }
 
 script:pre-request {
-  if (!bru.getVar("targetUserId")) {
-    bru.setVar("targetUserId", "1");
+  if (!bru.getEnvVar("targetUserId")) {
+    bru.setEnvVar("targetUserId", "1");
   }
 }
 

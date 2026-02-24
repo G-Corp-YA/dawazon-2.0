@@ -19,7 +19,7 @@ params:query {
 
 script:post-response {
   if (res.status === 200 && res.body.content && res.body.content.length > 0) {
-    bru.setVar("productId", res.body.content[0].id);
+    bru.setEnvVar("productId", res.body.content[0].id);
   }
 }
 

@@ -11,7 +11,7 @@ put {
 }
 
 auth:bearer {
-  token: {{adminToken}}
+  token: {{managerToken}}
 }
 
 body:multipart-form {
@@ -24,8 +24,8 @@ body:multipart-form {
 
 script:pre-request {
   // Si no se creó el producto antes, skip este test
-  if (!bru.getVar("newProductId")) {
-    bru.setVar("newProductId", "99999999");
+  if (!bru.getEnvVar("newProductId")) {
+    bru.setEnvVar("newProductId", "99999999");
   }
 }
 

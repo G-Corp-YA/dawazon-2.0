@@ -81,6 +81,7 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.MapBlazorHub();
+app.MapGet("/health", () => Results.Ok(new { status = "healthy", timestamp = DateTime.UtcNow }));
 // init de datos
 await app.SeedIdentityAsync();
 await app.InitializeDatabaseAsync();

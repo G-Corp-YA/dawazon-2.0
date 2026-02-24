@@ -1,0 +1,133 @@
+﻿name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build:
+    name: Build Project
+    runs-on: ubuntu-latest
+    env:
+      E2E_BASE_URL: "http://localhost:5041"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.102
+      - name: Restore & Build
+        run: |
+          dotnet restore
+          dotnet build --configuration Release
+
+  unit-tests:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.102
+      - name: Run Unit Tests
+        run: |
+          mkdir -p UnitTestResults
+          dotnet test ./dawazonTest/dawazonTest.csproj \
+            --configuration Release \
+            --logger "trx;LogFileName=UnitTestResults/UnitTestResults.trx"
+      - name: Upload Unit Test Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit-test-results
+          path: UnitTestResults
+
+  e2e-tests:
+    name: Run Playwright E2E Tests
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.102
+
+      - name: Restore & Build projects
+        run: |
+          dotnet restore
+          dotnet build ./dawazon2.0/dawazon2.0.csproj --configuration Release
+          dotnet build ./dawazonPlayWrite/dawazonPlayWrite.csproj --configuration Release
+
+      - name: Install Playwright browsers
+        run: |
+          cd dawazonPlayWrite
+          dotnet tool install --global Microsoft.Playwright.CLI || true
+          playwright install --with-deps chromium
+
+      - name: Start backend server
+        run: |
+          echo "Arrancando servidor en http://localhost:5041..."
+          dotnet run --project ./dawazon2.0/dawazon2.0.csproj \
+            --configuration Release \
+            --no-build \
+            --urls "http://localhost:5041" &
+          echo "SERVER_PID=$!" >> $GITHUB_ENV
+          echo "E2E_BASE_URL=http://localhost:5041" >> $GITHUB_ENV
+
+      - name: Wait for server to be ready
+        run: |
+          echo "Esperando a que el servidor esté listo..."
+          for i in {1..60}; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:5041/health || echo "000")
+            if [ "$STATUS" = "200" ]; then
+              echo "Servidor listo tras $i segundos"
+              break
+            fi
+            echo "Intento $i/60 - status: $STATUS"
+            sleep 1
+          done
+          # Verificación final — falla el job si el servidor no arrancó
+          curl -f http://localhost:5041/health || (echo "El servidor no respondió a tiempo" && exit 1)
+
+      - name: Run Playwright E2E Tests
+        env:
+          E2E_BASE_URL: http://localhost:5041
+        run: |
+          mkdir -p E2ETestResults
+          dotnet test ./dawazonPlayWrite/dawazonPlayWrite.csproj \
+            --configuration Release \
+            --no-build \
+            --logger "trx;LogFileName=E2ETestResults/PlaywrightResults.trx" \
+            --verbosity normal
+
+      - name: Stop backend server
+        if: always()
+        run: |
+          if [ -n "$SERVER_PID" ]; then
+            echo "Parando servidor (PID: $SERVER_PID)..."
+            kill $SERVER_PID 2>/dev/null || true
+          fi
+
+      - name: Upload Playwright screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-screenshots
+          path: dawazonPlayWrite/TestScreenshots/
+          retention-days: 7
+
+      - name: Upload E2E Test Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2e-test-results
+          path: E2ETestResults

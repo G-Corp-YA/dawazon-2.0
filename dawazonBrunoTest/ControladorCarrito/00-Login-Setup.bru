@@ -12,14 +12,14 @@ post {
 
 body:json {
   {
-    "usernameOrEmail": "testuser",
+    "usernameOrEmail": "user@user.com",
     "password": "User123!"
   }
 }
 
 script:post-response {
   if (res.status === 200) {
-    bru.setVar("userToken", res.body.token);
+    bru.setEnvVar("userToken", res.body.token);
   }
 }
 

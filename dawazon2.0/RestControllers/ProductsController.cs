@@ -63,7 +63,7 @@ public class ProductsController(IProductService service) : ControllerBase
     /// <example>
     /// GET /api/funkos/123
     /// </example>
-    [HttpGet("{id:long}")]
+    [HttpGet("{id}")]
     [ProducesResponseType(typeof(ProductResponseDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]

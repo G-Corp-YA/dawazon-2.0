@@ -15,8 +15,8 @@ auth:bearer {
 }
 
 script:pre-request {
-  if (!bru.getVar("targetUserId")) {
-    bru.setVar("targetUserId", "99999999");
+  if (!bru.getEnvVar("targetUserId")) {
+    bru.setEnvVar("targetUserId", "99999999");
   }
 }
 

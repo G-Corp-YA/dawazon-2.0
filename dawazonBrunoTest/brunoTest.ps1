@@ -24,7 +24,7 @@ $TotalFailed = 0
 foreach ($Carpeta in $Carpetas) {
     $RutaCarpeta = Join-Path $BaseDir $Carpeta
     Write-Host ""
-    Write-Host "📁 Ejecutando: $Carpeta" -ForegroundColor Yellow
+    Write-Host "Ejecutando: $Carpeta" -ForegroundColor Yellow
 
     bru run $RutaCarpeta --env $Env --output "$BaseDir\report-$Carpeta.json"
 
