@@ -38,4 +38,10 @@ public interface IUserService
     /// <param name="banUserId">El ID del usuario a desactivar.</param>
     /// <returns>Una tarea que representa la operación asíncrona.</returns>
     Task BanUserById(string banUserId);
+
+    /// <summary>
+    /// Obtiene el número total de usuarios registrados.
+    /// </summary>
+    /// <returns>El conteo total de usuarios.</returns>
+    Task<int> GetTotalUsersCountAsync();
 }

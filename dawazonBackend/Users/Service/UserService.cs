@@ -145,4 +145,11 @@ public class UserService(ILogger<UserService> logger,UserManager<User> userManag
         found.IsDeleted = true;
         await userManager.UpdateAsync(found);
     }
+
+    /// <inheritdoc/>
+    public async Task<int> GetTotalUsersCountAsync()
+    {
+        logger.LogInformation("Obteniendo total de usuarios");
+        return await userManager.Users.CountAsync(u => u.IsDeleted == false);
+    }
 }

@@ -519,5 +519,12 @@ public class CartService : ICartService
                 return Result.Failure<int, DomainError>(new CartError(ex.Message));
             }
         }
+
+        /// <inheritdoc/>
+        public async Task<int> GetTotalSalesCountAsync()
+        {
+            _logger.LogInformation("Obteniendo total de ventas");
+            return await _cartRepository.GetTotalSalesCountAsync();
+        }
     }
 }

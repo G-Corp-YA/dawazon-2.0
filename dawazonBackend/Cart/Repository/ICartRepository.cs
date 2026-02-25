@@ -79,4 +79,9 @@ public interface ICartRepository
     /// Cuenta las nuevas líneas de productos vendidas de un gestor desde una fecha específica.
     /// </summary>
     Task<int> CountNewSalesAsync(long managerId, DateTime since);
+
+    /// <summary>
+    /// Obtiene el número total de ventas realizadas.
+    /// </summary>
+    Task<int> GetTotalSalesCountAsync();
 }

@@ -250,4 +250,12 @@ public class AdminMvcController(IUserService userService, ICartService cartServi
 
         return RedirectToAction(nameof(Sales));
     }
+
+    /// <summary>Vista de estadísticas del panel de administración.</summary>
+    [HttpGet("estadisticas")]
+    public IActionResult Stats()
+    {
+        Log.Information("[AdminMvc] Stats");
+        return View();
+    }
 }

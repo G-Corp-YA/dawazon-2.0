@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Estadísticas";
+}
+
+<div class="container py-4">
+    <div class="row mb-4">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/" class="text-decoration-none">
+                            <i class="bi bi-house"></i> Inicio
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="/admin/usuarios" class="text-decoration-none">Panel Admin</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Estadísticas</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <component type="typeof(dawazon2._0.Components.AdminStats)"
+               render-mode="Server" />
+</div>

@@ -329,4 +329,14 @@ public class CartRepository(
             .Where(line => line.Product != null && line.Product.CreatorId == managerId)
             .CountAsync();
     }
+
+    /// <inheritdoc/>
+    public async Task<int> GetTotalSalesCountAsync()
+    {
+        return await context.Carts
+            .AsNoTracking()
+            .Where(c => c.Purchased == true)
+            .SelectMany(cart => cart.CartLines)
+            .CountAsync();
+    }
 }
