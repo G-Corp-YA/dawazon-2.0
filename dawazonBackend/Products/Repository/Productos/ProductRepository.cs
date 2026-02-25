@@ -127,6 +127,30 @@ public class ProductRepository(ILogger<ProductRepository> logger, DawazonDbConte
         await db.Products.Entry(product).Reference(p => p.Category).LoadAsync();
         return saved.Entity;
     }
+
+    /// <inheritdoc/>
+    public async Task<(int TotalProducts, int OutOfStockCount, Dictionary<string, int> ProductsByCategory)> GetStatsAsync(bool bypassCache = false)
+    {
+        logger.LogDebug("GetStatsAsync (bypassCache: {BypassCache})", bypassCache);
+
+        var products = await db.Products
+            .AsNoTracking()
+            .Where(p => p.IsDeleted == false)
+            .Include(p => p.Category)
+            .ToListAsync();
+
+        var totalProducts = products.Count;
+        var outOfStockCount = products.Count(p => p.Stock <= 0);
+
+        var productsByCategory = products
+            .GroupBy(p => p.Category?.Name ?? "Sin categoría")
+            .ToDictionary(g => g.Key, g => g.Count());
+
+        logger.LogDebug("Estadísticas: {TotalProducts} productos, {OutOfStockCount} sin stock", totalProducts, outOfStockCount);
+
+        return (totalProducts, outOfStockCount, productsByCategory);
+    }
+
     private static IQueryable<Product> ApplySorting(IQueryable<Product> query, string sortBy, string direction)
     {
         var isDescending = direction.Equals("desc", StringComparison.OrdinalIgnoreCase);

@@ -67,4 +67,11 @@ public interface IProductRepository
     /// <param name="product">El producto a crear.</param>
     /// <returns>El producto creado.</returns>
     Task<Product?> CreateProductAsync(Product product);
+
+    /// <summary>
+    /// Obtiene estadísticas de productos: total, sin stock y distribución por categoría.
+    /// </summary>
+    /// <param name="bypassCache">Si es true, fuerza la consulta a la base de datos sin usar caché.</param>
+    /// <returns>Tupla con (total productos, productos sin stock, productos por categoría).</returns>
+    Task<(int TotalProducts, int OutOfStockCount, Dictionary<string, int> ProductsByCategory)> GetStatsAsync(bool bypassCache = false);
 }

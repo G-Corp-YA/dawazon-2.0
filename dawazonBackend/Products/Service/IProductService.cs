@@ -1,4 +1,4 @@
-﻿using CSharpFunctionalExtensions;
+using CSharpFunctionalExtensions;
 using dawazonBackend.Common.Dto;
 using dawazonBackend.Products.Errors;
 using dawazonBackend.Products.Models;
@@ -85,4 +85,10 @@ public interface IProductService
     /// <param name="comment">El objeto comentario a añadir.</param>
     /// <returns>El DTO del producto con el nuevo comentario o un error.</returns>
     Task<Result<ProductResponseDto, ProductError>> AddCommentAsync(string id, Comment comment);
+
+    /// <summary>
+    /// Obtiene estadísticas generales del sistema.
+    /// </summary>
+    /// <returns>Un DTO con las estadísticas.</returns>
+    Task<AdminStatsDto> GetStatsAsync();
 }

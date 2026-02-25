@@ -1,4 +1,5 @@
-﻿using CSharpFunctionalExtensions;
+using CSharpFunctionalExtensions;
+using dawazonBackend.Cart.Service;
 using dawazonBackend.Common.Cache;
 using dawazonBackend.Common.Dto;
 using dawazonBackend.Common.Storage;
@@ -8,6 +9,7 @@ using dawazonBackend.Products.Models;
 using dawazonBackend.Products.Models.Dto;
 using dawazonBackend.Products.Repository.Categoria;
 using dawazonBackend.Products.Repository.Productos;
+using dawazonBackend.Users.Service;
 
 namespace dawazonBackend.Products.Service;
 
@@ -19,6 +21,8 @@ public class ProductService(
     IProductRepository repository,
     ICategoriaRepository categoryRepository,
     IStorage storageService,
+    ICartService cartService,
+    IUserService userService,
     ILogger<ProductService> logger)
     : IProductService
 {
@@ -312,5 +316,26 @@ public class ProductService(
         await cache.RemoveAsync(CacheKeyPrefix + id);
     
         return productToDelete.ToDto();
+    }
+
+    /// <inheritdoc/>
+    public async Task<AdminStatsDto> GetStatsAsync()
+    {
+        logger.LogInformation("Obteniendo estadísticas del sistema");
+
+        var productStats = await repository.GetStatsAsync(true);
+        var totalEarnings = await cartService.CalculateTotalEarningsAsync(null, true);
+        var totalUsers = await userService.GetTotalUsersCountAsync();
+        var totalSales = await cartService.GetTotalSalesCountAsync();
+
+        return new AdminStatsDto
+        {
+            TotalProducts = productStats.TotalProducts,
+            TotalUsers = totalUsers,
+            TotalSales = totalSales,
+            TotalEarnings = totalEarnings,
+            OutOfStockCount = productStats.OutOfStockCount,
+            ProductsByCategory = productStats.ProductsByCategory
+        };
     }
 }

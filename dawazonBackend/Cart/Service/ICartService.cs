@@ -95,4 +95,9 @@ public interface ICartService
     /// Cuenta las nuevas ventas de un gestor desde una fecha determinada.
     /// </summary>
     Task<Result<int, DomainError>> GetNewSalesCountAsync(long managerId, DateTime since);
+
+    /// <summary>
+    /// Obtiene el número total de ventas realizadas.
+    /// </summary>
+    Task<int> GetTotalSalesCountAsync();
 }
