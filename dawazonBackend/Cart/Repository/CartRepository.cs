@@ -319,4 +319,14 @@ public class CartRepository(
 
     return (finalItems, totalCount);
 }
+
+    public async Task<int> CountNewSalesAsync(long managerId, DateTime since)
+    {
+        return await context.Carts
+            .AsNoTracking()
+            .Where(c => c.Purchased == true && c.UploadAt > since)
+            .SelectMany(cart => cart.CartLines)
+            .Where(line => line.Product != null && line.Product.CreatorId == managerId)
+            .CountAsync();
+    }
 }

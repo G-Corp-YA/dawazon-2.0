@@ -504,5 +504,20 @@ public class CartService : ICartService
             };
             return await _cartRepository.CreateCartAsync(cart); 
         }
+
+        /// <inheritdoc/>
+        public async Task<Result<int, DomainError>> GetNewSalesCountAsync(long managerId, DateTime since)
+        {
+            try
+            {
+                var count = await _cartRepository.CountNewSalesAsync(managerId, since);
+                return Result.Success<int, DomainError>(count);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error contando nuevas ventas para manager {ManagerId}", managerId);
+                return Result.Failure<int, DomainError>(new CartError(ex.Message));
+            }
+        }
     }
 }
