@@ -8,6 +8,6 @@
 */report-ControladorProductos.json
 */report-ControladorAuth.json
 */report-ControladorCarrito.json
-playwright-reports
+playwright-reports/
 */reports/
-bruno-reports
+bruno-reports/
