@@ -57,13 +57,7 @@ foreach ($Carpeta in $Carpetas) {
     Write-Host "Ejecutando: $Carpeta" -ForegroundColor Yellow
 
     bru run $RutaCarpeta --env $Env  --format html --output "$BaseDir\report-$Carpeta.html"
-
-    if ($LASTEXITCODE -ne 0) {
-        $TotalFailed++
-        Write-Host "Fallos en $Carpeta" -ForegroundColor Red
-    } else {
-        Write-Host "$Carpeta OK" -ForegroundColor Green
-    }
+    
     # Capturar último HTML generado
     $UltimoHtml = Get-ChildItem -Path $BaseDir -Filter "*.html" |
             Sort-Object LastWriteTime -Descending |
@@ -75,12 +69,13 @@ foreach ($Carpeta in $Carpetas) {
         Move-Item $UltimoHtml.FullName $NuevoNombre -Force
     }
 
-    $Estado = if ($ExitCode -eq 0) { "PASÓ" } else { "FALLÓ" }
-
-    if ($ExitCode -ne 0) {
-        $FailCount++
+    if ($LASTEXITCODE -ne 0) {
+        $TotalFailed++
+        Write-Host "Fallos en $Carpeta" -ForegroundColor Red
+    } else {
+        Write-Host "$Carpeta OK" -ForegroundColor Green
+        $Estado="pass"
     }
-
     $Resumen += [PSCustomObject]@{
         Carpeta = $Carpeta
         Estado  = $Estado

@@ -1,5 +1,5 @@
 ﻿# STAGE 1: base - imagen runtime minima
-FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS base
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS base
 USER $APP_UID
 WORKDIR /app
 EXPOSE 8080
@@ -69,6 +69,7 @@ RUN dotnet publish "dawazon2.0/dawazon2.0.csproj" \
 # STAGE 5: final - imagen minima solo para ejecutar la app
 FROM base AS final
 WORKDIR /app
+
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "dawazon2.0.dll"]
 

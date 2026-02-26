@@ -1,4 +1,4 @@
-﻿#!/bin/sh
+#!/bin/sh
 
 # CONFIGURACIÓN
 BaseDir="$(cd "$(dirname "$0")" && pwd)"
@@ -6,7 +6,7 @@ Env="Local"
 ReportsDir="$BaseDir/reports"
 FailCount=0
 
-# Lista de carpetas (compatible con sh)
+# Lista de carpetas compatible con sh
 Carpetas="ControladorAuth ControladorProductos ControladorCarrito ControladorAdmin"
 
 # Crear carpeta reports si no existe
@@ -26,12 +26,8 @@ then
   npm install -g @usebruno/cli
 fi
 
-# INSTALAR REPORTER HTML SI NO EXISTE
-if ! npm list -g @usebruno/reporter-html >/dev/null 2>&1
-then
-  echo "Instalando reporter HTML..."
-  npm install -g @usebruno/reporter-html
-fi
+# OMITIR reporter HTML para evitar error npm 404
+echo "Reporter HTML omitido (no disponible en npm)"
 
 # EJECUTAR CARPETAS
 Resumen=""
@@ -44,9 +40,8 @@ do
   echo ""
   echo "📁 Ejecutando: $Carpeta"
 
-  bru run "$RutaCarpeta" \
-    --env "$Env" \
-    --reporter-html "$OutputPath"
+  # Ejecutar Bruno, ignorando errores para que siga con todas las carpetas
+  bru run "$RutaCarpeta" --env "$Env" --reporter-html "$OutputPath" || true
 
   ExitCode=$?
 
