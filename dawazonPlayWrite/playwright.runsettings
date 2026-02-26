@@ -8,5 +8,6 @@
     </NUnit>
     <Playwright>
         <BrowserName>chromium</BrowserName>
+        <VideoDir>videos</VideoDir>
     </Playwright>
 </RunSettings>

@@ -8,6 +8,8 @@ public class TestConfig
     public static int Timeout { get; private set; } = 30000;
     public static bool SlowMo { get; private set; } = false;
     public static int SlowMoDelay { get; private set; } = 0;
+    public static bool RecordVideo { get; private set; } = true;
+    public static string VideoDir { get; private set; } = "videos";
 
     static TestConfig()
     {
@@ -95,6 +97,20 @@ public class TestConfig
         if (int.TryParse(slowMoDelayEnv, out var delay))
         {
             SlowMoDelay = delay;
+        }
+
+        var recordVideoEnv = Environment.GetEnvironmentVariable("DAWAZON_RECORD_VIDEO");
+        if (!string.IsNullOrEmpty(recordVideoEnv))
+        {
+            RecordVideo = recordVideoEnv.Equals("true", StringComparison.OrdinalIgnoreCase) ||
+                          recordVideoEnv.Equals("1", StringComparison.OrdinalIgnoreCase) ||
+                          recordVideoEnv.Equals("yes", StringComparison.OrdinalIgnoreCase);
+        }
+
+        var videoDirEnv = Environment.GetEnvironmentVariable("DAWAZON_VIDEO_DIR");
+        if (!string.IsNullOrEmpty(videoDirEnv))
+        {
+            VideoDir = videoDirEnv;
         }
     }
 

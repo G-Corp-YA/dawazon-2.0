@@ -18,6 +18,8 @@ public class PlaywrightSetup
         Console.WriteLine($"Base URL: {TestConfig.BaseUrl}");
         Console.WriteLine($"Headless: {TestConfig.Headless}");
         Console.WriteLine($"Browser: {TestConfig.BrowserType}");
+        Console.WriteLine($"Record Video: {TestConfig.RecordVideo}");
+        Console.WriteLine($"Video Dir: {TestConfig.VideoDir}");
         Console.WriteLine($"================================");
         
         Playwright = await Microsoft.Playwright.Playwright.CreateAsync();
@@ -69,13 +71,31 @@ public abstract class BaseTest : PageTest
     protected string BaseUrl => TestConfig.BaseUrl;
     protected bool Headless => TestConfig.Headless;
     protected int Timeout => TestConfig.Timeout;
+    protected bool RecordVideo => TestConfig.RecordVideo;
+    protected string VideoDir => TestConfig.VideoDir;
 
     public override BrowserNewContextOptions ContextOptions()
     {
-        return new BrowserNewContextOptions()
+        var videoPath = Path.Combine(Directory.GetCurrentDirectory(), VideoDir);
+        
+        if (RecordVideo && !Directory.Exists(videoPath))
+        {
+            Directory.CreateDirectory(videoPath);
+            Console.WriteLine($"Creating video directory: {videoPath}");
+        }
+
+        var options = new BrowserNewContextOptions()
         {
             IgnoreHTTPSErrors = true
         };
+
+        if (RecordVideo)
+        {
+            options.RecordVideoDir = videoPath;
+            Console.WriteLine($"Video recording enabled. Directory: {videoPath}");
+        }
+
+        return options;
     }
 
     [SetUp]
@@ -83,6 +103,15 @@ public abstract class BaseTest : PageTest
     {
         LoadEnvFile();
         TestConfig.Reload();
+    }
+
+    [TearDown]
+    public async Task TearDownTest()
+    {
+        if (RecordVideo)
+        {
+            await Page.WaitForTimeoutAsync(3000);
+        }
     }
 
     protected async Task LoginAsUserAsync(string email, string password)
