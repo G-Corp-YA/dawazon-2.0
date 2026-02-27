@@ -1,0 +1,36 @@
+﻿# STAGE 1: base - imagen runtime minima
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS base
+USER $APP_UID
+WORKDIR /app
+EXPOSE 8080
+EXPOSE 8081
+
+# STAGE 2: build - restore y compilacion de todo
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+
+# Copiamos los .csproj para aprovechar la cache de capas de Docker
+COPY ["dawazon2.0/dawazon2.0.csproj", "dawazon2.0/"]
+COPY ["dawazonBackend/dawazonBackend.csproj", "dawazonBackend/"]
+COPY ["dawazonTest/dawazonTest.csproj", "dawazonTest/"]
+
+# Restore de dependencias
+RUN dotnet restore "dawazon2.0/dawazon2.0.csproj"
+RUN dotnet restore "dawazonTest/dawazonTest.csproj"
+
+# Copiamos todo el codigo fuente
+COPY dawazon2.0/ dawazon2.0/
+COPY dawazonBackend/ dawazonBackend/
+COPY dawazonTest/ dawazonTest/
+
+# Build del proyecto principal
+RUN dotnet build "dawazon2.0/dawazon2.0.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+# STAGE 5: final - imagen minima solo para ejecutar la app
+FROM base AS final
+WORKDIR /app
+
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "dawazon2.0.dll"]
+
