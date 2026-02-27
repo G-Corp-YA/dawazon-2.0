@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📁_20estructura_20del_20proyecto_0',['📁 Estructura del Proyecto',['../index.html#autotoc_md10',1,'']]]
+  ['✨_20características_0',['✨ Características',['../index.html#autotoc_md13',1,'']]]
 ];

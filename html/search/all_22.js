@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🛒_20dawazon_202_200_0',['🛒 Dawazon 2.0',['../index.html',1,'']]]
+  ['📁_20estructura_20del_20proyecto_0',['📁 Estructura del Proyecto',['../index.html#autotoc_md21',1,'']]]
 ];

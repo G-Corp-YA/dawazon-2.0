@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📖_20descripción_0',['📖 Descripción',['../index.html#autotoc_md4',1,'']]]
+  ['🏗_20arquitectura_0',['🏗 Arquitectura',['../index.html#autotoc_md11',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🚀_20instalación_20y_20ejecución_0',['🚀 Instalación y Ejecución',['../index.html#autotoc_md14',1,'']]]
+  ['👥_20equipo_20de_20desarrollo_0',['👥 Equipo de Desarrollo',['../index.html#autotoc_md57',1,'']]]
 ];

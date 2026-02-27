@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🏗_20arquitectura_0',['🏗 Arquitectura',['../index.html#autotoc_md8',1,'']]]
+  ['útil_0',['⭐️ ¡Dale una estrella al proyecto si te fue útil!',['../index.html#autotoc_md65',1,'']]]
 ];

@@ -74,197 +74,804 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__2home_2runner_2work_2dawazon-2_80_2dawazon-2_80_2README"></a> </p><blockquote class="doxtable">
-<p>&zwj;Plataforma de e-commerce inspirada en Amazon, construida con una arquitectura moderna de microservicios utilizando **.NET 10**, <b>Blazor</b> y <b>Docker</b>. </p>
+<p>&zwj;<b>Plataforma de comercio electrónico full-stack</b> construida con arquitectura moderna, containerización completa y testing automatizado. </p>
 </blockquote>
-<p><a href="https://dotnet.microsoft.com/"><img src="https://img.shields.io/badge/.NET-10.0-512BD4?style=flat&amp;logo=dotnet" alt=".NET" class="inline"/></a> <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-Compose-2496ED?style=flat&amp;logo=docker" alt="Docker" class="inline"/></a> <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" style="pointer-events: none;" class="inline"/></a> <a href="https://playwright.dev/"><img src="https://img.shields.io/badge/E2E-Playwright-45BA4B?style=flat&amp;logo=playwright" alt="Playwright" class="inline"/></a> <a href="https://nunit.org/"><img src="https://img.shields.io/badge/Tests-NUnit-brightgreen?style=flat" alt="NUnit" class="inline"/></a></p>
+<p><a href="https://dotnet.microsoft.com/"><img src="https://img.shields.io/badge/.NET-10.0-512BD4?style=for-the-badge&amp;logo=dotnet" alt=".NET" class="inline"/></a> <a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor"><img src="https://img.shields.io/badge/Blazor-512BD4?style=for-the-badge&amp;logo=blazor" alt="Blazor" class="inline"/></a> <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&amp;logo=postgresql" alt="PostgreSQL" class="inline"/></a> <a href="https://redis.io/"><img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&amp;logo=redis" alt="Redis" class="inline"/></a> <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&amp;logo=docker" alt="Docker" class="inline"/></a> <a href="https://playwright.dev/"><img src="https://img.shields.io/badge/Playwright-45BA4B?style=for-the-badge&amp;logo=playwright" alt="Playwright" class="inline"/></a> <a href="https://nunit.org/"><img src="https://img.shields.io/badge/Tests_NUnit-8CBE2D?style=for-the-badge" alt="NUnit" class="inline"/></a> <a href="https://github.com/features/actions"><img src="https://img.shields.io/badge/CI/CD-GitHub_Actions-2088FF?style=for-the-badge&amp;logo=github-actions" alt="GitHub Actions" class="inline"/></a> <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License" style="pointer-events: none;" class="inline"/></a> <a href="https://render.com/"><img src="https://img.shields.io/badge/Deployed-Render-46E3B7?style=for-the-badge&amp;logo=render" alt="Render" class="inline"/></a></p>
 <hr  />
 <h1><a class="anchor" id="autotoc_md2"></a>
 📋 Tabla de Contenidos</h1>
 <ul>
-<li>Descripción</li>
-<li>Tecnologías</li>
-<li>Arquitectura</li>
-<li>Estructura del Proyecto</li>
-<li>Requisitos Previos</li>
-<li>Instalación y Ejecución<ul>
-<li>Con Docker Compose</li>
+<li>🎯 Descripción</li>
+<li>🛠 Tecnologías</li>
+<li>🏗 Arquitectura</li>
+<li>✨ Características</li>
+<li>📁 Estructura del Proyecto</li>
+<li>🚀 Instalación y Ejecución<ul>
+<li>Docker Compose (Recomendado)</li>
 <li>Ejecución Local</li>
+<li>Variables de Entorno</li>
 </ul>
 </li>
-<li>Testing</li>
-<li>API Reference</li>
-<li>Licencia</li>
+<li>🧪 Testing<ul>
+<li>Pruebas Unitarias</li>
+<li>Pruebas API (Bruno)</li>
+<li>Pruebas E2E (Playwright)</li>
+</ul>
+</li>
+<li>🔄 CI/CD</li>
+<li>📦 Despliegue</li>
+<li>📡 API</li>
+<li>🤝 Contribución</li>
+<li>📄 Licencia</li>
 </ul>
 <hr  />
 <h1><a class="anchor" id="autotoc_md4"></a>
-📖 Descripción</h1>
-<p><b>Dawazon 2.0</b> es la segunda iteración de una plataforma de comercio electrónico full-stack. Cuenta con un frontend en <b>Blazor</b>, un backend <b>ASP.NET Core Web API</b> con soporte <b>OpenAPI</b>, pruebas unitarias con <b>NUnit</b> y pruebas end-to-end (E2E) con <b>Playwright</b>. Todo el entorno está completamente containerizado con <b>Docker</b>.</p>
+🎯 Descripción</h1>
+<p><b>Dawazon 2.0</b> es una plataforma de comercio electrónico de siguiente generación que combina un <b>frontend moderno en Blazor</b> con un <b>backend robusto en ASP.NET Core</b>. El proyecto implementa las mejores prácticas de desarrollo de software:</p>
+<ul>
+<li>✅ <b>Arquitectura limpia</b> con separación de responsabilidades</li>
+<li>✅ <b>Containerización completa</b> con Docker</li>
+<li>✅ <b>Testing automatizado</b> en 3 niveles (unitario, API, E2E)</li>
+<li>✅ <b>Integración continua</b> con GitHub Actions</li>
+<li>✅ <b>Documentación automática</b> con Doxygen</li>
+<li>✅ <b>Despliegue automático</b> a producción</li>
+</ul>
 <hr  />
 <h1><a class="anchor" id="autotoc_md6"></a>
 🛠 Tecnologías</h1>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Backend</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Capa   </th><th class="markdownTableHeadNone">Tecnología   </th><th class="markdownTableHeadNone">Versión    </th></tr>
+<th class="markdownTableHeadNone">Tecnología   </th><th class="markdownTableHeadNone">Propósito    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Frontend   </td><td class="markdownTableBodyNone">ASP.NET Core / Blazor   </td><td class="markdownTableBodyNone">.NET 10    </td></tr>
+<td class="markdownTableBodyNone">ASP.NET Core 10   </td><td class="markdownTableBodyNone">Framework web moderno    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Backend   </td><td class="markdownTableBodyNone">ASP.NET Core Web API   </td><td class="markdownTableBodyNone">.NET 10    </td></tr>
+<td class="markdownTableBodyNone">Entity Framework Core   </td><td class="markdownTableBodyNone">ORM para base de datos    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">API Docs   </td><td class="markdownTableBodyNone">Microsoft.AspNetCore.OpenApi   </td><td class="markdownTableBodyNone">10.0.2    </td></tr>
+<td class="markdownTableBodyNone">PostgreSQL   </td><td class="markdownTableBodyNone">Base de datos relacional    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Pruebas unitarias   </td><td class="markdownTableBodyNone">NUnit + NUnit3TestAdapter   </td><td class="markdownTableBodyNone">4.3.2    </td></tr>
+<td class="markdownTableBodyNone">Redis   </td><td class="markdownTableBodyNone">Caché de alto rendimiento    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Pruebas E2E   </td><td class="markdownTableBodyNone">Microsoft.Playwright.NUnit   </td><td class="markdownTableBodyNone">1.52.0    </td></tr>
+<td class="markdownTableBodyNone">JWT   </td><td class="markdownTableBodyNone">Autenticación segura    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Cobertura   </td><td class="markdownTableBodyNone">coverlet.collector   </td><td class="markdownTableBodyNone">6.0.4    </td></tr>
+<td class="markdownTableBodyNone">Stripe   </td><td class="markdownTableBodyNone">Procesamiento de pagos    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Containerización   </td><td class="markdownTableBodyNone">Docker + Docker Compose   </td><td class="markdownTableBodyNone">—   </td></tr>
+<td class="markdownTableBodyNone">GraphQL (HotChocolate)   </td><td class="markdownTableBodyNone">Consultas flexibles    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Serilog   </td><td class="markdownTableBodyNone">Logging estructurado    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">MailKit   </td><td class="markdownTableBodyNone">Envío de emails   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Frontend</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Tecnología   </th><th class="markdownTableHeadNone">Propósito    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Blazor WebAssembly   </td><td class="markdownTableBodyNone">UI interactiva    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Razor Pages   </td><td class="markdownTableBodyNone">Renderizado server-side    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">ASP.NET Core Identity   </td><td class="markdownTableBodyNone">Gestión de usuarios    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">SignalR   </td><td class="markdownTableBodyNone">Tiempo real   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Testing &amp; DevOps</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Tecnología   </th><th class="markdownTableHeadNone">Propósito    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">NUnit   </td><td class="markdownTableBodyNone">Pruebas unitarias    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Playwright   </td><td class="markdownTableBodyNone">Pruebas E2E    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Bruno   </td><td class="markdownTableBodyNone">Pruebas de API    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Doxygen   </td><td class="markdownTableBodyNone">Documentación de código    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">GitHub Actions   </td><td class="markdownTableBodyNone">CI/CD    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Docker   </td><td class="markdownTableBodyNone">Containerización    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Render   </td><td class="markdownTableBodyNone">Despliegue en la nube   </td></tr>
 </table>
 <hr  />
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 🏗 Arquitectura</h1>
-<p>El proyecto sigue una arquitectura de <b>microservicios</b> con dos servicios principales containerizados:</p>
-<div class="fragment"><div class="line">┌─────────────────────────────────────────────────────┐</div>
-<div class="line">│                   Docker Compose                    │</div>
-<div class="line">│                                                     │</div>
-<div class="line">│  ┌──────────────────┐    ┌───────────────────────┐  │</div>
-<div class="line">│  │   dawazon2.0     │    │   dawazonbackend      │  │</div>
-<div class="line">│  │  (Frontend)      │◄──►│   (REST API)          │  │</div>
-<div class="line">│  │  Blazor / .NET   │    │  ASP.NET Core Web API │  │</div>
-<div class="line">│  │  Port: 8080/8081 │    │  Port: 8080/8081      │  │</div>
-<div class="line">│  └──────────────────┘    └───────────────────────┘  │</div>
-<div class="line">└─────────────────────────────────────────────────────┘</div>
+<div class="fragment"><div class="line">┌─────────────────────────────────────────────────────────────────────────────┐</div>
+<div class="line">│                              DAWAZON 2.0                                    │</div>
+<div class="line">│                         ARQUITECTURA DEL SISTEMA                            │</div>
+<div class="line">└─────────────────────────────────────────────────────────────────────────────┘</div>
+<div class="line"> </div>
+<div class="line">                                    │</div>
+<div class="line">                    ┌───────────────┴───────────────┐</div>
+<div class="line">                    │         CLIENTE (Browser)       │</div>
+<div class="line">                    │    ┌───────────────────────┐   │</div>
+<div class="line">                    │    │   Frontend Blazor     │   │</div>
+<div class="line">                    │    │   Puerto: 8080/8081  │   │</div>
+<div class="line">                    │    └───────────────────────┘   │</div>
+<div class="line">                    └───────────────┬───────────────┘</div>
+<div class="line">                                    │</div>
+<div class="line">                                    ▼</div>
+<div class="line">┌─────────────────────────────────────────────────────────────────────────────┐</div>
+<div class="line">│                              DOCKER COMPOSE                                 │</div>
+<div class="line">│  ┌──────────────────────────────────────────────────────────────────────┐   │</div>
+<div class="line">│  │                         CONTENEDOR NGINX                              │   │</div>
+<div class="line">│  │                      (Reverse Proxy / SSL)                          │   │</div>
+<div class="line">│  └──────────────────────────────────────────────────────────────────────┘   │</div>
+<div class="line">│                                    │                                        │</div>
+<div class="line">│           ┌────────────────────────┼────────────────────────┐              │</div>
+<div class="line">│           ▼                        ▼                        ▼              │</div>
+<div class="line">│  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐       │</div>
+<div class="line">│  │   dawazon2.0    │    │ dawazonbackend  │    │   PostgreSQL    │       │</div>
+<div class="line">│  │   (Frontend)    │◄──►│   (API REST)    │◄─►│   (Database)    │       │</div>
+<div class="line">│  │   Blazor/.NET   │    │  ASP.NET Core   │    │    Puerto 5432  │       │</div>
+<div class="line">│  │   Puerto 5041   │    │   Puerto 5041   │    └─────────────────┘       │</div>
+<div class="line">│  └─────────────────┘    └─────────────────┘             │                  │</div>
+<div class="line">│                                                          ▼                  │</div>
+<div class="line">│                                                 ┌─────────────────┐        │</div>
+<div class="line">│                                                 │     Redis       │        │</div>
+<div class="line">│                                                 │    (Cache)      │        │</div>
+<div class="line">│                                                 │   Puerto 6379  │        │</div>
+<div class="line">│                                                 └─────────────────┘        │</div>
+<div class="line">└─────────────────────────────────────────────────────────────────────────────┘</div>
+<div class="line"> </div>
+<div class="line">┌─────────────────────────────────────────────────────────────────────────────┐</div>
+<div class="line">│                           CAPAS DE LA APLICACIÓN                            │</div>
+<div class="line">└─────────────────────────────────────────────────────────────────────────────┘</div>
+<div class="line"> </div>
+<div class="line">    ┌─────────────────────────────────────────────────────────────┐</div>
+<div class="line">    │                    PRESENTACIÓN (Blazor)                     │</div>
+<div class="line">    │   Pages/  Components/  Models/  Mapper/  Controllers/       │</div>
+<div class="line">    └─────────────────────────────────────────────────────────────┘</div>
+<div class="line">                                  │</div>
+<div class="line">                                  ▼</div>
+<div class="line">    ┌─────────────────────────────────────────────────────────────┐</div>
+<div class="line">    │                  API REST (ASP.NET Core)                     │</div>
+<div class="line">    │   RestControllers/  Middleware/  Filters/  Validators/       │</div>
+<div class="line">    └─────────────────────────────────────────────────────────────┘</div>
+<div class="line">                                  │</div>
+<div class="line">                                  ▼</div>
+<div class="line">    ┌─────────────────────────────────────────────────────────────┐</div>
+<div class="line">    │                    SERVICIOS (Domain)                        │</div>
+<div class="line">    │   Users/  Products/  Cart/  Stripe/  Email/  Storage/       │</div>
+<div class="line">    └─────────────────────────────────────────────────────────────┘</div>
+<div class="line">                                  │</div>
+<div class="line">                                  ▼</div>
+<div class="line">    ┌─────────────────────────────────────────────────────────────┐</div>
+<div class="line">    │                 REPOSITORIOS (Data Access)                    │</div>
+<div class="line">    │   Entity Framework Core  PostgreSQL  Redis Cache            │</div>
+<div class="line">    └─────────────────────────────────────────────────────────────┘</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
+✨ Características</h1>
+<h2><a class="anchor" id="autotoc_md14"></a>
+🔐 Autenticación y Autorización</h2>
+<ul>
+<li>Registro y login de usuarios</li>
+<li>Autenticación JWT con refresh tokens</li>
+<li>Roles: Usuario, Manager, Administrador</li>
+<li>Protección de rutas y endpoints</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md15"></a>
+🛒 Carrito de Compras</h2>
+<ul>
+<li>Añadir/eliminar productos</li>
+<li>Gestión de cantidades</li>
+<li>Persistencia en base de datos</li>
+<li>Checkout con Stripe</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md16"></a>
+📦 Productos</h2>
+<ul>
+<li>Catálogo de productos con categorías</li>
+<li>Búsqueda y filtrado</li>
+<li>Gestión de inventario (solo managers)</li>
+<li>Sistema de comentarios y valoraciones</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md17"></a>
+📊 Administración</h2>
+<ul>
+<li>Panel de administración</li>
+<li>Gestión de usuarios (banear, editar)</li>
+<li>Estadísticas de ventas</li>
+<li>Gestión de pedidos</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md18"></a>
+📨 Notificaciones</h2>
+<ul>
+<li>Emails transaccionales (registro, pedido)</li>
+<li>Notificaciones en tiempo real (SignalR)</li>
+<li>Recordatorios de carrito abandonado</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md19"></a>
+📄 Documentación</h2>
+<ul>
+<li>API documentada con OpenAPI/Swagger</li>
+<li>Pruebas de API con Bruno</li>
+<li>Documentación del código con Doxygen</li>
+<li>Informes de tests en GitHub Pages</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md21"></a>
 📁 Estructura del Proyecto</h1>
 <div class="fragment"><div class="line">dawazon-2.0/</div>
 <div class="line">│</div>
-<div class="line">├── 📄 compose.yaml                    # Orquestación Docker Compose</div>
-<div class="line">├── 📄 dawazon2.0.slnx                 # Solution file de Visual Studio</div>
-<div class="line">├── 📄 .dockerignore                   # Exclusiones para Docker</div>
-<div class="line">├── 📄 .gitignore                      # Exclusiones para Git</div>
-<div class="line">├── 📄 LICENSE                         # Licencia MIT</div>
+<div class="line">├── 📄 ARCHIVOS DE CONFIGURACIÓN</div>
+<div class="line">│   ├── compose.yaml                  # Orquestación de contenedores</div>
+<div class="line">│   ├── Dockerfile                    # Imagen Docker principal</div>
+<div class="line">│   ├── Dockerfile-Render              # Imagen para Render</div>
+<div class="line">│   ├── Dockerfile-playWrite           # Imagen para tests E2E</div>
+<div class="line">│   ├── Dockerfile-bruno              # Imagen para tests API</div>
+<div class="line">│   ├── dawazon2.0.slnx              # Solución .NET</div>
+<div class="line">│   ├── .dockerignore                 # Exclusiones Docker</div>
+<div class="line">│   ├── .gitignore                    # Exclusiones Git</div>
+<div class="line">│   └── LICENSE                       # Licencia MIT</div>
 <div class="line">│</div>
-<div class="line">├── 📁 dawazon2.0/                     # Proyecto Frontend (Blazor)</div>
-<div class="line">│   ├── 📄 Dockerfile                  # Imagen Docker del frontend</div>
-<div class="line">│   ├── 📄 Program.cs                  # Punto de entrada de la aplicación</div>
-<div class="line">│   ├── 📄 dawazon2.0.csproj           # Configuración del proyecto</div>
-<div class="line">│   ├── 📄 appsettings.json            # Configuración de la aplicación</div>
-<div class="line">│   ├── 📄 appsettings.Development.json# Configuración de desarrollo</div>
-<div class="line">│   ├── 📁 Pages/                      # Páginas Razor/Blazor</div>
-<div class="line">│   ├── 📁 Properties/                 # Propiedades del proyecto (launchSettings)</div>
-<div class="line">│   └── 📁 wwwroot/                    # Archivos estáticos (CSS, JS, imágenes)</div>
+<div class="line">├── 📁 DAWAZON2.0 (Frontend - Blazor)</div>
+<div class="line">│   ├── Program.cs                    # Punto de entrada</div>
+<div class="line">│   ├── dawazon2.0.csproj             # Proyecto</div>
+<div class="line">│   ├── appsettings.json              # Configuración</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 Components/                 # Componentes Blazor</div>
+<div class="line">│   │   └── ...</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 Pages/                      # Páginas Razor</div>
+<div class="line">│   │   ├── Index.cshtml</div>
+<div class="line">│   │   ├── Auth/</div>
+<div class="line">│   │   │   ├── Login.cshtml</div>
+<div class="line">│   │   │   ├── Register.cshtml</div>
+<div class="line">│   │   │   └── Logout.cshtml</div>
+<div class="line">│   │   ├── Privacy.cshtml</div>
+<div class="line">│   │   └── Error.cshtml</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 RestControllers/            # API REST</div>
+<div class="line">│   │   ├── AuthController.cs</div>
+<div class="line">│   │   ├── ProductsCotroller.cs</div>
+<div class="line">│   │   ├── CartController.cs</div>
+<div class="line">│   │   └── UserAdminController.cs</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 MvcControllers/            # Controllers MVC</div>
+<div class="line">│   │   ├── UserMvcController.cs</div>
+<div class="line">│   │   ├── ProductsMvcController.cs</div>
+<div class="line">│   │   ├── CartMvcController.cs</div>
+<div class="line">│   │   ├── ManagerMvcController.cs</div>
+<div class="line">│   │   └── AdminMvcController.cs</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 Models/                     # ViewModels</div>
+<div class="line">│   │   ├── LoginModelView.cs</div>
+<div class="line">│   │   ├── RegisterModelView.cs</div>
+<div class="line">│   │   ├── ProductDetailViewModel.cs</div>
+<div class="line">│   │   ├── CartOrderSummaryViewModel.cs</div>
+<div class="line">│   │   ├── AdminUserListViewModel.cs</div>
+<div class="line">│   │   └── ... (20+ archivos)</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 Mapper/                     # Mapeadores</div>
+<div class="line">│   │   ├── UserMapper.cs</div>
+<div class="line">│   │   ├── ProductMvcMapper.cs</div>
+<div class="line">│   │   └── CartMvcMapper.cs</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 Pdf/                        # Generación PDF</div>
+<div class="line">│   │   ├── IOrderPdfService.cs</div>
+<div class="line">│   │   └── OrderPdfService.cs</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 Middleware/                 # Middleware personalizado</div>
+<div class="line">│   │   └── GlobalExceptionHandler.cs</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 Session/                    # Gestión de sesión</div>
+<div class="line">│   │   └── SessionExtensions.cs</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 Infrastructures/            # Configuraciones</div>
+<div class="line">│   │   ├── AuthenticationConfig.cs</div>
+<div class="line">│   │   ├── CorsConfig.cs</div>
+<div class="line">│   │   ├── DbConfig.cs</div>
+<div class="line">│   │   ├── CacheConfig.cs</div>
+<div class="line">│   │   ├── EmailConfig.cs</div>
+<div class="line">│   │   ├── SerilogConfig.cs</div>
+<div class="line">│   │   ├── StorageConfig.cs</div>
+<div class="line">│   │   ├── IdentitySeeder.cs</div>
+<div class="line">│   │   ├── CartCleanupBackgroundService.cs</div>
+<div class="line">│   │   └── ...</div>
+<div class="line">│   │</div>
+<div class="line">│   └── 🗂 wwwroot/                    # Archivos estáticos</div>
+<div class="line">│       ├── css/</div>
+<div class="line">│       ├── js/</div>
+<div class="line">│       └── uploads/</div>
 <div class="line">│</div>
-<div class="line">���── 📁 dawazonBackend/                 # Proyecto Backend (Web API)</div>
-<div class="line">│   ├── 📄 Dockerfile                  # Imagen Docker del backend</div>
-<div class="line">│   ├── 📄 Program.cs                  # Punto de entrada y configuración de servicios</div>
-<div class="line">│   ├── 📄 dawazonBackend.csproj       # Configuración del proyecto</div>
-<div class="line">│   ├── 📄 dawazonBackend.http         # Archivo de pruebas HTTP (REST Client)</div>
-<div class="line">│   ├── 📄 appsettings.json            # Configuración de la aplicación</div>
-<div class="line">│   ├── 📄 appsettings.Development.json# Configuración de desarrollo</div>
-<div class="line">│   └── 📁 Controllers/                # Controladores de la API</div>
+<div class="line">├── 📁 DAWAZONBACKEND (Lógica de Negocio)</div>
+<div class="line">│   ├── Program.cs</div>
+<div class="line">│   ├── dawazonBackend.csproj</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 Users/                      # Módulo de Usuarios</div>
+<div class="line">│   │   ├── Models/</div>
+<div class="line">│   │   │   ├── User.cs</div>
+<div class="line">│   │   │   └── UserRoles.cs</div>
+<div class="line">│   │   ├── Dto/</div>
+<div class="line">│   │   │   ├── UserDto.cs</div>
+<div class="line">│   │   │   ├── UserRequestDto.cs</div>
+<div class="line">│   │   │   ├── LoginDto.cs</div>
+<div class="line">│   │   │   ├── RegisterDto.cs</div>
+<div class="line">│   │   │   └── AuthResponseDto.cs</div>
+<div class="line">│   │   ├── Mapper/</div>
+<div class="line">│   │   │   └── UserMapper.cs</div>
+<div class="line">│   │   ├── Errors/</div>
+<div class="line">│   │   │   └── UserError.cs</div>
+<div class="line">│   │   └── Service/</div>
+<div class="line">│   │       ├── IUserService.cs</div>
+<div class="line">│   │       ├── UserService.cs</div>
+<div class="line">│   │       ├── Auth/</div>
+<div class="line">│   │       │   ├── IAuthService.cs</div>
+<div class="line">│   │       │   └── AuthService.cs</div>
+<div class="line">│   │       ├── Favs/</div>
+<div class="line">│   │       │   ├── IFavService.cs</div>
+<div class="line">│   │       │   └── FavService.cs</div>
+<div class="line">│   │       └── Jwt/</div>
+<div class="line">│   │           ├── IJwtService.cs</div>
+<div class="line">│   │           ├── JwtService.cs</div>
+<div class="line">│   │           ├── IJwtTokenExtractor.cs</div>
+<div class="line">│   │           └── JwtTokenExtractor.cs</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 Products/                   # Módulo de Productos</div>
+<div class="line">│   │   ├── Models/</div>
+<div class="line">│   │   │   ├── Product.cs</div>
+<div class="line">│   │   │   ├── Category.cs</div>
+<div class="line">│   │   │   └── Comment.cs</div>
+<div class="line">│   │   ├── Dto/</div>
+<div class="line">│   │   │   ├── ProductResponseDto.cs</div>
+<div class="line">│   │   │   ├── ProductRequestDto.cs</div>
+<div class="line">│   │   │   ├── ProductPatchRequestDto.cs</div>
+<div class="line">│   │   │   └── CommentDto.cs</div>
+<div class="line">│   │   ├── Mapper/</div>
+<div class="line">│   │   │   └── ProductMapper.cs</div>
+<div class="line">│   │   ├── Errors/</div>
+<div class="line">│   │   │   └── ProductError.cs</div>
+<div class="line">│   │   ├── Repository/</div>
+<div class="line">│   │   │   ├── Productos/</div>
+<div class="line">│   │   │   │   ├── IProductRepository.cs</div>
+<div class="line">│   │   │   │   └── ProductRepository.cs</div>
+<div class="line">│   │   │   └── Categoria/</div>
+<div class="line">│   │   │       ├── ICategoriaRepository.cs</div>
+<div class="line">│   │   │       └── CategoryRepository.cs</div>
+<div class="line">│   │   └── Service/</div>
+<div class="line">│   │       ├── IProductService.cs</div>
+<div class="line">│   │       └── ProductService.cs</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 Cart/                      # Módulo de Carrito</div>
+<div class="line">│   │   ├── Models/</div>
+<div class="line">│   │   │   ├── Cart.cs</div>
+<div class="line">│   │   │   ├── CartLine.cs</div>
+<div class="line">│   │   │   ├── Client.cs</div>
+<div class="line">│   │   │   ├── Address.cs</div>
+<div class="line">│   │   │   └── Status.cs</div>
+<div class="line">│   │   ├── Dto/</div>
+<div class="line">│   │   │   ├── CartResponseDto.cs</div>
+<div class="line">│   │   │   ├── LineRequestDto.cs</div>
+<div class="line">│   │   │   ├── SaleLineDto.cs</div>
+<div class="line">│   │   │   └── ...</div>
+<div class="line">│   │   ├── Mapper/</div>
+<div class="line">│   │   │   └── CartMapper.cs</div>
+<div class="line">│   │   ├── Errors/</div>
+<div class="line">│   │   │   └── CartError.cs</div>
+<div class="line">│   │   ├── Exceptions/</div>
+<div class="line">│   │   │   └── CartException.cs</div>
+<div class="line">│   │   ├── Repository/</div>
+<div class="line">│   │   │   ├── ICartRepository.cs</div>
+<div class="line">│   │   │   └── CartRepository.cs</div>
+<div class="line">│   │   └── Service/</div>
+<div class="line">│   │       ├── ICartService.cs</div>
+<div class="line">│   │       └── CartService.cs</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 Common/                    # Componentes Compartidos</div>
+<div class="line">│   │   ├── Database/</div>
+<div class="line">│   │   │   └── DawazonDbContext.cs</div>
+<div class="line">│   │   ├── Dto/</div>
+<div class="line">│   │   │   ├── PageResponseDto.cs</div>
+<div class="line">│   │   │   ├── FilterDto.cs</div>
+<div class="line">│   │   │   └── AdminStatsDto.cs</div>
+<div class="line">│   │   ├── Cache/</div>
+<div class="line">│   │   │   ├── ICacheService.cs</div>
+<div class="line">│   │   │   └── CacheService.cs</div>
+<div class="line">│   │   ├── Mail/</div>
+<div class="line">│   │   │   ├── IEmailService.cs</div>
+<div class="line">│   │   │   ├── MailKitEmailService.cs</div>
+<div class="line">│   │   │   ├── EmailTemplates.cs</div>
+<div class="line">│   │   │   ├── EmailMessage.cs</div>
+<div class="line">│   │   │   └── EmailBackgroundService.cs</div>
+<div class="line">│   │   ├── Storage/</div>
+<div class="line">│   │   │   ├── IStorage.cs</div>
+<div class="line">│   │   │   └── Storage.cs</div>
+<div class="line">│   │   ├── Hub/</div>
+<div class="line">│   │   │   └── NotificationHub.cs</div>
+<div class="line">│   │   ├── Utils/</div>
+<div class="line">│   │   │   └── IdGenerator.cs</div>
+<div class="line">│   │   ├── Error/</div>
+<div class="line">│   │   │   └── DomainError.cs</div>
+<div class="line">│   │   └── Attribute/</div>
+<div class="line">│   │       └── GenerateCustomIdAtribute.cs</div>
+<div class="line">│   │</div>
+<div class="line">│   └── 🗂 Stripe/                     # Pago con Stripe</div>
+<div class="line">│       ├── IStripeService.cs</div>
+<div class="line">│       ├── StripeService.cs</div>
+<div class="line">│       └── Errors/</div>
+<div class="line">│           └── StripeError.cs</div>
 <div class="line">│</div>
-<div class="line">├── 📁 dawazonTest/                    # Pruebas Unitarias (NUnit)</div>
-<div class="line">│   ├── 📄 UnitTest1.cs                # Pruebas unitarias</div>
-<div class="line">│   └── 📄 dawazonTest.csproj          # Configuración del proyecto de pruebas</div>
+<div class="line">├── 📁 DAWAZONTEST (Pruebas Unitarias)</div>
+<div class="line">│   ├── dawazonTest.csproj</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 Users/                      # Tests de Usuarios</div>
+<div class="line">│   ├── 🗂 Products/                  # Tests de Productos</div>
+<div class="line">│   ├── 🗂 Cart/                       # Tests de Carrito</div>
+<div class="line">│   ├── 🗂 Common/                     # Tests Comunes</div>
+<div class="line">│   ├── 🗂 Container/                  # Tests con Docker</div>
+<div class="line">│   │</div>
+<div class="line">│   └── 📊 Coverage/                   # Informes de cobertura</div>
 <div class="line">│</div>
-<div class="line">└── 📁 dawazonPlayWrite/               # Pruebas E2E (Playwright + NUnit)</div>
-<div class="line">    ├── 📄 UnitTest1.cs                # Pruebas end-to-end</div>
-<div class="line">    └── 📄 dawazonPlayWrite.csproj     # Configuración del proyecto E2E</div>
+<div class="line">├── 📁 DAWAZONPLAYWRITE (Pruebas E2E)</div>
+<div class="line">│   ├── dawazonPlayWrite.csproj</div>
+<div class="line">│   ├── playwright.runsettings</div>
+<div class="line">│   ├── TestConfig.cs</div>
+<div class="line">│   ├── BaseTest.cs</div>
+<div class="line">│   │</div>
+<div class="line">│   └── 🗂 Tests/</div>
+<div class="line">│       ├── AuthTests.cs</div>
+<div class="line">│       ├── UserTests.cs</div>
+<div class="line">│       ├── ProductsTests.cs</div>
+<div class="line">│       ├── CartTests.cs</div>
+<div class="line">│       ├── ManagerTests.cs</div>
+<div class="line">│       └── AdminTests.cs</div>
+<div class="line">│</div>
+<div class="line">├── 📁 DAWAZONBRUNOTEST (Pruebas API)</div>
+<div class="line">│   ├── environments/</div>
+<div class="line">│   │   ├── Local.bru</div>
+<div class="line">│   │   └── Local.json</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 ControladorAuth/</div>
+<div class="line">│   │   ├── 01-Register-OK.bru</div>
+<div class="line">│   │   ├── 02-Register-Conflict.bru</div>
+<div class="line">│   │   ├── 03-Login-OK.bru</div>
+<div class="line">│   │   ├── 04-Login-WrongPassword.bru</div>
+<div class="line">│   │   └── 05-Login-Admin.bru</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 ControladorProductos/</div>
+<div class="line">│   │   ├── 01-GetAll-Productos.bru</div>
+<div class="line">│   │   ├── 02-GetAll-FiltroNombre.bru</div>
+<div class="line">│   │   ├── 03-GetById-OK.bru</div>
+<div class="line">│   │   ├── 04-GetById-NotFound.bru</div>
+<div class="line">│   │   ├── 05-Post-Producto-SinAuth.bru</div>
+<div class="line">│   │   ├── 06-Post-Producto-ConManagerToken.bru</div>
+<div class="line">│   │   ├── 07-Put-Producto-OK.bru</div>
+<div class="line">│   │   ├── 08-Put-Producto-SinAuth.bru</div>
+<div class="line">│   │   ├── 09-Delete-Producto-SinAuth.bru</div>
+<div class="line">│   │   └── 10-Delete-Producto-OK.bru</div>
+<div class="line">│   │</div>
+<div class="line">│   ├── 🗂 ControladorCarrito/</div>
+<div class="line">│   │   └── ... (8 pruebas)</div>
+<div class="line">│   │</div>
+<div class="line">│   └── 🗂 ControladorAdmin/</div>
+<div class="line">│       └── ... (6 pruebas)</div>
+<div class="line">│</div>
+<div class="line">├── 📁 .GITHUB/</div>
+<div class="line">│   └── workflows/</div>
+<div class="line">│       ├── docs.yml                   # CI: Build, Tests, Docs, Deploy</div>
+<div class="line">│       └── teste2e.yml                # CI: Solo tests E2E</div>
+<div class="line">│</div>
+<div class="line">├── 📁 DOCKER/</div>
+<div class="line">│   ├── nginx/</div>
+<div class="line">│   │   └── conf/</div>
+<div class="line">│   │       └── nginx.conf</div>
+<div class="line">│   └── mysql/</div>
+<div class="line">│       └── conf/</div>
+<div class="line">│           └── my.cnf</div>
+<div class="line">│</div>
+<div class="line">├── 📁 DOCS/                          # Documentación</div>
+<div class="line">│   ├── Doxyfile                       # Configuración Doxygen</div>
+<div class="line">│   └── html/                         # Documentación generada</div>
+<div class="line">│</div>
+<div class="line">└── 📁 DOCUMENTACIÓN/</div>
+<div class="line">    ├── Dawazon2.0.pdf</div>
+<div class="line">    ├── casos de uso.drawio.png</div>
+<div class="line">    └── gitflow.png</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md12"></a>
-✅ Requisitos Previos</h1>
-<p>Asegúrate de tener instalado:</p>
-<ul>
-<li><a href="https://dotnet.microsoft.com/download/dotnet/10.0">.NET 10 SDK</a></li>
-<li><a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> (para ejecución con Docker)</li>
-<li><a href="https://git-scm.com/">Git</a></li>
-</ul>
-<hr  />
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h1><a class="anchor" id="autotoc_md23"></a>
 🚀 Instalación y Ejecución</h1>
-<h2><a class="anchor" id="autotoc_md15"></a>
-Clonar el repositorio</h2>
-<div class="fragment"><div class="line">git clone https://github.com/Aragorn7372/dawazon-2.0.git</div>
+<h2><a class="anchor" id="autotoc_md24"></a>
+Docker Compose (Recomendado)</h2>
+<p>La forma más rápida de levantar todo el entorno:</p>
+<div class="fragment"><div class="line"># Clonar el repositorio</div>
+<div class="line">git clone https://github.com/G-Corp-YA/dawazon-2.0.git</div>
 <div class="line">cd dawazon-2.0</div>
+<div class="line"> </div>
+<div class="line"># Ejecutar con Docker Compose</div>
+<div class="line">docker compose up --build</div>
+<div class="line"> </div>
+<div class="line"># Servicios disponibles:</div>
+<div class="line"># - Frontend:    http://localhost:8080</div>
+<div class="line"># - Backend API: http://localhost:5080</div>
+<div class="line"># - PostgreSQL:  localhost:5432</div>
+<div class="line"># - Redis:       localhost:6379</div>
+</div><!-- fragment --><p><b>Comandos útiles:</b></p>
+<div class="fragment"><div class="line"># Detener servicios</div>
+<div class="line">docker compose down</div>
+<div class="line"> </div>
+<div class="line"># Ver logs</div>
+<div class="line">docker compose logs -f</div>
+<div class="line"> </div>
+<div class="line"># Reconstruir solo un servicio</div>
+<div class="line">docker compose build dawazon2.0</div>
+<div class="line">docker compose up -d dawazon2.0</div>
 </div><!-- fragment --><hr  />
-<h2><a class="anchor" id="autotoc_md17"></a>
-Con Docker Compose (Recomendado)</h2>
-<p>Levanta todos los servicios con un solo comando:</p>
-<div class="fragment"><div class="line">docker compose up --build</div>
-</div><!-- fragment --><p>Esto construirá y ejecutará:</p><ul>
-<li><b>Frontend</b> → <code><a href="http://localhost:8080">http://localhost:8080</a></code></li>
-<li><b>Backend API</b> → <code><a href="http://localhost:5080">http://localhost:5080</a></code></li>
-</ul>
-<p>Para detener los servicios:</p>
-<div class="fragment"><div class="line">docker compose down</div>
-</div><!-- fragment --><hr  />
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md26"></a>
 Ejecución Local</h2>
-<h3><a class="anchor" id="autotoc_md20"></a>
-Backend</h3>
+<h3><a class="anchor" id="autotoc_md27"></a>
+Requisitos Previos</h3>
+<ul>
+<li>.NET 10 SDK</li>
+<li>PostgreSQL 15+</li>
+<li>Redis 7+</li>
+<li>Node.js 20+ (para Bruno CLI)</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md28"></a>
+Configuración</h3>
+<ol type="1">
+<li><b>Crear base de datos PostgreSQL:</b> <div class="fragment"><div class="line"><span class="keyword">CREATE</span> DATABASE dawazon;</div>
+</div><!-- fragment --></li>
+<li><b>Configurar variables de entorno:</b> <div class="fragment"><div class="line"># Linux/Mac</div>
+<div class="line">export ASPNETCORE_ENVIRONMENT=Development</div>
+<div class="line">export ConnectionStrings__DefaultConnection=&quot;Host=localhost;Database=dawazon;Username=postgres;Password=tu_password&quot;</div>
+<div class="line">export Redis__Host=localhost</div>
+<div class="line">export Redis__Port=6379</div>
+<div class="line">export Jwt__Key=&quot;TuClaveSecretaMuyLarga12345678901234567890&quot;</div>
+<div class="line">export Stripe__Key=&quot;sk_test_...&quot;</div>
+<div class="line">export Smtp__Host=&quot;smtp.gmail.com&quot;</div>
+<div class="line">export Smtp__Port=587</div>
+<div class="line">export Smtp__Username=&quot;tu_email@gmail.com&quot;</div>
+<div class="line">export Smtp__Password=&quot;tu_app_password&quot;</div>
+</div><!-- fragment --></li>
+</ol>
+<h3><a class="anchor" id="autotoc_md29"></a>
+Ejecutar Backend</h3>
 <div class="fragment"><div class="line">cd dawazonBackend</div>
 <div class="line">dotnet restore</div>
 <div class="line">dotnet run</div>
-</div><!-- fragment --><p>El backend estará disponible en: <code><a href="http://localhost:5080">http://localhost:5080</a></code></p>
-<h3><a class="anchor" id="autotoc_md21"></a>
-Frontend</h3>
+<div class="line"># API disponible en: http://localhost:5041</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md30"></a>
+Ejecutar Frontend</h3>
 <div class="fragment"><div class="line">cd dawazon2.0</div>
 <div class="line">dotnet restore</div>
 <div class="line">dotnet run</div>
-</div><!-- fragment --><p>El frontend estará disponible en: <code><a href="http://localhost:PORT">http://localhost:PORT</a></code> (ver <code>Properties/launchSettings.json</code>)</p>
-<hr  />
-<h1><a class="anchor" id="autotoc_md23"></a>
-🧪 Testing</h1>
-<h2><a class="anchor" id="autotoc_md24"></a>
-Pruebas Unitarias (NUnit)</h2>
-<div class="fragment"><div class="line">cd dawazonTest</div>
-<div class="line">dotnet test</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md25"></a>
-Pruebas E2E (Playwright)</h2>
-<p>Antes de ejecutar las pruebas E2E, instala los navegadores de Playwright:</p>
-<div class="fragment"><div class="line">cd dawazonPlayWrite</div>
-<div class="line">dotnet build</div>
-<div class="line">pwsh bin/Debug/net10.0/playwright.ps1 install</div>
-<div class="line">dotnet test</div>
-</div><!-- fragment --><blockquote class="doxtable">
-<p>&zwj;<b>Nota:</b> Las pruebas E2E requieren PowerShell (<code>pwsh</code>) para la instalación de navegadores. </p>
-</blockquote>
-<h1><a class="anchor" id="autotoc_md26"></a>
-&lt;/blockquote&gt;</h1>
-<h1><a class="anchor" id="autotoc_md27"></a>
-📡 API Reference</h1>
-<p>El backend expone una API REST documentada con <b>OpenAPI</b>. En entorno de desarrollo, la documentación interactiva está disponible en:</p>
-<div class="fragment"><div class="line">http://localhost:5080/openapi</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md28"></a>
-Endpoints disponibles</h2>
+<div class="line"># Frontend disponible en: http://localhost:5xxx</div>
+</div><!-- fragment --><hr  />
+<h2><a class="anchor" id="autotoc_md32"></a>
+Variables de Entorno</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Método   </th><th class="markdownTableHeadNone">Endpoint   </th><th class="markdownTableHeadNone">Descripción    </th></tr>
+<th class="markdownTableHeadNone">Variable   </th><th class="markdownTableHeadNone">Descripción   </th><th class="markdownTableHeadNone">Ejemplo    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>GET</code>   </td><td class="markdownTableBodyNone"><code>/weatherforecast</code>   </td><td class="markdownTableBodyNone">Endpoint de ejemplo (placeholder)   </td></tr>
+<td class="markdownTableBodyNone"><code>ASPNETCORE_ENVIRONMENT</code>   </td><td class="markdownTableBodyNone">Entorno de ejecución   </td><td class="markdownTableBodyNone"><code>Development</code>, <code>Production</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>ConnectionStrings__DefaultConnection</code>   </td><td class="markdownTableBodyNone">Conexión PostgreSQL   </td><td class="markdownTableBodyNone"><code>Host=postgres;...</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Redis__Host</code>   </td><td class="markdownTableBodyNone">Servidor Redis   </td><td class="markdownTableBodyNone"><code>localhost</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Redis__Port</code>   </td><td class="markdownTableBodyNone">Puerto Redis   </td><td class="markdownTableBodyNone"><code>6379</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Jwt__Key</code>   </td><td class="markdownTableBodyNone">Clave JWT (min 32 chars)   </td><td class="markdownTableBodyNone"><code>MiClaveSuperSegura12345678901234567890</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Jwt__Issuer</code>   </td><td class="markdownTableBodyNone">Emisor JWT   </td><td class="markdownTableBodyNone"><code>dawazon2.0</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Jwt__Audience</code>   </td><td class="markdownTableBodyNone">Audiencia JWT   </td><td class="markdownTableBodyNone"><code>dawazon2.0</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Stripe__Key</code>   </td><td class="markdownTableBodyNone">Clave Stripe   </td><td class="markdownTableBodyNone"><code>sk_test_...</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Server__Url</code>   </td><td class="markdownTableBodyNone">URL del servidor   </td><td class="markdownTableBodyNone"><code><a href="https://dawazon.com">https://dawazon.com</a></code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Smtp__Host</code>   </td><td class="markdownTableBodyNone">Servidor SMTP   </td><td class="markdownTableBodyNone"><code>smtp.gmail.com</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Smtp__Port</code>   </td><td class="markdownTableBodyNone">Puerto SMTP   </td><td class="markdownTableBodyNone"><code>587</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Smtp__Username</code>   </td><td class="markdownTableBodyNone">Usuario SMTP   </td><td class="markdownTableBodyNone"><code>email@gmail.com</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Smtp__Password</code>   </td><td class="markdownTableBodyNone">Password SMTP   </td><td class="markdownTableBodyNone"><code>app_password</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Storage__UploadPath</code>   </td><td class="markdownTableBodyNone">Ruta de uploads   </td><td class="markdownTableBodyNone"><code>wwwroot/uploads</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Storage__MaxFileSize</code>   </td><td class="markdownTableBodyNone">Tamaño máximo archivo   </td><td class="markdownTableBodyNone"><code>10485760</code> (10MB)   </td></tr>
 </table>
-<blockquote class="doxtable">
-<p>&zwj;Los endpoints de productos, usuarios y pedidos se irán añadiendo en futuras iteraciones. </p>
-</blockquote>
-<h1><a class="anchor" id="autotoc_md29"></a>
-&lt;/blockquote&gt;</h1>
-<h1><a class="anchor" id="autotoc_md30"></a>
-🤝 Contribución</h1>
-<p>Las contribuciones son bienvenidas. Por favor:</p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md34"></a>
+🧪 Testing</h1>
+<h2><a class="anchor" id="autotoc_md35"></a>
+Pruebas Unitarias (NUnit)</h2>
+<div class="fragment"><div class="line">cd dawazonTest</div>
+<div class="line">dotnet test --configuration Release</div>
+<div class="line"> </div>
+<div class="line"># Con cobertura</div>
+<div class="line">dotnet test --configuration Release /p:CollectCoverage=true</div>
+</div><!-- fragment --><p><b>Resultado esperado:</b> </p><div class="fragment"><div class="line">+----------------------------+</div>
+<div class="line">|     Unit Tests Results     |</div>
+<div class="line">+----------------------------+</div>
+<div class="line">| Total:    150+ tests      |</div>
+<div class="line">| Passed:   145 tests       |</div>
+<div class="line">| Failed:   5 tests         |</div>
+<div class="line">| Skipped:  0 tests         |</div>
+<div class="line">+----------------------------+</div>
+</div><!-- fragment --><hr  />
+<h2><a class="anchor" id="autotoc_md37"></a>
+Pruebas API (Bruno)</h2>
+<p>Ejecuta las pruebas de API con Bruno CLI:</p>
+<div class="fragment"><div class="line"># Instalar Bruno CLI</div>
+<div class="line">npm install -g @usebruno/cli</div>
+<div class="line"> </div>
+<div class="line"># Ejecutar pruebas</div>
+<div class="line">cd dawazonBrunoTest</div>
+<div class="line">bru run --env Local --format json</div>
+</div><!-- fragment --><p><b>Colecciones disponibles:</b></p><ul>
+<li>✅ <code>ControladorAuth</code> - 5 pruebas (registro, login)</li>
+<li>✅ <code>ControladorProductos</code> - 10 pruebas (CRUD productos)</li>
+<li>✅ <code>ControladorCarrito</code> - 8 pruebas (gestión carrito)</li>
+<li>✅ <code>ControladorAdmin</code> - 6 pruebas (administración)</li>
+</ul>
+<hr  />
+<h2><a class="anchor" id="autotoc_md39"></a>
+Pruebas E2E (Playwright)</h2>
+<div class="fragment"><div class="line">cd dawazonPlayWrite</div>
+<div class="line"> </div>
+<div class="line"># Instalar navegadores</div>
+<div class="line">dotnet tool install --global Microsoft.Playwright.CLI</div>
+<div class="line">playwright install --with-deps chromium</div>
+<div class="line"> </div>
+<div class="line"># Ejecutar tests</div>
+<div class="line">dotnet test --configuration Release</div>
+<div class="line"> </div>
+<div class="line"># O con configuración específica</div>
+<div class="line">dotnet test --configuration Release --settings:playwright.runsettings</div>
+</div><!-- fragment --><p><b>Test suites:</b></p><ul>
+<li>✅ <code>AuthTests</code> - Login, registro, logout</li>
+<li>✅ <code>UserTests</code> - Perfil de usuario</li>
+<li>✅ <code>ProductsTests</code> - Navegación y búsqueda</li>
+<li>✅ <code>CartTests</code> - Añadir al carrito, checkout</li>
+<li>✅ <code>ManagerTests</code> - Gestión de productos</li>
+<li>✅ <code>AdminTests</code> - Panel de administración</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md41"></a>
+🔄 CI/CD</h1>
+<p>El proyecto usa <b>GitHub Actions</b> para integración y despliegue continuo:</p>
+<h2><a class="anchor" id="autotoc_md42"></a>
+Workflow: &lt;tt&gt;docs.yml&lt;/tt&gt;</h2>
+<p>Se ejecuta en cada push a <code>main</code>:</p>
 <ol type="1">
-<li>Haz un <b>fork</b> del proyecto.</li>
-<li>Crea una rama con tu feature: <code>git checkout -b feature/nueva-funcionalidad</code></li>
-<li>Haz commit de tus cambios: &lsquo;git commit -m 'feat: añadir nueva funcionalidad&rsquo;<code></code></li>
-<li><code>Haz push a la rama:</code>git push origin feature/nueva-funcionalidad`</li>
-<li>Abre un <b>Pull Request</b>.</li>
+<li><b>Build</b> - Compilación del proyecto</li>
+<li><b>Unit Tests</b> - Pruebas unitarias con NUnit</li>
+<li><b>Bruno Tests</b> - Pruebas de API</li>
+<li><b>Playwright Tests</b> - Pruebas E2E</li>
+<li><b>Generar Docs</b> - Documentación con Doxygen</li>
+<li><b>Deploy to GitHub Pages</b> - Publicación automática</li>
 </ol>
+<h2><a class="anchor" id="autotoc_md43"></a>
+Workflow: &lt;tt&gt;teste2e.yml&lt;/tt&gt;</h2>
+<p>Ejecuta solo los tests E2E (para testing rápido).</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md32"></a>
+<h1><a class="anchor" id="autotoc_md45"></a>
+📦 Despliegue</h1>
+<h2><a class="anchor" id="autotoc_md46"></a>
+Render (Recomendado)</h2>
+<p>El proyecto está configurado para desplegar en <b>Render</b>:</p>
+<ol type="1">
+<li>Conectar repositorio GitHub a Render</li>
+<li>Seleccionar "Web Service"</li>
+<li>Usar el <code>Dockerfile-Render</code></li>
+<li>Configurar variables de entorno</li>
+<li>Desplegar</li>
+</ol>
+<p><b>Build Command:</b> </p><div class="fragment"><div class="line"># No necesario (Dockerfile lo hace)</div>
+</div><!-- fragment --><p><b>Start Command:</b> </p><div class="fragment"><div class="line"># No necesario (entrypoint.sh lo maneja)</div>
+</div><!-- fragment --><hr  />
+<h1><a class="anchor" id="autotoc_md48"></a>
+📡 API</h1>
+<h2><a class="anchor" id="autotoc_md49"></a>
+Documentación Interactiva</h2>
+<p>La API está documentada con <b>OpenAPI/Swagger</b>:</p>
+<div class="fragment"><div class="line">http://localhost:5041/openapi</div>
+<div class="line">http://localhost:5041/swagger/index.html</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md50"></a>
+Endpoints Principales</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Método   </th><th class="markdownTableHeadNone">Endpoint   </th><th class="markdownTableHeadNone">Descripción   </th><th class="markdownTableHeadNone">Auth    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>POST</code>   </td><td class="markdownTableBodyNone"><code>/api/auth/register</code>   </td><td class="markdownTableBodyNone">Registrar usuario   </td><td class="markdownTableBodyNone">❌    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>POST</code>   </td><td class="markdownTableBodyNone"><code>/api/auth/login</code>   </td><td class="markdownTableBodyNone">Iniciar sesión   </td><td class="markdownTableBodyNone">❌    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>GET</code>   </td><td class="markdownTableBodyNone"><code>/api/products</code>   </td><td class="markdownTableBodyNone">Listar productos   </td><td class="markdownTableBodyNone">❌    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>GET</code>   </td><td class="markdownTableBodyNone"><code>/api/products/{id}</code>   </td><td class="markdownTableBodyNone">Obtener producto   </td><td class="markdownTableBodyNone">❌    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>POST</code>   </td><td class="markdownTableBodyNone"><code>/api/products</code>   </td><td class="markdownTableBodyNone">Crear producto   </td><td class="markdownTableBodyNone">✅ Manager    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>PUT</code>   </td><td class="markdownTableBodyNone"><code>/api/products/{id}</code>   </td><td class="markdownTableBodyNone">Actualizar producto   </td><td class="markdownTableBodyNone">✅ Manager    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>DELETE</code>   </td><td class="markdownTableBodyNone"><code>/api/products/{id}</code>   </td><td class="markdownTableBodyNone">Eliminar producto   </td><td class="markdownTableBodyNone">✅ Manager    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>GET</code>   </td><td class="markdownTableBodyNone"><code>/api/cart</code>   </td><td class="markdownTableBodyNone">Obtener carrito   </td><td class="markdownTableBodyNone">✅    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>POST</code>   </td><td class="markdownTableBodyNone"><code>/api/cart/add</code>   </td><td class="markdownTableBodyNone">Añadir al carrito   </td><td class="markdownTableBodyNone">✅    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>DELETE</code>   </td><td class="markdownTableBodyNone"><code>/api/cart/remove/{id}</code>   </td><td class="markdownTableBodyNone">Quitar del carrito   </td><td class="markdownTableBodyNone">✅    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>POST</code>   </td><td class="markdownTableBodyNone"><code>/api/cart/checkout</code>   </td><td class="markdownTableBodyNone">Finalizar compra   </td><td class="markdownTableBodyNone">✅    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>GET</code>   </td><td class="markdownTableBodyNone"><code>/api/admin/users</code>   </td><td class="markdownTableBodyNone">Listar usuarios   </td><td class="markdownTableBodyNone">✅ Admin    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>PUT</code>   </td><td class="markdownTableBodyNone"><code>/api/admin/ban/{id}</code>   </td><td class="markdownTableBodyNone">Banear usuario   </td><td class="markdownTableBodyNone">✅ Admin   </td></tr>
+</table>
+<hr  />
+<h1><a class="anchor" id="autotoc_md52"></a>
+🤝 Contribución</h1>
+<p>¡Las contribuciones son bienvenidas! Por favor:</p>
+<ol type="1">
+<li><b>Fork</b> el proyecto</li>
+<li>Crea tu rama: <code>git checkout -b feature/nueva-funcionalidad</code></li>
+<li>Commits descriptivos: &lsquo;git commit -m 'feat: añadir nueva funcionalidad&rsquo;<code></code></li>
+<li><code>Push a la rama:</code>git push origin feature/nueva-funcionalidad`</li>
+<li>Abre un <b>Pull Request</b></li>
+</ol>
+<h2><a class="anchor" id="autotoc_md53"></a>
+Convenciones de Commits</h2>
+<div class="fragment"><div class="line">feat:     Nueva funcionalidad</div>
+<div class="line">fix:      Corrección de bug</div>
+<div class="line">docs:     Documentación</div>
+<div class="line">style:    Cambios de formato</div>
+<div class="line">refactor: Refactorización</div>
+<div class="line">test:     Tests</div>
+<div class="line">chore:    Tareas varias</div>
+</div><!-- fragment --><hr  />
+<h1><a class="anchor" id="autotoc_md55"></a>
 📄 Licencia</h1>
-<p>Este proyecto está licenciado bajo la <a href="./LICENSE">MIT License</a>.</p>
+<p>Este proyecto está bajo la licencia <b>MIT</b>. Ver <a href="./LICENSE">LICENSE</a> para más detalles.</p>
 <hr  />
-<div align="center"> <sub>Desarrollado con ❤️ por <a href="https://github.com/Aragorn7372">Aragorn7372</a></sub> </div> </div></div><!-- PageDoc -->
+<h1><a class="anchor" id="autotoc_md57"></a>
+👥 Equipo de Desarrollo</h1>
+<div align="center"> <table class="doxtable">
+<tr>
+<td align="center"><a href="https://github.com/Aragorn7372"><img src="https://github.com/Aragorn7372.png" alt="Víctor Marín Escribano" width="120" height="120" style="border-radius: 50%; object-fit: cover;" class="inline"/> <br  />
+ <sub><b>Víctor Marín</b></sub> <br  />
+ <sub>Aragorn7372</sub> </a>  </td><td align="center"><a href="https://github.com/Sggz221"><img src="https://github.com/Sggz221.png" alt="Sggz221" width="120" height="120" style="border-radius: 50%; object-fit: cover;" class="inline"/> <br  />
+ <sub><b>Sggz221</b></sub> </a>  </td><td align="center"><a href="https://github.com/charlieecy"><img src="https://github.com/charlieecy.png" alt="Charlieecy" width="120" height="120" style="border-radius: 50%; object-fit: cover;" class="inline"/> <br  />
+ <sub><b>charlieecy</b></sub> </a>  </td><td align="center"><a href="https://github.com/AdrianHerSac"><img src="https://github.com/AdrianHerSac.png" alt="Adrián Hernández" width="120" height="120" style="border-radius: 50%; object-fit: cover;" class="inline"/> <br  />
+ <sub><b>Adrián Hernández</b></sub> <br  />
+ <sub>AdrianHerSac</sub> </a>   </td></tr>
+</table>
+</div> <h2><a class="anchor" id="autotoc_md58"></a>
+🏢 Organización</h2>
+<div align="center"> <a href="https://github.com/G-Corp-YA"><img src="https://github.com/G-Corp-YA.png" alt="G-Corp-YA" width="150" height="150" style="border-radius: 50%; object-fit: cover;" class="inline"/> <br  />
+ <sub><b>G-Corp-YA</b></sub> </a> </div><hr  />
+<h1><a class="anchor" id="autotoc_md60"></a>
+📚 Documentación del Proyecto</h1>
+<h2><a class="anchor" id="autotoc_md61"></a>
+Diagramas de Arquitectura</h2>
+<p><img src="./documentacion/casos de uso.drawio.png" alt="Casos de Uso" width="45%" class="inline"/> <img src="./documentacion/gitflow.png" alt="Gitflow" width="45%" class="inline"/> </p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Documento   </th><th class="markdownTableHeadNone">Descripción    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a href="./documentacion/casos%20de%20uso.drawio.png">Casos de Uso</a>   </td><td class="markdownTableBodyNone">Diagrama de casos de uso del sistema    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a href="./documentacion/gitflow.png">Gitflow</a>   </td><td class="markdownTableBodyNone">Flujo de trabajo con Git    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a href="./documentacion/Dawazon2.0.pdf">Documentación PDF</a>   </td><td class="markdownTableBodyNone">Documentación técnica completa del proyecto   </td></tr>
+</table>
+<hr  />
+<h1><a class="anchor" id="autotoc_md63"></a>
+📄 Licencia</h1>
+<p>Este proyecto está bajo la licencia <b>MIT</b>. Ver <a href="./LICENSE">LICENSE</a> para más detalles.</p>
+<hr  />
+<div align="center"></div><div align="center"></div><h2><a class="anchor" id="autotoc_md65"></a>
+⭐️ ¡Dale una estrella al proyecto si te fue útil!</h2>
+<div align="center"></div><div align="center"><em>Construido con ❤️ por el equipo de G-Corp-YA usando .NET 10, Blazor y Docker</em></div><div align="center"></div> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

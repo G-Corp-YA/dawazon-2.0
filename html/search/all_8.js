@@ -6,7 +6,7 @@ var searchData=
   ['favservice_2ecs_3',['FavService.cs',['../FavService_8cs.html',1,'']]],
   ['favservicetest_4',['FavServiceTest',['../classdawazonTest_1_1Users_1_1Service_1_1Favs_1_1FavServiceTest.html',1,'dawazonTest::Users::Service::Favs']]],
   ['favservicetest_2ecs_5',['FavServiceTest.cs',['../FavServiceTest_8cs.html',1,'']]],
-  ['file_6',['Example .env file',['../md__2home_2runner_2work_2dawazon-2_80_2dawazon-2_80_2dawazonPlayWrite_2README.html#autotoc_md37',1,'']]],
+  ['file_6',['Example .env file',['../md__2home_2runner_2work_2dawazon-2_80_2dawazon-2_80_2dawazonPlayWrite_2README.html#autotoc_md69',1,'']]],
   ['fileexists_7',['fileexists',['../interfacedawazonBackend_1_1Common_1_1Storage_1_1IStorage.html#a001e07d4b2ab32a0372acf8a34855633',1,'dawazonBackend.Common.Storage.IStorage.FileExists()'],['../classdawazonBackend_1_1Common_1_1Storage_1_1Storage.html#af8a4fae34772fd7d6a70861dd40c0647',1,'dawazonBackend.Common.Storage.Storage.FileExists()']]],
   ['fileexists_5fwhenfiledoesnotexist_5fshouldreturnfalse_8',['FileExists_WhenFileDoesNotExist_ShouldReturnFalse',['../classdawazonTest_1_1Common_1_1Storage_1_1StorageServiceTest.html#ad80b960935df24c7a05618be172a1049',1,'dawazonTest::Common::Storage::StorageServiceTest']]],
   ['fileexists_5fwhenfileexists_5fshouldreturntrue_9',['FileExists_WhenFileExists_ShouldReturnTrue',['../classdawazonTest_1_1Common_1_1Storage_1_1StorageServiceTest.html#ada2d7d94ccec435f90e64ee91122c02e',1,'dawazonTest::Common::Storage::StorageServiceTest']]],
@@ -47,5 +47,6 @@ var searchData=
   ['first_5fwhenpagenumberiszero_5fshouldbetrue_44',['First_WhenPageNumberIsZero_ShouldBeTrue',['../classdawazonTest_1_1Common_1_1Dto_1_1PageResponseDtoTest.html#a9e4a4b48f19fe7767e07fca59ff7479a',1,'dawazonTest::Common::Dto::PageResponseDtoTest']]],
   ['firstimage_45',['FirstImage',['../classdawazon2_1_1__0_1_1Models_1_1ProductSummaryViewModel.html#aeace2ff9709e40159cff53ed1f776030',1,'dawazon2::_0::Models::ProductSummaryViewModel']]],
   ['folder_2ebru_46',['folder.bru',['../ControladorAdmin_2folder_8bru.html',1,'(Espacio de nombres global)'],['../ControladorAuth_2folder_8bru.html',1,'(Espacio de nombres global)'],['../ControladorCarrito_2folder_8bru.html',1,'(Espacio de nombres global)'],['../ControladorProductos_2folder_8bru.html',1,'(Espacio de nombres global)']]],
-  ['frontend_47',['Frontend',['../index.html#autotoc_md21',1,'']]]
+  ['frontend_47',['frontend',['../index.html#autotoc_md30',1,'Ejecutar Frontend'],['../index.html#autotoc_md8',1,'Frontend']]],
+  ['fue_20útil_48',['⭐️ ¡Dale una estrella al proyecto si te fue útil!',['../index.html#autotoc_md65',1,'']]]
 ];

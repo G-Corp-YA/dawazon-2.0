@@ -10,6 +10,7 @@ var searchData=
   ['orderpdfservice_7',['OrderPdfService',['../classdawazon2_1_1__0_1_1Pdf_1_1OrderPdfService.html',1,'dawazon2::_0::Pdf']]],
   ['orderpdfservice_2ecs_8',['OrderPdfService.cs',['../OrderPdfService_8cs.html',1,'']]],
   ['orders_9',['Orders',['../classdawazon2_1_1__0_1_1Models_1_1CartOrderListViewModel.html#aa1bf9362af0e32fb1fafb78fc1cdaf7d',1,'dawazon2::_0::Models::CartOrderListViewModel']]],
-  ['outofstockcount_10',['OutOfStockCount',['../classdawazonBackend_1_1Common_1_1Dto_1_1AdminStatsDto.html#ace674d60e7f0b6b61a1c15253151cad4',1,'dawazonBackend::Common::Dto::AdminStatsDto']]],
-  ['outputencoding_11',['OutputEncoding',['../Program_8cs.html#a349d39ecb8cf69b92f64f23775abc311',1,'Program.cs']]]
+  ['organización_10',['🏢 Organización',['../index.html#autotoc_md58',1,'']]],
+  ['outofstockcount_11',['OutOfStockCount',['../classdawazonBackend_1_1Common_1_1Dto_1_1AdminStatsDto.html#ace674d60e7f0b6b61a1c15253151cad4',1,'dawazonBackend::Common::Dto::AdminStatsDto']]],
+  ['outputencoding_12',['OutputEncoding',['../Program_8cs.html#a349d39ecb8cf69b92f64f23775abc311',1,'Program.cs']]]
 ];

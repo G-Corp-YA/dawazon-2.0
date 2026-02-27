@@ -10,9 +10,10 @@ var searchData=
   ['next_5fshouldreturnnonnullandnonemptystring_7',['Next_ShouldReturnNonNullAndNonEmptyString',['../classdawazonTest_1_1Common_1_1Utils_1_1IdGeneratorTest.html#a912456a5814122ebe34879c1503e2af8',1,'dawazonTest::Common::Utils::IdGeneratorTest']]],
   ['nextpage_8',['nextpage',['../classdawazon2_1_1__0_1_1Models_1_1ProductListViewModel.html#abb45cfa6e198ff317fd20a15d8137639',1,'dawazon2._0.Models.ProductListViewModel.NextPage'],['../classdawazon2_1_1__0_1_1Models_1_1UserFavsViewModel.html#ac7841e18e53aa528b9e6a0fcb56e4f9b',1,'dawazon2._0.Models.UserFavsViewModel.NextPage'],['../classdawazon2_1_1__0_1_1Models_1_1CartOrderListViewModel.html#a7296d6775d76b4e8a3a899dbc909db0a',1,'dawazon2._0.Models.CartOrderListViewModel.NextPage']]],
   ['nombre_9',['nombre',['../classdawazonBackend_1_1Users_1_1Dto_1_1UserDto.html#a98a225b9edec999af9388c0026384d4c',1,'dawazonBackend.Users.Dto.UserDto.Nombre'],['../classdawazonBackend_1_1Users_1_1Dto_1_1UserRequestDto.html#a42e5eda01fe210826ce390f129818edb',1,'dawazonBackend.Users.Dto.UserRequestDto.Nombre'],['../classdawazon2_1_1__0_1_1Models_1_1UserEditViewModel.html#aa8f2b8290953f2962c8b3444fd6807c1',1,'dawazon2._0.Models.UserEditViewModel.Nombre']]],
-  ['notes_10',['notes',['../classdawazon2_1_1__0_1_1Models_1_1AdminSaleEditViewModel.html#a7899493d54a9ea5403fddf4fc0ff35e4',1,'dawazon2._0.Models.AdminSaleEditViewModel.Notes'],['../md__2home_2runner_2work_2dawazon-2_80_2dawazon-2_80_2dawazonPlayWrite_2README.html#autotoc_md51',1,'Notes']]],
-  ['notificationhub_11',['NotificationHub',['../classdawazonBackend_1_1Common_1_1Hub_1_1NotificationHub.html',1,'dawazonBackend::Common::Hub']]],
-  ['notificationhub_2ecs_12',['NotificationHub.cs',['../NotificationHub_8cs.html',1,'']]],
-  ['number_13',['number',['../classdawazon2_1_1__0_1_1Models_1_1CheckoutViewModel.html#a3b70d145680d2f499e591ac78fb8bd2a',1,'dawazon2._0.Models.CheckoutViewModel.Number'],['../classdawazonBackend_1_1Cart_1_1Models_1_1Address.html#a7d891ceaecc5cfa0e5b49202101b3efc',1,'dawazonBackend.Cart.Models.Address.Number']]],
-  ['nunit_14',['Pruebas Unitarias (NUnit)',['../index.html#autotoc_md24',1,'']]]
+  ['notes_10',['notes',['../classdawazon2_1_1__0_1_1Models_1_1AdminSaleEditViewModel.html#a7899493d54a9ea5403fddf4fc0ff35e4',1,'dawazon2._0.Models.AdminSaleEditViewModel.Notes'],['../md__2home_2runner_2work_2dawazon-2_80_2dawazon-2_80_2dawazonPlayWrite_2README.html#autotoc_md83',1,'Notes']]],
+  ['notificaciones_11',['📨 Notificaciones',['../index.html#autotoc_md18',1,'']]],
+  ['notificationhub_12',['NotificationHub',['../classdawazonBackend_1_1Common_1_1Hub_1_1NotificationHub.html',1,'dawazonBackend::Common::Hub']]],
+  ['notificationhub_2ecs_13',['NotificationHub.cs',['../NotificationHub_8cs.html',1,'']]],
+  ['number_14',['number',['../classdawazon2_1_1__0_1_1Models_1_1CheckoutViewModel.html#a3b70d145680d2f499e591ac78fb8bd2a',1,'dawazon2._0.Models.CheckoutViewModel.Number'],['../classdawazonBackend_1_1Cart_1_1Models_1_1Address.html#a7d891ceaecc5cfa0e5b49202101b3efc',1,'dawazonBackend.Cart.Models.Address.Number']]],
+  ['nunit_15',['Pruebas Unitarias (NUnit)',['../index.html#autotoc_md35',1,'']]]
 ];
