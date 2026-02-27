@@ -1,0 +1,5 @@
+<map id="dawazon2._0.Pdf.OrderPdfService" name="dawazon2._0.Pdf.OrderPdfService">
+<area shape="rect" id="Node000001" title="Implementación de IOrderPdfService usando QuestPDF. Construye un documento PDF estructurado con el re..." alt="" coords="5,79,197,119"/>
+<area shape="rect" id="Node000002" href="$interfacedawazon2_1_1__0_1_1Pdf_1_1IOrderPdfService.html" title="Genera un PDF con el resumen de un pedido." alt="" coords="36,5,167,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,44,104,79,99,79,99,44"/>
+</map>

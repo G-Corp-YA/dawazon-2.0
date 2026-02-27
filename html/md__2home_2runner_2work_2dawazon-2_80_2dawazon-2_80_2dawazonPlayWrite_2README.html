@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FunkoApi: Dawazon Playwright Tests</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FunkoApi<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Ejemplo de api de funkos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">Dawazon Playwright Tests</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md34"></a> </p>
+<h1><a class="anchor" id="autotoc_md35"></a>
+Configuration</h1>
+<p>You can configure the test execution using environment variables. Create a <code>.env</code> file in the root directory or set the variables directly.</p>
+<h2><a class="anchor" id="autotoc_md36"></a>
+Environment Variables</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Variable   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">Default    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>DAWAZON_BASE_URL</code>   </td><td class="markdownTableBodyNone">Base URL of the application   </td><td class="markdownTableBodyNone"><code><a href="http://localhost:5080">http://localhost:5080</a></code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>DAWAZON_HEADLESS</code>   </td><td class="markdownTableBodyNone">Run browser in headless mode (<code>true</code>/<code>false</code>)   </td><td class="markdownTableBodyNone"><code>true</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>DAWAZON_BROWSER</code>   </td><td class="markdownTableBodyNone">Browser to use (<code>chromium</code>/<code>firefox</code>/<code>webkit</code>)   </td><td class="markdownTableBodyNone"><code>chromium</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>DAWAZON_TIMEOUT</code>   </td><td class="markdownTableBodyNone">Timeout in milliseconds   </td><td class="markdownTableBodyNone"><code>30000</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>DAWAZON_SLOWMO</code>   </td><td class="markdownTableBodyNone">Enable slow motion for debugging (<code>true</code>/<code>false</code>)   </td><td class="markdownTableBodyNone"><code>false</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>DAWAZON_SLOWMO_DELAY</code>   </td><td class="markdownTableBodyNone">Delay in milliseconds between actions   </td><td class="markdownTableBodyNone"><code>0</code>   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md37"></a>
+Example .env file</h2>
+<div class="fragment"><div class="line"># Development - Show browser</div>
+<div class="line">DAWAZON_HEADLESS=false</div>
+<div class="line">DAWAZON_SLOWMO=true</div>
+<div class="line">DAWAZON_SLOWMO_DELAY=500</div>
+<div class="line"> </div>
+<div class="line"># Browser selection</div>
+<div class="line">DAWAZON_BROWSER=chromium</div>
+<div class="line"> </div>
+<div class="line"># Timeout</div>
+<div class="line">DAWAZON_TIMEOUT=60000</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md38"></a>
+Running Tests</h1>
+<h2><a class="anchor" id="autotoc_md39"></a>
+Prerequisites</h2>
+<ol type="1">
+<li>Install Playwright browsers: <div class="fragment"><div class="line">cd dawazonPlayWrite</div>
+<div class="line">pwsh bin/Debug/net10.0/playwright.ps1 install</div>
+</div><!-- fragment --></li>
+</ol>
+<p>Or on Windows with PowerShell: </p><div class="fragment"><div class="line">.\bin\Debug\net10.0\playwright.ps1 install</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md40"></a>
+Run All Tests</h2>
+<div class="fragment"><div class="line">dotnet test</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md41"></a>
+Run Specific Test Category</h2>
+<div class="fragment"><div class="line"># Auth tests only</div>
+<div class="line">dotnet test --filter &quot;FullyQualifiedName~AuthTests&quot;</div>
+<div class="line"> </div>
+<div class="line"># Products tests only</div>
+<div class="line">dotnet test --filter &quot;FullyQualifiedName~ProductsTests&quot;</div>
+<div class="line"> </div>
+<div class="line"># Cart tests only</div>
+<div class="line">dotnet test --filter &quot;FullyQualifiedName~CartTests&quot;</div>
+<div class="line"> </div>
+<div class="line"># User tests only</div>
+<div class="line">dotnet test --filter &quot;FullyQualifiedName~UserTests&quot;</div>
+<div class="line"> </div>
+<div class="line"># Admin tests only</div>
+<div class="line">dotnet test --filter &quot;FullyQualifiedName~AdminTests&quot;</div>
+<div class="line"> </div>
+<div class="line"># Manager tests only</div>
+<div class="line">dotnet test --filter &quot;FullyQualifiedName~ManagerTests&quot;</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md42"></a>
+Run with Browser Visible (Headed Mode)</h2>
+<p>Set the environment variable before running:</p>
+<p><b>Windows (PowerShell):</b> </p><div class="fragment"><div class="line">$env:DAWAZON_HEADLESS=&quot;false&quot;</div>
+<div class="line">dotnet test</div>
+</div><!-- fragment --><p><b>Windows (CMD):</b> </p><div class="fragment"><div class="line">set DAWAZON_HEADLESS=false</div>
+<div class="line">dotnet test</div>
+</div><!-- fragment --><p><b>Linux/Mac:</b> </p><div class="fragment"><div class="line">DAWAZON_HEADLESS=false dotnet test</div>
+</div><!-- fragment --><p>Or create a <code>.env</code> file: </p><div class="fragment"><div class="line">echo &quot;DAWAZON_HEADLESS=false&quot; &gt; .env</div>
+<div class="line">dotnet test</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md43"></a>
+Test Structure</h1>
+<div class="fragment"><div class="line">dawazonPlayWrite/</div>
+<div class="line">├── Tests/</div>
+<div class="line">│   ├── AuthTests.cs       # Login, Register, Logout tests</div>
+<div class="line">│   ├── ProductsTests.cs   # Products list, detail, search tests</div>
+<div class="line">│   ├── CartTests.cs      # Cart, checkout, orders tests</div>
+<div class="line">│   ├── UserTests.cs      # User profile, favorites tests</div>
+<div class="line">│   ├── AdminTests.cs     # Admin panel tests</div>
+<div class="line">│   └── ManagerTests.cs   # Manager panel tests</div>
+<div class="line">├── BaseTest.cs           # Base test class with common methods</div>
+<div class="line">├── TestConfig.cs         # Configuration management</div>
+<div class="line">└── dawazonPlayWrite.csproj</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md44"></a>
+Test Coverage</h1>
+<h2><a class="anchor" id="autotoc_md45"></a>
+AuthTests</h2>
+<ul>
+<li>[ ] Login with valid credentials</li>
+<li>[ ] Login with empty fields (validation)</li>
+<li>[ ] Login with invalid credentials (error handling)</li>
+<li>[ ] Register page load</li>
+<li>[ ] Register with empty form (validation)</li>
+<li>[ ] Logout functionality</li>
+<li>[ ] Access restricted page without login (redirect)</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md46"></a>
+ProductsTests</h2>
+<ul>
+<li>[ ] Products index page loads</li>
+<li>[ ] Search products by name</li>
+<li>[ ] Filter by category</li>
+<li>[ ] Pagination navigation</li>
+<li>[ ] View product detail</li>
+<li>[ ] Product not found (404)</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md47"></a>
+CartTests</h2>
+<ul>
+<li>[ ] Empty cart display</li>
+<li>[ ] Checkout without login (redirect)</li>
+<li>[ ] My orders without login (redirect)</li>
+<li>[ ] Order detail without login (redirect)</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md48"></a>
+UserTests</h2>
+<ul>
+<li>[ ] Profile without login (redirect)</li>
+<li>[ ] Favorites without login (redirect)</li>
+<li>[ ] Edit profile without login (redirect)</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md49"></a>
+AdminTests</h2>
+<ul>
+<li>[ ] Admin users page without login (redirect)</li>
+<li>[ ] Admin sales page without login (redirect)</li>
+<li>[ ] Admin stats page without login (redirect)</li>
+<li>[ ] Admin page as regular user (403/redirect)</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md50"></a>
+ManagerTests</h2>
+<ul>
+<li>[ ] Manager sales page without login (redirect)</li>
+<li>[ ] Manager sales edit without login (redirect)</li>
+<li>[ ] Manager create product without login (redirect)</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md51"></a>
+Notes</h1>
+<ul>
+<li>Tests are designed to work with the Dawazon e-commerce application</li>
+<li>Some tests require specific user roles (Admin, Manager, User) to be present in the database</li>
+<li>Tests will automatically redirect to login pages when accessing restricted areas</li>
+<li>The base URL defaults to <code><a href="http://localhost:5080">http://localhost:5080</a></code> which is the default Docker Compose port </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

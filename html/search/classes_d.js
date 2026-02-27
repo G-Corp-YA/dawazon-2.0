@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['pageresponsedtotest_0',['PageResponseDtoTest',['../classdawazonTest_1_1Common_1_1Dto_1_1PageResponseDtoTest.html',1,'dawazonTest::Common::Dto']]],
+  ['playwrightsetup_1',['PlaywrightSetup',['../classdawazonPlayWrite_1_1PlaywrightSetup.html',1,'dawazonPlayWrite']]],
+  ['privacymodel_2',['PrivacyModel',['../classdawazon2_1_1__0_1_1Pages_1_1PrivacyModel.html',1,'dawazon2::_0::Pages']]],
+  ['product_3',['product',['../classdawazon2_1_1__0_1_1Models_1_1Product.html',1,'dawazon2._0.Models.Product'],['../classdawazonBackend_1_1Products_1_1Models_1_1Product.html',1,'dawazonBackend.Products.Models.Product']]],
+  ['productdetailviewmodel_4',['ProductDetailViewModel',['../classdawazon2_1_1__0_1_1Models_1_1ProductDetailViewModel.html',1,'dawazon2::_0::Models']]],
+  ['producterrortest_5',['ProductErrorTest',['../classdawazonTest_1_1Products_1_1Errors_1_1ProductErrorTest.html',1,'dawazonTest::Products::Errors']]],
+  ['productformviewmodel_6',['ProductFormViewModel',['../classdawazon2_1_1__0_1_1Models_1_1ProductFormViewModel.html',1,'dawazon2::_0::Models']]],
+  ['productlistviewmodel_7',['ProductListViewModel',['../classdawazon2_1_1__0_1_1Models_1_1ProductListViewModel.html',1,'dawazon2::_0::Models']]],
+  ['productmappertest_8',['ProductMapperTest',['../classdawazonTest_1_1Products_1_1Mapper_1_1ProductMapperTest.html',1,'dawazonTest::Products::Mapper']]],
+  ['productmvcmappertests_9',['ProductMvcMapperTests',['../classdawazonTest_1_1dawazon2_1_1__0_1_1Mapper_1_1ProductMvcMapperTests.html',1,'dawazonTest::dawazon2::_0::Mapper']]],
+  ['productpageviewmodel_10',['ProductPageViewModel',['../classdawazon2_1_1__0_1_1Models_1_1ProductPageViewModel.html',1,'dawazon2::_0::Models']]],
+  ['productrepositorytest_11',['ProductRepositoryTest',['../classdawazonTest_1_1Products_1_1Repository_1_1ProductRepositoryTest.html',1,'dawazonTest::Products::Repository']]],
+  ['productscontrollertests_12',['ProductsControllerTests',['../classdawazonTest_1_1dawazon2_1_1__0_1_1RestController_1_1ProductsControllerTests.html',1,'dawazonTest::dawazon2::_0::RestController']]],
+  ['productservicetest_13',['ProductServiceTest',['../classdawazonTest_1_1Products_1_1Service_1_1ProductServiceTest.html',1,'dawazonTest::Products::Service']]],
+  ['productsmvccontrollertests_14',['ProductsMvcControllerTests',['../classdawazonTest_1_1dawazon2_1_1__0_1_1MvcControllers_1_1ProductsMvcControllerTests.html',1,'dawazonTest::dawazon2::_0::MvcControllers']]],
+  ['productsrepositorytestcontainer_15',['ProductsRepositoryTestContainer',['../classdawazonTest_1_1Container_1_1Productos_1_1ProductsRepositoryTestContainer.html',1,'dawazonTest::Container::Productos']]],
+  ['productstests_16',['ProductsTests',['../classdawazonPlayWrite_1_1ProductsTests.html',1,'dawazonPlayWrite']]],
+  ['productsummaryviewmodel_17',['ProductSummaryViewModel',['../classdawazon2_1_1__0_1_1Models_1_1ProductSummaryViewModel.html',1,'dawazon2::_0::Models']]],
+  ['productviewmodelstests_18',['ProductViewModelsTests',['../classdawazonTest_1_1dawazon2_1_1__0_1_1Models_1_1ProductViewModelsTests.html',1,'dawazonTest::dawazon2::_0::Models']]]
+];

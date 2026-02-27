@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FunkoApi: Referencia de la interface dawazonBackend.Cart.Repository.ICartRepository</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FunkoApi<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Ejemplo de api de funkos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacedawazonBackend.html">dawazonBackend</a></li><li class="navelem"><a class="el" href="namespacedawazonBackend_1_1Cart.html">Cart</a></li><li class="navelem"><a class="el" href="namespacedawazonBackend_1_1Cart_1_1Repository.html">Repository</a></li><li class="navelem"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html">ICartRepository</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la interface dawazonBackend.Cart.Repository.ICartRepository</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Interfaz para el repositorio de carritos de compra.  
+ <a href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:af3f6a1c58c3b184815cc7dedcdb869c7" id="r_af3f6a1c58c3b184815cc7dedcdb869c7"><td class="memItemLeft" align="right" valign="top">Task&lt;(IEnumerable&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a> &gt; Items, int TotalCount)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#af3f6a1c58c3b184815cc7dedcdb869c7">GetAllAsync</a> (FilterCartDto filter)</td></tr>
+<tr class="memdesc:af3f6a1c58c3b184815cc7dedcdb869c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene todos los carritos filtrados de forma paginada.  <br /></td></tr>
+<tr class="separator:af3f6a1c58c3b184815cc7dedcdb869c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1237a3f8d37bca4ba5f99cf67ad96fb8" id="r_a1237a3f8d37bca4ba5f99cf67ad96fb8"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a1237a3f8d37bca4ba5f99cf67ad96fb8">UpdateCartLineStatusAsync</a> (string id, string productId, <a class="el" href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521">Status</a> status)</td></tr>
+<tr class="memdesc:a1237a3f8d37bca4ba5f99cf67ad96fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza el estado de una línea de carrito específica.  <br /></td></tr>
+<tr class="separator:a1237a3f8d37bca4ba5f99cf67ad96fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c8c3851835eda1ecbc3615136f47827" id="r_a5c8c3851835eda1ecbc3615136f47827"><td class="memItemLeft" align="right" valign="top">Task&lt; IEnumerable&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a5c8c3851835eda1ecbc3615136f47827">FindByUserIdAsync</a> (long userId, FilterCartDto filter)</td></tr>
+<tr class="memdesc:a5c8c3851835eda1ecbc3615136f47827"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca carritos asociados a un ID de usuario.  <br /></td></tr>
+<tr class="separator:a5c8c3851835eda1ecbc3615136f47827"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c0ba445db7f504314bf136f3a67b32f" id="r_a8c0ba445db7f504314bf136f3a67b32f"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a8c0ba445db7f504314bf136f3a67b32f">AddCartLineAsync</a> (string cartId, <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html">CartLine</a> cartLine)</td></tr>
+<tr class="memdesc:a8c0ba445db7f504314bf136f3a67b32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Añade una nueva línea de producto a un carrito.  <br /></td></tr>
+<tr class="separator:a8c0ba445db7f504314bf136f3a67b32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4dae40c470b63ce876c156d0f4d79c5" id="r_aa4dae40c470b63ce876c156d0f4d79c5"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#aa4dae40c470b63ce876c156d0f4d79c5">RemoveCartLineAsync</a> (string cartId, <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html">CartLine</a> cartLine)</td></tr>
+<tr class="memdesc:aa4dae40c470b63ce876c156d0f4d79c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina una línea de producto de un carrito.  <br /></td></tr>
+<tr class="separator:aa4dae40c470b63ce876c156d0f4d79c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a706933a4d4c1453bc993c212a9ed2099" id="r_a706933a4d4c1453bc993c212a9ed2099"><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a>?&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a706933a4d4c1453bc993c212a9ed2099">FindByUserIdAndPurchasedAsync</a> (long userId, bool purchased)</td></tr>
+<tr class="memdesc:a706933a4d4c1453bc993c212a9ed2099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca un carrito por usuario y estado de compra (usado para recuperar el carrito activo).  <br /></td></tr>
+<tr class="separator:a706933a4d4c1453bc993c212a9ed2099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bc613f48c80c4e2692203c235648e13" id="r_a2bc613f48c80c4e2692203c235648e13"><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a>?&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a2bc613f48c80c4e2692203c235648e13">FindCartByIdAsync</a> (string cartId)</td></tr>
+<tr class="memdesc:a2bc613f48c80c4e2692203c235648e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca un carrito por su identificador único.  <br /></td></tr>
+<tr class="separator:a2bc613f48c80c4e2692203c235648e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf9f330687861ce0c770b3fb42fbab12" id="r_acf9f330687861ce0c770b3fb42fbab12"><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#acf9f330687861ce0c770b3fb42fbab12">CreateCartAsync</a> (<a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a> cart)</td></tr>
+<tr class="memdesc:acf9f330687861ce0c770b3fb42fbab12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea un nuevo carrito en la base de datos.  <br /></td></tr>
+<tr class="separator:acf9f330687861ce0c770b3fb42fbab12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a179873cb84f5f9f34b61e1e4dad2e68a" id="r_a179873cb84f5f9f34b61e1e4dad2e68a"><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a>?&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a179873cb84f5f9f34b61e1e4dad2e68a">UpdateCartAsync</a> (string id, <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a> cart)</td></tr>
+<tr class="memdesc:a179873cb84f5f9f34b61e1e4dad2e68a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza los datos de un carrito existente.  <br /></td></tr>
+<tr class="separator:a179873cb84f5f9f34b61e1e4dad2e68a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a019261f00d9b2c0ca2b2b5afc470a74a" id="r_a019261f00d9b2c0ca2b2b5afc470a74a"><td class="memItemLeft" align="right" valign="top">Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a019261f00d9b2c0ca2b2b5afc470a74a">UpdateCartScalarsAsync</a> (string cartId, int totalItems, double total)</td></tr>
+<tr class="memdesc:a019261f00d9b2c0ca2b2b5afc470a74a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza únicamente los campos Total y TotalItems de un carrito, sin tocar las líneas de carrito.  <br /></td></tr>
+<tr class="separator:a019261f00d9b2c0ca2b2b5afc470a74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ced11b24a3d481a6b32cd5775f4ae8a" id="r_a5ced11b24a3d481a6b32cd5775f4ae8a"><td class="memItemLeft" align="right" valign="top">Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a5ced11b24a3d481a6b32cd5775f4ae8a">DeleteCartAsync</a> (string id)</td></tr>
+<tr class="memdesc:a5ced11b24a3d481a6b32cd5775f4ae8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un carrito de la base de datos.  <br /></td></tr>
+<tr class="separator:a5ced11b24a3d481a6b32cd5775f4ae8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1adee614f5d5d3ae61b36c86f9219510" id="r_a1adee614f5d5d3ae61b36c86f9219510"><td class="memItemLeft" align="right" valign="top">Task&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a1adee614f5d5d3ae61b36c86f9219510">CalculateTotalEarningsAsync</a> (long? managerId, bool isAdmin)</td></tr>
+<tr class="memdesc:a1adee614f5d5d3ae61b36c86f9219510"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula las ganancias acumuladas filtrando opcionalmente por gestor.  <br /></td></tr>
+<tr class="separator:a1adee614f5d5d3ae61b36c86f9219510"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04a7c2f6a24e3955459dd4937d9a2dee" id="r_a04a7c2f6a24e3955459dd4937d9a2dee"><td class="memItemLeft" align="right" valign="top">Task&lt;(List&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Dto_1_1SaleLineDto.html">SaleLineDto</a> &gt; Items, int TotalCount)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a04a7c2f6a24e3955459dd4937d9a2dee">GetSalesAsLinesAsync</a> (long? managerId, bool isAdmin, FilterDto filter)</td></tr>
+<tr class="memdesc:a04a7c2f6a24e3955459dd4937d9a2dee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene las ventas proyectadas como líneas de pedido individuales.  <br /></td></tr>
+<tr class="separator:a04a7c2f6a24e3955459dd4937d9a2dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae56438885f23f70c6c90837d83e9e1de" id="r_ae56438885f23f70c6c90837d83e9e1de"><td class="memItemLeft" align="right" valign="top">Task&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#ae56438885f23f70c6c90837d83e9e1de">CountNewSalesAsync</a> (long managerId, DateTime since)</td></tr>
+<tr class="memdesc:ae56438885f23f70c6c90837d83e9e1de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cuenta las nuevas líneas de productos vendidas de un gestor desde una fecha específica.  <br /></td></tr>
+<tr class="separator:ae56438885f23f70c6c90837d83e9e1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f3c69d805d53d9a98564ee3cb36fe21" id="r_a0f3c69d805d53d9a98564ee3cb36fe21"><td class="memItemLeft" align="right" valign="top">Task&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a0f3c69d805d53d9a98564ee3cb36fe21">GetTotalSalesCountAsync</a> ()</td></tr>
+<tr class="memdesc:a0f3c69d805d53d9a98564ee3cb36fe21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el número total de ventas realizadas.  <br /></td></tr>
+<tr class="separator:a0f3c69d805d53d9a98564ee3cb36fe21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Interfaz para el repositorio de carritos de compra. </p>
+</div><h2 class="groupheader">Documentación de funciones miembro</h2>
+<a id="a8c0ba445db7f504314bf136f3a67b32f" name="a8c0ba445db7f504314bf136f3a67b32f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c0ba445db7f504314bf136f3a67b32f">&#9670;&#160;</a></span>AddCartLineAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; bool &gt; dawazonBackend.Cart.Repository.ICartRepository.AddCartLineAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>cartId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html">CartLine</a>&#160;</td>
+          <td class="paramname"><em>cartLine</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Añade una nueva línea de producto a un carrito. </p>
+
+</div>
+</div>
+<a id="a1adee614f5d5d3ae61b36c86f9219510" name="a1adee614f5d5d3ae61b36c86f9219510"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1adee614f5d5d3ae61b36c86f9219510">&#9670;&#160;</a></span>CalculateTotalEarningsAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; double &gt; dawazonBackend.Cart.Repository.ICartRepository.CalculateTotalEarningsAsync </td>
+          <td>(</td>
+          <td class="paramtype">long?&#160;</td>
+          <td class="paramname"><em>managerId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isAdmin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula las ganancias acumuladas filtrando opcionalmente por gestor. </p>
+
+</div>
+</div>
+<a id="ae56438885f23f70c6c90837d83e9e1de" name="ae56438885f23f70c6c90837d83e9e1de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae56438885f23f70c6c90837d83e9e1de">&#9670;&#160;</a></span>CountNewSalesAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; int &gt; dawazonBackend.Cart.Repository.ICartRepository.CountNewSalesAsync </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>managerId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DateTime&#160;</td>
+          <td class="paramname"><em>since</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cuenta las nuevas líneas de productos vendidas de un gestor desde una fecha específica. </p>
+
+</div>
+</div>
+<a id="acf9f330687861ce0c770b3fb42fbab12" name="acf9f330687861ce0c770b3fb42fbab12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf9f330687861ce0c770b3fb42fbab12">&#9670;&#160;</a></span>CreateCartAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a> &gt; dawazonBackend.Cart.Repository.ICartRepository.CreateCartAsync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a>&#160;</td>
+          <td class="paramname"><em>cart</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crea un nuevo carrito en la base de datos. </p>
+
+</div>
+</div>
+<a id="a5ced11b24a3d481a6b32cd5775f4ae8a" name="a5ced11b24a3d481a6b32cd5775f4ae8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ced11b24a3d481a6b32cd5775f4ae8a">&#9670;&#160;</a></span>DeleteCartAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task dawazonBackend.Cart.Repository.ICartRepository.DeleteCartAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina un carrito de la base de datos. </p>
+
+</div>
+</div>
+<a id="a706933a4d4c1453bc993c212a9ed2099" name="a706933a4d4c1453bc993c212a9ed2099"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a706933a4d4c1453bc993c212a9ed2099">&#9670;&#160;</a></span>FindByUserIdAndPurchasedAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a>?&gt; dawazonBackend.Cart.Repository.ICartRepository.FindByUserIdAndPurchasedAsync </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>purchased</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Busca un carrito por usuario y estado de compra (usado para recuperar el carrito activo). </p>
+
+</div>
+</div>
+<a id="a5c8c3851835eda1ecbc3615136f47827" name="a5c8c3851835eda1ecbc3615136f47827"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c8c3851835eda1ecbc3615136f47827">&#9670;&#160;</a></span>FindByUserIdAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; IEnumerable&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a> &gt; &gt; dawazonBackend.Cart.Repository.ICartRepository.FindByUserIdAsync </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FilterCartDto&#160;</td>
+          <td class="paramname"><em>filter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Busca carritos asociados a un ID de usuario. </p>
+
+</div>
+</div>
+<a id="a2bc613f48c80c4e2692203c235648e13" name="a2bc613f48c80c4e2692203c235648e13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bc613f48c80c4e2692203c235648e13">&#9670;&#160;</a></span>FindCartByIdAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a>?&gt; dawazonBackend.Cart.Repository.ICartRepository.FindCartByIdAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>cartId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Busca un carrito por su identificador único. </p>
+
+</div>
+</div>
+<a id="af3f6a1c58c3b184815cc7dedcdb869c7" name="af3f6a1c58c3b184815cc7dedcdb869c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3f6a1c58c3b184815cc7dedcdb869c7">&#9670;&#160;</a></span>GetAllAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt;(IEnumerable&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a> &gt; Items, int TotalCount)&gt; dawazonBackend.Cart.Repository.ICartRepository.GetAllAsync </td>
+          <td>(</td>
+          <td class="paramtype">FilterCartDto&#160;</td>
+          <td class="paramname"><em>filter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene todos los carritos filtrados de forma paginada. </p>
+
+</div>
+</div>
+<a id="a04a7c2f6a24e3955459dd4937d9a2dee" name="a04a7c2f6a24e3955459dd4937d9a2dee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04a7c2f6a24e3955459dd4937d9a2dee">&#9670;&#160;</a></span>GetSalesAsLinesAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt;(List&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Dto_1_1SaleLineDto.html">SaleLineDto</a> &gt; Items, int TotalCount)&gt; dawazonBackend.Cart.Repository.ICartRepository.GetSalesAsLinesAsync </td>
+          <td>(</td>
+          <td class="paramtype">long?&#160;</td>
+          <td class="paramname"><em>managerId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isAdmin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FilterDto&#160;</td>
+          <td class="paramname"><em>filter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene las ventas proyectadas como líneas de pedido individuales. </p>
+
+</div>
+</div>
+<a id="a0f3c69d805d53d9a98564ee3cb36fe21" name="a0f3c69d805d53d9a98564ee3cb36fe21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f3c69d805d53d9a98564ee3cb36fe21">&#9670;&#160;</a></span>GetTotalSalesCountAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; int &gt; dawazonBackend.Cart.Repository.ICartRepository.GetTotalSalesCountAsync </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el número total de ventas realizadas. </p>
+
+</div>
+</div>
+<a id="aa4dae40c470b63ce876c156d0f4d79c5" name="aa4dae40c470b63ce876c156d0f4d79c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4dae40c470b63ce876c156d0f4d79c5">&#9670;&#160;</a></span>RemoveCartLineAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; bool &gt; dawazonBackend.Cart.Repository.ICartRepository.RemoveCartLineAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>cartId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html">CartLine</a>&#160;</td>
+          <td class="paramname"><em>cartLine</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina una línea de producto de un carrito. </p>
+
+</div>
+</div>
+<a id="a179873cb84f5f9f34b61e1e4dad2e68a" name="a179873cb84f5f9f34b61e1e4dad2e68a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a179873cb84f5f9f34b61e1e4dad2e68a">&#9670;&#160;</a></span>UpdateCartAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a>?&gt; dawazonBackend.Cart.Repository.ICartRepository.UpdateCartAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a>&#160;</td>
+          <td class="paramname"><em>cart</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza los datos de un carrito existente. </p>
+
+</div>
+</div>
+<a id="a1237a3f8d37bca4ba5f99cf67ad96fb8" name="a1237a3f8d37bca4ba5f99cf67ad96fb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1237a3f8d37bca4ba5f99cf67ad96fb8">&#9670;&#160;</a></span>UpdateCartLineStatusAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; bool &gt; dawazonBackend.Cart.Repository.ICartRepository.UpdateCartLineStatusAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>productId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521">Status</a>&#160;</td>
+          <td class="paramname"><em>status</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza el estado de una línea de carrito específica. </p>
+
+</div>
+</div>
+<a id="a019261f00d9b2c0ca2b2b5afc470a74a" name="a019261f00d9b2c0ca2b2b5afc470a74a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a019261f00d9b2c0ca2b2b5afc470a74a">&#9670;&#160;</a></span>UpdateCartScalarsAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task dawazonBackend.Cart.Repository.ICartRepository.UpdateCartScalarsAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>cartId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>totalItems</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>total</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza únicamente los campos Total y TotalItems de un carrito, sin tocar las líneas de carrito. </p>
+
+</div>
+</div>
+<hr/>La documentación de esta interface está generada del siguiente archivo:<ul>
+<li>/home/runner/work/dawazon-2.0/dawazon-2.0/dawazonBackend/Cart/Repository/<a class="el" href="ICartRepository_8cs.html">ICartRepository.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

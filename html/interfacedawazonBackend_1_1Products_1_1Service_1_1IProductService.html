@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FunkoApi: Referencia de la interface dawazonBackend.Products.Service.IProductService</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FunkoApi<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Ejemplo de api de funkos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacedawazonBackend.html">dawazonBackend</a></li><li class="navelem"><a class="el" href="namespacedawazonBackend_1_1Products.html">Products</a></li><li class="navelem"><a class="el" href="namespacedawazonBackend_1_1Products_1_1Service.html">Service</a></li><li class="navelem"><a class="el" href="interfacedawazonBackend_1_1Products_1_1Service_1_1IProductService.html">IProductService</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="interfacedawazonBackend_1_1Products_1_1Service_1_1IProductService-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la interface dawazonBackend.Products.Service.IProductService</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Interfaz para el servicio de gestión de productos.  
+ <a href="interfacedawazonBackend_1_1Products_1_1Service_1_1IProductService.html#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:abcf13647ed43ab951396422e418ac3d5" id="r_abcf13647ed43ab951396422e418ac3d5"><td class="memItemLeft" align="right" valign="top">Task&lt; PageResponseDto&lt; ProductResponseDto &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Products_1_1Service_1_1IProductService.html#abcf13647ed43ab951396422e418ac3d5">GetAllAsync</a> (FilterDto filter, long? creatorId=null)</td></tr>
+<tr class="memdesc:abcf13647ed43ab951396422e418ac3d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene todos los productos de forma paginada y filtrada. Opcionalmente, permite filtrar solo los productos creados por un usuario específico.  <br /></td></tr>
+<tr class="separator:abcf13647ed43ab951396422e418ac3d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f41bec887a871ad5242079dbd801492" id="r_a3f41bec887a871ad5242079dbd801492"><td class="memItemLeft" align="right" valign="top">Task&lt; Result&lt; ProductResponseDto, ProductError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Products_1_1Service_1_1IProductService.html#a3f41bec887a871ad5242079dbd801492">GetByIdAsync</a> (string id)</td></tr>
+<tr class="memdesc:a3f41bec887a871ad5242079dbd801492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene un producto por su identificador.  <br /></td></tr>
+<tr class="separator:a3f41bec887a871ad5242079dbd801492"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcc287da0d559b5047aa84e6c4ea2045" id="r_adcc287da0d559b5047aa84e6c4ea2045"><td class="memItemLeft" align="right" valign="top">Task&lt; Result&lt; long, ProductError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Products_1_1Service_1_1IProductService.html#adcc287da0d559b5047aa84e6c4ea2045">GetUserProductIdAsync</a> (string id)</td></tr>
+<tr class="memdesc:adcc287da0d559b5047aa84e6c4ea2045"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el ID numérico interno de un producto a partir de su ID de cadena.  <br /></td></tr>
+<tr class="separator:adcc287da0d559b5047aa84e6c4ea2045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9475671b86bd1ccf5d87d88aecfbcb47" id="r_a9475671b86bd1ccf5d87d88aecfbcb47"><td class="memItemLeft" align="right" valign="top">Task&lt; Result&lt; ProductResponseDto, ProductError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Products_1_1Service_1_1IProductService.html#a9475671b86bd1ccf5d87d88aecfbcb47">CreateAsync</a> (ProductRequestDto dto)</td></tr>
+<tr class="memdesc:a9475671b86bd1ccf5d87d88aecfbcb47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea un nuevo producto.  <br /></td></tr>
+<tr class="separator:a9475671b86bd1ccf5d87d88aecfbcb47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01529dec95250cbe18c761d5d3d9bea9" id="r_a01529dec95250cbe18c761d5d3d9bea9"><td class="memItemLeft" align="right" valign="top">Task&lt; Result&lt; ProductResponseDto, ProductError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Products_1_1Service_1_1IProductService.html#a01529dec95250cbe18c761d5d3d9bea9">UpdateAsync</a> (string id, ProductRequestDto dto)</td></tr>
+<tr class="memdesc:a01529dec95250cbe18c761d5d3d9bea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza un producto existente (reemplazo completo).  <br /></td></tr>
+<tr class="separator:a01529dec95250cbe18c761d5d3d9bea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a058a51890cbc61743c97629d60dde370" id="r_a058a51890cbc61743c97629d60dde370"><td class="memItemLeft" align="right" valign="top">Task&lt; Result&lt; ProductResponseDto, ProductError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Products_1_1Service_1_1IProductService.html#a058a51890cbc61743c97629d60dde370">PatchAsync</a> (string id, ProductPatchRequestDto dto)</td></tr>
+<tr class="memdesc:a058a51890cbc61743c97629d60dde370"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza parcialmente un producto.  <br /></td></tr>
+<tr class="separator:a058a51890cbc61743c97629d60dde370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9085a42f3809e4e29f681b8915bdfe6" id="r_ad9085a42f3809e4e29f681b8915bdfe6"><td class="memItemLeft" align="right" valign="top">Task&lt; Result&lt; ProductResponseDto, ProductError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Products_1_1Service_1_1IProductService.html#ad9085a42f3809e4e29f681b8915bdfe6">DeleteAsync</a> (string id)</td></tr>
+<tr class="memdesc:ad9085a42f3809e4e29f681b8915bdfe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un producto (borrado lógico o físico según implementación).  <br /></td></tr>
+<tr class="separator:ad9085a42f3809e4e29f681b8915bdfe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe960086dab1808120a963a80928ab92" id="r_afe960086dab1808120a963a80928ab92"><td class="memItemLeft" align="right" valign="top">Task&lt; Result&lt; ProductResponseDto, ProductError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Products_1_1Service_1_1IProductService.html#afe960086dab1808120a963a80928ab92">UpdateImageAsync</a> (string id, List&lt; IFormFile &gt; images)</td></tr>
+<tr class="memdesc:afe960086dab1808120a963a80928ab92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza las imágenes asociadas a un producto.  <br /></td></tr>
+<tr class="separator:afe960086dab1808120a963a80928ab92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1278cfe5240494a93bb323653d3f7e88" id="r_a1278cfe5240494a93bb323653d3f7e88"><td class="memItemLeft" align="right" valign="top">Task&lt; List&lt; string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Products_1_1Service_1_1IProductService.html#a1278cfe5240494a93bb323653d3f7e88">GetAllCategoriesAsync</a> ()</td></tr>
+<tr class="memdesc:a1278cfe5240494a93bb323653d3f7e88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene todas las categorías de productos disponibles.  <br /></td></tr>
+<tr class="separator:a1278cfe5240494a93bb323653d3f7e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26bd8e1c0d022acf0934fa2aadeb5fc3" id="r_a26bd8e1c0d022acf0934fa2aadeb5fc3"><td class="memItemLeft" align="right" valign="top">Task&lt; Result&lt; ProductResponseDto, ProductError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Products_1_1Service_1_1IProductService.html#a26bd8e1c0d022acf0934fa2aadeb5fc3">AddCommentAsync</a> (string id, <a class="el" href="classdawazonBackend_1_1Products_1_1Models_1_1Comment.html">Comment</a> comment)</td></tr>
+<tr class="memdesc:a26bd8e1c0d022acf0934fa2aadeb5fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Añade un comentario a un producto.  <br /></td></tr>
+<tr class="separator:a26bd8e1c0d022acf0934fa2aadeb5fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50a8c4abdf4a2cf1bd67aed5513839ad" id="r_a50a8c4abdf4a2cf1bd67aed5513839ad"><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="classdawazonBackend_1_1Common_1_1Dto_1_1AdminStatsDto.html">AdminStatsDto</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Products_1_1Service_1_1IProductService.html#a50a8c4abdf4a2cf1bd67aed5513839ad">GetStatsAsync</a> ()</td></tr>
+<tr class="memdesc:a50a8c4abdf4a2cf1bd67aed5513839ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene estadísticas generales del sistema.  <br /></td></tr>
+<tr class="separator:a50a8c4abdf4a2cf1bd67aed5513839ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Interfaz para el servicio de gestión de productos. </p>
+</div><h2 class="groupheader">Documentación de funciones miembro</h2>
+<a id="a26bd8e1c0d022acf0934fa2aadeb5fc3" name="a26bd8e1c0d022acf0934fa2aadeb5fc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26bd8e1c0d022acf0934fa2aadeb5fc3">&#9670;&#160;</a></span>AddCommentAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; Result&lt; ProductResponseDto, ProductError &gt; &gt; dawazonBackend.Products.Service.IProductService.AddCommentAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classdawazonBackend_1_1Products_1_1Models_1_1Comment.html">Comment</a>&#160;</td>
+          <td class="paramname"><em>comment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Añade un comentario a un producto. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>El ID del producto.</td></tr>
+    <tr><td class="paramname">comment</td><td>El objeto comentario a añadir.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El DTO del producto con el nuevo comentario o un error.</dd></dl>
+
+</div>
+</div>
+<a id="a9475671b86bd1ccf5d87d88aecfbcb47" name="a9475671b86bd1ccf5d87d88aecfbcb47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9475671b86bd1ccf5d87d88aecfbcb47">&#9670;&#160;</a></span>CreateAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; Result&lt; ProductResponseDto, ProductError &gt; &gt; dawazonBackend.Products.Service.IProductService.CreateAsync </td>
+          <td>(</td>
+          <td class="paramtype">ProductRequestDto&#160;</td>
+          <td class="paramname"><em>dto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crea un nuevo producto. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dto</td><td>Los datos del nuevo producto.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El DTO del producto creado o un error.</dd></dl>
+
+</div>
+</div>
+<a id="ad9085a42f3809e4e29f681b8915bdfe6" name="ad9085a42f3809e4e29f681b8915bdfe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9085a42f3809e4e29f681b8915bdfe6">&#9670;&#160;</a></span>DeleteAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; Result&lt; ProductResponseDto, ProductError &gt; &gt; dawazonBackend.Products.Service.IProductService.DeleteAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina un producto (borrado lógico o físico según implementación). </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>El ID del producto a eliminar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El DTO del producto eliminado o un error.</dd></dl>
+
+</div>
+</div>
+<a id="abcf13647ed43ab951396422e418ac3d5" name="abcf13647ed43ab951396422e418ac3d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcf13647ed43ab951396422e418ac3d5">&#9670;&#160;</a></span>GetAllAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; PageResponseDto&lt; ProductResponseDto &gt; &gt; dawazonBackend.Products.Service.IProductService.GetAllAsync </td>
+          <td>(</td>
+          <td class="paramtype">FilterDto&#160;</td>
+          <td class="paramname"><em>filter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long?&#160;</td>
+          <td class="paramname"><em>creatorId</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene todos los productos de forma paginada y filtrada. Opcionalmente, permite filtrar solo los productos creados por un usuario específico. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filter</td><td>Filtros de búsqueda.</td></tr>
+    <tr><td class="paramname">creatorId</td><td>Opcional. ID del creador para filtrar (ej. para "Mis productos").</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Paginación de productos.</dd></dl>
+
+</div>
+</div>
+<a id="a1278cfe5240494a93bb323653d3f7e88" name="a1278cfe5240494a93bb323653d3f7e88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1278cfe5240494a93bb323653d3f7e88">&#9670;&#160;</a></span>GetAllCategoriesAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; List&lt; string &gt; &gt; dawazonBackend.Products.Service.IProductService.GetAllCategoriesAsync </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene todas las categorías de productos disponibles. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Una lista de nombres de categorías.</dd></dl>
+
+</div>
+</div>
+<a id="a3f41bec887a871ad5242079dbd801492" name="a3f41bec887a871ad5242079dbd801492"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f41bec887a871ad5242079dbd801492">&#9670;&#160;</a></span>GetByIdAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; Result&lt; ProductResponseDto, ProductError &gt; &gt; dawazonBackend.Products.Service.IProductService.GetByIdAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene un producto por su identificador. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>El ID del producto (GUID como string).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Un resultado con el DTO del producto o un error.</dd></dl>
+
+</div>
+</div>
+<a id="a50a8c4abdf4a2cf1bd67aed5513839ad" name="a50a8c4abdf4a2cf1bd67aed5513839ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50a8c4abdf4a2cf1bd67aed5513839ad">&#9670;&#160;</a></span>GetStatsAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; <a class="el" href="classdawazonBackend_1_1Common_1_1Dto_1_1AdminStatsDto.html">AdminStatsDto</a> &gt; dawazonBackend.Products.Service.IProductService.GetStatsAsync </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene estadísticas generales del sistema. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Un DTO con las estadísticas.</dd></dl>
+
+</div>
+</div>
+<a id="adcc287da0d559b5047aa84e6c4ea2045" name="adcc287da0d559b5047aa84e6c4ea2045"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcc287da0d559b5047aa84e6c4ea2045">&#9670;&#160;</a></span>GetUserProductIdAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; Result&lt; long, ProductError &gt; &gt; dawazonBackend.Products.Service.IProductService.GetUserProductIdAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el ID numérico interno de un producto a partir de su ID de cadena. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>El ID del producto.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El ID numérico o un error.</dd></dl>
+
+</div>
+</div>
+<a id="a058a51890cbc61743c97629d60dde370" name="a058a51890cbc61743c97629d60dde370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a058a51890cbc61743c97629d60dde370">&#9670;&#160;</a></span>PatchAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; Result&lt; ProductResponseDto, ProductError &gt; &gt; dawazonBackend.Products.Service.IProductService.PatchAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ProductPatchRequestDto&#160;</td>
+          <td class="paramname"><em>dto</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza parcialmente un producto. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>El ID del producto.</td></tr>
+    <tr><td class="paramname">dto</td><td>Los campos a actualizar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El DTO actualizado o un error.</dd></dl>
+
+</div>
+</div>
+<a id="a01529dec95250cbe18c761d5d3d9bea9" name="a01529dec95250cbe18c761d5d3d9bea9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01529dec95250cbe18c761d5d3d9bea9">&#9670;&#160;</a></span>UpdateAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; Result&lt; ProductResponseDto, ProductError &gt; &gt; dawazonBackend.Products.Service.IProductService.UpdateAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ProductRequestDto&#160;</td>
+          <td class="paramname"><em>dto</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza un producto existente (reemplazo completo). </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>El ID del producto a actualizar.</td></tr>
+    <tr><td class="paramname">dto</td><td>Los nuevos datos del producto.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El DTO actualizado o un error.</dd></dl>
+
+</div>
+</div>
+<a id="afe960086dab1808120a963a80928ab92" name="afe960086dab1808120a963a80928ab92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe960086dab1808120a963a80928ab92">&#9670;&#160;</a></span>UpdateImageAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; Result&lt; ProductResponseDto, ProductError &gt; &gt; dawazonBackend.Products.Service.IProductService.UpdateImageAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">List&lt; IFormFile &gt;&#160;</td>
+          <td class="paramname"><em>images</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza las imágenes asociadas a un producto. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>El ID del producto.</td></tr>
+    <tr><td class="paramname">images</td><td>Lista de archivos de imagen.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El DTO actualizado o un error.</dd></dl>
+
+</div>
+</div>
+<hr/>La documentación de esta interface está generada del siguiente archivo:<ul>
+<li>/home/runner/work/dawazon-2.0/dawazon-2.0/dawazonBackend/Products/Service/<a class="el" href="IProductService_8cs.html">IProductService.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

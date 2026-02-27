@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FunkoApi: Referencia de la interface dawazonBackend.Common.Cache.ICacheService</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FunkoApi<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Ejemplo de api de funkos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacedawazonBackend.html">dawazonBackend</a></li><li class="navelem"><a class="el" href="namespacedawazonBackend_1_1Common.html">Common</a></li><li class="navelem"><a class="el" href="namespacedawazonBackend_1_1Common_1_1Cache.html">Cache</a></li><li class="navelem"><a class="el" href="interfacedawazonBackend_1_1Common_1_1Cache_1_1ICacheService.html">ICacheService</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="interfacedawazonBackend_1_1Common_1_1Cache_1_1ICacheService-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la interface dawazonBackend.Common.Cache.ICacheService</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Contrato del servicio de caché.  
+ <a href="interfacedawazonBackend_1_1Common_1_1Cache_1_1ICacheService.html#details">Más...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a5eec86b708035e7e323548b0ed9c421d" id="r_a5eec86b708035e7e323548b0ed9c421d"><td class="memItemLeft" align="right" valign="top">Task&lt; T?&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Common_1_1Cache_1_1ICacheService.html#a5eec86b708035e7e323548b0ed9c421d">GetAsync&lt; T &gt;</a> (string key)</td></tr>
+<tr class="memdesc:a5eec86b708035e7e323548b0ed9c421d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene un valor de la caché.  <br /></td></tr>
+<tr class="separator:a5eec86b708035e7e323548b0ed9c421d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae53c345008efd1135e4bf0c908250d80" id="r_ae53c345008efd1135e4bf0c908250d80"><td class="memItemLeft" align="right" valign="top">Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Common_1_1Cache_1_1ICacheService.html#ae53c345008efd1135e4bf0c908250d80">SetAsync&lt; T &gt;</a> (string key, T value, TimeSpan? expiration=null)</td></tr>
+<tr class="memdesc:ae53c345008efd1135e4bf0c908250d80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda un valor en la caché.  <br /></td></tr>
+<tr class="separator:ae53c345008efd1135e4bf0c908250d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dc8163dcf6752530465f9edbc52435d" id="r_a2dc8163dcf6752530465f9edbc52435d"><td class="memItemLeft" align="right" valign="top">Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Common_1_1Cache_1_1ICacheService.html#a2dc8163dcf6752530465f9edbc52435d">RemoveAsync</a> (string key)</td></tr>
+<tr class="memdesc:a2dc8163dcf6752530465f9edbc52435d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un valor de la caché.  <br /></td></tr>
+<tr class="separator:a2dc8163dcf6752530465f9edbc52435d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca124aad723e755fdfcbcb8bac02d78" id="r_a5ca124aad723e755fdfcbcb8bac02d78"><td class="memItemLeft" align="right" valign="top">Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Common_1_1Cache_1_1ICacheService.html#a5ca124aad723e755fdfcbcb8bac02d78">RemoveByPatternAsync</a> (string pattern)</td></tr>
+<tr class="memdesc:a5ca124aad723e755fdfcbcb8bac02d78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina valores por patrón.  <br /></td></tr>
+<tr class="separator:a5ca124aad723e755fdfcbcb8bac02d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Contrato del servicio de caché. </p>
+</div><h2 class="groupheader">Documentación de funciones miembro</h2>
+<a id="a5eec86b708035e7e323548b0ed9c421d" name="a5eec86b708035e7e323548b0ed9c421d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eec86b708035e7e323548b0ed9c421d">&#9670;&#160;</a></span>GetAsync&lt; T &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task&lt; T?&gt; dawazonBackend.Common.Cache.ICacheService.GetAsync&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene un valor de la caché. </p>
+<dl class="tparams"><dt>Parámetros de plantilla</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Tipo del valor.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Clave del valor.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Valor encontrado o default.</dd></dl>
+
+</div>
+</div>
+<a id="a2dc8163dcf6752530465f9edbc52435d" name="a2dc8163dcf6752530465f9edbc52435d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dc8163dcf6752530465f9edbc52435d">&#9670;&#160;</a></span>RemoveAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task dawazonBackend.Common.Cache.ICacheService.RemoveAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina un valor de la caché. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Clave a eliminar.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5ca124aad723e755fdfcbcb8bac02d78" name="a5ca124aad723e755fdfcbcb8bac02d78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ca124aad723e755fdfcbcb8bac02d78">&#9670;&#160;</a></span>RemoveByPatternAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task dawazonBackend.Common.Cache.ICacheService.RemoveByPatternAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>pattern</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina valores por patrón. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>Patrón de búsqueda.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae53c345008efd1135e4bf0c908250d80" name="ae53c345008efd1135e4bf0c908250d80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae53c345008efd1135e4bf0c908250d80">&#9670;&#160;</a></span>SetAsync&lt; T &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Task dawazonBackend.Common.Cache.ICacheService.SetAsync&lt; T &gt; </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TimeSpan?&#160;</td>
+          <td class="paramname"><em>expiration</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Guarda un valor en la caché. </p>
+<dl class="tparams"><dt>Parámetros de plantilla</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Tipo del valor.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Clave.</td></tr>
+    <tr><td class="paramname">value</td><td>Valor a guardar.</td></tr>
+    <tr><td class="paramname">expiration</td><td>Tiempo de expiración.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>La documentación de esta interface está generada del siguiente archivo:<ul>
+<li>/home/runner/work/dawazon-2.0/dawazon-2.0/dawazonBackend/Common/Cache/<a class="el" href="ICacheService_8cs.html">ICacheService.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

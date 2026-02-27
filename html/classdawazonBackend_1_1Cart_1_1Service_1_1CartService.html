@@ -1,0 +1,944 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FunkoApi: Referencia de la clase dawazonBackend.Cart.Service.CartService</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FunkoApi<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Ejemplo de api de funkos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacedawazonBackend.html">dawazonBackend</a></li><li class="navelem"><a class="el" href="namespacedawazonBackend_1_1Cart.html">Cart</a></li><li class="navelem"><a class="el" href="namespacedawazonBackend_1_1Cart_1_1Service.html">Service</a></li><li class="navelem"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html">CartService</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la clase dawazonBackend.Cart.Service.CartService</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementación del servicio de gestión de carritos de compra, ventas y pagos con Stripe.  
+ <a href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#details">Más...</a></p>
+<div class="dynheader">
+Diagrama de herencia de dawazonBackend.Cart.Service.CartService</div>
+<div class="dyncontent">
+<div class="center"><img src="classdawazonBackend_1_1Cart_1_1Service_1_1CartService__inherit__graph.png" border="0" usemap="#adawazonBackend_8Cart_8Service_8CartService_inherit__map" alt="Inheritance graph"/></div>
+<map name="adawazonBackend_8Cart_8Service_8CartService_inherit__map" id="adawazonBackend_8Cart_8Service_8CartService_inherit__map">
+<area shape="rect" title="Implementación del servicio de gestión de carritos de compra, ventas y pagos con Stripe." alt="" coords="5,79,228,119"/>
+<area shape="rect" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html" title="Interfaz para el servicio de gestión de carritos de compra y ventas." alt="" coords="66,5,167,31"/>
+<area shape="poly" title=" " alt="" coords="119,44,119,79,114,79,114,44"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">leyenda</a>]</span></center></div>
+<div class="dynheader">
+Diagrama de colaboración de dawazonBackend.Cart.Service.CartService:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdawazonBackend_1_1Cart_1_1Service_1_1CartService__coll__graph.png" border="0" usemap="#adawazonBackend_8Cart_8Service_8CartService_coll__map" alt="Collaboration graph"/></div>
+<map name="adawazonBackend_8Cart_8Service_8CartService_coll__map" id="adawazonBackend_8Cart_8Service_8CartService_coll__map">
+<area shape="rect" title="Implementación del servicio de gestión de carritos de compra, ventas y pagos con Stripe." alt="" coords="5,79,228,119"/>
+<area shape="rect" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html" title="Interfaz para el servicio de gestión de carritos de compra y ventas." alt="" coords="66,5,167,31"/>
+<area shape="poly" title=" " alt="" coords="119,44,119,79,114,79,114,44"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">leyenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a81e9a2510f6e95a016b02b8fd6974210" id="r_a81e9a2510f6e95a016b02b8fd6974210"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#a81e9a2510f6e95a016b02b8fd6974210">CartService</a> (<a class="el" href="interfacedawazonBackend_1_1Products_1_1Repository_1_1Productos_1_1IProductRepository.html">IProductRepository</a> productRepository, <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html">ICartRepository</a> cartRepository, UserManager&lt; <a class="el" href="classdawazonBackend_1_1Users_1_1Models_1_1User.html">User</a> &gt; userManager, <a class="el" href="interfacedawazonBackend_1_1Stripe_1_1IStripeService.html">IStripeService</a> stripeService, <a class="el" href="interfacedawazonBackend_1_1Common_1_1Mail_1_1IEmailService.html">IEmailService</a> mailService, ILogger&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html">CartService</a> &gt; logger)</td></tr>
+<tr class="memdesc:a81e9a2510f6e95a016b02b8fd6974210"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa una nueva instancia de CartService.  <br /></td></tr>
+<tr class="separator:a81e9a2510f6e95a016b02b8fd6974210"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bf9133666343e00c6bf62af187101bc" id="r_a3bf9133666343e00c6bf62af187101bc"><td class="memItemLeft" align="right" valign="top">async Task&lt; PageResponseDto&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Dto_1_1SaleLineDto.html">SaleLineDto</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#a3bf9133666343e00c6bf62af187101bc">FindAllSalesAsLinesAsync</a> (long? managerId, bool isAdmin, FilterDto filter)</td></tr>
+<tr class="memdesc:a3bf9133666343e00c6bf62af187101bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene todas las líneas de venta filtradas para administradores o gestores.  <br /></td></tr>
+<tr class="separator:a3bf9133666343e00c6bf62af187101bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a992198bff5424f1942fc3160e09df8" id="r_a0a992198bff5424f1942fc3160e09df8"><td class="memItemLeft" align="right" valign="top">async Task&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#a0a992198bff5424f1942fc3160e09df8">CalculateTotalEarningsAsync</a> (long? managerId, bool isAdmin)</td></tr>
+<tr class="memdesc:a0a992198bff5424f1942fc3160e09df8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula las ganancias totales totales para administradores o gestores.  <br /></td></tr>
+<tr class="separator:a0a992198bff5424f1942fc3160e09df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b20833c2c28fad8b35e2d9d43f3b1fa" id="r_a6b20833c2c28fad8b35e2d9d43f3b1fa"><td class="memItemLeft" align="right" valign="top">async Task&lt; PageResponseDto&lt; CartResponseDto &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#a6b20833c2c28fad8b35e2d9d43f3b1fa">FindAllAsync</a> (long? userId, bool purchased, FilterCartDto filter)</td></tr>
+<tr class="memdesc:a6b20833c2c28fad8b35e2d9d43f3b1fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca carritos filtrados por usuario y estado de compra.  <br /></td></tr>
+<tr class="separator:a6b20833c2c28fad8b35e2d9d43f3b1fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54d948a48e5a2ca6b42505d5a413cfec" id="r_a54d948a48e5a2ca6b42505d5a413cfec"><td class="memItemLeft" align="right" valign="top">async Task&lt; Result&lt; CartResponseDto, DomainError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#a54d948a48e5a2ca6b42505d5a413cfec">AddProductAsync</a> (string cartId, string productId)</td></tr>
+<tr class="memdesc:a54d948a48e5a2ca6b42505d5a413cfec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Añade un producto al carrito especificado.  <br /></td></tr>
+<tr class="separator:a54d948a48e5a2ca6b42505d5a413cfec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55477a4d4c2b8b8cb4e458a9117db717" id="r_a55477a4d4c2b8b8cb4e458a9117db717"><td class="memItemLeft" align="right" valign="top">async Task&lt; CartResponseDto &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#a55477a4d4c2b8b8cb4e458a9117db717">RemoveProductAsync</a> (string cartId, string productId)</td></tr>
+<tr class="memdesc:a55477a4d4c2b8b8cb4e458a9117db717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un producto del carrito.  <br /></td></tr>
+<tr class="separator:a55477a4d4c2b8b8cb4e458a9117db717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2194291c145a4879e0f36f0aaf3b4d1f" id="r_a2194291c145a4879e0f36f0aaf3b4d1f"><td class="memItemLeft" align="right" valign="top">async Task&lt; Result&lt; CartResponseDto, DomainError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#a2194291c145a4879e0f36f0aaf3b4d1f">GetByIdAsync</a> (string id)</td></tr>
+<tr class="memdesc:a2194291c145a4879e0f36f0aaf3b4d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene un carrito por su ID (devuelve el DTO).  <br /></td></tr>
+<tr class="separator:a2194291c145a4879e0f36f0aaf3b4d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84dad32336b3c05996ae0d17d0764864" id="r_a84dad32336b3c05996ae0d17d0764864"><td class="memItemLeft" align="right" valign="top">async Task&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a>?&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#a84dad32336b3c05996ae0d17d0764864">GetCartModelByIdAsync</a> (string id)</td></tr>
+<tr class="memdesc:a84dad32336b3c05996ae0d17d0764864"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el modelo de dominio completo de un carrito por su ID. Útil para operaciones que requieren la entidad (SaveAsync, SendConfirmationEmailAsync).  <br /></td></tr>
+<tr class="separator:a84dad32336b3c05996ae0d17d0764864"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f0d46ca7459f1f9725c2cd0c06b3ac1" id="r_a7f0d46ca7459f1f9725c2cd0c06b3ac1"><td class="memItemLeft" align="right" valign="top">async Task&lt; Result&lt; CartResponseDto, DomainError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#a7f0d46ca7459f1f9725c2cd0c06b3ac1">SaveAsync</a> (<a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a> entity)</td></tr>
+<tr class="memdesc:a7f0d46ca7459f1f9725c2cd0c06b3ac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda o actualiza una entidad de carrito.  <br /></td></tr>
+<tr class="separator:a7f0d46ca7459f1f9725c2cd0c06b3ac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3a6f6a11f7317bc8cc3d03185e63e0b" id="r_aa3a6f6a11f7317bc8cc3d03185e63e0b"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#aa3a6f6a11f7317bc8cc3d03185e63e0b">SendConfirmationEmailAsync</a> (<a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a> pedido)</td></tr>
+<tr class="memdesc:aa3a6f6a11f7317bc8cc3d03185e63e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envía un correo de confirmación de pedido al cliente.  <br /></td></tr>
+<tr class="separator:aa3a6f6a11f7317bc8cc3d03185e63e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16c65ac187fefac828648fa044d1878d" id="r_a16c65ac187fefac828648fa044d1878d"><td class="memItemLeft" align="right" valign="top">async Task&lt; Result&lt; CartResponseDto, DomainError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#a16c65ac187fefac828648fa044d1878d">UpdateStockWithValidationAsync</a> (string cartId, string productId, int quantity)</td></tr>
+<tr class="memdesc:a16c65ac187fefac828648fa044d1878d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza la cantidad de un producto en el carrito validando el stock.  <br /></td></tr>
+<tr class="separator:a16c65ac187fefac828648fa044d1878d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae838481f74a51a2223969720fd2f3fa0" id="r_ae838481f74a51a2223969720fd2f3fa0"><td class="memItemLeft" align="right" valign="top">async Task&lt; Result&lt; string, DomainError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#ae838481f74a51a2223969720fd2f3fa0">CheckoutAsync</a> (string id)</td></tr>
+<tr class="memdesc:ae838481f74a51a2223969720fd2f3fa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procesa el pago y finaliza la compra del carrito.  <br /></td></tr>
+<tr class="separator:ae838481f74a51a2223969720fd2f3fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba417a15dc11e25440f4f4b443190014" id="r_aba417a15dc11e25440f4f4b443190014"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#aba417a15dc11e25440f4f4b443190014">RestoreStockAsync</a> (string cartId)</td></tr>
+<tr class="memdesc:aba417a15dc11e25440f4f4b443190014"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restaura el stock de los productos de un carrito (ej. en caso de cancelación).  <br /></td></tr>
+<tr class="separator:aba417a15dc11e25440f4f4b443190014"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77b68ff85dd0a9d2dd8a70b910a9738a" id="r_a77b68ff85dd0a9d2dd8a70b910a9738a"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#a77b68ff85dd0a9d2dd8a70b910a9738a">DeleteByIdAsync</a> (string id)</td></tr>
+<tr class="memdesc:a77b68ff85dd0a9d2dd8a70b910a9738a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un carrito por su ID.  <br /></td></tr>
+<tr class="separator:a77b68ff85dd0a9d2dd8a70b910a9738a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d4645324312e8252b455694274ad7d8" id="r_a5d4645324312e8252b455694274ad7d8"><td class="memItemLeft" align="right" valign="top">async Task&lt; Result&lt; CartResponseDto, DomainError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#a5d4645324312e8252b455694274ad7d8">GetCartByUserIdAsync</a> (long userId)</td></tr>
+<tr class="memdesc:a5d4645324312e8252b455694274ad7d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el carrito activo (no comprado) de un usuario.  <br /></td></tr>
+<tr class="separator:a5d4645324312e8252b455694274ad7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94ddf97ef97e51c0de7f4869c7ba6b6a" id="r_a94ddf97ef97e51c0de7f4869c7ba6b6a"><td class="memItemLeft" align="right" valign="top">async Task&lt; DomainError?&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#a94ddf97ef97e51c0de7f4869c7ba6b6a">CancelSaleAsync</a> (string ventaId, string productId, long? managerId, bool isAdmin)</td></tr>
+<tr class="memdesc:a94ddf97ef97e51c0de7f4869c7ba6b6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancela una venta de un producto específico en un pedido.  <br /></td></tr>
+<tr class="separator:a94ddf97ef97e51c0de7f4869c7ba6b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1e5c7f6a87dc13b7d73570b28e89c9c" id="r_ab1e5c7f6a87dc13b7d73570b28e89c9c"><td class="memItemLeft" align="right" valign="top">async Task&lt; DomainError?&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#ab1e5c7f6a87dc13b7d73570b28e89c9c">UpdateSaleStatusAsync</a> (string ventaId, string productId, <a class="el" href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521">Status</a> newStatus, long? managerId, bool isAdmin)</td></tr>
+<tr class="memdesc:ab1e5c7f6a87dc13b7d73570b28e89c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza el estado de una venta.  <br /></td></tr>
+<tr class="separator:ab1e5c7f6a87dc13b7d73570b28e89c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47302c3692dfad5fc9236718cebf66f3" id="r_a47302c3692dfad5fc9236718cebf66f3"><td class="memItemLeft" align="right" valign="top">async Task&lt; Result&lt; int, DomainError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#a47302c3692dfad5fc9236718cebf66f3">GetNewSalesCountAsync</a> (long managerId, DateTime since)</td></tr>
+<tr class="memdesc:a47302c3692dfad5fc9236718cebf66f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cuenta las nuevas ventas de un gestor desde una fecha determinada.  <br /></td></tr>
+<tr class="separator:a47302c3692dfad5fc9236718cebf66f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accade54ca0f3fe6b31be52fe12035581" id="r_accade54ca0f3fe6b31be52fe12035581"><td class="memItemLeft" align="right" valign="top">async Task&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#accade54ca0f3fe6b31be52fe12035581">GetTotalSalesCountAsync</a> ()</td></tr>
+<tr class="memdesc:accade54ca0f3fe6b31be52fe12035581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el número total de ventas realizadas.  <br /></td></tr>
+<tr class="separator:accade54ca0f3fe6b31be52fe12035581"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e28b39fb8da051b4aacc16cf2c16e51" id="r_a8e28b39fb8da051b4aacc16cf2c16e51"><td class="memItemLeft" align="right" valign="top">async Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html#a8e28b39fb8da051b4aacc16cf2c16e51">CleanupExpiredCheckoutsAsync</a> (int expirationMinutes=5)</td></tr>
+<tr class="memdesc:a8e28b39fb8da051b4aacc16cf2c16e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limpia los carritos con checkout iniciado hace más de <em>expirationMinutes</em>  minutos restaurando el stock de sus productos y restableciendo el estado de checkout.  <br /></td></tr>
+<tr class="separator:a8e28b39fb8da051b4aacc16cf2c16e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Implementación del servicio de gestión de carritos de compra, ventas y pagos con Stripe. </p>
+</div><h2 class="groupheader">Documentación de constructores y destructores</h2>
+<a id="a81e9a2510f6e95a016b02b8fd6974210" name="a81e9a2510f6e95a016b02b8fd6974210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81e9a2510f6e95a016b02b8fd6974210">&#9670;&#160;</a></span>CartService()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">dawazonBackend.Cart.Service.CartService.CartService </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interfacedawazonBackend_1_1Products_1_1Repository_1_1Productos_1_1IProductRepository.html">IProductRepository</a>&#160;</td>
+          <td class="paramname"><em>productRepository</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html">ICartRepository</a>&#160;</td>
+          <td class="paramname"><em>cartRepository</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UserManager&lt; <a class="el" href="classdawazonBackend_1_1Users_1_1Models_1_1User.html">User</a> &gt;&#160;</td>
+          <td class="paramname"><em>userManager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfacedawazonBackend_1_1Stripe_1_1IStripeService.html">IStripeService</a>&#160;</td>
+          <td class="paramname"><em>stripeService</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfacedawazonBackend_1_1Common_1_1Mail_1_1IEmailService.html">IEmailService</a>&#160;</td>
+          <td class="paramname"><em>mailService</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ILogger&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html">CartService</a> &gt;&#160;</td>
+          <td class="paramname"><em>logger</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inicializa una nueva instancia de CartService. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones miembro</h2>
+<a id="a54d948a48e5a2ca6b42505d5a413cfec" name="a54d948a48e5a2ca6b42505d5a413cfec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54d948a48e5a2ca6b42505d5a413cfec">&#9670;&#160;</a></span>AddProductAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; Result&lt; CartResponseDto, DomainError &gt; &gt; dawazonBackend.Cart.Service.CartService.AddProductAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>cartId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>productId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Añade un producto al carrito especificado. </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#aafd9d42fb2c6e69cda4d7d413acecd5e">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="a0a992198bff5424f1942fc3160e09df8" name="a0a992198bff5424f1942fc3160e09df8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a992198bff5424f1942fc3160e09df8">&#9670;&#160;</a></span>CalculateTotalEarningsAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; double &gt; dawazonBackend.Cart.Service.CartService.CalculateTotalEarningsAsync </td>
+          <td>(</td>
+          <td class="paramtype">long?&#160;</td>
+          <td class="paramname"><em>managerId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isAdmin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calcula las ganancias totales totales para administradores o gestores. </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#a2642b5b052e8bae5fdbb481c74132151">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="a94ddf97ef97e51c0de7f4869c7ba6b6a" name="a94ddf97ef97e51c0de7f4869c7ba6b6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94ddf97ef97e51c0de7f4869c7ba6b6a">&#9670;&#160;</a></span>CancelSaleAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; DomainError?&gt; dawazonBackend.Cart.Service.CartService.CancelSaleAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>ventaId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>productId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long?&#160;</td>
+          <td class="paramname"><em>managerId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isAdmin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cancela una venta de un producto específico en un pedido. </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#a183df60d5ce94aec5bbed17baa1d0ac7">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="ae838481f74a51a2223969720fd2f3fa0" name="ae838481f74a51a2223969720fd2f3fa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae838481f74a51a2223969720fd2f3fa0">&#9670;&#160;</a></span>CheckoutAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; Result&lt; string, DomainError &gt; &gt; dawazonBackend.Cart.Service.CartService.CheckoutAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Procesa el pago y finaliza la compra del carrito. </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#a9772379ad2ca19c70509bc21ada2a721">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="a8e28b39fb8da051b4aacc16cf2c16e51" name="a8e28b39fb8da051b4aacc16cf2c16e51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e28b39fb8da051b4aacc16cf2c16e51">&#9670;&#160;</a></span>CleanupExpiredCheckoutsAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task dawazonBackend.Cart.Service.CartService.CleanupExpiredCheckoutsAsync </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>expirationMinutes</em> = <code>5</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Limpia los carritos con checkout iniciado hace más de <em>expirationMinutes</em>  minutos restaurando el stock de sus productos y restableciendo el estado de checkout. </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#a44dabac983f6bf548ea066207f3d0d24">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="a77b68ff85dd0a9d2dd8a70b910a9738a" name="a77b68ff85dd0a9d2dd8a70b910a9738a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77b68ff85dd0a9d2dd8a70b910a9738a">&#9670;&#160;</a></span>DeleteByIdAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task dawazonBackend.Cart.Service.CartService.DeleteByIdAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Elimina un carrito por su ID. </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#a6ee92427d60cf670bc663522a604014a">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="a6b20833c2c28fad8b35e2d9d43f3b1fa" name="a6b20833c2c28fad8b35e2d9d43f3b1fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b20833c2c28fad8b35e2d9d43f3b1fa">&#9670;&#160;</a></span>FindAllAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; PageResponseDto&lt; CartResponseDto &gt; &gt; dawazonBackend.Cart.Service.CartService.FindAllAsync </td>
+          <td>(</td>
+          <td class="paramtype">long?&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>purchased</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FilterCartDto&#160;</td>
+          <td class="paramname"><em>filter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Busca carritos filtrados por usuario y estado de compra. </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#a35e38b4b251665d6a36dda9b0a0e7358">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="a3bf9133666343e00c6bf62af187101bc" name="a3bf9133666343e00c6bf62af187101bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bf9133666343e00c6bf62af187101bc">&#9670;&#160;</a></span>FindAllSalesAsLinesAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; PageResponseDto&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Dto_1_1SaleLineDto.html">SaleLineDto</a> &gt; &gt; dawazonBackend.Cart.Service.CartService.FindAllSalesAsLinesAsync </td>
+          <td>(</td>
+          <td class="paramtype">long?&#160;</td>
+          <td class="paramname"><em>managerId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isAdmin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FilterDto&#160;</td>
+          <td class="paramname"><em>filter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtiene todas las líneas de venta filtradas para administradores o gestores. </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#a592da27c12492713f447c4a0495b1855">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="a2194291c145a4879e0f36f0aaf3b4d1f" name="a2194291c145a4879e0f36f0aaf3b4d1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2194291c145a4879e0f36f0aaf3b4d1f">&#9670;&#160;</a></span>GetByIdAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; Result&lt; CartResponseDto, DomainError &gt; &gt; dawazonBackend.Cart.Service.CartService.GetByIdAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtiene un carrito por su ID (devuelve el DTO). </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#a2e87c0c33a84682736b60215e2d9cad5">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="a5d4645324312e8252b455694274ad7d8" name="a5d4645324312e8252b455694274ad7d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d4645324312e8252b455694274ad7d8">&#9670;&#160;</a></span>GetCartByUserIdAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; Result&lt; CartResponseDto, DomainError &gt; &gt; dawazonBackend.Cart.Service.CartService.GetCartByUserIdAsync </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>userId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtiene el carrito activo (no comprado) de un usuario. </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#a99774d47c6262a307142f5ee01b85834">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="a84dad32336b3c05996ae0d17d0764864" name="a84dad32336b3c05996ae0d17d0764864"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84dad32336b3c05996ae0d17d0764864">&#9670;&#160;</a></span>GetCartModelByIdAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a>?&gt; dawazonBackend.Cart.Service.CartService.GetCartModelByIdAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el modelo de dominio completo de un carrito por su ID. Útil para operaciones que requieren la entidad (SaveAsync, SendConfirmationEmailAsync). </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#a7ef023b3720d1b1aff22e72b41337302">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="a47302c3692dfad5fc9236718cebf66f3" name="a47302c3692dfad5fc9236718cebf66f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47302c3692dfad5fc9236718cebf66f3">&#9670;&#160;</a></span>GetNewSalesCountAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; Result&lt; int, DomainError &gt; &gt; dawazonBackend.Cart.Service.CartService.GetNewSalesCountAsync </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>managerId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DateTime&#160;</td>
+          <td class="paramname"><em>since</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cuenta las nuevas ventas de un gestor desde una fecha determinada. </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#a95b40a42ffbc6cdc42449cabac9b6dab">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="accade54ca0f3fe6b31be52fe12035581" name="accade54ca0f3fe6b31be52fe12035581"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accade54ca0f3fe6b31be52fe12035581">&#9670;&#160;</a></span>GetTotalSalesCountAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; int &gt; dawazonBackend.Cart.Service.CartService.GetTotalSalesCountAsync </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtiene el número total de ventas realizadas. </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#adae253e8b5975c86499ebfc6d12759e3">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="a55477a4d4c2b8b8cb4e458a9117db717" name="a55477a4d4c2b8b8cb4e458a9117db717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55477a4d4c2b8b8cb4e458a9117db717">&#9670;&#160;</a></span>RemoveProductAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; CartResponseDto &gt; dawazonBackend.Cart.Service.CartService.RemoveProductAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>cartId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>productId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Elimina un producto del carrito. </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#a58891c4303a967b5e3e43ed72176aae5">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="aba417a15dc11e25440f4f4b443190014" name="aba417a15dc11e25440f4f4b443190014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba417a15dc11e25440f4f4b443190014">&#9670;&#160;</a></span>RestoreStockAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task dawazonBackend.Cart.Service.CartService.RestoreStockAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>cartId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Restaura el stock de los productos de un carrito (ej. en caso de cancelación). </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#a4ffcacc35a565a1af1f57fb0de00ac40">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="a7f0d46ca7459f1f9725c2cd0c06b3ac1" name="a7f0d46ca7459f1f9725c2cd0c06b3ac1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f0d46ca7459f1f9725c2cd0c06b3ac1">&#9670;&#160;</a></span>SaveAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; Result&lt; CartResponseDto, DomainError &gt; &gt; dawazonBackend.Cart.Service.CartService.SaveAsync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models::Cart</a>&#160;</td>
+          <td class="paramname"><em>entity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Guarda o actualiza una entidad de carrito. </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#ad817a4e45f1d48412a6cc75eee675a3d">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="aa3a6f6a11f7317bc8cc3d03185e63e0b" name="aa3a6f6a11f7317bc8cc3d03185e63e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3a6f6a11f7317bc8cc3d03185e63e0b">&#9670;&#160;</a></span>SendConfirmationEmailAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task dawazonBackend.Cart.Service.CartService.SendConfirmationEmailAsync </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models::Cart</a>&#160;</td>
+          <td class="paramname"><em>pedido</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Envía un correo de confirmación de pedido al cliente. </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#a973b92166d2f7fd136303787b9ffbc9b">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="ab1e5c7f6a87dc13b7d73570b28e89c9c" name="ab1e5c7f6a87dc13b7d73570b28e89c9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1e5c7f6a87dc13b7d73570b28e89c9c">&#9670;&#160;</a></span>UpdateSaleStatusAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; DomainError?&gt; dawazonBackend.Cart.Service.CartService.UpdateSaleStatusAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>ventaId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>productId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521">Status</a>&#160;</td>
+          <td class="paramname"><em>newStatus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long?&#160;</td>
+          <td class="paramname"><em>managerId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isAdmin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Actualiza el estado de una venta. </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#a8327f3e832d2c4c8f6b6f355ed7bb073">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<a id="a16c65ac187fefac828648fa044d1878d" name="a16c65ac187fefac828648fa044d1878d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16c65ac187fefac828648fa044d1878d">&#9670;&#160;</a></span>UpdateStockWithValidationAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">async Task&lt; Result&lt; CartResponseDto, DomainError &gt; &gt; dawazonBackend.Cart.Service.CartService.UpdateStockWithValidationAsync </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>cartId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>productId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>quantity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Actualiza la cantidad de un producto en el carrito validando el stock. </p>
+
+<p>Implementa <a class="el" href="interfacedawazonBackend_1_1Cart_1_1Service_1_1ICartService.html#a7f05fb58de77a33fe06e192c652477ab">dawazonBackend.Cart.Service.ICartService</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<li>/home/runner/work/dawazon-2.0/dawazon-2.0/dawazonBackend/Cart/Service/<a class="el" href="CartService_8cs.html">CartService.cs</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

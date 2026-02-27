@@ -1,0 +1,17 @@
+<map id="dawazonPlayWrite.BaseTest" name="dawazonPlayWrite.BaseTest">
+<area shape="rect" id="Node000001" title=" " alt="" coords="132,133,337,159"/>
+<area shape="rect" id="Node000003" href="$classdawazonPlayWrite_1_1AdminTests.html" title=" " alt="" coords="385,5,608,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="259,122,314,80,348,58,384,40,417,28,419,33,386,44,351,63,317,84,262,126"/>
+<area shape="rect" id="Node000004" href="$classdawazonPlayWrite_1_1AuthTests.html" title=" " alt="" coords="391,55,602,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="279,126,385,89,429,78,430,83,386,94,281,131"/>
+<area shape="rect" id="Node000005" href="$classdawazonPlayWrite_1_1CartTests.html" title=" " alt="" coords="393,104,600,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="351,130,393,126,393,131,351,136"/>
+<area shape="rect" id="Node000006" href="$classdawazonPlayWrite_1_1ManagerTests.html" title=" " alt="" coords="395,154,599,194"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="351,156,395,160,394,166,350,161"/>
+<area shape="rect" id="Node000007" href="$classdawazonPlayWrite_1_1ProductsTests.html" title=" " alt="" coords="395,218,598,258"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="279,162,386,203,423,215,421,220,384,209,277,167"/>
+<area shape="rect" id="Node000008" href="$classdawazonPlayWrite_1_1UserTests.html" title=" " alt="" coords="391,283,602,308"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="258,167,313,218,348,245,386,268,420,280,418,285,384,272,345,249,310,222,255,170"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,133,84,159"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,143,132,143,132,149,98,149"/>
+</map>

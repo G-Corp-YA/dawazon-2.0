@@ -1,0 +1,5 @@
+<map id="dawazonBackend.Cart.Service.ICartService" name="dawazonBackend.Cart.Service.ICartService">
+<area shape="rect" id="Node000001" title="Interfaz para el servicio de gestión de carritos de compra y ventas." alt="" coords="5,5,228,45"/>
+<area shape="rect" id="Node000002" href="$classdawazonBackend_1_1Cart_1_1Service_1_1CartService.html" title="Implementación del servicio de gestión de carritos de compra, ventas y pagos con Stripe." alt="" coords="5,93,228,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,59,119,93,114,93,114,59"/>
+</map>

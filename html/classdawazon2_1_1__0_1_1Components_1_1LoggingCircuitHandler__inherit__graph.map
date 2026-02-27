@@ -1,0 +1,5 @@
+<map id="dawazon2._0.Components.LoggingCircuitHandler" name="dawazon2._0.Components.LoggingCircuitHandler">
+<area shape="rect" id="Node000001" title="Manejador de circuitos Blazor Server. Loguea cada evento del ciclo de vida del circuito para depuraci..." alt="" coords="5,79,253,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="72,5,187,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,44,132,79,127,79,127,44"/>
+</map>

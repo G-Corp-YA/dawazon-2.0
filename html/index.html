@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FunkoApi: 🛒 Dawazon 2.0</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FunkoApi<span id="projectnumber">&#160;0.1</span>
+   </div>
+   <div id="projectbrief">Ejemplo de api de funkos</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">🛒 Dawazon 2.0 </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__2home_2runner_2work_2dawazon-2_80_2dawazon-2_80_2README"></a> </p><blockquote class="doxtable">
+<p>&zwj;Plataforma de e-commerce inspirada en Amazon, construida con una arquitectura moderna de microservicios utilizando **.NET 10**, <b>Blazor</b> y <b>Docker</b>. </p>
+</blockquote>
+<p><a href="https://dotnet.microsoft.com/"><img src="https://img.shields.io/badge/.NET-10.0-512BD4?style=flat&amp;logo=dotnet" alt=".NET" class="inline"/></a> <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-Compose-2496ED?style=flat&amp;logo=docker" alt="Docker" class="inline"/></a> <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" style="pointer-events: none;" class="inline"/></a> <a href="https://playwright.dev/"><img src="https://img.shields.io/badge/E2E-Playwright-45BA4B?style=flat&amp;logo=playwright" alt="Playwright" class="inline"/></a> <a href="https://nunit.org/"><img src="https://img.shields.io/badge/Tests-NUnit-brightgreen?style=flat" alt="NUnit" class="inline"/></a></p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md2"></a>
+📋 Tabla de Contenidos</h1>
+<ul>
+<li>Descripción</li>
+<li>Tecnologías</li>
+<li>Arquitectura</li>
+<li>Estructura del Proyecto</li>
+<li>Requisitos Previos</li>
+<li>Instalación y Ejecución<ul>
+<li>Con Docker Compose</li>
+<li>Ejecución Local</li>
+</ul>
+</li>
+<li>Testing</li>
+<li>API Reference</li>
+<li>Licencia</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md4"></a>
+📖 Descripción</h1>
+<p><b>Dawazon 2.0</b> es la segunda iteración de una plataforma de comercio electrónico full-stack. Cuenta con un frontend en <b>Blazor</b>, un backend <b>ASP.NET Core Web API</b> con soporte <b>OpenAPI</b>, pruebas unitarias con <b>NUnit</b> y pruebas end-to-end (E2E) con <b>Playwright</b>. Todo el entorno está completamente containerizado con <b>Docker</b>.</p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md6"></a>
+🛠 Tecnologías</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Capa   </th><th class="markdownTableHeadNone">Tecnología   </th><th class="markdownTableHeadNone">Versión    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Frontend   </td><td class="markdownTableBodyNone">ASP.NET Core / Blazor   </td><td class="markdownTableBodyNone">.NET 10    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Backend   </td><td class="markdownTableBodyNone">ASP.NET Core Web API   </td><td class="markdownTableBodyNone">.NET 10    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">API Docs   </td><td class="markdownTableBodyNone">Microsoft.AspNetCore.OpenApi   </td><td class="markdownTableBodyNone">10.0.2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Pruebas unitarias   </td><td class="markdownTableBodyNone">NUnit + NUnit3TestAdapter   </td><td class="markdownTableBodyNone">4.3.2    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Pruebas E2E   </td><td class="markdownTableBodyNone">Microsoft.Playwright.NUnit   </td><td class="markdownTableBodyNone">1.52.0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Cobertura   </td><td class="markdownTableBodyNone">coverlet.collector   </td><td class="markdownTableBodyNone">6.0.4    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Containerización   </td><td class="markdownTableBodyNone">Docker + Docker Compose   </td><td class="markdownTableBodyNone">—   </td></tr>
+</table>
+<hr  />
+<h1><a class="anchor" id="autotoc_md8"></a>
+🏗 Arquitectura</h1>
+<p>El proyecto sigue una arquitectura de <b>microservicios</b> con dos servicios principales containerizados:</p>
+<div class="fragment"><div class="line">┌─────────────────────────────────────────────────────┐</div>
+<div class="line">│                   Docker Compose                    │</div>
+<div class="line">│                                                     │</div>
+<div class="line">│  ┌──────────────────┐    ┌───────────────────────┐  │</div>
+<div class="line">│  │   dawazon2.0     │    │   dawazonbackend      │  │</div>
+<div class="line">│  │  (Frontend)      │◄──►│   (REST API)          │  │</div>
+<div class="line">│  │  Blazor / .NET   │    │  ASP.NET Core Web API │  │</div>
+<div class="line">│  │  Port: 8080/8081 │    │  Port: 8080/8081      │  │</div>
+<div class="line">│  └──────────────────┘    └───────────────────────┘  │</div>
+<div class="line">└─────────────────────────────────────────────────────┘</div>
+</div><!-- fragment --><hr  />
+<h1><a class="anchor" id="autotoc_md10"></a>
+📁 Estructura del Proyecto</h1>
+<div class="fragment"><div class="line">dawazon-2.0/</div>
+<div class="line">│</div>
+<div class="line">├── 📄 compose.yaml                    # Orquestación Docker Compose</div>
+<div class="line">├── 📄 dawazon2.0.slnx                 # Solution file de Visual Studio</div>
+<div class="line">├── 📄 .dockerignore                   # Exclusiones para Docker</div>
+<div class="line">├── 📄 .gitignore                      # Exclusiones para Git</div>
+<div class="line">├── 📄 LICENSE                         # Licencia MIT</div>
+<div class="line">│</div>
+<div class="line">├── 📁 dawazon2.0/                     # Proyecto Frontend (Blazor)</div>
+<div class="line">│   ├── 📄 Dockerfile                  # Imagen Docker del frontend</div>
+<div class="line">│   ├── 📄 Program.cs                  # Punto de entrada de la aplicación</div>
+<div class="line">│   ├── 📄 dawazon2.0.csproj           # Configuración del proyecto</div>
+<div class="line">│   ├── 📄 appsettings.json            # Configuración de la aplicación</div>
+<div class="line">│   ├── 📄 appsettings.Development.json# Configuración de desarrollo</div>
+<div class="line">│   ├── 📁 Pages/                      # Páginas Razor/Blazor</div>
+<div class="line">│   ├── 📁 Properties/                 # Propiedades del proyecto (launchSettings)</div>
+<div class="line">│   └── 📁 wwwroot/                    # Archivos estáticos (CSS, JS, imágenes)</div>
+<div class="line">│</div>
+<div class="line">���── 📁 dawazonBackend/                 # Proyecto Backend (Web API)</div>
+<div class="line">│   ├── 📄 Dockerfile                  # Imagen Docker del backend</div>
+<div class="line">│   ├── 📄 Program.cs                  # Punto de entrada y configuración de servicios</div>
+<div class="line">│   ├── 📄 dawazonBackend.csproj       # Configuración del proyecto</div>
+<div class="line">│   ├── 📄 dawazonBackend.http         # Archivo de pruebas HTTP (REST Client)</div>
+<div class="line">│   ├── 📄 appsettings.json            # Configuración de la aplicación</div>
+<div class="line">│   ├── 📄 appsettings.Development.json# Configuración de desarrollo</div>
+<div class="line">│   └── 📁 Controllers/                # Controladores de la API</div>
+<div class="line">│</div>
+<div class="line">├── 📁 dawazonTest/                    # Pruebas Unitarias (NUnit)</div>
+<div class="line">│   ├── 📄 UnitTest1.cs                # Pruebas unitarias</div>
+<div class="line">│   └── 📄 dawazonTest.csproj          # Configuración del proyecto de pruebas</div>
+<div class="line">│</div>
+<div class="line">└── 📁 dawazonPlayWrite/               # Pruebas E2E (Playwright + NUnit)</div>
+<div class="line">    ├── 📄 UnitTest1.cs                # Pruebas end-to-end</div>
+<div class="line">    └── 📄 dawazonPlayWrite.csproj     # Configuración del proyecto E2E</div>
+</div><!-- fragment --><hr  />
+<h1><a class="anchor" id="autotoc_md12"></a>
+✅ Requisitos Previos</h1>
+<p>Asegúrate de tener instalado:</p>
+<ul>
+<li><a href="https://dotnet.microsoft.com/download/dotnet/10.0">.NET 10 SDK</a></li>
+<li><a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> (para ejecución con Docker)</li>
+<li><a href="https://git-scm.com/">Git</a></li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md14"></a>
+🚀 Instalación y Ejecución</h1>
+<h2><a class="anchor" id="autotoc_md15"></a>
+Clonar el repositorio</h2>
+<div class="fragment"><div class="line">git clone https://github.com/Aragorn7372/dawazon-2.0.git</div>
+<div class="line">cd dawazon-2.0</div>
+</div><!-- fragment --><hr  />
+<h2><a class="anchor" id="autotoc_md17"></a>
+Con Docker Compose (Recomendado)</h2>
+<p>Levanta todos los servicios con un solo comando:</p>
+<div class="fragment"><div class="line">docker compose up --build</div>
+</div><!-- fragment --><p>Esto construirá y ejecutará:</p><ul>
+<li><b>Frontend</b> → <code><a href="http://localhost:8080">http://localhost:8080</a></code></li>
+<li><b>Backend API</b> → <code><a href="http://localhost:5080">http://localhost:5080</a></code></li>
+</ul>
+<p>Para detener los servicios:</p>
+<div class="fragment"><div class="line">docker compose down</div>
+</div><!-- fragment --><hr  />
+<h2><a class="anchor" id="autotoc_md19"></a>
+Ejecución Local</h2>
+<h3><a class="anchor" id="autotoc_md20"></a>
+Backend</h3>
+<div class="fragment"><div class="line">cd dawazonBackend</div>
+<div class="line">dotnet restore</div>
+<div class="line">dotnet run</div>
+</div><!-- fragment --><p>El backend estará disponible en: <code><a href="http://localhost:5080">http://localhost:5080</a></code></p>
+<h3><a class="anchor" id="autotoc_md21"></a>
+Frontend</h3>
+<div class="fragment"><div class="line">cd dawazon2.0</div>
+<div class="line">dotnet restore</div>
+<div class="line">dotnet run</div>
+</div><!-- fragment --><p>El frontend estará disponible en: <code><a href="http://localhost:PORT">http://localhost:PORT</a></code> (ver <code>Properties/launchSettings.json</code>)</p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md23"></a>
+🧪 Testing</h1>
+<h2><a class="anchor" id="autotoc_md24"></a>
+Pruebas Unitarias (NUnit)</h2>
+<div class="fragment"><div class="line">cd dawazonTest</div>
+<div class="line">dotnet test</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md25"></a>
+Pruebas E2E (Playwright)</h2>
+<p>Antes de ejecutar las pruebas E2E, instala los navegadores de Playwright:</p>
+<div class="fragment"><div class="line">cd dawazonPlayWrite</div>
+<div class="line">dotnet build</div>
+<div class="line">pwsh bin/Debug/net10.0/playwright.ps1 install</div>
+<div class="line">dotnet test</div>
+</div><!-- fragment --><blockquote class="doxtable">
+<p>&zwj;<b>Nota:</b> Las pruebas E2E requieren PowerShell (<code>pwsh</code>) para la instalación de navegadores. </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md26"></a>
+&lt;/blockquote&gt;</h1>
+<h1><a class="anchor" id="autotoc_md27"></a>
+📡 API Reference</h1>
+<p>El backend expone una API REST documentada con <b>OpenAPI</b>. En entorno de desarrollo, la documentación interactiva está disponible en:</p>
+<div class="fragment"><div class="line">http://localhost:5080/openapi</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md28"></a>
+Endpoints disponibles</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Método   </th><th class="markdownTableHeadNone">Endpoint   </th><th class="markdownTableHeadNone">Descripción    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>GET</code>   </td><td class="markdownTableBodyNone"><code>/weatherforecast</code>   </td><td class="markdownTableBodyNone">Endpoint de ejemplo (placeholder)   </td></tr>
+</table>
+<blockquote class="doxtable">
+<p>&zwj;Los endpoints de productos, usuarios y pedidos se irán añadiendo en futuras iteraciones. </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md29"></a>
+&lt;/blockquote&gt;</h1>
+<h1><a class="anchor" id="autotoc_md30"></a>
+🤝 Contribución</h1>
+<p>Las contribuciones son bienvenidas. Por favor:</p>
+<ol type="1">
+<li>Haz un <b>fork</b> del proyecto.</li>
+<li>Crea una rama con tu feature: <code>git checkout -b feature/nueva-funcionalidad</code></li>
+<li>Haz commit de tus cambios: &lsquo;git commit -m 'feat: añadir nueva funcionalidad&rsquo;<code></code></li>
+<li><code>Haz push a la rama:</code>git push origin feature/nueva-funcionalidad`</li>
+<li>Abre un <b>Pull Request</b>.</li>
+</ol>
+<hr  />
+<h1><a class="anchor" id="autotoc_md32"></a>
+📄 Licencia</h1>
+<p>Este proyecto está licenciado bajo la <a href="./LICENSE">MIT License</a>.</p>
+<hr  />
+<div align="center"> <sub>Desarrollado con ❤️ por <a href="https://github.com/Aragorn7372">Aragorn7372</a></sub> </div> </div></div><!-- PageDoc -->
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

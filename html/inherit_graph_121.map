@@ -1,0 +1,9 @@
+<map id="Gráfico de jerarquía de clases" name="Gráfico de jerarquía de clases">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,55,99,80"/>
+<area shape="rect" id="Node000001" href="$classdawazon2_1_1__0_1_1Pages_1_1ErrorModel.html" title=" " alt="" coords="149,5,373,31"/>
+<area shape="poly" id="edge10_Node000000_Node000001" title=" " alt="" coords="111,48,146,39,196,28,197,33,147,45,112,54"/>
+<area shape="rect" id="Node000002" href="$classdawazon2_1_1__0_1_1Pages_1_1IndexModel.html" title=" " alt="" coords="147,55,376,80"/>
+<area shape="poly" id="edge11_Node000000_Node000002" title=" " alt="" coords="112,65,147,65,147,70,112,70"/>
+<area shape="rect" id="Node000003" href="$classdawazon2_1_1__0_1_1Pages_1_1PrivacyModel.html" title=" " alt="" coords="161,105,362,145"/>
+<area shape="poly" id="edge12_Node000000_Node000003" title=" " alt="" coords="113,81,188,102,187,107,111,86"/>
+</map>

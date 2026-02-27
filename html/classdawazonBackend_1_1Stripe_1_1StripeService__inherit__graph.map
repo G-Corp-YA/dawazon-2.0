@@ -1,0 +1,5 @@
+<map id="dawazonBackend.Stripe.StripeService" name="dawazonBackend.Stripe.StripeService">
+<area shape="rect" id="Node000001" title="Servicio para gestionar la integración con la pasarela de pagos Stripe." alt="" coords="5,79,224,119"/>
+<area shape="rect" id="Node000002" href="$interfacedawazonBackend_1_1Stripe_1_1IStripeService.html" title="Interfaz para el servicio de integración con Stripe." alt="" coords="59,5,171,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,44,117,79,112,79,112,44"/>
+</map>
