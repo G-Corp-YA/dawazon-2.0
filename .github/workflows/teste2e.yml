@@ -42,12 +42,6 @@ jobs:
           dotnet test ./dawazonTest/dawazonTest.csproj \
             --configuration Release \
             --logger "trx;LogFileName=UnitTestResults/UnitTestResults.trx"
-      - name: Upload Unit Test Results
-        uses: actions/upload-artifact@v4
-        if: always() && github.ref == 'refs/heads/main'
-        with:
-          name: unit-test-results
-          path: UnitTestResults
 
   bruno-tests:
     name: Bruno API Tests
@@ -109,13 +103,6 @@ jobs:
           cd dawazonBrunoTest
           mkdir -p reports
           bru run --output reports --env Local --format json
-
-      - name: Upload Bruno Results
-        uses: actions/upload-artifact@v4
-        if: always() && github.ref == 'refs/heads/main'
-        with:
-          name: bruno-test-results
-          path: dawazonBrunoTest/reports/**/*.json
 
       - name: Stop server
         if: always()
@@ -195,17 +182,3 @@ jobs:
             kill $SERVER_PID 2>/dev/null || true
           fi
 
-      - name: Upload Playwright screenshots on failure
-        if: failure() && github.ref == 'refs/heads/main'
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-screenshots
-          path: dawazonPlayWrite/TestScreenshots/
-          retention-days: 7
-
-      - name: Upload E2E Test Results
-        uses: actions/upload-artifact@v4
-        if: always() && github.ref == 'refs/heads/main'
-        with:
-          name: e2e-test-results
-          path: E2ETestResults
