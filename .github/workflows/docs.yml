@@ -6,6 +6,10 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   build:
     name: Build Project
@@ -247,3 +251,7 @@ jobs:
           folder: generated
           branch: gh-pages
           token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request: true
+          pull-request-title: 'Deploy Documentation & Test Reports'
+          pull-request-body: 'Automated deployment of documentation and test reports'
+          pull-request-base: main
