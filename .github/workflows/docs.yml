@@ -212,36 +212,40 @@ jobs:
       - name: Copy Doxygen output to generated
         run: cp -r docs/html generated/
 
+      - name: Generate Test Summary
+        run: |
+          echo "## Test Results Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          echo "### Unit Tests" >> $GITHUB_STEP_SUMMARY
+          if [ -f "test-results/unit-test-results/UnitTestResults.trx" ]; then
+            echo "Unit tests completed. View detailed results in the artifact." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "No unit test results found" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Bruno API Tests" >> $GITHUB_STEP_SUMMARY
+          if [ -d "test-results/bruno-test-results" ]; then
+            echo "Bruno API tests completed. View detailed results in the artifact." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "No Bruno test results found" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Playwright E2E Tests" >> $GITHUB_STEP_SUMMARY
+          if [ -f "test-results/playwright-test-results/PlaywrightResults.trx" ]; then
+            echo "Playwright E2E tests completed. View detailed results in the artifact." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "No Playwright test results found" >> $GITHUB_STEP_SUMMARY
+          fi
+
       - name: Copy Unit Test Results
         run: |
           mkdir -p generated/unit-tests
           if [ -d "test-results/unit-test-results" ]; then
             cp -r test-results/unit-test-results/* generated/unit-tests/ 2>/dev/null || true
           fi
-
-      - name: Generate Unit Tests HTML Report
-        run: |
-          cat > generated/unit-tests/index.html << 'HTMLEOF'
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <title>Unit Tests Report</title>
-            <style>
-              body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
-              h1 { color: #333; }
-              .result { padding: 10px; margin: 10px 0; border-radius: 4px; }
-              .pass { background: #d4edda; color: #155724; }
-              .fail { background: #f8d7da; color: #721c24; }
-            </style>
-          </head>
-          <body>
-            <h1>Unit Tests Report</h1>
-            <div class="result pass">Unit tests completed. Check TRX files for details.</div>
-            <p><small>Generated: </small></p>
-          </body>
-          </html>
-          HTMLEOF
-          echo -n "$(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> generated/unit-tests/index.html
 
       - name: Copy Bruno Test Results
         run: |
@@ -250,29 +254,6 @@ jobs:
             cp -r test-results/bruno-test-results/* generated/bruno-tests/ 2>/dev/null || true
           fi
 
-      - name: Generate Bruno Tests HTML Report
-        run: |
-          cat > generated/bruno-tests/index.html << 'HTMLEOF'
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <title>Bruno API Tests Report</title>
-            <style>
-              body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
-              h1 { color: #333; }
-              .result { padding: 10px; margin: 10px 0; border-radius: 4px; }
-              .pass { background: #d4edda; color: #155724; }
-            </style>
-          </head>
-          <body>
-            <h1>Bruno API Tests Report</h1>
-            <div class="result pass">Bruno API tests completed. Check JSON results for details.</div>
-            <p><small>Generated: </small></p>
-          </body>
-          </html>
-          HTMLEOF
-          echo -n "$(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> generated/bruno-tests/index.html
-
       - name: Copy Playwright Test Results
         run: |
           mkdir -p generated/playwright-tests
@@ -280,30 +261,7 @@ jobs:
             cp -r test-results/playwright-test-results/* generated/playwright-tests/ 2>/dev/null || true
           fi
 
-      - name: Generate Playwright Tests HTML Report
-        run: |
-          cat > generated/playwright-tests/index.html << 'HTMLEOF'
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <title>Playwright E2E Tests Report</title>
-            <style>
-              body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
-              h1 { color: #333; }
-              .result { padding: 10px; margin: 10px 0; border-radius: 4px; }
-              .pass { background: #d4edda; color: #155724; }
-            </style>
-          </head>
-          <body>
-            <h1>Playwright E2E Tests Report</h1>
-            <div class="result pass">Playwright E2E tests completed. Check TRX files for details.</div>
-            <p><small>Generated: </small></p>
-          </body>
-          </html>
-          HTMLEOF
-          echo -n "$(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> generated/playwright-tests/index.html
-
-      - name: Create index.html with links to all reports
+      - name: Create simple index.html
         run: |
           cat > generated/index.html << 'HTMLEOF'
           <!DOCTYPE html>
@@ -325,11 +283,11 @@ jobs:
               <p><a href="html/index.html">Browse Doxygen API Documentation</a></p>
             </div>
             <div class="card">
-              <h2>Test Reports</h2>
+              <h2>Test Results (Artifacts)</h2>
               <ul>
-                <li><a href="unit-tests/index.html">Unit Tests Report</a></li>
-                <li><a href="bruno-tests/index.html">Bruno API Tests Report</a></li>
-                <li><a href="playwright-tests/index.html">Playwright E2E Tests Report</a></li>
+                <li><a href="unit-tests/">Unit Tests Results</a></li>
+                <li><a href="bruno-tests/">Bruno API Tests Results</a></li>
+                <li><a href="playwright-tests/">Playwright E2E Tests Results</a></li>
               </ul>
             </div>
             <p><small>Generated: HTMLEOF
