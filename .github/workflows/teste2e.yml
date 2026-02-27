@@ -101,8 +101,7 @@ jobs:
       - name: Run Bruno Tests
         run: |
           cd dawazonBrunoTest
-          mkdir -p reports
-          bru run --output reports --env Local --format json
+          bru run --env Local --format json
 
       - name: Stop server
         if: always()

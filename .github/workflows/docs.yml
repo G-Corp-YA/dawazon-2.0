@@ -37,11 +37,6 @@ jobs:
           dotnet test ./dawazonTest/dawazonTest.csproj \
             --configuration Release \
             --logger "trx;LogFileName=UnitTestResults/UnitTestResults.trx"
-      - name: Upload Unit Test Results
-        uses: actions/upload-artifact@v4
-        with:
-          name: unit-test-results
-          path: UnitTestResults
 
   bruno-tests:
     name: Bruno API Tests
@@ -91,13 +86,8 @@ jobs:
       - name: Run Bruno Tests
         run: |
           cd dawazonBrunoTest
-          mkdir -p reports
-          bru run --output reports --format json
-      - name: Upload Bruno Results
-        uses: actions/upload-artifact@v4
-        with:
-          name: bruno-test-results
-          path: dawazonBrunoTest/reports
+          bru run --env Local --format json
+
       - name: Stop server
         if: always()
         run: |
@@ -158,11 +148,6 @@ jobs:
             --configuration Release \
             --no-build \
             --logger "trx;LogFileName=E2ETestResults/PlaywrightResults.trx"
-      - name: Upload Playwright Results
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-test-results
-          path: E2ETestResults
       - name: Stop server
         if: always()
         run: |
