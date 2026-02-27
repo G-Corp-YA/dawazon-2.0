@@ -2,3 +2,12 @@
 .vscode/*
 */obj/*
 */bin/*
+.env
+*/bruno-report.json
+*/report-ControladorAdmin.json
+*/report-ControladorProductos.json
+*/report-ControladorAuth.json
+*/report-ControladorCarrito.json
+playwright-reports/
+*/reports/
+bruno-reports/

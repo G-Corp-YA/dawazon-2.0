@@ -1,0 +1,240 @@
+@model dawazon2._0.Models.ProductDetailViewModel
+
+@{
+    ViewData["Title"] = Model.Name;
+    bool isUser = User.IsInRole("User");
+    bool isManager = User.IsInRole("Manager");
+    bool isAdmin = User.IsInRole("Admin");
+}
+
+@Html.AntiForgeryToken()
+
+<div class="container col-12 my-4">
+
+    @* Mensajes de éxito *@
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @* Migas de pan *@
+    <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a asp-controller="ProductsMvc" asp-action="Index">Productos</a>
+            </li>
+            <li class="breadcrumb-item active">@Model.Name</li>
+        </ol>
+    </nav>
+
+    <h1 class="product-title">@Model.Name</h1>
+
+    <div class="product-main-grid">
+        @* Carrusel de imágenes *@
+        <div class="carousel-container">
+            <button class="carousel-arrow left">&#10094;</button>
+            @for (int i = 0; i < Model.Images.Count; i++)
+            {
+                <img src="@Model.Images[i]"
+                     class="product-img @(i == 0 ? "active" : "")"
+                     alt="@Model.Name">
+            }
+            @if (!Model.Images.Any())
+            {
+                <img src="~/img/defaultImg.png" class="product-img active" alt="Sin imagen">
+            }
+            <button class="carousel-arrow right">&#10095;</button>
+        </div>
+
+        @* Info del producto *@
+        <div class="product-info">
+            <div class="price-tag">@Model.Price€</div>
+            <p class="text-muted mb-1"><i class="bi bi-tag me-1"></i>@Model.Category</p>
+
+            @if (Model.Stock > 0)
+            {
+                <span class="badge bg-success mb-2">En stock (@Model.Stock disponibles)</span>
+            }
+            else
+            {
+                <span class="badge bg-danger mb-2">Agotado</span>
+            }
+
+            <ul id="description" class="features-list">@Model.Description</ul>
+
+            @* Acciones de usuario *@
+            @if (isUser && Model.Stock > 0)
+            {
+                bool isInCart = ViewBag.IsInCart is bool b && b;
+                <div class="action-buttons mt-3">
+                    @if (isInCart)
+                    {
+                        <form asp-controller="CartMvc" asp-action="RemoveFromCart"
+                              asp-route-productId="@Model.Id" method="post" style="margin:0">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-danger">
+                                <i class="bi bi-cart-x me-1"></i>Quitar del carrito
+                            </button>
+                        </form>
+                    }
+                    else
+                    {
+                        <form asp-controller="CartMvc" asp-action="AddToCart"
+                              asp-route-productId="@Model.Id" method="post" style="margin:0">
+                            @Html.AntiForgeryToken()
+                            @* Corrección visual: cambiado btn-gradient a btn-primary *@
+                            <button type="submit" class="btn btn-warning">
+                                <i class="bi bi-cart-plus me-1"></i>Añadir al carrito
+                            </button>
+                        </form>
+                    }
+                </div>
+            }
+
+            @* Favoritos (solo Usuario) *@
+            @if (isUser)
+            {
+                
+                    // Asumimos por defecto que NO es favorito
+                    bool isFav = false;
+                    // Comprobamos si hay un booleano guardado
+                    if (ViewBag.IsFav is bool)
+                    {
+                        // Si lo hay, lo extraemos de forma segura
+                        isFav = (bool)ViewBag.IsFav;
+                    }
+                
+                <div class="mt-2">
+                    @if (isFav)
+                    {
+                        <form asp-controller="UserMvc" asp-action="RemoveFav"
+                              asp-route-id="@Model.Id" method="post">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-warning">
+                               <i class="bi bi-heart-fill me-1"></i>Quitar de favoritos
+                            </button>
+                        </form>
+                    }
+                    else
+                    {
+                        <form asp-controller="UserMvc" asp-action="AddFav"
+                              asp-route-id="@Model.Id" method="post">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-outline-danger">
+                                <i class="bi bi-heart me-1"></i>Añadir a favoritos
+                            </button>
+                        </form>
+                    }
+                </div>
+            }
+
+            @* Acciones de manager / admin *@
+            @if (isManager || isAdmin)
+            {
+                <div class="action-buttons mt-3 d-flex gap-2">
+                    @if (isManager)
+                    {
+                        <a asp-controller="ProductsMvc" asp-action="Edit"
+                           asp-route-id="@Model.Id" class="btn btn-gradient">
+                            <i class="bi bi-pencil me-1"></i>Editar
+                        </a>
+                    }
+                    <form asp-controller="ProductsMvc" asp-action="Delete"
+                          asp-route-id="@Model.Id" method="post"
+                          onsubmit="return confirm('¿Eliminar el producto «@Model.Name»? Esta acción no se puede deshacer.')">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-danger">
+                            <i class="bi bi-trash me-1"></i>Eliminar
+                        </button>
+                    </form>
+                </div>
+            }
+        </div>
+    </div>
+
+    @* Comentarios — componente Blazor con tiempo real (Timer + SignalR) *@
+    @{
+        long currentUserId = 0;
+        if (isUser)
+        {
+            var rawId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            long.TryParse(rawId, out currentUserId);
+        }
+    }
+    <component type="typeof(dawazon2._0.Components.ProductComments)"
+               render-mode="Server"
+               param-ProductId="@Model.Id"
+               param-IsUser="@isUser"
+               param-CurrentUserId="@currentUserId" />
+
+    @* Toast de notificación *@
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="notificationToast" class="toast" role="alert">
+            <div class="toast-header">
+                <strong class="me-auto">Notificación</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body text-white" id="toastMessage"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+    // Carrusel de imágenes
+    document.addEventListener("DOMContentLoaded", function () {
+        const imgs = document.querySelectorAll('.product-img');
+        let current = 0;
+        const show = (i) => {
+            imgs.forEach(img => img.classList.remove('active'));
+            if (imgs[i]) imgs[i].classList.add('active');
+        };
+        document.querySelector('.carousel-arrow.left')?.addEventListener('click', () => {
+            current = (current - 1 + imgs.length) % imgs.length;
+            show(current);
+        });
+        document.querySelector('.carousel-arrow.right')?.addEventListener('click', () => {
+            current = (current + 1) % imgs.length;
+            show(current);
+        });
+        // Descripción como lista si viene en JSON
+        const lista = document.getElementById("description");
+        if (lista) {
+            const text = lista.textContent.trim();
+            try {
+                const data = JSON.parse(text);
+                if (Array.isArray(data)) {
+                    lista.innerHTML = "<li>Características:</li>" + data.map(item => `<li>${item}</li>`).join("");
+                }
+            } catch (e) { /* texto plano, nada que hacer */ }
+        }
+    });
+    @if (isUser)
+    {
+        <text>
+        function addCart(productoId) {
+            window.location.href = `/auth/me/carrito/add/${productoId}`;
+        }
+        </text>
+    }
+
+    function showNotification(message, type = 'success') {
+        const toastEl = document.getElementById('notificationToast');
+        const toastMsg = document.getElementById('toastMessage');
+        toastMsg.textContent = message;
+        toastEl.classList.remove('bg-success', 'bg-danger', 'bg-warning');
+        toastEl.classList.add(type === 'error' ? 'bg-danger' : 'bg-success');
+        new bootstrap.Toast(toastEl).show();
+    }
+</script>
+}

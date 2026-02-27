@@ -1,0 +1,245 @@
+﻿@model dawazon2._0.Models.Product
+
+@{
+    ViewData["Title"] = $"Product View {Model.Name}";
+    // Mapeo de variables de sesión o ViewBag para roles y estados
+    bool isUser = User.IsInRole("User");
+    bool isAdmin = User.IsInRole("Admin");
+    bool isManager = User.IsInRole("Manager");
+   
+    // Estas variables deben venir del Controller via ViewBag/ViewData
+    bool isMine = ViewBag.IsMine ?? false;
+    bool isCart = ViewBag.IsInCart ?? false;
+    bool isFav = ViewBag.IsInFav ?? false;
+}
+
+@Html.AntiForgeryToken()
+<div class="container col-12">
+
+    <h1 class="product-title">@Model.Name</h1>
+
+    <div class="product-main-grid">
+        <div class="carousel-container">
+            <button class="carousel-arrow left">&#10094;</button>
+            @for (int i = 0; i < Model.Images.Count; i++)
+            {
+                <text>
+                    <img src="@Model.Images[i]"
+                         class="product-img @(i == 0 ? "active" : "")"
+                         alt="@Model.Name"></text>
+            }
+            <button class="carousel-arrow right">&#10095;</button>
+        </div>
+
+        <div class="product-info">
+            <div class="price-tag">@Model.Price€</div>
+
+            <ul id="description" class="features-list">@* @Model.Description *@</ul>
+
+            <div class="seller-info">
+                vendedor: <strong> @* @Model.Category *@ </strong>
+            </div>
+        </div>
+    </div>
+
+    @if (isUser)
+    {
+        <div class="action-buttons">
+            <button onclick="addCart(this, '@Model.Id')"
+                    class="@(isCart ? "btn btn-danger" : "btn btn-gradient")">
+                @(isCart ? "Quitar del carrito" : "Añadir al carrito")
+            </button>
+            <button onclick="addFav(this, '@Model.Id')"
+                    class="@(isFav ? "btn btn-danger" : "btn btn-gradient")"
+                    data-fav="@(isFav ? "true" : "false")">
+                @(isFav ? "no fav" : "fav")
+            </button>
+        </div>
+    }
+
+    @if (isManager && isMine)
+    {
+        <div class="action-buttons">
+            <button onclick="edit(this,'@Model.Id')" class="btn btn-gradient">editar</button>
+            <button onclick="eliminar(this,'@Model.Id')" class="btn btn-danger">eliminar</button>
+        </div>
+    }
+
+    @if (isAdmin)
+    {
+        <div class="action-buttons">
+            <button onclick="eliminar(this,'@Model.Id')" class="btn btn-danger">eliminar</button>
+        </div>
+    }
+
+    <section class="comments-section">
+        <h3>comentarios: </h3>
+@*
+        @if (isUser)
+        {
+            <form asp-action="SubmitRating" asp-controller="Product" method="post">
+    
+                <input type="hidden" asp-for="Id" />
+
+                <div class="comment-card">
+                    <div class="d-block">
+                        <label class="form-label col-12" asp-for="Comment"></label>
+                        <textarea class="form-control col-12" asp-for="Comment" rows="4"></textarea>
+                        <span asp-validation-for="Comment" class="text-danger"></span>
+
+                        <div class="mt-3">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" asp-for="Recommended" type="radio" value="true" />
+                                <label class="form-check-label">Recomendado</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" asp-for="Recommended" type="radio" value="false" />
+                                <label class="form-check-label">No recomendado</label>
+                            </div>
+                        </div>
+
+                        <span asp-validation-for="Recommended" class="text-danger"></span>
+
+                        <button type="submit" class="btn btn-primary text-light mt-3">
+                            Enviar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        }
+*@
+        @if (Model.Comments.Any())
+        {
+            @foreach (var comment in Model.Comments)
+            {
+                <div class="comment-card">
+                    <div class="comment-header">
+                        <div>
+                            <span class="user-name">@comment.userName</span>
+                            <span class="@(comment.verified ? "badge-verified" : "badge-")">
+                                @(comment.verified ? "compra verificada" : "compra no verificada")
+                            </span>
+                        </div>
+                        <span class="recommendation @(comment.recommended ? "positive" : "negative")">
+                            @(comment.recommended ? "recomendado" : "no recomendado")
+                        </span>
+                    </div>
+                    <div class="comment-body">
+                        <p>@comment.comment</p>
+                    </div>
+                    <hr>
+                </div>
+            }
+        }
+
+        @* Notificaciones Toast *@
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="notificationToast" class="toast" role="alert">
+                <div class="toast-header">
+                    <strong class="me-auto">Notificación</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                </div>
+                <div class="toast-body text-white" id="toastMessage"></div>
+            </div>
+        </div>
+    </section>
+</div>
+
+@* SCRIPTS *@
+<script>
+    // Función para obtener el token Anti-Falsificación de ASP.NET Core
+    function getCsrfToken() {
+        return document.querySelector('input[name="__RequestVerificationToken"]').value;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const lista = document.getElementById("description");
+        if (lista) {
+            const text = lista.textContent.trim();
+            try {
+                const data = JSON.parse(text);
+                if(Array.isArray(data)) cargarLista(data, lista);
+            } catch(e) {
+                console.log("Descripción en formato texto");
+            }
+        }
+    });
+
+    function cargarLista(lista, element) {
+        element.innerHTML = "<li>Características:</li>" + 
+            lista.map(item => `<li>${item}</li>`).join("");
+    }
+
+    function showNotification(message, type = 'success') {
+        const toastEl = document.getElementById('notificationToast');
+        const toastMsg = document.getElementById('toastMessage');
+        toastMsg.textContent = message;
+        
+        toastEl.classList.remove('bg-success', 'bg-danger', 'bg-warning', 'bg-info');
+        const bgClass = type === 'error' ? 'bg-danger' : (type === 'warning' ? 'bg-warning' : 'bg-success');
+        toastEl.classList.add(bgClass);
+
+        new bootstrap.Toast(toastEl).show();
+    }
+
+    @if (isUser)
+    {
+        <text>
+        function addCart(element, productoId) {
+            const action = element.textContent.trim() === "Añadir al carrito" ? "add" : "remove";
+            window.location.href = `/auth/me/carrito/${action}/${productoId}`;
+        }
+
+        function addFav(element, productoId) {
+            const action = element.textContent.trim() === "fav" ? "add" : "remove";
+            window.location.href = `/auth/me/fav/${action}/${productoId}`;
+        }
+
+        function submitRating(productoId) {
+            const rating = document.querySelector('input[name="recomended"]:checked');
+            const comment = document.getElementById('comment');
+            const comentario = comment.value;
+            if (!rating) {
+                showNotification('Seleccione una recomendación', 'warning');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('recomended', rating.value);
+            formData.append('comment', comentario);
+            // El nombre del campo del token en .NET suele ser __RequestVerificationToken
+            formData.append('__RequestVerificationToken', getCsrfToken());
+
+            fetch(`/products/${productoId}/comentarios`, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showNotification('¡Enviado!', 'success');
+                    setTimeout(() => location.reload(), 1500);
+                } else {
+                    showNotification('Error: ' + data.message, 'error');
+                }
+            })
+            .catch(() => showNotification('Error al conectar con el servidor', 'error'));
+        }
+        </text>
+    }
+
+    @if (isManager && isMine)
+    {
+        <text>
+        function edit(element, productoId) {
+            window.location.href = `/auth/me/products/edit/${productoId}`;
+        }
+        function eliminar(element, productoId) {
+            if(confirm('¿Eliminar producto?')) {
+                window.location.href = `/auth/me/products/delete/${productoId}`;
+            }
+        }
+        </text>
+    }
+</script>

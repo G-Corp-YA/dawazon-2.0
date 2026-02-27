@@ -1,0 +1,23 @@
+meta {
+  name: 09-Delete-Producto-SinAuth
+  type: http
+  seq: 9
+}
+
+delete {
+  url: {{baseUrl}}/api/products/{{newProductId}}
+  body: none
+  auth: none
+}
+
+script:pre-request {
+  if (!bru.getVar("newProductId")) {
+    bru.setVar("newProductId", "1");
+  }
+}
+
+tests {
+  test("DELETE sin autenticacion devuelve 401", function() {
+    expect(res.status).to.equal(401);
+  });
+}

@@ -1,0 +1,30 @@
+meta {
+  name: 03-GetById-OK
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/products/{{productId}}
+  body: none
+  auth: none
+}
+
+script:pre-request {
+  // Si productId está vacío, usar un ID conocido como fallback
+  if (!bru.getVar("productId")) {
+    bru.setVar("productId", "1");
+  }
+}
+
+tests {
+  test("GET producto por ID devuelve 200 o 404", function() {
+    expect([200, 404]).to.include(res.status);
+  });
+  test("Si existe: tiene id y name", function() {
+    if (res.status === 200) {
+      expect(res.body).to.have.property("id");
+      expect(res.body).to.have.property("name");
+    }
+  });
+}

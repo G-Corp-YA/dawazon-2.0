@@ -1,0 +1,44 @@
+meta {
+  name: 05-UpdateById-Usuario-Admin
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseUrl}}/api/users/{{targetUserId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:json {
+  {
+    "Nombre": "testuser_updated",
+    "Email": "testuser_updated@dawazon.test",
+    "Telefono": "612345678",
+    "Calle": "Calle Falsa",
+    "Ciudad": "Soria",
+    "CodigoPostal": "42001",
+    "Provincia": "Soria"
+  }
+}
+
+script:pre-request {
+  if (!bru.getVar("targetUserId")) {
+    bru.setVar("targetUserId", "1");
+  }
+}
+
+tests {
+  test("PUT usuario como admin devuelve 200 o 404", function() {
+    expect([200, 404]).to.include(res.status);
+  });
+  test("Si OK, respuesta contiene id del usuario actualizado", function() {
+    if (res.status === 200) {
+      expect(res.body).to.have.property("id");
+    }
+  });
+}

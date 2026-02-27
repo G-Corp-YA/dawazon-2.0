@@ -1,0 +1,71 @@
+﻿# -----------------------------
+# STAGE 1: build — restaura y compila
+# -----------------------------
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+
+WORKDIR /src
+
+# Copiar csproj y restaurar paquetes
+COPY dawazonPlayWrite/dawazonPlayWrite.csproj dawazonPlayWrite/
+RUN dotnet restore dawazonPlayWrite/dawazonPlayWrite.csproj
+
+# Copiar el resto del código
+COPY dawazonPlayWrite/ dawazonPlayWrite/
+
+# Compilar proyecto en Release
+RUN dotnet build dawazonPlayWrite/dawazonPlayWrite.csproj --no-restore
+
+# -----------------------------
+# STAGE 2: runner — Playwright y tests
+# -----------------------------
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS runner
+
+WORKDIR /app
+
+# Instalar dependencias necesarias para Chromium/Playwright
+RUN apt-get update && apt-get install -y \
+    libnss3 \
+    libnspr4 \
+    libatk1.0-0 \
+    libatk-bridge2.0-0 \
+    libcups2 \
+    libdrm2 \
+    libdbus-1-3 \
+    libxkbcommon0 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxfixes3 \
+    libxrandr2 \
+    libgbm1 \
+    libasound2t64 \
+    libpango-1.0-0 \
+    libcairo2 \
+    libatspi2.0-0 \
+    ca-certificates \
+    curl \
+    && update-ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Configurar NuGet para confiar en certificados
+RUN dotnet nuget update config trusted-sources add --source https://api.nuget.org/v3/index.json 2>/dev/null || true
+
+# Instalar herramientas globales
+RUN dotnet tool install --global Microsoft.Playwright.CLI
+ENV PATH="$PATH:/root/.dotnet/tools"
+
+# Copiar proyecto compilado desde stage build
+COPY --from=build /src /src
+
+# Instalar navegadores de Playwright
+RUN cd /src/dawazonPlayWrite && \
+    playwright install chromium
+
+# Crear carpeta de reportes
+RUN mkdir -p /app/reports
+
+# Copiar script de ejecución y dar permisos
+COPY playwright-run.sh /app/playwright-run.sh
+RUN sed -i 's/\r$//' /app/playwright-run.sh && chmod +x /app/playwright-run.sh
+
+# Comando por defecto
+CMD ["sh", "/app/playwright-run.sh"]

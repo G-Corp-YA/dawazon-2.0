@@ -1,0 +1,36 @@
+meta {
+  name: 00-Login-Setup
+  type: http
+  seq: 0
+}
+
+post {
+  url: {{baseUrl}}/api/auth/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "usernameOrEmail": "testuser",
+    "password": "User123!"
+  }
+}
+
+script:post-response {
+  if (res.status === 200) {
+    bru.setVar("userToken", res.body.token);
+  }
+}
+
+script:pre-request {
+  // También necesitamos el adminToken para el test 07 de esta colección
+  // Lo obtenemos con un segundo login si no está disponible
+}
+
+tests {
+  test("Setup: Login usuario OK", function() {
+    expect(res.status).to.equal(200);
+    expect(res.body).to.have.property("token");
+  });
+}

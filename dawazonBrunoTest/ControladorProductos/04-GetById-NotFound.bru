@@ -1,0 +1,22 @@
+meta {
+  name: 04-GetById-NotFound
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/products/99999999
+  body: none
+  auth: none
+}
+
+tests {
+  test("GET producto inexistente devuelve 404", function() {
+    expect(res.status).to.equal(404);
+  });
+  test("Respuesta contiene mensaje de error", function() {
+    if (res.body && typeof res.body === "object") {
+      expect(res.body).to.have.property("message");
+    }
+  });
+}

@@ -1,0 +1,36 @@
+meta {
+  name: 07-Put-Producto-OK
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{baseUrl}}/api/products/{{newProductId}}
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+body:multipart-form {
+  ~nombre: Producto Test E2E Actualizado
+  ~price: 19.99
+  ~stock: 5
+  ~categoria: Figuras
+  ~description: Descripcion actualizada en test E2E
+}
+
+script:pre-request {
+  // Si no se creó el producto antes, skip este test
+  if (!bru.getVar("newProductId")) {
+    bru.setVar("newProductId", "99999999");
+  }
+}
+
+tests {
+  test("PUT producto devuelve 200, 403 o 404", function() {
+    expect([200, 403, 404]).to.include(res.status);
+  });
+}

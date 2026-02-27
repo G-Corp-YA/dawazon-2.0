@@ -1,0 +1,41 @@
+meta {
+  name: 01-GetAll-Usuarios-Admin
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/api/users
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+params:query {
+  ~page: 0
+  ~size: 10
+  ~sortBy: id
+  ~direction: asc
+}
+
+script:post-response {
+  if (res.status === 200 && res.body.content && res.body.content.length > 0) {
+    var nonAdmin = res.body.content.find(function(u) {
+      return u.id && u.id !== bru.getVar("userId");
+    });
+    if (nonAdmin) bru.setVar("targetUserId", nonAdmin.id);
+  }
+}
+
+tests {
+  test("GET usuarios como admin devuelve 200", function() {
+    expect(res.status).to.equal(200);
+  });
+  test("Respuesta contiene campo content paginado", function() {
+    expect(res.body).to.have.property("content");
+    expect(res.body.content).to.be.an("array");
+  });
+}

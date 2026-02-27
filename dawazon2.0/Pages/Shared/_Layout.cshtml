@@ -11,42 +11,190 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm bg-black border-bottom box-shadow mb-3">
         <div class="container">
-            <a class="navbar-brand" asp-area="" asp-page="/Index">dawazon2._0</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                    </li>
-                </ul>
+            <div class="bg-custom-dark py-2">
+                <div class="d-flex align-items-center gap-2 gap-md-3">
+
+                    <a class="text-decoration-none d-flex align-items-center text-white me-1" asp-controller="Home" asp-action="Index">
+                        <img src="~/Dawazon.png"
+                             class="bg-white text-dark rounded-circle d-flex justify-content-center align-items-center me-2"
+                             style="width: 35px; height: 35px; font-weight: bold;">
+                        <span class="fw-bold fs-5 d-none d-sm-block">Dawazon</span>
+                    </a>
+
+                    <form class="d-flex flex-grow-1" asp-controller="Home" asp-action="Index" method="get" role="search">
+                        <div class="input-group">
+                            <input class="form-control search-input" name="name" type="search" placeholder="Buscar..."
+                                   aria-label="Search" value="@Context.Request.Query["name"]">
+                            <button class="btn btn-search" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </form>
+            
+                    @using System.Security.Claims
+
+                    @* @if (User.Identity.IsAuthenticated) *@
+                    {
+                    <div class="d-flex align-items-center gap-3 ms-1">
+                        @* Verificamos si el usuario tiene el rol de "User" *@
+                        @if (User.IsInRole("User"))
+                        {
+                            <a asp-controller="Cart" asp-action="Index" class="text-white position-relative d-none d-md-block">
+                                <i class="bi bi-cart3 fs-4"></i>
+                                @if (ViewBag.CartItemCount > 0)
+                                {
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        @ViewBag.CartItemCount
+                                    </span>
+                                }
+                            </a>
+                        }
+
+                        <div class="dropdown">
+                            <a href="#" class="d-flex align-items-center text-white text-decoration-none"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="~/img/defaultImg.png" alt="user" class="rounded-circle profile-img">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end shadow">
+                                <li><a class="dropdown-item" asp-controller="Account" asp-action="Profile">Mi Cuenta</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <form asp-controller="Account" asp-action="Logout" method="post" style="margin: 0;">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="dropdown-item" style="cursor: pointer; border: none; background: none; width: 100%; text-align: left;">
+                                            Cerrar Sesión
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    }
+                    else
+                    {
+                    <div class="d-flex align-items-center gap-3 ms-1">
+                        <div class="dropdown">
+                            <a asp-controller="Account" asp-action="Login">
+                                <img src="~/img/defaultImg.png" alt="user" class="rounded-circle profile-img" style="cursor: pointer;">
+                            </a>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+            
+        @* @if (User.Identity.IsAuthenticated) *@
+        {
+        @if (User.IsInRole("Admin"))
+        {
+            <div class="bg-custom-secondary text-white py-1 shadow-sm">
+                <nav class="d-flex gap-3 overflow-auto px-3" style="white-space: nowrap; scrollbar-width: none;">
+                    <span class="small fw-bold border-end pe-2">Panel Admin:</span>
+                    <a class="nav-link text-white small p-0" asp-controller="Admin" asp-action="Users">Usuarios</a>
+                    <a class="nav-link text-white small p-0" asp-controller="Admin" asp-action="Sales">Ventas y envíos</a>
+                </nav>
+            </div>
+        }
+            
+        @if (User.IsInRole("User"))
+        {
+            <div class="bg-custom-secondary text-white py-1 shadow-sm">
+                <nav class="d-flex gap-3 overflow-auto px-3" style="white-space: nowrap; scrollbar-width: none;">
+                    <a class="nav-link text-white small p-0" asp-controller="Orders" asp-action="MyOrders">Mis Pedidos</a>
+                </nav>
+            </div>
+        }
+
+        @if (User.IsInRole("Manager"))
+        {
+            <div class="bg-custom-secondary text-white py-1 shadow-sm">
+                <nav class="d-flex gap-3 overflow-auto px-3" style="white-space: nowrap; scrollbar-width: none;">
+                    <span class="small fw-bold border-end pe-2">Gestión:</span>
+                    <a class="nav-link text-white small p-0" asp-controller="Manager" asp-action="Products">Mis productos</a>
+                    <a class="nav-link text-white small p-0" asp-controller="Manager" asp-action="Sales">Ventas y envíos</a>
+                </nav>
+            </div>
+        }
+
+        <div class="bg-custom-secondary text-white py-1 shadow-sm border-top border-secondary">
+            <div class="container-fluid d-flex align-items-center">
+
+                <button class="btn btn-link text-white text-decoration-none d-flex align-items-center me-3 px-0 fw-bold border-0"
+                        type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCategories">
+                    <i class="bi bi-list fs-3 me-1"></i>
+                    <span class="d-none d-sm-inline">Categorías</span>
+                </button>
+
+                <nav class="d-flex gap-3 overflow-auto ms-2" style="white-space: nowrap; scrollbar-width: none;">
+                    @if (ViewBag.Categorias != null)
+                    {
+                        @foreach (var categoria in ((List<string>)ViewBag.Categorias).Take(5))
+                        {
+                            <a class="nav-link text-white small p-0" asp-controller="Home" asp-action="Index" asp-route-categoria="@categoria">
+                                @categoria
+                            </a>
+                        }
+                    }
+                </nav>
             </div>
         </div>
     </nav>
 </header>
+
 <div class="container">
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
 </div>
 
-<footer class="border-top footer text-muted">
-    <div class="container">
-        &copy; 2026 - dawazon2._0 - <a asp-area="" asp-page="/Privacy">Privacy</a>
+<footer class="bg-custom-secondary bg-dark text-light mt-5">
+    <div class="container-fluid py-4 px-5">
+        <div class="row text-light small border border-light">
+            <div class="col-12 col-md-4 mb-4 mb-md-0 border border-light" id="contacto">
+                <h6 class="fw-bold text-white mb-3 border-light">Contacto</h6>
+                <p class="mb-1">Dawazon S.L.</p>
+                <p class="mb-1">C/ Falsa 123, 4ºB, 28000 Madrid, España</p>
+                <p class="mb-1">Tel: +34 912 345 678</p>
+                <p class="mb-1">Email: <a href="mailto:info@dawazon.example" class="text-info text-decoration-none">info@dawazon.example</a></p>
+                <p class="mb-0">Horario: Lun-Vie 09:00–18:00</p>
+            </div>
+
+            <div class="col-12 col-md-4 mb-4 mb-md-0 border border-light" id="quienes-somos">
+                <h6 class="fw-bold text-white mb-3">Quiénes somos</h6>
+                <p class="mb-2">Dawazon es una empresa tecnológica fundada en 2020 dedicada a desarrollar soluciones de comercio electrónico.</p>
+                <p class="mb-2">Nuestra misión es facilitar el acceso a herramientas de venta online con una plataforma intuitiva.</p>
+                <p class="mb-0">Equipo formado por desarrolladores y especialistas en operaciones.</p>
+            </div>
+
+            <div class="col-12 col-md-4 border border-light" id="legal">
+                <h6 class="fw-bold text-white mb-3">Legal</h6>
+                <ul class="list-unstyled mb-2">
+                    <li class="mb-1"><a href="#" class="text-light text-decoration-none hover-underline">Aviso legal</a></li>
+                    <li class="mb-1"><a href="#" class="text-light text-decoration-none hover-underline">Política de privacidad</a></li>
+                    <li class="mb-1"><a href="#" class="text-light text-decoration-none hover-underline">Términos y condiciones</a></li>
+                </ul>
+                <p class="mb-1 x-small opacity-75">Razón social: Dawazon S.L. | CIF: B12345678</p>
+                <p class="mb-0 x-small opacity-75">Registro Mercantil de Madrid. Tomo 1234, Folio 56.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-custom-dark text-center py-3 border-top border-secondary">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center gap-2">
+                <img src="~/Dawazon.png" style="width: 25px; filter: grayscale(1) brightness(2);" alt="Logo">
+                <span class="small opacity-75">&copy; @DateTime.Now.Year Dawazon S.L. Todos los derechos reservados.</span>
+            </div>
+        </div>
     </div>
 </footer>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
-
 @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

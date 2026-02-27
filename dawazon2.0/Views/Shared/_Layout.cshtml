@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <base href="/" />
+    <title>@ViewData["Title"] - dawazon2.0</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/css/site.css" asp-append-version="true"/>
+</head>
+<body>
+<header style="background-color: #131921;">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm p-0 m-0">
+        <div class="container-fluid p-0">
+            <div class="bg-custom-dark py-2 w-100">
+                <div class="d-flex align-items-center gap-2 gap-md-3">
+
+                    <a class="text-decoration-none d-flex align-items-center text-white me-1" asp-controller="ProductsMvc" asp-action="Index">
+                        <img src="~/Dawazon.png"
+                             class="bg-white text-dark rounded-circle d-flex justify-content-center align-items-center me-2"
+                             style="width: 35px; height: 35px; font-weight: bold;">
+                        <span class="fw-bold fs-5 d-none d-sm-block">Dawazon</span>
+                    </a>
+
+                    <form class="d-flex flex-grow-1" asp-controller="ProductsMvc" asp-action="Index" method="get" role="search">
+                        <div class="input-group">
+                            <input class="form-control search-input" name="nombre" type="search" placeholder="Buscar..."
+                                   aria-label="Search" value="@Context.Request.Query["nombre"]">
+                            <button class="btn btn-search" type="submit">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </form>
+            
+                    @using System.Security.Claims
+                    @using Microsoft.AspNetCore.Identity
+                    @using dawazonBackend.Users.Models
+                    @inject UserManager<User> UserManager
+                    
+                    @{
+                        string avatarUrl = "/uploads/users/default.png";
+                        if (User.Identity!.IsAuthenticated)
+                        {
+                            var appUser = await UserManager.GetUserAsync(User);
+                            if (appUser != null && !string.IsNullOrWhiteSpace(appUser.Avatar) && appUser.Avatar != "default.png")
+                            {
+                                avatarUrl = appUser.Avatar.StartsWith("/") ? appUser.Avatar : $"/{appUser.Avatar}";
+                            }
+                        }
+                    }
+
+                    @if (User.Identity!.IsAuthenticated)
+                    {
+                    <div class="d-flex align-items-center gap-3 ms-1">
+                        @* Verificamos si el usuario tiene el rol de "User" *@
+                        @if (User.IsInRole("User"))
+                        {
+                            var rawNavId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                            long.TryParse(rawNavId, out long navUserId);
+                            <a asp-controller="CartMvc" asp-action="Index" class="text-white position-relative d-none d-md-block">
+                                <i class="bi bi-cart3 fs-4"></i>
+                                <component type="typeof(dawazon2._0.Components.CartBadge)"
+                                           render-mode="Server"
+                                           param-UserId="@navUserId" />
+                            </a>
+                        }
+
+                        <div class="dropdown">
+                            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle-custom"
+                               data-bs-toggle="dropdown" aria-expanded="false" style="padding: 5px 8px; border-radius: 4px; transition: background 0.2s;">
+                                <div class="d-flex flex-column me-2 d-none d-sm-flex" style="line-height: 1;">
+                                    <span style="font-size: 0.75rem; color: #ccc;">Hola,</span>
+                                    <span class="fw-bold" style="font-size: 0.85rem;">@User.Identity.Name</span>
+                                </div>
+                                <img src="@avatarUrl" alt="user" class="rounded-circle profile-img" style="width: 32px; height: 32px; object-fit: cover; border: 1px solid rgba(255,255,255,0.2);">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end shadow">
+                                <li><span class="dropdown-item-text small text-muted">@User.Identity.Name</span></li>
+                                <li><hr class="dropdown-divider"></li>
+                                @if (User.IsInRole("User"))
+                                {
+                                <li>
+                                    <a asp-controller="UserMvc" asp-action="Profile" class="dropdown-item">
+                                        <i class="bi bi-person-circle me-2"></i>Mi perfil
+                                    </a>
+                                </li>
+                                }
+                                <li>
+                                    <a href="/Auth/Logout" class="dropdown-item">
+                                        <i class="bi bi-box-arrow-right me-2"></i>Cerrar Sesión
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    }
+                    else
+                    {
+                    <div class="d-flex align-items-center gap-3 ms-1">
+                        <a href="/Auth/Login" class="text-white text-decoration-none small fw-semibold">
+                            <img src="@avatarUrl" alt="user" class="rounded-circle profile-img" style="width: 32px; height: 32px; object-fit: cover; border: 1px solid rgba(255,255,255,0.2); cursor: pointer;">
+                        </a>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+            
+        @if (User.Identity!.IsAuthenticated)
+        {
+        @if (User.IsInRole("Admin"))
+        {
+            <div class="bg-custom-secondary text-white py-1 shadow-sm">
+                <nav class="d-flex gap-3 overflow-auto px-3" style="white-space: nowrap; scrollbar-width: none;">
+                    <span class="small fw-bold border-end pe-2">Panel Admin:</span>
+                    <a class="nav-link text-white small p-0" href="/admin/usuarios">Usuarios</a>
+                    <a class="nav-link text-white small p-0" href="/admin/ventas">Ventas y envíos</a>
+                    <a class="nav-link text-white small p-0" href="/admin/estadisticas">Estadísticas</a>
+                </nav>
+            </div>
+        }
+            
+        @if (User.IsInRole("User"))
+        {
+            <div class="bg-custom-secondary text-white py-1 shadow-sm">
+                <nav class="d-flex gap-3 overflow-auto px-3" style="white-space: nowrap; scrollbar-width: none;">
+                    <a class="nav-link text-white small p-0" asp-controller="CartMvc" asp-action="MyOrders">Mis Pedidos</a>
+                    <a class="nav-link text-white small p-0" asp-controller="UserMvc" asp-action="Favs">Mis Favoritos</a>
+                </nav>
+            </div>
+        }
+
+        @if (User.IsInRole("Manager"))
+        {
+            <div class="bg-custom-secondary text-white py-1 shadow-sm">
+                <nav class="d-flex gap-3 overflow-auto px-3" style="white-space: nowrap; scrollbar-width: none;">
+                    <span class="small fw-bold border-end pe-2">Gestión:</span>
+                    <a class="nav-link text-white small p-0" asp-controller="ProductsMvc" asp-action="Index" asp-route-misProductos="true">Mis productos</a>
+                    <a class="nav-link text-white small p-0" asp-controller="ManagerMvc" asp-action="Sales">Ventas y envíos</a>
+                </nav>
+            </div>
+        }
+
+        } @* fin @if IsAuthenticated *@
+    </nav>
+    @* Barra de categorías — segunda fila del header *@
+    <div style="background-color: #000d27; padding: 2px 0; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div class="container-fluid d-flex align-items-center">
+
+            <button style="background:none; border:none; color:#fff; font-weight:600; font-size:0.875rem; padding: 2px 12px 2px 0; display:flex; align-items:center; gap:4px; cursor:pointer;"
+                    type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCategories" aria-controls="offcanvasCategories">
+                <i class="bi bi-list" style="font-size:1.25rem;"></i>
+                <span class="d-none d-sm-inline">Categorías</span>
+            </button>
+
+            <nav class="d-flex gap-3 overflow-auto" style="white-space: nowrap; scrollbar-width: none;">
+                @if (ViewBag.Categorias != null)
+                {
+                    @foreach (var categoria in ((List<string>)ViewBag.Categorias).Take(3))
+                    {
+                        <a style="color:#fff; font-size:0.875rem; text-decoration:none; padding: 0;"
+                           asp-controller="ProductsMvc" asp-action="Index"
+                           asp-route-categoria="@categoria">
+                            @categoria
+                        </a>
+                    }
+                }
+            </nav>
+        </div>
+    </div>
+
+    @* Offcanvas de todas las categorías *@
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasCategories"
+         aria-labelledby="offcanvasCategoriesLabel">
+        <div class="offcanvas-header bg-custom-dark text-black">
+            <h5 class="offcanvas-title" id="offcanvasCategoriesLabel">
+                <i class="bi bi-grid me-2"></i>Categorías
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a class="text-decoration-none d-block py-1"
+                       asp-controller="ProductsMvc" asp-action="Index">
+                        <i class="bi bi-house me-2"></i>Todos los productos
+                    </a>
+                </li>
+                @if (ViewBag.Categorias != null)
+                {
+                    @foreach (var categoria in (List<string>)ViewBag.Categorias)
+                    {
+                        <li class="list-group-item">
+                            <a class="text-decoration-none d-block py-1"
+                               asp-controller="ProductsMvc" asp-action="Index"
+                               asp-route-categoria="@categoria">
+                                <i class="bi bi-tag me-2 text-muted"></i>@categoria
+                            </a>
+                        </li>
+                    }
+                }
+                else
+                {
+                    <li class="list-group-item text-muted small">Sin categorías disponibles</li>
+                }
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+
+<footer class="text-light mt-5">
+    <div class="container-fluid py-4 px-5">
+        <div class="row text-light small border border-light">
+            <div class="col-12 col-md-4 mb-4 mb-md-0 border border-light" id="contacto">
+                <h6 class="fw-bold text-white mb-3 border-light">Contacto</h6>
+                <p class="mb-1">Dawazon S.L.</p>
+                <p class="mb-1">C/ Falsa 123, 4ºB, 28000 Madrid, España</p>
+                <p class="mb-1">Tel: +34 912 345 678</p>
+                <p class="mb-1">Email: <a href="mailto:info@dawazon.example" class="text-info text-decoration-none">info@dawazon.example</a></p>
+                <p class="mb-0">Horario: Lun-Vie 09:00–18:00</p>
+            </div>
+
+            <div class="col-12 col-md-4 mb-4 mb-md-0 border border-light" id="quienes-somos">
+                <h6 class="fw-bold text-white mb-3">Quiénes somos</h6>
+                <p class="mb-2">Dawazon es una empresa tecnológica fundada en 2020 dedicada a desarrollar soluciones de comercio electrónico.</p>
+                <p class="mb-2">Nuestra misión es facilitar el acceso a herramientas de venta online con una plataforma intuitiva.</p>
+                <p class="mb-0">Equipo formado por desarrolladores y especialistas en operaciones.</p>
+            </div>
+
+            <div class="col-12 col-md-4 border border-light" id="legal">
+                <h6 class="fw-bold text-white mb-3">Legal</h6>
+                <ul class="list-unstyled mb-2">
+                    <li class="mb-1"><a href="#" class="text-light text-decoration-none hover-underline">Aviso legal</a></li>
+                    <li class="mb-1"><a href="#" class="text-light text-decoration-none hover-underline">Política de privacidad</a></li>
+                    <li class="mb-1"><a href="#" class="text-light text-decoration-none hover-underline">Términos y condiciones</a></li>
+                </ul>
+                <p class="mb-1 x-small opacity-75">Razón social: Dawazon S.L. | CIF: B12345678</p>
+                <p class="mb-0 x-small opacity-75">Registro Mercantil de Madrid. Tomo 1234, Folio 56.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center py-3 border-top border-secondary">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center gap-2">
+                <img src="~/Dawazon.png" style="width: 25px; filter: grayscale(1) brightness(2);" alt="Logo">
+                <span class="small opacity-75">&copy; @DateTime.Now.Year Dawazon S.L. Todos los derechos reservados.</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+@if (User.Identity!.IsAuthenticated && (User.IsInRole("Manager")))
+{
+    var rawNavId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+    if (long.TryParse(rawNavId, out long navUserId))
+    {
+        <component type="typeof(dawazon2._0.Components.ManagerSalesNotification)"
+                   render-mode="Server"
+                   param-ManagerId="@navUserId" />
+    }
+}
+
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/site.js" asp-append-version="true"></script>
+
+<script src="/_framework/blazor.server.js"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,409 @@
+@namespace dawazon2._0.Components
+@using System.Timers
+@using dawazonBackend.Common.Dto
+@using dawazonBackend.Products.Service
+@implements IDisposable
+@inject IProductService ProductService
+@inject ILogger<AdminStats> Logger
+
+<div class="stats-container">
+    <div class="stats-header">
+        <h2 class="stats-title">
+            <i class="bi bi-speedometer2 me-2"></i>Estadísticas en Tiempo Real
+        </h2>
+        <p class="stats-subtitle">Los datos se actualizan automáticamente cada 10 segundos</p>
+    </div>
+
+    @if (_isLoading && _stats == null)
+    {
+        <div class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+            <p class="mt-3 text-muted">Cargando estadísticas...</p>
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="stat-card stat-card-primary">
+                    <div class="stat-icon">
+                        <i class="bi bi-box-seam"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">@_stats?.TotalProducts.ToString("N0")</div>
+                        <div class="stat-label">Productos en Tienda</div>
+                    </div>
+                    <div class="stat-trend trend-up">
+                        <i class="bi bi-arrow-up"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="stat-card stat-card-success">
+                    <div class="stat-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">@_stats?.TotalUsers.ToString("N0")</div>
+                        <div class="stat-label">Usuarios Registrados</div>
+                    </div>
+                    <div class="stat-trend trend-up">
+                        <i class="bi bi-person-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="stat-card stat-card-warning">
+                    <div class="stat-icon">
+                        <i class="bi bi-cart-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">@_stats?.TotalSales.ToString("N0")</div>
+                        <div class="stat-label">Ventas Realizadas</div>
+                    </div>
+                    <div class="stat-trend trend-up">
+                        <i class="bi bi-graph-up"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="stat-card stat-card-info">
+                    <div class="stat-icon">
+                        <i class="bi bi-currency-euro"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">@_stats?.TotalEarnings.ToString("N2")€</div>
+                        <div class="stat-label">Ganancias Totales</div>
+                    </div>
+                    <div class="stat-trend trend-up">
+                        <i class="bi bi-cash-stack"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="stat-card stat-card-danger">
+                    <div class="stat-icon">
+                        <i class="bi bi-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">@_stats?.OutOfStockCount.ToString("N0")</div>
+                        <div class="stat-label">Productos Sin Stock</div>
+                    </div>
+                    @if (_stats?.OutOfStockCount > 0)
+                    {
+                        <div class="stat-trend trend-down">
+                            <i class="bi bi-arrow-down"></i>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="stat-card stat-card-purple">
+                    <div class="stat-icon">
+                        <i class="bi bi-pie-chart"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value">@_stats?.ProductsByCategory.Count</div>
+                        <div class="stat-label">Categorías Activas</div>
+                    </div>
+                    <div class="stat-trend trend-up">
+                        <i class="bi bi-tags"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @if (_stats?.ProductsByCategory != null && _stats.ProductsByCategory.Any())
+        {
+            <div class="category-section mt-4">
+                <h4 class="category-title">
+                    <i class="bi bi-bar-chart me-2"></i>Distribución por Categorías
+                </h4>
+                <div class="category-grid">
+                    @foreach (var category in _stats.ProductsByCategory.OrderByDescending(c => c.Value).Take(6))
+                    {
+                        <div class="category-item">
+                            <div class="category-info">
+                                <span class="category-name">@category.Key</span>
+                                <span class="category-count">@category.Value productos</span>
+                            </div>
+                            <div class="category-bar-container">
+                                <div class="category-bar" 
+                                     style="width: @((double)category.Value / _stats.ProductsByCategory.Values.Max() * 100)%">
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    }
+</div>
+
+<style>
+    .stats-container {
+        padding: 1rem;
+    }
+
+    .stats-header {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .stats-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #131921;
+        margin-bottom: 0.5rem;
+    }
+
+    .stats-subtitle {
+        color: #6c757d;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    .stat-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .stat-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+    }
+
+    .stat-card-primary::before {
+        background: linear-gradient(180deg, #007185, #00a8e8);
+    }
+
+    .stat-card-success::before {
+        background: linear-gradient(180deg, #067d62, #19a974);
+    }
+
+    .stat-card-warning::before {
+        background: linear-gradient(180deg, #c7511f, #f08804);
+    }
+
+    .stat-card-info::before {
+        background: linear-gradient(180deg, #232f3e, #374b5e);
+    }
+
+    .stat-card-danger::before {
+        background: linear-gradient(180deg, #b12704, #d12212);
+    }
+
+    .stat-card-purple::before {
+        background: linear-gradient(180deg, #4a154b, #8843c2);
+    }
+
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        flex-shrink: 0;
+    }
+
+    .stat-card-primary .stat-icon {
+        background: linear-gradient(135deg, #e8f4f8, #d1e9f0);
+        color: #007185;
+    }
+
+    .stat-card-success .stat-icon {
+        background: linear-gradient(135deg, #e8f5f0, #d0ebe0);
+        color: #067d62;
+    }
+
+    .stat-card-warning .stat-icon {
+        background: linear-gradient(135deg, #fef3e8, #fce8d4);
+        color: #c7511f;
+    }
+
+    .stat-card-info .stat-icon {
+        background: linear-gradient(135deg, #e8eaec, #d0d3d8);
+        color: #232f3e;
+    }
+
+    .stat-card-danger .stat-icon {
+        background: linear-gradient(135deg, #fceae8, #fadcd8);
+        color: #b12704;
+    }
+
+    .stat-card-purple .stat-icon {
+        background: linear-gradient(135deg, #f3e8f5, #eddaf0);
+        color: #4a154b;
+    }
+
+    .stat-content {
+        flex: 1;
+    }
+
+    .stat-value {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: #131921;
+        line-height: 1.2;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+        color: #6c757d;
+        margin-top: 0.25rem;
+    }
+
+    .stat-trend {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+    }
+
+    .trend-up {
+        background: #d1e9d8;
+        color: #067d62;
+    }
+
+    .trend-down {
+        background: #fadcd8;
+        color: #b12704;
+    }
+
+    .category-section {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .category-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #131921;
+        margin-bottom: 1rem;
+    }
+
+    .category-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .category-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .category-info {
+        width: 180px;
+        flex-shrink: 0;
+    }
+
+    .category-name {
+        display: block;
+        font-weight: 600;
+        color: #131921;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .category-count {
+        display: block;
+        font-size: 0.8rem;
+        color: #6c757d;
+    }
+
+    .category-bar-container {
+        flex: 1;
+        height: 24px;
+        background: #f0f2f5;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .category-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #007185, #00a8e8);
+        border-radius: 12px;
+        transition: width 0.5s ease;
+    }
+
+    .spinner-border {
+        color: #007185;
+    }
+</style>
+
+@code {
+    private AdminStatsDto? _stats;
+    private bool _isLoading = true;
+    private Timer? _timer;
+
+    protected override void OnInitialized()
+    {
+        Logger.LogInformation("AdminStats inicializado. Polling cada 10s.");
+        
+        _timer = new Timer(10_000);
+        _timer.Elapsed += async (_, _) => await InvokeAsync(LoadStatsAsync);
+        _timer.AutoReset = true;
+        _timer.Enabled = true;
+
+        _ = LoadStatsAsync();
+    }
+
+    private async Task LoadStatsAsync()
+    {
+        try
+        {
+            _stats = await ProductService.GetStatsAsync();
+            _isLoading = false;
+            await InvokeAsync(StateHasChanged);
+            Logger.LogDebug("Estadísticas actualizadas: {Products} productos, {OutOfStock} sin stock, {Sales} ventas", 
+                _stats.TotalProducts, _stats.OutOfStockCount, _stats.TotalSales);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error al cargar estadísticas");
+        }
+    }
+
+    public void Dispose()
+    {
+        _timer?.Stop();
+        _timer?.Dispose();
+    }
+}
