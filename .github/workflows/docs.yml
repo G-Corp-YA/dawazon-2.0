@@ -42,6 +42,14 @@ jobs:
             --configuration Release \
             --logger "trx;LogFileName=UnitTestResults/UnitTestResults.trx"
 
+      - name: Upload Unit Test Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: unit-test-results
+          path: UnitTestResults/
+          retention-days: 7
+
   bruno-tests:
     name: Bruno API Tests
     runs-on: ubuntu-latest
@@ -91,6 +99,14 @@ jobs:
         run: |
           cd dawazonBrunoTest
           bru run --env Local --format json
+
+      - name: Upload Bruno Test Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bruno-test-results
+          path: dawazonBrunoTest/results/
+          retention-days: 7
 
       - name: Stop server
         if: always()
@@ -152,6 +168,14 @@ jobs:
             --configuration Release \
             --no-build \
             --logger "trx;LogFileName=E2ETestResults/PlaywrightResults.trx"
+
+      - name: Upload Playwright Test Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-test-results
+          path: E2ETestResults/
+          retention-days: 7
       - name: Stop server
         if: always()
         run: |
@@ -195,6 +219,30 @@ jobs:
             cp -r test-results/unit-test-results/* generated/unit-tests/ 2>/dev/null || true
           fi
 
+      - name: Generate Unit Tests HTML Report
+        run: |
+          cat > generated/unit-tests/index.html << 'HTMLEOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>Unit Tests Report</title>
+            <style>
+              body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+              h1 { color: #333; }
+              .result { padding: 10px; margin: 10px 0; border-radius: 4px; }
+              .pass { background: #d4edda; color: #155724; }
+              .fail { background: #f8d7da; color: #721c24; }
+            </style>
+          </head>
+          <body>
+            <h1>Unit Tests Report</h1>
+            <div class="result pass">Unit tests completed. Check TRX files for details.</div>
+            <p><small>Generated: </small></p>
+          </body>
+          </html>
+          HTMLEOF
+          echo -n "$(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> generated/unit-tests/index.html
+
       - name: Copy Bruno Test Results
         run: |
           mkdir -p generated/bruno-tests
@@ -202,12 +250,58 @@ jobs:
             cp -r test-results/bruno-test-results/* generated/bruno-tests/ 2>/dev/null || true
           fi
 
+      - name: Generate Bruno Tests HTML Report
+        run: |
+          cat > generated/bruno-tests/index.html << 'HTMLEOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>Bruno API Tests Report</title>
+            <style>
+              body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+              h1 { color: #333; }
+              .result { padding: 10px; margin: 10px 0; border-radius: 4px; }
+              .pass { background: #d4edda; color: #155724; }
+            </style>
+          </head>
+          <body>
+            <h1>Bruno API Tests Report</h1>
+            <div class="result pass">Bruno API tests completed. Check JSON results for details.</div>
+            <p><small>Generated: </small></p>
+          </body>
+          </html>
+          HTMLEOF
+          echo -n "$(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> generated/bruno-tests/index.html
+
       - name: Copy Playwright Test Results
         run: |
           mkdir -p generated/playwright-tests
           if [ -d "test-results/playwright-test-results" ]; then
             cp -r test-results/playwright-test-results/* generated/playwright-tests/ 2>/dev/null || true
           fi
+
+      - name: Generate Playwright Tests HTML Report
+        run: |
+          cat > generated/playwright-tests/index.html << 'HTMLEOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>Playwright E2E Tests Report</title>
+            <style>
+              body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+              h1 { color: #333; }
+              .result { padding: 10px; margin: 10px 0; border-radius: 4px; }
+              .pass { background: #d4edda; color: #155724; }
+            </style>
+          </head>
+          <body>
+            <h1>Playwright E2E Tests Report</h1>
+            <div class="result pass">Playwright E2E tests completed. Check TRX files for details.</div>
+            <p><small>Generated: </small></p>
+          </body>
+          </html>
+          HTMLEOF
+          echo -n "$(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> generated/playwright-tests/index.html
 
       - name: Create index.html with links to all reports
         run: |
@@ -251,7 +345,3 @@ jobs:
           folder: generated
           branch: gh-pages
           token: ${{ secrets.GITHUB_TOKEN }}
-          pull-request: true
-          pull-request-title: 'Deploy Documentation & Test Reports'
-          pull-request-body: 'Automated deployment of documentation and test reports'
-          pull-request-base: main
