@@ -37,11 +37,11 @@ jobs:
           dotnet-version: 10.0.102
       - name: Run Unit Tests
         run: |
-          mkdir -p UnitTestResults
           dotnet test ./dawazonTest/dawazonTest.csproj \
             --configuration Release \
-            --logger "trx;LogFileName=UnitTestResults/UnitTestResults.trx" \
-            --logger "html;LogFileName=UnitTestResults/UnitTestResults.html"
+            --results-directory ./UnitTestResults \
+            --logger "trx;LogFileName=UnitTestResults.trx" \
+            --logger "html;LogFileName=UnitTestResults.html"
 
       - name: Upload Unit Test Results
         uses: actions/upload-artifact@v4
@@ -99,7 +99,8 @@ jobs:
       - name: Run Bruno Tests
         run: |
           cd dawazonBrunoTest
-          bru run --env Local --format html
+          mkdir -p results
+          bru run --env Local --format html > results/results.html
 
       - name: Upload Bruno Test Results
         uses: actions/upload-artifact@v4
@@ -164,12 +165,12 @@ jobs:
         env:
           E2E_BASE_URL: http://localhost:5041
         run: |
-          mkdir -p E2ETestResults
           dotnet test ./dawazonPlayWrite/dawazonPlayWrite.csproj \
             --configuration Release \
             --no-build \
-            --logger "trx;LogFileName=E2ETestResults/PlaywrightResults.trx" \
-            --logger "html;LogFileName=E2ETestResults/PlaywrightResults.html"
+            --results-directory ./E2ETestResults \
+            --logger "trx;LogFileName=PlaywrightResults.trx" \
+            --logger "html;LogFileName=PlaywrightResults.html"
 
       - name: Upload Playwright Test Results
         uses: actions/upload-artifact@v4
@@ -228,7 +229,7 @@ jobs:
           
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Bruno API Tests" >> $GITHUB_STEP_SUMMARY
-          if [ -d "test-results/bruno-test-results" ]; then
+          if [ -f "test-results/bruno-test-results/results/results.html" ]; then
             echo "Bruno API tests completed. View detailed results in the artifact." >> $GITHUB_STEP_SUMMARY
           else
             echo "No Bruno test results found" >> $GITHUB_STEP_SUMMARY
@@ -265,7 +266,8 @@ jobs:
 
       - name: Create index.html with test results
         run: |
-          cat > generated/index.html << 'HTMLEOF'
+          TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
+          cat > generated/index.html << EOF
           <!DOCTYPE html>
           <html>
           <head>
@@ -293,13 +295,14 @@ jobs:
               <h2>Test Results</h2>
               <ul>
                 <li><a href="unit-tests/UnitTestResults.html">Unit Tests Report (HTML)</a></li>
-                <li><a href="bruno-tests/results.html">Bruno API Tests Report (HTML)</a></li>
+                <li><a href="bruno-tests/results/results.html">Bruno API Tests Report (HTML)</a></li>
                 <li><a href="playwright-tests/PlaywrightResults.html">Playwright E2E Tests Report (HTML)</a></li>
               </ul>
             </div>
-            <p><small>Generated: HTMLEOF
-          echo -n "$(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> generated/index.html
-          echo "</small></p></body></html>" >> generated/index.html
+            <p><small>Generated: ${TIMESTAMP}</small></p>
+          </body>
+          </html>
+          EOF
 
       - name: Create .nojekyll
         run: touch generated/.nojekyll
