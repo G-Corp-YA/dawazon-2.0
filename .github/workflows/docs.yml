@@ -79,10 +79,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install Bruno CLI & HTML Reporter
-        run: |
-          npm install -g @usebruno/cli
-          npm install -g @usebruno/reporter-html
+      - name: Install Bruno CLI
+        run: npm install -g @usebruno/cli
       - name: Start backend server
         run: |
           dotnet run --project ./dawazon2.0/dawazon2.0.csproj \
