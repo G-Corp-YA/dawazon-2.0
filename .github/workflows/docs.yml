@@ -169,8 +169,7 @@ jobs:
             --configuration Release \
             --no-build \
             --results-directory ./E2ETestResults \
-            --logger "trx;LogFileName=PlaywrightResults.trx" \
-            --collect:"XPlat Code Coverage;Format=cobertura"
+            --logger "trx;LogFileName=PlaywrightResults.trx"
 
       - name: Upload Playwright Test Results
         uses: actions/upload-artifact@v4
@@ -216,7 +215,6 @@ jobs:
           mkdir -p generated/unit-coverage
           mkdir -p generated/bruno-tests
           mkdir -p generated/playwright-tests
-          mkdir -p generated/playwright-coverage
 
       - name: Generate Doxygen docs
         run: cd docs && doxygen Doxyfile
@@ -459,19 +457,6 @@ jobs:
             echo "<html><body><h1>No test results found</h1></body></html>" > generated/playwright-tests/index.html
           fi
 
-      - name: Generate Playwright Coverage HTML Report
-        run: |
-          COBERTURA=$(find test-results/playwright-test-results -name "coverage.cobertura.xml" -type f | head -1)
-          if [ -f "$COBERTURA" ]; then
-            reportgenerator \
-              -reports:"$COBERTURA" \
-              -targetdir:generated/playwright-coverage \
-              -reporttypes:Html \
-              -title:"Playwright E2E Code Coverage"
-          else
-            echo "<html><body><h1>No coverage data found</h1></body></html>" > generated/playwright-coverage/index.html
-          fi
-
       - name: Create index.html with test results
         run: |
           TIMESTAMP=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
@@ -500,9 +485,8 @@ jobs:
               <ul>
                 <li><a href="unit-tests/index.html">Unit Tests Report</a></li>
                 <li><a href="unit-coverage/index.html">Unit Tests Coverage Report</a></li>
-                <li><a href="bruno-tests/results/results.html">Bruno API Tests Report</a></li>
+                <li><a href="bruno-tests/results.html">Bruno API Tests Report</a></li>
                 <li><a href="playwright-tests/index.html">Playwright E2E Tests Report</a></li>
-                <li><a href="playwright-coverage/index.html">Playwright E2E Coverage Report</a></li>
               </ul>
             </div>
             <p><small>Generated: ${TIMESTAMP}</small></p>
