@@ -1,50 +1,38 @@
 #!/bin/sh
-
 # CONFIGURACION
 BaseDir="$(cd "$(dirname "$0")" && pwd)"
 Env="Local"
 ReportsDir="$BaseDir/reports"
 FailCount=0
-
 # Lista de carpetas compatible con sh
 Carpetas="ControladorAuth ControladorProductos ControladorCarrito ControladorAdmin"
-
 # Crear carpeta reports si no existe
 if [ ! -d "$ReportsDir" ]; then
   mkdir -p "$ReportsDir"
 fi
-
 echo "Iniciando pruebas con Bruno CLI..."
 echo "Directorio base: $BaseDir"
 echo "Entorno: $Env"
 echo "========================================="
-
 # INSTALAR BRUNO CLI SI NO EXISTE
 if ! command -v bru >/dev/null 2>&1
 then
   echo "Instalando Bruno CLI..."
   npm install -g @usebruno/cli
 fi
-
 # OMITIR reporter HTML para evitar error npm 404
 echo "Reporter HTML omitido (no disponible en npm)"
-
 # EJECUTAR CARPETAS
 Resumen=""
-
 for Carpeta in $Carpetas
 do
   RutaCarpeta="$BaseDir/$Carpeta"
   OutputPath="$ReportsDir/report-$Carpeta.html"
-
   echo ""
   echo "Ejecutando: $Carpeta"
-
   # Ejecutar Bruno, ignorando errores para que siga con todas las carpetas
   bru run "$RutaCarpeta" --env "$Env" --reporter-html "$OutputPath" || true
-
   ExitCode=$?
-
   if [ "$ExitCode" -ne 0 ]; then
     echo "Fallos en $Carpeta"
     Estado="FALLO"
@@ -53,7 +41,6 @@ do
     echo "$Carpeta OK"
     Estado="PASO"
   fi
-
   Resumen="$Resumen
 <div class=\"card $( [ "$Estado" = "PASO" ] && echo "pass" || echo "fail" )\">
 <h2>$Carpeta</h2>
@@ -62,10 +49,8 @@ do
 </div>
 "
 done
-
 # GENERAR DASHBOARD HTML
 IndexPath="$ReportsDir/index.html"
-
 cat > "$IndexPath" <<EOF
 <!DOCTYPE html>
 <html>
@@ -92,24 +77,18 @@ a { text-decoration:none; font-weight:bold; color:#007bff; }
 </style>
 </head>
 <body>
-
 <h1>Dashboard de Pruebas Bruno</h1>
 <p><strong>Fecha:</strong> $(date)</p>
 <p><strong>Entorno:</strong> $Env</p>
-
 $Resumen
-
 <div class="summary">
 <h2>Total de Fallos: $FailCount</h2>
 </div>
-
 </body>
 </html>
 EOF
-
 echo ""
 echo "Dashboard generado en: $IndexPath"
-
 # RESUMEN FINAL
 echo ""
 echo "========================================="
@@ -119,5 +98,4 @@ else
   echo "$FailCount carpeta(s) fallaron."
 fi
 echo "========================================="
-
 exit $FailCount

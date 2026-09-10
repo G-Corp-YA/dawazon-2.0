@@ -35,8 +35,6 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 10.0.102
-      - name: Install HTML Report Generator
-        run: dotnet tool install --global Microsoft.TestPlatform.Extensions.HtmlReportGenerator
       - name: Run Unit Tests
         run: |
           mkdir -p UnitTestResults
@@ -146,8 +144,6 @@ jobs:
           cd dawazonPlayWrite
           dotnet tool install --global Microsoft.Playwright.CLI || true
           playwright install --with-deps chromium
-      - name: Install HTML Report Generator
-        run: dotnet tool install --global Microsoft.TestPlatform.Extensions.HtmlReportGenerator
       - name: Start backend server
         run: |
           dotnet run --project ./dawazon2.0/dawazon2.0.csproj \
@@ -205,21 +201,6 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 10.0.102
-
-      - name: Install HTML Report Generator
-        run: dotnet tool install --global Microsoft.TestPlatform.Extensions.HtmlReportGenerator
-
-      - name: Generate HTML from TRX if missing
-        run: |
-          if [ -f "test-results/unit-test-results/UnitTestResults.trx" ] && [ ! -f "test-results/unit-test-results/UnitTestResults.html" ]; then
-            mkdir -p test-results/unit-test-results
-            dotnet-trx2html test-results/unit-test-results/UnitTestResults.trx -o test-results/unit-test-results/UnitTestResults.html
-          fi
-          
-          if [ -f "test-results/playwright-test-results/PlaywrightResults.trx" ] && [ ! -f "test-results/playwright-test-results/PlaywrightResults.html" ]; then
-            mkdir -p test-results/playwright-test-results
-            dotnet-trx2html test-results/playwright-test-results/PlaywrightResults.trx -o test-results/playwright-test-results/PlaywrightResults.html
-          fi
 
       - name: Install Doxygen
         run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
