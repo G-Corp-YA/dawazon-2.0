@@ -81,21 +81,44 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Contrato del servicio de autenticación.  
+<p>Interfaz que define el contrato para el servicio de autenticación de usuarios.  
  <a href="interfacedawazonBackend_1_1Users_1_1Service_1_1Auth_1_1IAuthService.html#details">Más...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
 <tr class="memitem:abda5422e2a0f56358eb8c2bf6559b80c" id="r_abda5422e2a0f56358eb8c2bf6559b80c"><td class="memItemLeft" align="right" valign="top">Task&lt; Result&lt; AuthResponseDto, UserError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Auth_1_1IAuthService.html#abda5422e2a0f56358eb8c2bf6559b80c">SignUpAsync</a> (RegisterDto dto)</td></tr>
-<tr class="memdesc:abda5422e2a0f56358eb8c2bf6559b80c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra un nuevo usuario.  <br /></td></tr>
+<tr class="memdesc:abda5422e2a0f56358eb8c2bf6559b80c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra un nuevo usuario en el sistema.  <br /></td></tr>
 <tr class="separator:abda5422e2a0f56358eb8c2bf6559b80c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a169a2a9a0c9ceb1385890ec52ae3c7e9" id="r_a169a2a9a0c9ceb1385890ec52ae3c7e9"><td class="memItemLeft" align="right" valign="top">Task&lt; Result&lt; AuthResponseDto, UserError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Auth_1_1IAuthService.html#a169a2a9a0c9ceb1385890ec52ae3c7e9">SignInAsync</a> (LoginDto dto)</td></tr>
-<tr class="memdesc:a169a2a9a0c9ceb1385890ec52ae3c7e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicia sesión con credenciales.  <br /></td></tr>
+<tr class="memdesc:a169a2a9a0c9ceb1385890ec52ae3c7e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicia sesión con credenciales de usuario (username o email + password).  <br /></td></tr>
 <tr class="separator:a169a2a9a0c9ceb1385890ec52ae3c7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>Contrato del servicio de autenticación. </p>
-</div><h2 class="groupheader">Documentación de funciones miembro</h2>
+<div class="textblock"><p>Interfaz que define el contrato para el servicio de autenticación de usuarios. </p>
+<p>Proporciona métodos para el registro e inicio de sesión de usuarios en el sistema.</p>
+<p><b>Características:</b></p>
+<ul>
+<li>
+Registro de nuevos usuarios </li>
+<li>
+Inicio de sesión con credenciales </li>
+<li>
+Generación de tokens JWT </li>
+</ul>
+<p><b>Uso típico:</b></p>
+<div class="fragment"><div class="line"><a class="code hl_interface" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Auth_1_1IAuthService.html">IAuthService</a> authService = httpContext.RequestServices.GetRequiredService&lt;<a class="code hl_interface" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Auth_1_1IAuthService.html">IAuthService</a>&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Registro</span></div>
+<div class="line">var registerDto = <span class="keyword">new</span> RegisterDto { Username = <span class="stringliteral">&quot;john&quot;</span>, Email = <span class="stringliteral">&quot;john@example.com&quot;</span>, Password = <span class="stringliteral">&quot;password123&quot;</span> };</div>
+<div class="line">var signUpResult = await authService.<a class="code hl_function" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Auth_1_1IAuthService.html#abda5422e2a0f56358eb8c2bf6559b80c">SignUpAsync</a>(registerDto);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Inicio de sesión</span></div>
+<div class="line">var loginDto = <span class="keyword">new</span> LoginDto { UsernameOrEmail = <span class="stringliteral">&quot;john&quot;</span>, Password = <span class="stringliteral">&quot;password123&quot;</span> };</div>
+<div class="line">var signInResult = await authService.<a class="code hl_function" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Auth_1_1IAuthService.html#a169a2a9a0c9ceb1385890ec52ae3c7e9">SignInAsync</a>(loginDto);</div>
+<div class="ttc" id="ainterfacedawazonBackend_1_1Users_1_1Service_1_1Auth_1_1IAuthService_html"><div class="ttname"><a href="interfacedawazonBackend_1_1Users_1_1Service_1_1Auth_1_1IAuthService.html">dawazonBackend.Users.Service.Auth.IAuthService</a></div><div class="ttdoc">Interfaz que define el contrato para el servicio de autenticación de usuarios.</div><div class="ttdef"><b>Definition</b> IAuthService.cs:34</div></div>
+<div class="ttc" id="ainterfacedawazonBackend_1_1Users_1_1Service_1_1Auth_1_1IAuthService_html_a169a2a9a0c9ceb1385890ec52ae3c7e9"><div class="ttname"><a href="interfacedawazonBackend_1_1Users_1_1Service_1_1Auth_1_1IAuthService.html#a169a2a9a0c9ceb1385890ec52ae3c7e9">dawazonBackend.Users.Service.Auth.IAuthService.SignInAsync</a></div><div class="ttdeci">Task&lt; Result&lt; AuthResponseDto, UserError &gt; &gt; SignInAsync(LoginDto dto)</div><div class="ttdoc">Inicia sesión con credenciales de usuario (username o email + password).</div></div>
+<div class="ttc" id="ainterfacedawazonBackend_1_1Users_1_1Service_1_1Auth_1_1IAuthService_html_abda5422e2a0f56358eb8c2bf6559b80c"><div class="ttname"><a href="interfacedawazonBackend_1_1Users_1_1Service_1_1Auth_1_1IAuthService.html#abda5422e2a0f56358eb8c2bf6559b80c">dawazonBackend.Users.Service.Auth.IAuthService.SignUpAsync</a></div><div class="ttdeci">Task&lt; Result&lt; AuthResponseDto, UserError &gt; &gt; SignUpAsync(RegisterDto dto)</div><div class="ttdoc">Registra un nuevo usuario en el sistema.</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Documentación de funciones miembro</h2>
 <a id="a169a2a9a0c9ceb1385890ec52ae3c7e9" name="a169a2a9a0c9ceb1385890ec52ae3c7e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a169a2a9a0c9ceb1385890ec52ae3c7e9">&#9670;&#160;</a></span>SignInAsync()</h2>
 
@@ -112,15 +135,52 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Inicia sesión con credenciales. </p>
+<p>Inicia sesión con credenciales de usuario (username o email + password). </p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dto</td><td>Credenciales de acceso.</td></tr>
+    <tr><td class="paramname">dto</td><td>Objeto <a class="el" href="namespacedawazonBackend_1_1Users_1_1Dto.html#a0f1b494b1adde620523c09cbe5d71546" title="DTO para solicitudes de inicio de sesión.">LoginDto</a> con las credenciales de acceso.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Devuelve</dt><dd>Resultado con respuesta de autenticación.</dd></dl>
-
+<dl class="section return"><dt>Devuelve</dt><dd>Un Result&lt;AuthResponseDto, UserError&gt; que puede ser: <ul>
+<li>
+Exitoso: contiene <a class="el" href="namespacedawazonBackend_1_1Users_1_1Dto.html#ae8c11143f9b6042e9fc61a80cf0256ea" title="DTO de respuesta de autenticación con JWT.">AuthResponseDto</a> con el token JWT </li>
+<li>
+Fallido: contiene un UserError indicando el error </li>
+</ul>
+</dd></dl>
+<p><b>Proceso de login:</b></p>
+<ol>
+<li>
+Busca el usuario por username o email </li>
+<li>
+Valida la contraseña usando Identity </li>
+<li>
+Genera un nuevo token JWT </li>
+</ol>
+<p><b>Errores posibles:</b></p>
+<ul>
+<li>
+UnauthorizedError: Si el usuario no existe o la contraseña es incorrecta </li>
+</ul>
+<p><b>Nota:</b> El método sanitiza el input eliminando caracteres de salto de línea.</p>
+<div class="fragment"><div class="line">var loginDto = <span class="keyword">new</span> LoginDto</div>
+<div class="line">{</div>
+<div class="line">    UsernameOrEmail = <span class="stringliteral">&quot;juan@example.com&quot;</span>, <span class="comment">// o puede ser el username</span></div>
+<div class="line">    Password = <span class="stringliteral">&quot;SecurePassword123&quot;</span></div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">var result = await authService.SignInAsync(loginDto);</div>
+<div class="line"><span class="keywordflow">if</span> (result.IsSuccess)</div>
+<div class="line">{</div>
+<div class="line">    var token = result.Value.Token;</div>
+<div class="line">    Console.WriteLine($<span class="stringliteral">&quot;Login exitoso. Token: {token}&quot;</span>);</div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">else</span></div>
+<div class="line">{</div>
+<div class="line">    Console.WriteLine($<span class="stringliteral">&quot;Error: {result.Error.Message}&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="abda5422e2a0f56358eb8c2bf6559b80c" name="abda5422e2a0f56358eb8c2bf6559b80c"></a>
@@ -139,15 +199,58 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Registra un nuevo usuario. </p>
+<p>Registra un nuevo usuario en el sistema. </p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dto</td><td>Datos de registro.</td></tr>
+    <tr><td class="paramname">dto</td><td>Objeto <a class="el" href="namespacedawazonBackend_1_1Users_1_1Dto.html#ad6810fb6cb261482119b31b089653343" title="DTO para solicitudes de registro de nuevos usuarios.">RegisterDto</a> con los datos de registro del usuario.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Devuelve</dt><dd>Resultado con respuesta de autenticación.</dd></dl>
-
+<dl class="section return"><dt>Devuelve</dt><dd>Un Result&lt;AuthResponseDto, UserError&gt; que puede ser: <ul>
+<li>
+Exitoso: contiene <a class="el" href="namespacedawazonBackend_1_1Users_1_1Dto.html#ae8c11143f9b6042e9fc61a80cf0256ea" title="DTO de respuesta de autenticación con JWT.">AuthResponseDto</a> con el token JWT </li>
+<li>
+Fallido: contiene un UserError indicando el error </li>
+</ul>
+</dd></dl>
+<p><b>Proceso de registro:</b></p>
+<ol>
+<li>
+Valida que el username y email no estén en uso </li>
+<li>
+Crea el usuario en Identity con hash de contraseña </li>
+<li>
+Asigna el rol "User" por defecto </li>
+<li>
+Crea un carrito de compras vacío </li>
+<li>
+Genera un token JWT de autenticación </li>
+</ol>
+<p><b>Errores posibles:</b></p>
+<ul>
+<li>
+UserConflictError: Si el username o email ya existen </li>
+<li>
+UserError: Si falla la creación del usuario en Identity </li>
+</ul>
+<div class="fragment"><div class="line">var registerDto = <span class="keyword">new</span> RegisterDto</div>
+<div class="line">{</div>
+<div class="line">    Username = <span class="stringliteral">&quot;juan Perez&quot;</span>,</div>
+<div class="line">    Email = <span class="stringliteral">&quot;juan@example.com&quot;</span>,</div>
+<div class="line">    Password = <span class="stringliteral">&quot;SecurePassword123&quot;</span></div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">var result = await authService.SignUpAsync(registerDto);</div>
+<div class="line"><span class="keywordflow">if</span> (result.IsSuccess)</div>
+<div class="line">{</div>
+<div class="line">    var token = result.Value.Token;</div>
+<div class="line">    Console.WriteLine($<span class="stringliteral">&quot;Usuario registrado. Token: {token}&quot;</span>);</div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">else</span></div>
+<div class="line">{</div>
+<div class="line">    Console.WriteLine($<span class="stringliteral">&quot;Error: {result.Error.Message}&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <hr/>La documentación de esta interface está generada del siguiente archivo:<ul>

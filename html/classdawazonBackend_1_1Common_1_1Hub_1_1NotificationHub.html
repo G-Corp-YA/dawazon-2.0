@@ -77,12 +77,15 @@ $(function() {
   <div class="headertitle"><div class="title">Referencia de la clase dawazonBackend.Common.Hub.NotificationHub</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Hub de SignalR para notificaciones en tiempo real.  
+ <a href="classdawazonBackend_1_1Common_1_1Hub_1_1NotificationHub.html#details">Más...</a></p>
 <div class="dynheader">
 Diagrama de herencia de dawazonBackend.Common.Hub.NotificationHub</div>
 <div class="dyncontent">
 <div class="center"><img src="classdawazonBackend_1_1Common_1_1Hub_1_1NotificationHub__inherit__graph.png" border="0" usemap="#adawazonBackend_8Common_8Hub_8NotificationHub_inherit__map" alt="Inheritance graph"/></div>
 <map name="adawazonBackend_8Common_8Hub_8NotificationHub_inherit__map" id="adawazonBackend_8Common_8Hub_8NotificationHub_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,93,237,133"/>
+<area shape="rect" title="Hub de SignalR para notificaciones en tiempo real." alt="" coords="5,93,237,133"/>
 <area shape="rect" title=" " alt="" coords="38,5,205,45"/>
 <area shape="poly" title=" " alt="" coords="124,59,124,93,119,93,119,59"/>
 </map>
@@ -92,12 +95,32 @@ Diagrama de colaboración de dawazonBackend.Common.Hub.NotificationHub:</div>
 <div class="dyncontent">
 <div class="center"><img src="classdawazonBackend_1_1Common_1_1Hub_1_1NotificationHub__coll__graph.png" border="0" usemap="#adawazonBackend_8Common_8Hub_8NotificationHub_coll__map" alt="Collaboration graph"/></div>
 <map name="adawazonBackend_8Common_8Hub_8NotificationHub_coll__map" id="adawazonBackend_8Common_8Hub_8NotificationHub_coll__map">
-<area shape="rect" title=" " alt="" coords="5,93,237,133"/>
+<area shape="rect" title="Hub de SignalR para notificaciones en tiempo real." alt="" coords="5,93,237,133"/>
 <area shape="rect" title=" " alt="" coords="38,5,205,45"/>
 <area shape="poly" title=" " alt="" coords="124,59,124,93,119,93,119,59"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">leyenda</a>]</span></center></div>
-<hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Hub de SignalR para notificaciones en tiempo real. </p>
+<p>Este Hub permite la comunicación bidireccional en tiempo real entre el servidor y los clientes conectados. Se utiliza para enviar notificaciones instantáneas a los clientes sin necesidad de polling.</p>
+<p><b>Funcionalidades:</b></p>
+<ul>
+<li>
+Notificaciones en tiempo real </li>
+<li>
+Actualización de estado de pedidos </li>
+<li>
+Alertas de stock </li>
+<li>
+Mensajería entre usuarios </li>
+</ul>
+<p><b>Protocolo:</b></p>
+<p>Los clientes se conectan a este hub y pueden suscribirse a grupos o recibir mensajes directamente.</p>
+<p><b>Configuración:</b></p>
+<p>En <a class="el" href="Program_8cs.html">Program.cs</a>: </p><div class="fragment"><div class="line"><a class="code hl_variable" href="Program_8cs.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a>.MapHub&lt;<a class="code hl_class" href="classdawazonBackend_1_1Common_1_1Hub_1_1NotificationHub.html">NotificationHub</a>&gt;(<span class="stringliteral">&quot;/hubs/notifications&quot;</span>);</div>
+<div class="ttc" id="aProgram_8cs_html_a7b225fcb720e4d5ed2bbf60e28a25e6d"><div class="ttname"><a href="Program_8cs.html#a7b225fcb720e4d5ed2bbf60e28a25e6d">app</a></div><div class="ttdeci">var app</div><div class="ttdef"><b>Definition</b> Program.cs:53</div></div>
+<div class="ttc" id="aclassdawazonBackend_1_1Common_1_1Hub_1_1NotificationHub_html"><div class="ttname"><a href="classdawazonBackend_1_1Common_1_1Hub_1_1NotificationHub.html">dawazonBackend.Common.Hub.NotificationHub</a></div><div class="ttdoc">Hub de SignalR para notificaciones en tiempo real.</div><div class="ttdef"><b>Definition</b> NotificationHub.cs:30</div></div>
+</div><!-- fragment --> </div><hr/>La documentación de esta clase está generada del siguiente archivo:<ul>
 <li>/home/runner/work/dawazon-2.0/dawazon-2.0/dawazonBackend/Common/Hub/<a class="el" href="NotificationHub_8cs.html">NotificationHub.cs</a></li>
 </ul>
 </div><!-- contents -->

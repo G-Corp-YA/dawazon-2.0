@@ -81,14 +81,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Servicio para gestionar la integración con la pasarela de pagos Stripe.  
+<p>Implementación del servicio de pagos con Stripe.  
  <a href="classdawazonBackend_1_1Stripe_1_1StripeService.html#details">Más...</a></p>
 <div class="dynheader">
 Diagrama de herencia de dawazonBackend.Stripe.StripeService</div>
 <div class="dyncontent">
 <div class="center"><img src="classdawazonBackend_1_1Stripe_1_1StripeService__inherit__graph.png" border="0" usemap="#adawazonBackend_8Stripe_8StripeService_inherit__map" alt="Inheritance graph"/></div>
 <map name="adawazonBackend_8Stripe_8StripeService_inherit__map" id="adawazonBackend_8Stripe_8StripeService_inherit__map">
-<area shape="rect" title="Servicio para gestionar la integración con la pasarela de pagos Stripe." alt="" coords="5,79,224,119"/>
+<area shape="rect" title="Implementación del servicio de pagos con Stripe." alt="" coords="5,79,224,119"/>
 <area shape="rect" href="interfacedawazonBackend_1_1Stripe_1_1IStripeService.html" title="Interfaz para el servicio de integración con Stripe." alt="" coords="59,5,171,31"/>
 <area shape="poly" title=" " alt="" coords="117,44,117,79,112,79,112,44"/>
 </map>
@@ -98,7 +98,7 @@ Diagrama de colaboración de dawazonBackend.Stripe.StripeService:</div>
 <div class="dyncontent">
 <div class="center"><img src="classdawazonBackend_1_1Stripe_1_1StripeService__coll__graph.png" border="0" usemap="#adawazonBackend_8Stripe_8StripeService_coll__map" alt="Collaboration graph"/></div>
 <map name="adawazonBackend_8Stripe_8StripeService_coll__map" id="adawazonBackend_8Stripe_8StripeService_coll__map">
-<area shape="rect" title="Servicio para gestionar la integración con la pasarela de pagos Stripe." alt="" coords="5,79,224,119"/>
+<area shape="rect" title="Implementación del servicio de pagos con Stripe." alt="" coords="5,79,224,119"/>
 <area shape="rect" href="interfacedawazonBackend_1_1Stripe_1_1IStripeService.html" title="Interfaz para el servicio de integración con Stripe." alt="" coords="59,5,171,31"/>
 <area shape="poly" title=" " alt="" coords="117,44,117,79,112,79,112,44"/>
 </map>
@@ -110,18 +110,12 @@ Métodos públicos</h2></td></tr>
 <tr class="memdesc:abb1a323c83cee6a32a5e615794a79984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa una nueva instancia de StripeService.  <br /></td></tr>
 <tr class="separator:abb1a323c83cee6a32a5e615794a79984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dc543ccd9f881986f4b74ab3707b05c" id="r_a6dc543ccd9f881986f4b74ab3707b05c"><td class="memItemLeft" align="right" valign="top">async Task&lt; Result&lt; string, DomainError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Stripe_1_1StripeService.html#a6dc543ccd9f881986f4b74ab3707b05c">CreateCheckoutSessionAsync</a> (<a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Cart.Models.Cart</a> cart)</td></tr>
-<tr class="memdesc:a6dc543ccd9f881986f4b74ab3707b05c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una sesión de checkout de <a class="el" href="namespacedawazonBackend_1_1Stripe.html">Stripe</a> para procesar el pago de un carrito.<dl class="params"><dt>Parámetros</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cart</td><td>El carrito de compras con los productos y datos del cliente.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Devuelve</dt><dd>Un resultado exitoso con la URL de la sesión de pago de <a class="el" href="namespacedawazonBackend_1_1Stripe.html">Stripe</a> o un error de dominio.</dd></dl>
-  <br /></td></tr>
+<tr class="memdesc:a6dc543ccd9f881986f4b74ab3707b05c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una sesión de checkout de Stripe.  <br /></td></tr>
 <tr class="separator:a6dc543ccd9f881986f4b74ab3707b05c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>Servicio para gestionar la integración con la pasarela de pagos Stripe. </p>
+<div class="textblock"><p>Implementación del servicio de pagos con Stripe. </p>
+<p>Gestiona la integración con la API de Stripe para crear sesiones de checkout. </p>
 </div><h2 class="groupheader">Documentación de constructores y destructores</h2>
 <a id="abb1a323c83cee6a32a5e615794a79984" name="abb1a323c83cee6a32a5e615794a79984"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb1a323c83cee6a32a5e615794a79984">&#9670;&#160;</a></span>StripeService()</h2>
@@ -193,6 +187,7 @@ Métodos públicos</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Crea una sesión de checkout de Stripe. </p>
 <p>Crea una sesión de checkout de <a class="el" href="namespacedawazonBackend_1_1Stripe.html">Stripe</a> para procesar el pago de un carrito.<dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">cart</td><td>El carrito de compras con los productos y datos del cliente.</td></tr>
@@ -200,7 +195,17 @@ Métodos públicos</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Devuelve</dt><dd>Un resultado exitoso con la URL de la sesión de pago de <a class="el" href="namespacedawazonBackend_1_1Stripe.html">Stripe</a> o un error de dominio.</dd></dl>
- </p>
+</p>
+<ol>
+<li>
+Convierte las líneas del carrito a SessionLineItemOptions </li>
+<li>
+Configura URLs de éxito y cancelación </li>
+<li>
+Crea la sesión con Stripe API </li>
+<li>
+Retorna la URL de pago </li>
+</ol>
 
 <p>Implementa <a class="el" href="interfacedawazonBackend_1_1Stripe_1_1IStripeService.html#a49d42ab5bf9ec36c4825e57ffe9ed407">dawazonBackend.Stripe.IStripeService</a>.</p>
 

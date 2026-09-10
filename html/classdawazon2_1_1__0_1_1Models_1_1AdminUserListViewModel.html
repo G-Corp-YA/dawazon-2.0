@@ -87,18 +87,36 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Propiedades</h2></td></tr>
 <tr class="memitem:a6a20cff8b5c68e43c2158145aa46f491" id="r_a6a20cff8b5c68e43c2158145aa46f491"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classdawazonBackend_1_1Users_1_1Dto_1_1UserDto.html">UserDto</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1AdminUserListViewModel.html#a6a20cff8b5c68e43c2158145aa46f491">Users</a> = new()<code> [get, set]</code></td></tr>
+<tr class="memdesc:a6a20cff8b5c68e43c2158145aa46f491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista de usuarios en la página actual.  <br /></td></tr>
 <tr class="separator:a6a20cff8b5c68e43c2158145aa46f491"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eccb7cc60b05721a3a49d4e9e983bee" id="r_a2eccb7cc60b05721a3a49d4e9e983bee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1AdminUserListViewModel.html#a2eccb7cc60b05721a3a49d4e9e983bee">PageNumber</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a2eccb7cc60b05721a3a49d4e9e983bee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número de página actual (0-indexed).  <br /></td></tr>
 <tr class="separator:a2eccb7cc60b05721a3a49d4e9e983bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64637708dea700800d813d395bd7291a" id="r_a64637708dea700800d813d395bd7291a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1AdminUserListViewModel.html#a64637708dea700800d813d395bd7291a">TotalPages</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a64637708dea700800d813d395bd7291a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número total de páginas.  <br /></td></tr>
 <tr class="separator:a64637708dea700800d813d395bd7291a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9a44d0cfacd9cff1f65261a6fec16e9" id="r_aa9a44d0cfacd9cff1f65261a6fec16e9"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1AdminUserListViewModel.html#aa9a44d0cfacd9cff1f65261a6fec16e9">TotalElements</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aa9a44d0cfacd9cff1f65261a6fec16e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total de usuarios en todas las páginas.  <br /></td></tr>
 <tr class="separator:aa9a44d0cfacd9cff1f65261a6fec16e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac340ff6da48b5234af3a999f99681252" id="r_ac340ff6da48b5234af3a999f99681252"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1AdminUserListViewModel.html#ac340ff6da48b5234af3a999f99681252">PageSize</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac340ff6da48b5234af3a999f99681252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tamaño de cada página.  <br /></td></tr>
 <tr class="separator:ac340ff6da48b5234af3a999f99681252"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>ViewModel para la lista paginada de usuarios en el panel de Admin. </p>
+<p>Proporciona datos para renderizar el listado de usuarios con paginación.</p>
+<p><b>Dependencias:</b></p>
+<ul>
+<li>
+UserDto: Modelo de usuario del backend </li>
+</ul>
+<p><b>Propiedades:</b></p>
+<ul>
+<li>
+Users: Lista de usuarios </li>
+<li>
+Pagination: PageNumber, TotalPages, TotalElements, PageSize </li>
+</ul>
 </div><h2 class="groupheader">Documentación de propiedades</h2>
 <a id="a2eccb7cc60b05721a3a49d4e9e983bee" name="a2eccb7cc60b05721a3a49d4e9e983bee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2eccb7cc60b05721a3a49d4e9e983bee">&#9670;&#160;</a></span>PageNumber</h2>
@@ -119,6 +137,8 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Número de página actual (0-indexed). </p>
 
 </div>
 </div>
@@ -142,6 +162,8 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Tamaño de cada página. </p>
+
 </div>
 </div>
 <a id="aa9a44d0cfacd9cff1f65261a6fec16e9" name="aa9a44d0cfacd9cff1f65261a6fec16e9"></a>
@@ -163,6 +185,8 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Total de usuarios en todas las páginas. </p>
 
 </div>
 </div>
@@ -186,6 +210,8 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Número total de páginas. </p>
+
 </div>
 </div>
 <a id="a6a20cff8b5c68e43c2158145aa46f491" name="a6a20cff8b5c68e43c2158145aa46f491"></a>
@@ -207,6 +233,8 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Lista de usuarios en la página actual. </p>
 
 </div>
 </div>

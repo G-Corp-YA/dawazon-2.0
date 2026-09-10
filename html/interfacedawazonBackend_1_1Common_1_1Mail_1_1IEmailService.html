@@ -87,14 +87,15 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
 <tr class="memitem:a07cc849a0daaef8f16fe611c6f960b1e" id="r_a07cc849a0daaef8f16fe611c6f960b1e"><td class="memItemLeft" align="right" valign="top">Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Common_1_1Mail_1_1IEmailService.html#a07cc849a0daaef8f16fe611c6f960b1e">SendEmailAsync</a> (<a class="el" href="classdawazonBackend_1_1Common_1_1Mail_1_1EmailMessage.html">EmailMessage</a> message)</td></tr>
-<tr class="memdesc:a07cc849a0daaef8f16fe611c6f960b1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envía un correo electrónico de forma asíncrona e inmediata.  <br /></td></tr>
+<tr class="memdesc:a07cc849a0daaef8f16fe611c6f960b1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Envía un correo de forma síncrona e inmediata.  <br /></td></tr>
 <tr class="separator:a07cc849a0daaef8f16fe611c6f960b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16f514ca69020193fb0d2bfae4e14134" id="r_a16f514ca69020193fb0d2bfae4e14134"><td class="memItemLeft" align="right" valign="top">Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Common_1_1Mail_1_1IEmailService.html#a16f514ca69020193fb0d2bfae4e14134">EnqueueEmailAsync</a> (<a class="el" href="classdawazonBackend_1_1Common_1_1Mail_1_1EmailMessage.html">EmailMessage</a> message)</td></tr>
-<tr class="memdesc:a16f514ca69020193fb0d2bfae4e14134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encola un correo electrónico para ser enviado en segundo plano.  <br /></td></tr>
+<tr class="memdesc:a16f514ca69020193fb0d2bfae4e14134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encola un correo para envío en segundo plano.  <br /></td></tr>
 <tr class="separator:a16f514ca69020193fb0d2bfae4e14134"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Interfaz para el servicio de envío de correos electrónicos. </p>
+<p>Define el contrato para enviar emails de forma síncrona o encolada. Implementada por MailKitEmailService. </p>
 </div><h2 class="groupheader">Documentación de funciones miembro</h2>
 <a id="a16f514ca69020193fb0d2bfae4e14134" name="a16f514ca69020193fb0d2bfae4e14134"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a16f514ca69020193fb0d2bfae4e14134">&#9670;&#160;</a></span>EnqueueEmailAsync()</h2>
@@ -112,14 +113,14 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Encola un correo electrónico para ser enviado en segundo plano. </p>
+<p>Encola un correo para envío en segundo plano. </p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td>El mensaje a encolar.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Devuelve</dt><dd>Una tarea que representa la operación asíncrona.</dd></dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Task de la operación.</dd></dl>
 
 </div>
 </div>
@@ -139,14 +140,14 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Envía un correo electrónico de forma asíncrona e inmediata. </p>
+<p>Envía un correo de forma síncrona e inmediata. </p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td>El mensaje a enviar.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Devuelve</dt><dd>Una tarea que representa la operación asíncrona.</dd></dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Task de la operación.</dd></dl>
 
 </div>
 </div>

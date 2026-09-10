@@ -80,17 +80,47 @@ $(function() {
   <div class="headertitle"><div class="title">Referencia de la interface dawazonBackend.Users.Service.Favs.IFavService</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Interfaz que define el contrato para el servicio de gestión de productos favoritos.  
+ <a href="interfacedawazonBackend_1_1Users_1_1Service_1_1Favs_1_1IFavService.html#details">Más...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
 <tr class="memitem:a69ea60658c96b2149f871451c2e307a2" id="r_a69ea60658c96b2149f871451c2e307a2"><td class="memItemLeft" align="right" valign="top">Task&lt; Result&lt; bool, DomainError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Favs_1_1IFavService.html#a69ea60658c96b2149f871451c2e307a2">AddFav</a> (string productId, long userId)</td></tr>
+<tr class="memdesc:a69ea60658c96b2149f871451c2e307a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Añade un producto a la lista de favoritos del usuario.  <br /></td></tr>
 <tr class="separator:a69ea60658c96b2149f871451c2e307a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d5f22693c6ee16372d91553990c8025" id="r_a3d5f22693c6ee16372d91553990c8025"><td class="memItemLeft" align="right" valign="top">Task&lt; Result&lt; bool, DomainError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Favs_1_1IFavService.html#a3d5f22693c6ee16372d91553990c8025">RemoveFav</a> (string productId, long userId)</td></tr>
+<tr class="memdesc:a3d5f22693c6ee16372d91553990c8025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un producto de la lista de favoritos del usuario.  <br /></td></tr>
 <tr class="separator:a3d5f22693c6ee16372d91553990c8025"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad83612f876d19e0edadc84af51744193" id="r_ad83612f876d19e0edadc84af51744193"><td class="memItemLeft" align="right" valign="top">Task&lt; Result&lt; PageResponseDto&lt; ProductResponseDto &gt;, DomainError &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Favs_1_1IFavService.html#ad83612f876d19e0edadc84af51744193">GetFavs</a> (long userId, FilterDto pageable)</td></tr>
+<tr class="memdesc:ad83612f876d19e0edadc84af51744193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la lista de productos favoritos del usuario con paginación.  <br /></td></tr>
 <tr class="separator:ad83612f876d19e0edadc84af51744193"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentación de funciones miembro</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Interfaz que define el contrato para el servicio de gestión de productos favoritos. </p>
+<p>Proporciona métodos para administrar los productos favoritos de los usuarios.</p>
+<p><b>Características:</b></p>
+<ul>
+<li>
+Añadir productos a favoritos </li>
+<li>
+Eliminar productos de favoritos </li>
+<li>
+Obtener lista de favoritos con paginación </li>
+</ul>
+<p><b>Uso típico:</b></p>
+<div class="fragment"><div class="line"><a class="code hl_interface" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Favs_1_1IFavService.html">IFavService</a> favService = httpContext.RequestServices.GetRequiredService&lt;<a class="code hl_interface" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Favs_1_1IFavService.html">IFavService</a>&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Añadir a favoritos</span></div>
+<div class="line">var addResult = await favService.<a class="code hl_function" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Favs_1_1IFavService.html#a69ea60658c96b2149f871451c2e307a2">AddFav</a>(<span class="stringliteral">&quot;product123&quot;</span>, userId);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Obtener favoritos paginados</span></div>
+<div class="line">var filters = <span class="keyword">new</span> FilterDto { Page = 0, Size = 10, SortBy = <span class="stringliteral">&quot;name&quot;</span> };</div>
+<div class="line">var favsResult = await favService.<a class="code hl_function" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Favs_1_1IFavService.html#ad83612f876d19e0edadc84af51744193">GetFavs</a>(userId, filters);</div>
+<div class="ttc" id="ainterfacedawazonBackend_1_1Users_1_1Service_1_1Favs_1_1IFavService_html"><div class="ttname"><a href="interfacedawazonBackend_1_1Users_1_1Service_1_1Favs_1_1IFavService.html">dawazonBackend.Users.Service.Favs.IFavService</a></div><div class="ttdoc">Interfaz que define el contrato para el servicio de gestión de productos favoritos.</div><div class="ttdef"><b>Definition</b> IFavService.cs:34</div></div>
+<div class="ttc" id="ainterfacedawazonBackend_1_1Users_1_1Service_1_1Favs_1_1IFavService_html_a69ea60658c96b2149f871451c2e307a2"><div class="ttname"><a href="interfacedawazonBackend_1_1Users_1_1Service_1_1Favs_1_1IFavService.html#a69ea60658c96b2149f871451c2e307a2">dawazonBackend.Users.Service.Favs.IFavService.AddFav</a></div><div class="ttdeci">Task&lt; Result&lt; bool, DomainError &gt; &gt; AddFav(string productId, long userId)</div><div class="ttdoc">Añade un producto a la lista de favoritos del usuario.</div></div>
+<div class="ttc" id="ainterfacedawazonBackend_1_1Users_1_1Service_1_1Favs_1_1IFavService_html_ad83612f876d19e0edadc84af51744193"><div class="ttname"><a href="interfacedawazonBackend_1_1Users_1_1Service_1_1Favs_1_1IFavService.html#ad83612f876d19e0edadc84af51744193">dawazonBackend.Users.Service.Favs.IFavService.GetFavs</a></div><div class="ttdeci">Task&lt; Result&lt; PageResponseDto&lt; ProductResponseDto &gt;, DomainError &gt; &gt; GetFavs(long userId, FilterDto pageable)</div><div class="ttdoc">Obtiene la lista de productos favoritos del usuario con paginación.</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Documentación de funciones miembro</h2>
 <a id="a69ea60658c96b2149f871451c2e307a2" name="a69ea60658c96b2149f871451c2e307a2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a69ea60658c96b2149f871451c2e307a2">&#9670;&#160;</a></span>AddFav()</h2>
 
@@ -117,6 +147,37 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Añade un producto a la lista de favoritos del usuario. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">productId</td><td>El identificador único del producto a añadir.</td></tr>
+    <tr><td class="paramname">userId</td><td>El identificador único del usuario.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Un Result&lt;bool, DomainError&gt; que puede ser: <ul>
+<li>
+Exitoso: true si se añadió correctamente </li>
+<li>
+Fallido: un <a class="el" href="namespacedawazonBackend_1_1Common_1_1Error.html#a8482be91378a7c14de0d6c92b8990029" title="Record abstracto base para errores de dominio en la aplicación.">DomainError</a> indicando el error </li>
+</ul>
+</dd></dl>
+<p><b>Errores posibles:</b></p>
+<ul>
+<li>
+UserNotFoundError: Si el usuario no existe </li>
+<li>
+UserHasThatProductError: Si el producto ya está en favoritos </li>
+<li>
+UserError: Si falla la actualización del usuario </li>
+</ul>
+<p><b>Nota:</b> No se permiten productos duplicados en la lista de favoritos.</p>
+<div class="fragment"><div class="line">var result = await favService.AddFav(<span class="stringliteral">&quot;PROD-001&quot;</span>, 123);</div>
+<div class="line"><span class="keywordflow">if</span> (result.IsSuccess)</div>
+<div class="line">{</div>
+<div class="line">    Console.WriteLine(<span class="stringliteral">&quot;Producto añadido a favoritos&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="ad83612f876d19e0edadc84af51744193" name="ad83612f876d19e0edadc84af51744193"></a>
@@ -145,6 +206,56 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Obtiene la lista de productos favoritos del usuario con paginación. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>El identificador único del usuario.</td></tr>
+    <tr><td class="paramname">pageable</td><td>Objeto <a class="el" href="namespacedawazonBackend_1_1Common_1_1Dto.html#a3ed31d4c3e2cae1429410236b1a001bf" title="Record para filtros de paginación y ordenación en consultas genéricas.">FilterDto</a> con los filtros de paginación y ordenamiento.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Un Result&lt;PageResponseDto&lt;ProductResponseDto&gt;, DomainError&gt; que puede ser: <ul>
+<li>
+Exitoso: PageResponseDto&lt;ProductResponseDto&gt; con los productos favoritos </li>
+<li>
+Fallido: un <a class="el" href="namespacedawazonBackend_1_1Common_1_1Error.html#a8482be91378a7c14de0d6c92b8990029" title="Record abstracto base para errores de dominio en la aplicación.">DomainError</a> indicando el error </li>
+</ul>
+</dd></dl>
+<p><b>Campos de ordenamiento soportados:</b></p>
+<ul>
+<li>
+"name" - Ordenar por nombre del producto </li>
+<li>
+"price" - Ordenar por precio </li>
+<li>
+"stock" - Ordenar por cantidad en stock </li>
+<li>
+cualquier otro valor - Ordenar por ID (comportamiento por defecto) </li>
+</ul>
+<p><b>Valores por defecto:</b></p>
+<ul>
+<li>
+Si Page &lt; 0: se usa 0 </li>
+<li>
+Si Size &lt;= 0: se usa 10 </li>
+</ul>
+<div class="fragment"><div class="line">var filters = <span class="keyword">new</span> FilterDto</div>
+<div class="line">{</div>
+<div class="line">    Page = 0,</div>
+<div class="line">    Size = 20,</div>
+<div class="line">    SortBy = <span class="stringliteral">&quot;price&quot;</span>,</div>
+<div class="line">    Direction = <span class="stringliteral">&quot;asc&quot;</span></div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">var result = await favService.GetFavs(userId, filters);</div>
+<div class="line"><span class="keywordflow">if</span> (result.IsSuccess)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordflow">foreach</span> (var product <span class="keywordflow">in</span> result.Value.Content)</div>
+<div class="line">    {</div>
+<div class="line">        Console.WriteLine($<span class="stringliteral">&quot;- {product.Name}: {product.Price}€&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="a3d5f22693c6ee16372d91553990c8025" name="a3d5f22693c6ee16372d91553990c8025"></a>
@@ -173,6 +284,36 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Elimina un producto de la lista de favoritos del usuario. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">productId</td><td>El identificador único del producto a eliminar.</td></tr>
+    <tr><td class="paramname">userId</td><td>El identificador único del usuario.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Un Result&lt;bool, DomainError&gt; que puede ser: <ul>
+<li>
+Exitoso: true si se eliminó correctamente </li>
+<li>
+Fallido: un <a class="el" href="namespacedawazonBackend_1_1Common_1_1Error.html#a8482be91378a7c14de0d6c92b8990029" title="Record abstracto base para errores de dominio en la aplicación.">DomainError</a> indicando el error </li>
+</ul>
+</dd></dl>
+<p><b>Errores posibles:</b></p>
+<ul>
+<li>
+UserNotFoundError: Si el usuario no existe </li>
+<li>
+UserHasThatProductError: Si el producto no está en favoritos </li>
+<li>
+UserError: Si falla la actualización del usuario </li>
+</ul>
+<div class="fragment"><div class="line">var result = await favService.RemoveFav(<span class="stringliteral">&quot;PROD-001&quot;</span>, 123);</div>
+<div class="line"><span class="keywordflow">if</span> (result.IsSuccess)</div>
+<div class="line">{</div>
+<div class="line">    Console.WriteLine(<span class="stringliteral">&quot;Producto eliminado de favoritos&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <hr/>La documentación de esta interface está generada del siguiente archivo:<ul>

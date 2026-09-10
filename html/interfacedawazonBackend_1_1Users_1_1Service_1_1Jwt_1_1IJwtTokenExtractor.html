@@ -81,13 +81,16 @@ $(function() {
   <div class="headertitle"><div class="title">Referencia de la interface dawazonBackend.Users.Service.Jwt.IJwtTokenExtractor</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Interfaz que define el contrato para extraer información de tokens JWT.  
+ <a href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html#details">Más...</a></p>
 <div class="dynheader">
 Diagrama de herencia de dawazonBackend.Users.Service.Jwt.IJwtTokenExtractor</div>
 <div class="dyncontent">
 <div class="center"><img src="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor__inherit__graph.png" border="0" usemap="#adawazonBackend_8Users_8Service_8Jwt_8IJwtTokenExtractor_inherit__map" alt="Inheritance graph"/></div>
 <map name="adawazonBackend_8Users_8Service_8Jwt_8IJwtTokenExtractor_inherit__map" id="adawazonBackend_8Users_8Service_8Jwt_8IJwtTokenExtractor_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,5,237,45"/>
-<area shape="rect" href="classdawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1JwtTokenExtractor.html" title=" " alt="" coords="5,93,237,133"/>
+<area shape="rect" title="Interfaz que define el contrato para extraer información de tokens JWT." alt="" coords="5,5,237,45"/>
+<area shape="rect" href="classdawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1JwtTokenExtractor.html" title="Implementación de IJwtTokenExtractor para extraer información de tokens JWT." alt="" coords="5,93,237,133"/>
 <area shape="poly" title=" " alt="" coords="124,59,124,93,119,93,119,59"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">leyenda</a>]</span></center></div>
@@ -95,28 +98,64 @@ Diagrama de herencia de dawazonBackend.Users.Service.Jwt.IJwtTokenExtractor</div
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
 <tr class="memitem:a891a9113ae02373ca2107f8270662612" id="r_a891a9113ae02373ca2107f8270662612"><td class="memItemLeft" align="right" valign="top">long?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html#a891a9113ae02373ca2107f8270662612">ExtractUserId</a> (string token)</td></tr>
+<tr class="memdesc:a891a9113ae02373ca2107f8270662612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrae el ID del usuario del token JWT.  <br /></td></tr>
 <tr class="separator:a891a9113ae02373ca2107f8270662612"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae37894c243ca00e8b914fa68e9cc74bf" id="r_ae37894c243ca00e8b914fa68e9cc74bf"><td class="memItemLeft" align="right" valign="top">string?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html#ae37894c243ca00e8b914fa68e9cc74bf">ExtractRole</a> (string token)</td></tr>
+<tr class="memdesc:ae37894c243ca00e8b914fa68e9cc74bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrae el rol del usuario del token JWT.  <br /></td></tr>
 <tr class="separator:ae37894c243ca00e8b914fa68e9cc74bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b5c910216adc383ffc3865a6aea984b" id="r_a4b5c910216adc383ffc3865a6aea984b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html#a4b5c910216adc383ffc3865a6aea984b">IsAdmin</a> (string token)</td></tr>
+<tr class="memdesc:a4b5c910216adc383ffc3865a6aea984b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determina si el token pertenece a un administrador.  <br /></td></tr>
 <tr class="separator:a4b5c910216adc383ffc3865a6aea984b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5498faed151f1431c7a7205199c965df" id="r_a5498faed151f1431c7a7205199c965df"><td class="memItemLeft" align="right" valign="top">long? bool? string Role&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html#a5498faed151f1431c7a7205199c965df">ExtractUserInfo</a> (string token)</td></tr>
 <tr class="separator:a5498faed151f1431c7a7205199c965df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3dba6b9ee63d00a302a72da7d1f2fc0" id="r_ab3dba6b9ee63d00a302a72da7d1f2fc0"><td class="memItemLeft" align="right" valign="top">ClaimsPrincipal?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html#ab3dba6b9ee63d00a302a72da7d1f2fc0">ExtractClaims</a> (string token)</td></tr>
+<tr class="memdesc:ab3dba6b9ee63d00a302a72da7d1f2fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrae todos los claims del token JWT.  <br /></td></tr>
 <tr class="separator:ab3dba6b9ee63d00a302a72da7d1f2fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add5774082784326a4e96ad99aeb06c68" id="r_add5774082784326a4e96ad99aeb06c68"><td class="memItemLeft" align="right" valign="top">string?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html#add5774082784326a4e96ad99aeb06c68">ExtractEmail</a> (string token)</td></tr>
+<tr class="memdesc:add5774082784326a4e96ad99aeb06c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrae el email del token JWT.  <br /></td></tr>
 <tr class="separator:add5774082784326a4e96ad99aeb06c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6f7737d20dd2492b0b53a323f99b22d" id="r_ad6f7737d20dd2492b0b53a323f99b22d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html#ad6f7737d20dd2492b0b53a323f99b22d">IsValidTokenFormat</a> (string token)</td></tr>
+<tr class="memdesc:ad6f7737d20dd2492b0b53a323f99b22d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida el formato básico del token JWT sin verificar la firma.  <br /></td></tr>
 <tr class="separator:ad6f7737d20dd2492b0b53a323f99b22d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Atributos públicos</h2></td></tr>
 <tr class="memitem:a8a3d445d74879d66305695eb1ab86584" id="r_a8a3d445d74879d66305695eb1ab86584"><td class="memItemLeft" align="right" valign="top">long?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html#a8a3d445d74879d66305695eb1ab86584">UserId</a></td></tr>
+<tr class="memdesc:a8a3d445d74879d66305695eb1ab86584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrae toda la información relevante del usuario del token en una sola llamada.  <br /></td></tr>
 <tr class="separator:a8a3d445d74879d66305695eb1ab86584"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4467d91b18de405eef8931c59f451514" id="r_a4467d91b18de405eef8931c59f451514"><td class="memItemLeft" align="right" valign="top">long? bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html#a4467d91b18de405eef8931c59f451514">IsAdmin</a></td></tr>
 <tr class="separator:a4467d91b18de405eef8931c59f451514"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentación de funciones miembro</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Interfaz que define el contrato para extraer información de tokens JWT. </p>
+<p>Proporciona métodos para extraer diferentes partes de información de un token JWT sin necesidad de validar la firma.</p>
+<p><b>Características:</b></p>
+<ul>
+<li>
+Extracción de ID de usuario </li>
+<li>
+Extracción de rol </li>
+<li>
+Verificación de rol de administrador </li>
+<li>
+Extracción de email </li>
+<li>
+Extracción de todos los claims </li>
+<li>
+Validación de formato de token </li>
+</ul>
+<p><b>Uso típico:</b></p>
+<div class="fragment"><div class="line"><a class="code hl_interface" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html">IJwtTokenExtractor</a> extractor = httpContext.RequestServices.GetRequiredService&lt;<a class="code hl_interface" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html">IJwtTokenExtractor</a>&gt;();</div>
+<div class="line">var token = httpContext.Request.Headers[<span class="stringliteral">&quot;Authorization&quot;</span>].ToString().Replace(<span class="stringliteral">&quot;Bearer &quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">var userId = extractor.<a class="code hl_function" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html#a891a9113ae02373ca2107f8270662612">ExtractUserId</a>(token);</div>
+<div class="line">var isAdmin = extractor.<a class="code hl_variable" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html#a4467d91b18de405eef8931c59f451514">IsAdmin</a>(token);</div>
+<div class="line">var userInfo = extractor.<a class="code hl_function" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html#a5498faed151f1431c7a7205199c965df">ExtractUserInfo</a>(token);</div>
+<div class="ttc" id="ainterfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor_html"><div class="ttname"><a href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html">dawazonBackend.Users.Service.Jwt.IJwtTokenExtractor</a></div><div class="ttdoc">Interfaz que define el contrato para extraer información de tokens JWT.</div><div class="ttdef"><b>Definition</b> IJwtTokenExtractor.cs:33</div></div>
+<div class="ttc" id="ainterfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor_html_a4467d91b18de405eef8931c59f451514"><div class="ttname"><a href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html#a4467d91b18de405eef8931c59f451514">dawazonBackend.Users.Service.Jwt.IJwtTokenExtractor.IsAdmin</a></div><div class="ttdeci">long? bool IsAdmin</div><div class="ttdef"><b>Definition</b> IJwtTokenExtractor.cs:108</div></div>
+<div class="ttc" id="ainterfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor_html_a5498faed151f1431c7a7205199c965df"><div class="ttname"><a href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html#a5498faed151f1431c7a7205199c965df">dawazonBackend.Users.Service.Jwt.IJwtTokenExtractor.ExtractUserInfo</a></div><div class="ttdeci">long? bool? string Role ExtractUserInfo(string token)</div></div>
+<div class="ttc" id="ainterfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor_html_a891a9113ae02373ca2107f8270662612"><div class="ttname"><a href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtTokenExtractor.html#a891a9113ae02373ca2107f8270662612">dawazonBackend.Users.Service.Jwt.IJwtTokenExtractor.ExtractUserId</a></div><div class="ttdeci">long? ExtractUserId(string token)</div><div class="ttdoc">Extrae el ID del usuario del token JWT.</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Documentación de funciones miembro</h2>
 <a id="ab3dba6b9ee63d00a302a72da7d1f2fc0" name="ab3dba6b9ee63d00a302a72da7d1f2fc0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab3dba6b9ee63d00a302a72da7d1f2fc0">&#9670;&#160;</a></span>ExtractClaims()</h2>
 
@@ -133,6 +172,18 @@ Atributos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Extrae todos los claims del token JWT. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">token</td><td>Token JWT del cual extraer los claims.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Un ClaimsPrincipal con todos los claims, o null si falla. </dd></dl>
+<p>Si el token no puede ser parseado, intenta decodificar el payload manualmente. Normaliza los tipos de claim a tipos estándar de .NET. </p>
+<div class="fragment"><div class="line">var claimsPrincipal = extractor.ExtractClaims(token);</div>
+<div class="line">var identity = claimsPrincipal?.Identity;</div>
+</div><!-- fragment --> 
 <p>Implementado en <a class="el" href="classdawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1JwtTokenExtractor.html#ab9421096a31ff6dbaa9c5a68d9a7d982">dawazonBackend.Users.Service.Jwt.JwtTokenExtractor</a>.</p>
 
 </div>
@@ -153,6 +204,17 @@ Atributos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Extrae el email del token JWT. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">token</td><td>Token JWT del cual extraer el email.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El email del usuario, o null si no se puede extraer. </dd></dl>
+<p>Busca en los claims: JwtRegisteredClaimNames.Email o ClaimTypes.Email. </p>
+<div class="fragment"><div class="line">var email = extractor.ExtractEmail(token);</div>
+</div><!-- fragment --> 
 <p>Implementado en <a class="el" href="classdawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1JwtTokenExtractor.html#ae6d9af55b4238af28783562fbc09e73c">dawazonBackend.Users.Service.Jwt.JwtTokenExtractor</a>.</p>
 
 </div>
@@ -173,6 +235,18 @@ Atributos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Extrae el rol del usuario del token JWT. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">token</td><td>Token JWT del cual extraer el rol.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El nombre del rol, o null si no se puede extraer. </dd></dl>
+<p>Busca en los claims: ClaimTypes.Role o "role". </p>
+<div class="fragment"><div class="line">var role = extractor.ExtractRole(token);</div>
+<div class="line">Console.WriteLine($<span class="stringliteral">&quot;Rol: {role}&quot;</span>);</div>
+</div><!-- fragment --> 
 <p>Implementado en <a class="el" href="classdawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1JwtTokenExtractor.html#a6ff0f7f95368729eeeff5506ea1e36a6">dawazonBackend.Users.Service.Jwt.JwtTokenExtractor</a>.</p>
 
 </div>
@@ -193,6 +267,21 @@ Atributos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Extrae el ID del usuario del token JWT. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">token</td><td>Token JWT del cual extraer el ID.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El ID del usuario como long, o null si no se puede extraer. </dd></dl>
+<p>Busca en los claims: ClaimTypes.NameIdentifier, JwtRegisteredClaimNames.Sub, o "nameid". </p>
+<div class="fragment"><div class="line">var userId = extractor.ExtractUserId(token);</div>
+<div class="line"><span class="keywordflow">if</span> (userId.HasValue)</div>
+<div class="line">{</div>
+<div class="line">    Console.WriteLine($<span class="stringliteral">&quot;User ID: {userId.Value}&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
 <p>Implementado en <a class="el" href="classdawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1JwtTokenExtractor.html#a0ca1a7d5a09252bdd97ce22cc23317f0">dawazonBackend.Users.Service.Jwt.JwtTokenExtractor</a>.</p>
 
 </div>
@@ -233,6 +322,20 @@ Atributos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Determina si el token pertenece a un administrador. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">token</td><td>Token JWT a verificar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true si el rol es "admin" (case-insensitive), false en caso contrario. </dd></dl>
+<p>Utiliza comparación case-insensitive para el rol. </p>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span> (extractor.IsAdmin(token))</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Es administrador</span></div>
+<div class="line">}</div>
+</div><!-- fragment --> 
 <p>Implementado en <a class="el" href="classdawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1JwtTokenExtractor.html#ac8db1ad509b7bdd9f32b001130024644">dawazonBackend.Users.Service.Jwt.JwtTokenExtractor</a>.</p>
 
 </div>
@@ -253,6 +356,29 @@ Atributos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Valida el formato básico del token JWT sin verificar la firma. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">token</td><td>Token a validar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true si el formato es válido, false en caso contrario. </dd></dl>
+<p><b>Validaciones:</b></p>
+<ul>
+<li>
+No estar vacío </li>
+<li>
+Tener 3 partes separadas por puntos </li>
+<li>
+Header y payload no estar vacíos </li>
+</ul>
+<p>También detecta tokens con algoritmo "none".</p>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span> (!extractor.IsValidTokenFormat(token))</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordflow">return</span> BadRequest(<span class="stringliteral">&quot;Token inválido&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
 <p>Implementado en <a class="el" href="classdawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1JwtTokenExtractor.html#a15656ac4bcbf622b32797cccf083125c">dawazonBackend.Users.Service.Jwt.JwtTokenExtractor</a>.</p>
 
 </div>
@@ -284,6 +410,17 @@ Atributos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Extrae toda la información relevante del usuario del token en una sola llamada. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">token</td><td>Token JWT del cual extraer la información.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Tupla con UserId, IsAdmin y Role. </dd></dl>
+<p>Método optimizado para obtener toda la información en una sola operación. </p>
+<div class="fragment"><div class="line">var (userId, isAdmin, role) = extractor.ExtractUserInfo(token);</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <hr/>La documentación de esta interface está generada del siguiente archivo:<ul>

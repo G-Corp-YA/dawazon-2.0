@@ -84,15 +84,16 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Clases</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Address.html">Address</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa una dirección postal.  <a href="classdawazonBackend_1_1Cart_1_1Models_1_1Address.html#details">Más...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modelo de dominio que representa una dirección postal completa.  <a href="classdawazonBackend_1_1Cart_1_1Models_1_1Address.html#details">Más...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Cart</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa un carrito de compra o un pedido finalizado.  <a href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#details">Más...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modelo de dominio que representa un carrito de compras o un pedido finalizado.  <a href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#details">Más...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html">CartLine</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa un producto y su cantidad dentro de un carrito.  <a href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html#details">Más...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modelo de dominio que representa una línea de producto dentro de un carrito de compras.  <a href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html#details">Más...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Client.html">Client</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modelo de dominio que representa la información de un cliente asociado a un carrito o pedido.  <a href="classdawazonBackend_1_1Cart_1_1Models_1_1Client.html#details">Más...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -106,6 +107,7 @@ Enumeraciones</h2></td></tr>
 &#160;&#160;<a class="el" href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521a04b0f5c4f238a5a2ab1724a790786e54">Cancelado</a>
 <br />
  }</td></tr>
+<tr class="memdesc:a0856cbed48b45aaab4fa9a6100820521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeración que representa los posibles estados de una línea de pedido en el sistema.  <a href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521">Más...</a><br /></td></tr>
 <tr class="separator:a0856cbed48b45aaab4fa9a6100820521"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentación de enumeraciones</h2>
@@ -120,12 +122,55 @@ Enumeraciones</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enumeración que representa los posibles estados de una línea de pedido en el sistema. </p>
+<p>Define el ciclo de vida completo de una línea de carrito/pedido desde que se añade hasta que se completa o cancela. Cada estado representa una etapa del proceso de venta.</p>
+<p><b>Ciclo de vida:</b></p>
+<div class="fragment"><div class="line"><a class="code hl_enumvalue" href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521aa78cf2618c2d4592934be3f72537d865">EnCarrito</a> → <a class="code hl_enumvalue" href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521ad4920c2bed7e9f974213ab1f8b226c46">Preparado</a> → <a class="code hl_enumvalue" href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521a823a8f1e7b400e02fc4b463f4e2cbd72">Enviado</a> → <a class="code hl_enumvalue" href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521a9ca02280817447e726ee410a511e01ee">Recibido</a></div>
+<div class="line">          ↘ <a class="code hl_enumvalue" href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521a04b0f5c4f238a5a2ab1724a790786e54">Cancelado</a> (desde cualquier estado)</div>
+<div class="ttc" id="anamespacedawazonBackend_1_1Cart_1_1Models_html_a0856cbed48b45aaab4fa9a6100820521a04b0f5c4f238a5a2ab1724a790786e54"><div class="ttname"><a href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521a04b0f5c4f238a5a2ab1724a790786e54">dawazonBackend.Cart.Models.Status.Cancelado</a></div><div class="ttdeci">@ Cancelado</div><div class="ttdoc">El pedido ha sido cancelado.</div></div>
+<div class="ttc" id="anamespacedawazonBackend_1_1Cart_1_1Models_html_a0856cbed48b45aaab4fa9a6100820521a823a8f1e7b400e02fc4b463f4e2cbd72"><div class="ttname"><a href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521a823a8f1e7b400e02fc4b463f4e2cbd72">dawazonBackend.Cart.Models.Status.Enviado</a></div><div class="ttdeci">@ Enviado</div><div class="ttdoc">El pedido ha sido enviado al cliente.</div></div>
+<div class="ttc" id="anamespacedawazonBackend_1_1Cart_1_1Models_html_a0856cbed48b45aaab4fa9a6100820521a9ca02280817447e726ee410a511e01ee"><div class="ttname"><a href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521a9ca02280817447e726ee410a511e01ee">dawazonBackend.Cart.Models.Status.Recibido</a></div><div class="ttdeci">@ Recibido</div><div class="ttdoc">El cliente ha recibido el pedido correctamente.</div></div>
+<div class="ttc" id="anamespacedawazonBackend_1_1Cart_1_1Models_html_a0856cbed48b45aaab4fa9a6100820521aa78cf2618c2d4592934be3f72537d865"><div class="ttname"><a href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521aa78cf2618c2d4592934be3f72537d865">dawazonBackend.Cart.Models.Status.EnCarrito</a></div><div class="ttdeci">@ EnCarrito</div><div class="ttdoc">El producto está en el carrito del usuario, sin completar la compra.</div></div>
+<div class="ttc" id="anamespacedawazonBackend_1_1Cart_1_1Models_html_a0856cbed48b45aaab4fa9a6100820521ad4920c2bed7e9f974213ab1f8b226c46"><div class="ttname"><a href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521ad4920c2bed7e9f974213ab1f8b226c46">dawazonBackend.Cart.Models.Status.Preparado</a></div><div class="ttdeci">@ Preparado</div><div class="ttdoc">El pedido está siendo preparado por el vendedor/manager.</div></div>
+</div><!-- fragment --><p><b>Descripción de cada estado:</b></p>
+<table class="doxtable">
+<tr>
+<th>Estado </th><th>Descripción  </th></tr>
+<tr>
+<td>EnCarrito </td><td>El producto está en el carrito del usuario, sin comprar  </td></tr>
+<tr>
+<td>Preparado </td><td>El pedido está siendo preparado por el vendedor/manager  </td></tr>
+<tr>
+<td>Enviado </td><td>El pedido ha sido enviado al cliente  </td></tr>
+<tr>
+<td>Recibido </td><td>El cliente ha recibido el pedido  </td></tr>
+<tr>
+<td>Cancelado </td><td>El pedido ha sido cancelado (desde cualquier estado)  </td></tr>
+</table>
 <table class="fieldtable">
-<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a0856cbed48b45aaab4fa9a6100820521aa78cf2618c2d4592934be3f72537d865" name="a0856cbed48b45aaab4fa9a6100820521aa78cf2618c2d4592934be3f72537d865"></a>EnCarrito&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0856cbed48b45aaab4fa9a6100820521ad4920c2bed7e9f974213ab1f8b226c46" name="a0856cbed48b45aaab4fa9a6100820521ad4920c2bed7e9f974213ab1f8b226c46"></a>Preparado&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0856cbed48b45aaab4fa9a6100820521a823a8f1e7b400e02fc4b463f4e2cbd72" name="a0856cbed48b45aaab4fa9a6100820521a823a8f1e7b400e02fc4b463f4e2cbd72"></a>Enviado&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0856cbed48b45aaab4fa9a6100820521a9ca02280817447e726ee410a511e01ee" name="a0856cbed48b45aaab4fa9a6100820521a9ca02280817447e726ee410a511e01ee"></a>Recibido&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0856cbed48b45aaab4fa9a6100820521a04b0f5c4f238a5a2ab1724a790786e54" name="a0856cbed48b45aaab4fa9a6100820521a04b0f5c4f238a5a2ab1724a790786e54"></a>Cancelado&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a0856cbed48b45aaab4fa9a6100820521aa78cf2618c2d4592934be3f72537d865" name="a0856cbed48b45aaab4fa9a6100820521aa78cf2618c2d4592934be3f72537d865"></a>EnCarrito&#160;</td><td class="fielddoc"><p>El producto está en el carrito del usuario, sin completar la compra. </p>
+<p>Este es el estado inicial cuando un usuario añade un producto a su carrito. El producto no está reservado ni comprometido hasta que se realiza el pago. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0856cbed48b45aaab4fa9a6100820521ad4920c2bed7e9f974213ab1f8b226c46" name="a0856cbed48b45aaab4fa9a6100820521ad4920c2bed7e9f974213ab1f8b226c46"></a>Preparado&#160;</td><td class="fielddoc"><p>El pedido está siendo preparado por el vendedor/manager. </p>
+<p>Indica que el manager ha aceptado o está procesando el pedido. En este estado se verifica el stock y se prepara para el envío. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0856cbed48b45aaab4fa9a6100820521a823a8f1e7b400e02fc4b463f4e2cbd72" name="a0856cbed48b45aaab4fa9a6100820521a823a8f1e7b400e02fc4b463f4e2cbd72"></a>Enviado&#160;</td><td class="fielddoc"><p>El pedido ha sido enviado al cliente. </p>
+<p>El producto está en tránsito hacia la dirección del cliente. Puede estar asociado a un número de seguimiento. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0856cbed48b45aaab4fa9a6100820521a9ca02280817447e726ee410a511e01ee" name="a0856cbed48b45aaab4fa9a6100820521a9ca02280817447e726ee410a511e01ee"></a>Recibido&#160;</td><td class="fielddoc"><p>El cliente ha recibido el pedido correctamente. </p>
+<p>Estado final exitoso. Indica que el pedido fue entregado y el cliente lo recibió conforme. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0856cbed48b45aaab4fa9a6100820521a04b0f5c4f238a5a2ab1724a790786e54" name="a0856cbed48b45aaab4fa9a6100820521a04b0f5c4f238a5a2ab1724a790786e54"></a>Cancelado&#160;</td><td class="fielddoc"><p>El pedido ha sido cancelado. </p>
+<p>Puede cancelarse desde cualquier estado. Puede ser solicitado por: </p><ul>
+<li>
+El cliente antes de recibir el producto </li>
+<li>
+El manager por falta de stock </li>
+<li>
+Sistema por timeout de pago </li>
+</ul>
+</td></tr>
 </table>
 
 </div>

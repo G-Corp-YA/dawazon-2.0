@@ -81,35 +81,45 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Representa un producto y su cantidad dentro de un carrito.  
+<p>Modelo de dominio que representa una línea de producto dentro de un carrito de compras.  
  <a href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html#details">Más...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Propiedades</h2></td></tr>
 <tr class="memitem:ad66aee91c030e5630a1f62b2ba1beeda" id="r_ad66aee91c030e5630a1f62b2ba1beeda"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html#ad66aee91c030e5630a1f62b2ba1beeda">CartId</a> = string.Empty<code> [get, set]</code></td></tr>
-<tr class="memdesc:ad66aee91c030e5630a1f62b2ba1beeda"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID del carrito al que pertenece la línea.  <br /></td></tr>
+<tr class="memdesc:ad66aee91c030e5630a1f62b2ba1beeda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identificador del carrito al que pertenece esta línea.  <br /></td></tr>
 <tr class="separator:ad66aee91c030e5630a1f62b2ba1beeda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf2345df0319501f24c801b985bf6102" id="r_aaf2345df0319501f24c801b985bf6102"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html#aaf2345df0319501f24c801b985bf6102">ProductId</a> = string.Empty<code> [get, set]</code></td></tr>
-<tr class="memdesc:aaf2345df0319501f24c801b985bf6102"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID del producto.  <br /></td></tr>
+<tr class="memdesc:aaf2345df0319501f24c801b985bf6102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identificador del producto en el catálogo.  <br /></td></tr>
 <tr class="separator:aaf2345df0319501f24c801b985bf6102"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cae503a1d54366b6f7ee2fb83a44da3" id="r_a8cae503a1d54366b6f7ee2fb83a44da3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdawazonBackend_1_1Products_1_1Models_1_1Product.html">Product</a>?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html#a8cae503a1d54366b6f7ee2fb83a44da3">Product</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a8cae503a1d54366b6f7ee2fb83a44da3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Referencia al modelo del producto (para navegación).  <br /></td></tr>
+<tr class="memdesc:a8cae503a1d54366b6f7ee2fb83a44da3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Navegación hacia el modelo del producto.  <br /></td></tr>
 <tr class="separator:a8cae503a1d54366b6f7ee2fb83a44da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a627d531ecf8c0a6a6498ac736f828420" id="r_a627d531ecf8c0a6a6498ac736f828420"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html#a627d531ecf8c0a6a6498ac736f828420">Quantity</a> = 0<code> [get, set]</code></td></tr>
-<tr class="memdesc:a627d531ecf8c0a6a6498ac736f828420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cantidad del producto solicitada.  <br /></td></tr>
+<tr class="memdesc:a627d531ecf8c0a6a6498ac736f828420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cantidad de unidades del producto en esta línea.  <br /></td></tr>
 <tr class="separator:a627d531ecf8c0a6a6498ac736f828420"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a682b65812d6da632c3d87034dcf9777d" id="r_a682b65812d6da632c3d87034dcf9777d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html#a682b65812d6da632c3d87034dcf9777d">ProductPrice</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a682b65812d6da632c3d87034dcf9777d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Precio unitario del producto en el momento de la línea.  <br /></td></tr>
+<tr class="memdesc:a682b65812d6da632c3d87034dcf9777d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Precio unitario del producto en el momento de añadir al carrito.  <br /></td></tr>
 <tr class="separator:a682b65812d6da632c3d87034dcf9777d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e0d9f6c88cf9bd30b2db925140e3fcd" id="r_a1e0d9f6c88cf9bd30b2db925140e3fcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html#a1e0d9f6c88cf9bd30b2db925140e3fcd">Status</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a1e0d9f6c88cf9bd30b2db925140e3fcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estado actual de esta línea de pedido (ej. Preparado, Cancelado).  <br /></td></tr>
+<tr class="memdesc:a1e0d9f6c88cf9bd30b2db925140e3fcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estado actual de esta línea de pedido.  <br /></td></tr>
 <tr class="separator:a1e0d9f6c88cf9bd30b2db925140e3fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a8ba547ea01e7c83b0a317d07e23f44" id="r_a9a8ba547ea01e7c83b0a317d07e23f44"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html#a9a8ba547ea01e7c83b0a317d07e23f44">TotalPrice</a><code> [get]</code></td></tr>
-<tr class="memdesc:a9a8ba547ea01e7c83b0a317d07e23f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el precio total de esta línea (Precio * Cantidad).  <br /></td></tr>
+<tr class="memdesc:a9a8ba547ea01e7c83b0a317d07e23f44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula el precio total de esta línea (Precio unitario × Cantidad).  <br /></td></tr>
 <tr class="separator:a9a8ba547ea01e7c83b0a317d07e23f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>Representa un producto y su cantidad dentro de un carrito. </p>
+<div class="textblock"><p>Modelo de dominio que representa una línea de producto dentro de un carrito de compras. </p>
+<p>Cada CartLine representa un producto específico con su cantidad dentro de un Cart. Contiene el precio en el momento de añadir para mantener historial de precios.</p>
+<p><b>Relaciones:</b></p>
+<ul>
+<li>
+Pertenece a un Cart mediante CartId </li>
+<li>
+Referencia a Product mediante ProductId (navigation property) </li>
+</ul>
+<p><b>Patrón de precios:</b></p>
+<p>El precio unitario se almacena en el momento de añadir al carrito. Esto protege al usuario de cambios de precio durante el proceso de compra. El precio total se calcula dinámicamente mediante TotalPrice. </p>
 </div><h2 class="groupheader">Documentación de propiedades</h2>
 <a id="ad66aee91c030e5630a1f62b2ba1beeda" name="ad66aee91c030e5630a1f62b2ba1beeda"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad66aee91c030e5630a1f62b2ba1beeda">&#9670;&#160;</a></span>CartId</h2>
@@ -131,7 +141,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>ID del carrito al que pertenece la línea. </p>
+<p>Identificador del carrito al que pertenece esta línea. </p>
+<p>String con el ID del carrito padre.</p>
+<p>Foreign key hacia la tabla de carritos. </p>
 
 </div>
 </div>
@@ -155,7 +167,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Referencia al modelo del producto (para navegación). </p>
+<p>Navegación hacia el modelo del producto. </p>
+<p>Instancia de Product o null si no se ha cargado.</p>
+<p>Esta propiedad es opcional y se usa para obtener información adicional del producto (nombre, imagen, etc.) cuando se requiere. </p>
 
 </div>
 </div>
@@ -179,7 +193,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>ID del producto. </p>
+<p>Identificador del producto en el catálogo. </p>
+<p>String con el ID del producto.</p>
+<p>Foreign key hacia la tabla de productos. </p>
 
 </div>
 </div>
@@ -203,7 +219,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Precio unitario del producto en el momento de la línea. </p>
+<p>Precio unitario del producto en el momento de añadir al carrito. </p>
+<p>Decimal con el precio (ejemplo: 19.99).</p>
+<p>Se almacena al añadir el producto y no se actualiza automáticamente. Esto mantiene el precio acordado aunque el producto cambie de precio. </p>
 
 </div>
 </div>
@@ -227,7 +245,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Cantidad del producto solicitada. </p>
+<p>Cantidad de unidades del producto en esta línea. </p>
+<p>Entero no negativo.</p>
+<p>Debe ser mayor que 0 para una línea válida. Se valida en el servicio antes de guardar. </p>
 
 </div>
 </div>
@@ -251,7 +271,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Estado actual de esta línea de pedido (ej. Preparado, Cancelado). </p>
+<p>Estado actual de esta línea de pedido. </p>
+<p>Enumeración Status.</p>
+<p>Representa el estado en el ciclo de vida del pedido. Se actualiza a medida que el pedido progresa. </p>
 
 </div>
 </div>
@@ -275,7 +297,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Obtiene el precio total de esta línea (Precio * Cantidad). </p>
+<p>Calcula el precio total de esta línea (Precio unitario × Cantidad). </p>
+<p>Decimal con el total (ejemplo: 39.98 para 2 unidades a 19.99).</p>
+<p>Propiedad calculada (readonly). Se recalcula cada vez que se accede. No se persiste en la base de datos. </p>
 
 </div>
 </div>

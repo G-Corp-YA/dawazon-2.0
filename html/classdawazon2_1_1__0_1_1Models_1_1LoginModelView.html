@@ -80,17 +80,35 @@ $(function() {
   <div class="headertitle"><div class="title">Referencia de la clase dawazon2._0.Models.LoginModelView</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>ViewModel para el formulario de inicio de sesión.  
+ <a href="classdawazon2_1_1__0_1_1Models_1_1LoginModelView.html#details">Más...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Propiedades</h2></td></tr>
 <tr class="memitem:a8e0da328c44e531e60d0b110afa527a8" id="r_a8e0da328c44e531e60d0b110afa527a8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1LoginModelView.html#a8e0da328c44e531e60d0b110afa527a8">UsernameOrEmail</a> = string.Empty<code> [get]</code></td></tr>
-<tr class="memdesc:a8e0da328c44e531e60d0b110afa527a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de usuario o correo electrónico. Identifica al usuario en el sistema.  <br /></td></tr>
+<tr class="memdesc:a8e0da328c44e531e60d0b110afa527a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de usuario o correo electrónico.  <br /></td></tr>
 <tr class="separator:a8e0da328c44e531e60d0b110afa527a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab266146bb047fb2fb03533e6adc79cea" id="r_ab266146bb047fb2fb03533e6adc79cea"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1LoginModelView.html#ab266146bb047fb2fb03533e6adc79cea">Password</a> = string.Empty<code> [get]</code></td></tr>
-<tr class="memdesc:ab266146bb047fb2fb03533e6adc79cea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contraseña del usuario. Verificada contra el hash almacenado.  <br /></td></tr>
+<tr class="memdesc:ab266146bb047fb2fb03533e6adc79cea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contraseña del usuario.  <br /></td></tr>
 <tr class="separator:ab266146bb047fb2fb03533e6adc79cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentación de propiedades</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>ViewModel para el formulario de inicio de sesión. </p>
+<p>Recoge las credenciales del usuario para autenticar.</p>
+<p><b>Dependencias:</b></p>
+<ul>
+<li>
+DataAnnotations: Validaciones </li>
+</ul>
+<p><b>Características:</b></p>
+<ul>
+<li>
+Validaciones: Required </li>
+<li>
+Soporta username o email </li>
+</ul>
+</div><h2 class="groupheader">Documentación de propiedades</h2>
 <a id="ab266146bb047fb2fb03533e6adc79cea" name="ab266146bb047fb2fb03533e6adc79cea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab266146bb047fb2fb03533e6adc79cea">&#9670;&#160;</a></span>Password</h2>
 
@@ -111,7 +129,11 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Contraseña del usuario. Verificada contra el hash almacenado. </p>
+<p>Contraseña del usuario. </p>
+<p>Verificada contra el hash almacenado en la base de datos. </p><ul>
+<li>
+Required: Obligatoria </li>
+</ul>
 <p>Contraseña123!</p>
 
 </div>
@@ -136,7 +158,11 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Nombre de usuario o correo electrónico. Identifica al usuario en el sistema. </p>
+<p>Nombre de usuario o correo electrónico. </p>
+<p>Identifica al usuario en el sistema. </p><ul>
+<li>
+Required: Obligatorio </li>
+</ul>
 <p>juanperez</p>
 
 </div>

@@ -80,17 +80,37 @@ $(function() {
   <div class="headertitle"><div class="title">Referencia de la clase dawazonBackend.Cart.Dto.LineRequestDto</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Data Transfer Object (DTO) utilizado para solicitudes de modificación de líneas de carrito.  
+ <a href="classdawazonBackend_1_1Cart_1_1Dto_1_1LineRequestDto.html#details">Más...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Propiedades</h2></td></tr>
 <tr class="memitem:a33e381a2429560d36a43d62a828cf2aa" id="r_a33e381a2429560d36a43d62a828cf2aa"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Dto_1_1LineRequestDto.html#a33e381a2429560d36a43d62a828cf2aa">CartId</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a33e381a2429560d36a43d62a828cf2aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identificador del carrito al cual pertenece la línea.  <br /></td></tr>
 <tr class="separator:a33e381a2429560d36a43d62a828cf2aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe8d2c07776b949e2ece6b166a9f1262" id="r_afe8d2c07776b949e2ece6b166a9f1262"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Dto_1_1LineRequestDto.html#afe8d2c07776b949e2ece6b166a9f1262">ProductId</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:afe8d2c07776b949e2ece6b166a9f1262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identificador del producto a añadir o modificar.  <br /></td></tr>
 <tr class="separator:afe8d2c07776b949e2ece6b166a9f1262"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fde75891468bb376c26c9c77838d119" id="r_a9fde75891468bb376c26c9c77838d119"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Dto_1_1LineRequestDto.html#a9fde75891468bb376c26c9c77838d119">Status</a> = new()<code> [get, set]</code></td></tr>
+<tr class="memdesc:a9fde75891468bb376c26c9c77838d119"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estado de la línea de venta en el carrito.  <br /></td></tr>
 <tr class="separator:a9fde75891468bb376c26c9c77838d119"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentación de propiedades</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Data Transfer Object (DTO) utilizado para solicitudes de modificación de líneas de carrito. </p>
+<p>Este DTO se utiliza en las solicitudes HTTP (POST/PUT) para actualizar o añadir líneas de productos en un carrito de compras.</p>
+<p><b>Uso típico:</b></p>
+<ul>
+<li>
+POST /cart/line - Añadir una nueva línea al carrito </li>
+<li>
+PUT /cart/line - Actualizar una línea existente </li>
+<li>
+PATCH /cart/line - Modificar el estado de una línea </li>
+</ul>
+<p><b>Estados posibles:</b></p>
+<p><a class="el" href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521" title="Enumeración que representa los posibles estados de una línea de pedido en el sistema.">Status</a> enum define los estados del ciclo de vida del pedido. </p>
+</div><h2 class="groupheader">Documentación de propiedades</h2>
 <a id="a33e381a2429560d36a43d62a828cf2aa" name="a33e381a2429560d36a43d62a828cf2aa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a33e381a2429560d36a43d62a828cf2aa">&#9670;&#160;</a></span>CartId</h2>
 
@@ -110,6 +130,10 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Identificador del carrito al cual pertenece la línea. </p>
+<p>String con el identificador del carrito (ejemplo: "CART-2024-001").</p>
+<p>Este campo es requerido. Identifica el carrito padre de la línea. </p>
 
 </div>
 </div>
@@ -133,6 +157,10 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Identificador del producto a añadir o modificar. </p>
+<p>String con el identificador del producto (ejemplo: "PROD-123").</p>
+<p>Este campo es requerido. Relaciona la línea con un producto del catálogo. </p>
+
 </div>
 </div>
 <a id="a9fde75891468bb376c26c9c77838d119" name="a9fde75891468bb376c26c9c77838d119"></a>
@@ -154,6 +182,10 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Estado de la línea de venta en el carrito. </p>
+<p>Enumeración <a class="el" href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521" title="Enumeración que representa los posibles estados de una línea de pedido en el sistema.">Status</a> indicando el estado actual.</p>
+<p>Por defecto se inicializa en Status.EnCarrito. Se utiliza para hacer seguimiento del procesamiento del pedido. </p>
 
 </div>
 </div>

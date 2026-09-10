@@ -90,7 +90,7 @@ Clases</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funciones</h2></td></tr>
 <tr class="memitem:a0d03d35499fbb22b002036da81d9715b" id="r_a0d03d35499fbb22b002036da81d9715b"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedawazon2_1_1__0_1_1Middleware.html#a0d03d35499fbb22b002036da81d9715b">GlobalExceptionHandler</a> (RequestDelegate next, ILogger&lt; GlobalExceptionHandler &gt; logger)</td></tr>
-<tr class="memdesc:a0d03d35499fbb22b002036da81d9715b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manejador global de excepciones. Maneja excepciones y errores del dominio (Result Pattern). Genera respuestas HTTP consistentes y trazables.  <br /></td></tr>
+<tr class="memdesc:a0d03d35499fbb22b002036da81d9715b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manejador global de excepciones.  <br /></td></tr>
 <tr class="separator:a0d03d35499fbb22b002036da81d9715b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentación de funciones</h2>
@@ -120,8 +120,62 @@ Funciones</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Manejador global de excepciones. Maneja excepciones y errores del dominio (Result Pattern). Genera respuestas HTTP consistentes y trazables. </p>
-<p>Maneja las excepciones capturadas. </p><dl class="params"><dt>Parámetros</dt><dd>
+<p>Manejador global de excepciones. </p>
+<p>Captura excepciones no controladas y errores del dominio (Result Pattern). Genera respuestas HTTP consistentes y trazables.</p>
+<p><b>Dependencias:</b></p>
+<ul>
+<li>
+RequestDelegate: Pipeline de la solicitud </li>
+<li>
+ILogger: Logging de errores </li>
+</ul>
+<p><b>Características:</b></p>
+<ul>
+<li>
+Genera ID único de error (8 caracteres) </li>
+<li>
+Mapea tipos de excepción a códigos HTTP </li>
+<li>
+Respuesta JSON estructurada </li>
+</ul>
+<p><b>Mapeo de excepciones:</b></p>
+<table class="doxtable">
+<tr>
+<td>CartNotFoundException </td><td>404 NotFoundError  </td></tr>
+<tr>
+<td>UnauthorizedAccessException </td><td>401 UnauthorizedError  </td></tr>
+<tr>
+<td>ArgumentException </td><td>400 ValidationError  </td></tr>
+<tr>
+<td>DbUpdateException </td><td>409 ConflictError  </td></tr>
+<tr>
+<td>TimeoutException </td><td>408 InternalError  </td></tr>
+<tr>
+<td>Exception (general) </td><td>500 InternalError  </td></tr>
+</table>
+<p>Punto de entrada del middleware.</p>
+<ol>
+<li>
+Ejecuta el siguiente middleware en el pipeline </li>
+<li>
+Captura cualquier excepción no manejada </li>
+<li>
+Genera ID de error único </li>
+<li>
+Llama a HandleExceptionAsync para responder al cliente </li>
+</ol>
+<p>Maneja las excepciones capturadas y genera respuesta HTTP.</p>
+<ol>
+<li>
+Configura el tipo de contenido como JSON </li>
+<li>
+Mapea el tipo de excepción a código de estado HTTP </li>
+<li>
+Construye respuesta con errorId, message, errorType, timestamp, path, method </li>
+<li>
+Serializa y envía la respuesta </li>
+</ol>
+<dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">context</td><td>Contexto HTTP.</td></tr>
     <tr><td class="paramname">exception</td><td>Excepción capturada.</td></tr>

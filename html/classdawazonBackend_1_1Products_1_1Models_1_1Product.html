@@ -81,7 +81,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Representa un producto en el catálogo de Dawazon.  
+<p>Modelo de dominio que representa un producto en el catálogo.  
  <a href="classdawazonBackend_1_1Products_1_1Models_1_1Product.html#details">Más...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
@@ -130,7 +130,17 @@ Propiedades</h2></td></tr>
 <tr class="separator:a9a9fe92cf1798dad30e1ee67216dd846"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>Representa un producto en el catálogo de Dawazon. </p>
+<div class="textblock"><p>Modelo de dominio que representa un producto en el catálogo. </p>
+<p>Entidad principal del módulo de productos. Representa un artículo vendible con precio, stock, imágenes y comentarios.</p>
+<p><b>Características:</b></p>
+<ul>
+<li>
+Borrado lógico: IsDeleted en lugar de eliminar </li>
+<li>
+Control de concurrencia: Version para optimistic locking </li>
+<li>
+ID automático: Generado por IdGenerator </li>
+</ul>
 </div><h2 class="groupheader">Documentación de propiedades</h2>
 <a id="a3383325b6957bf29b2725cd6fe6d36c5" name="a3383325b6957bf29b2725cd6fe6d36c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3383325b6957bf29b2725cd6fe6d36c5">&#9670;&#160;</a></span>Category</h2>

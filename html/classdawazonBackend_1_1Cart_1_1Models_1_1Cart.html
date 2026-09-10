@@ -82,53 +82,72 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Representa un carrito de compra o un pedido finalizado.  
+<p>Modelo de dominio que representa un carrito de compras o un pedido finalizado.  
  <a href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#details">Más...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
 <tr class="memitem:ae8663dfb45ed4615d529e8a131c4274d" id="r_ae8663dfb45ed4615d529e8a131c4274d"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#ae8663dfb45ed4615d529e8a131c4274d">GetMinutesSinceCheckoutStarted</a> ()</td></tr>
-<tr class="memdesc:ae8663dfb45ed4615d529e8a131c4274d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene los minutos transcurridos desde que se inició el checkout.  <br /></td></tr>
+<tr class="memdesc:ae8663dfb45ed4615d529e8a131c4274d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula los minutos transcurridos desde que se inició el proceso de checkout.  <br /></td></tr>
 <tr class="separator:ae8663dfb45ed4615d529e8a131c4274d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Propiedades</h2></td></tr>
 <tr class="memitem:a74140799a2cc709c3d81a8d757a2f4c8" id="r_a74140799a2cc709c3d81a8d757a2f4c8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#a74140799a2cc709c3d81a8d757a2f4c8">Id</a> = string.Empty<code> [get, set]</code></td></tr>
-<tr class="memdesc:a74140799a2cc709c3d81a8d757a2f4c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identificador único del carrito (Custom ID).  <br /></td></tr>
+<tr class="memdesc:a74140799a2cc709c3d81a8d757a2f4c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identificador único del carrito con formato personalizado.  <br /></td></tr>
 <tr class="separator:a74140799a2cc709c3d81a8d757a2f4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a571fabc586e34b7340400c478daf6836" id="r_a571fabc586e34b7340400c478daf6836"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#a571fabc586e34b7340400c478daf6836">UserId</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a571fabc586e34b7340400c478daf6836"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID del usuario propietario del carrito.  <br /></td></tr>
+<tr class="memdesc:a571fabc586e34b7340400c478daf6836"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identificador del usuario propietario del carrito.  <br /></td></tr>
 <tr class="separator:a571fabc586e34b7340400c478daf6836"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcb509b73dd4d01a03b044794c719ddc" id="r_afcb509b73dd4d01a03b044794c719ddc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#afcb509b73dd4d01a03b044794c719ddc">Purchased</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:afcb509b73dd4d01a03b044794c719ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si el carrito ya ha sido comprado (convertido en pedido).  <br /></td></tr>
+<tr class="memdesc:afcb509b73dd4d01a03b044794c719ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si el carrito ha sido convertido en un pedido completado.  <br /></td></tr>
 <tr class="separator:afcb509b73dd4d01a03b044794c719ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc359752d3c51278300a502fc170b762" id="r_acc359752d3c51278300a502fc170b762"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Client.html">Client</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#acc359752d3c51278300a502fc170b762">Client</a> = new()<code> [get, set]</code></td></tr>
-<tr class="memdesc:acc359752d3c51278300a502fc170b762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Información del cliente que realiza el pedido.  <br /></td></tr>
+<tr class="memdesc:acc359752d3c51278300a502fc170b762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Información del cliente para envío del pedido.  <br /></td></tr>
 <tr class="separator:acc359752d3c51278300a502fc170b762"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f72a7bdce17e566e206675b8f1aec27" id="r_a6f72a7bdce17e566e206675b8f1aec27"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html">CartLine</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#a6f72a7bdce17e566e206675b8f1aec27">CartLines</a> = []<code> [get, set]</code></td></tr>
-<tr class="memdesc:a6f72a7bdce17e566e206675b8f1aec27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Líneas de productos contenidas en el carrito.  <br /></td></tr>
+<tr class="memdesc:a6f72a7bdce17e566e206675b8f1aec27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Colección de líneas de productos en el carrito.  <br /></td></tr>
 <tr class="separator:a6f72a7bdce17e566e206675b8f1aec27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64594951409d8a16e00b7cf42f677833" id="r_a64594951409d8a16e00b7cf42f677833"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#a64594951409d8a16e00b7cf42f677833">TotalItems</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a64594951409d8a16e00b7cf42f677833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cantidad total de productos en el carrito.  <br /></td></tr>
+<tr class="memdesc:a64594951409d8a16e00b7cf42f677833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cantidad total de productos (suma de quantities).  <br /></td></tr>
 <tr class="separator:a64594951409d8a16e00b7cf42f677833"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee73c205eec6ae081c59d6d979873602" id="r_aee73c205eec6ae081c59d6d979873602"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#aee73c205eec6ae081c59d6d979873602">Total</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aee73c205eec6ae081c59d6d979873602"><td class="mdescLeft">&#160;</td><td class="mdescRight">Precio total del carrito.  <br /></td></tr>
+<tr class="memdesc:aee73c205eec6ae081c59d6d979873602"><td class="mdescLeft">&#160;</td><td class="mdescRight">Importe total del carrito.  <br /></td></tr>
 <tr class="separator:aee73c205eec6ae081c59d6d979873602"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b9613f1661b326ce8c0e5bc358ebfbe" id="r_a2b9613f1661b326ce8c0e5bc358ebfbe"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#a2b9613f1661b326ce8c0e5bc358ebfbe">CreatedAt</a> = DateTime.UtcNow<code> [get, set]</code></td></tr>
-<tr class="memdesc:a2b9613f1661b326ce8c0e5bc358ebfbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fecha de creación del carrito.  <br /></td></tr>
+<tr class="memdesc:a2b9613f1661b326ce8c0e5bc358ebfbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fecha y hora de creación del carrito.  <br /></td></tr>
 <tr class="separator:a2b9613f1661b326ce8c0e5bc358ebfbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3096d157b4dedbd3a53ec62ba1a009bc" id="r_a3096d157b4dedbd3a53ec62ba1a009bc"><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#a3096d157b4dedbd3a53ec62ba1a009bc">UploadAt</a> = DateTime.UtcNow<code> [get, set]</code></td></tr>
-<tr class="memdesc:a3096d157b4dedbd3a53ec62ba1a009bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fecha de la última actualización del carrito.  <br /></td></tr>
+<tr class="memdesc:a3096d157b4dedbd3a53ec62ba1a009bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fecha y hora de la última modificación.  <br /></td></tr>
 <tr class="separator:a3096d157b4dedbd3a53ec62ba1a009bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5744613bcf70395af178321e526d78e" id="r_ab5744613bcf70395af178321e526d78e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#ab5744613bcf70395af178321e526d78e">CheckoutInProgress</a> = false<code> [get, set]</code></td></tr>
-<tr class="memdesc:ab5744613bcf70395af178321e526d78e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si hay un proceso de checkout (pago) en curso.  <br /></td></tr>
+<tr class="memdesc:ab5744613bcf70395af178321e526d78e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica si hay un proceso de checkout/pago en curso.  <br /></td></tr>
 <tr class="separator:ab5744613bcf70395af178321e526d78e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5e392b4c7c5438f956b4bfffcdcb900" id="r_af5e392b4c7c5438f956b4bfffcdcb900"><td class="memItemLeft" align="right" valign="top">DateTime?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#af5e392b4c7c5438f956b4bfffcdcb900">CheckoutStartedAt</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:af5e392b4c7c5438f956b4bfffcdcb900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fecha y hora en la que se inició el proceso de checkout.  <br /></td></tr>
+<tr class="memdesc:af5e392b4c7c5438f956b4bfffcdcb900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fecha y hora cuando se inició el proceso de checkout.  <br /></td></tr>
 <tr class="separator:af5e392b4c7c5438f956b4bfffcdcb900"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>Representa un carrito de compra o un pedido finalizado. </p>
+<div class="textblock"><p>Modelo de dominio que representa un carrito de compras o un pedido finalizado. </p>
+<p>Esta es la entidad principal del módulo de carrito. Representa tanto carritos activos (no comprados) como pedidos históricos (ya comprados).</p>
+<p><b>Estados del carrito:</b></p>
+<ul>
+<li>
+<b>Carrito activo:</b> Purchased = false, CheckoutInProgress = false/true </li>
+<li>
+<b>Pedido:</b> Purchased = true, CheckoutInProgress = false </li>
+</ul>
+<p><b>Ciclo de vida:</b></p>
+<div class="fragment"><div class="line">Carrito nuevo → Añadir productos → Checkout → Pago → Pedido (Purchased=<span class="keyword">true</span>)</div>
+</div><!-- fragment --><p><b>Relaciones:</b></p>
+<ul>
+<li>
+Un Cart tiene muchos CartLine </li>
+<li>
+Un Cart tiene un Client </li>
+</ul>
+<p><b>Patrón de precios:</b></p>
+<p>TotalItems y Total se calculan y almacenan para optimizar consultas. Se actualizan cada vez que se modifica el carrito. </p>
 </div><h2 class="groupheader">Documentación de funciones miembro</h2>
 <a id="ae8663dfb45ed4615d529e8a131c4274d" name="ae8663dfb45ed4615d529e8a131c4274d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae8663dfb45ed4615d529e8a131c4274d">&#9670;&#160;</a></span>GetMinutesSinceCheckoutStarted()</h2>
@@ -153,8 +172,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Obtiene los minutos transcurridos desde que se inició el checkout. </p>
-<dl class="section return"><dt>Devuelve</dt><dd>Minutos transcurridos o 0 si no hay checkout iniciado.</dd></dl>
+<p>Calcula los minutos transcurridos desde que se inició el proceso de checkout. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Long con los minutos transcurridos, o 0 si no hay checkout iniciado.</dd></dl>
+<p>Se utiliza para implementar un timeout de checkout (ejemplo: liberar stock después de 15 minutos de inactividad). </p>
 
 </div>
 </div>
@@ -179,7 +199,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Líneas de productos contenidas en el carrito. </p>
+<p>Colección de líneas de productos en el carrito. </p>
+<p>Lista de objetos CartLine.</p>
+<p>Cada línea representa un producto diferente con su cantidad. La lista puede estar vacía para un carrito sin productos. </p>
 
 </div>
 </div>
@@ -203,7 +225,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Indica si hay un proceso de checkout (pago) en curso. </p>
+<p>Indica si hay un proceso de checkout/pago en curso. </p>
+<p>True si el usuario está en proceso de pago.</p>
+<p>Se usa para prevenir modificaciones concurrentes durante el pago. Cuando es true, se bloquean operaciones que puedan afectar el pedido. </p>
 
 </div>
 </div>
@@ -227,7 +251,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Fecha y hora en la que se inició el proceso de checkout. </p>
+<p>Fecha y hora cuando se inició el proceso de checkout. </p>
+<p>Fecha UTC o null si no hay checkout en curso.</p>
+<p>Se establece cuando CheckoutInProgress pasa a true. Se usa para implementar timeouts de checkout. </p>
 
 </div>
 </div>
@@ -251,7 +277,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Información del cliente que realiza el pedido. </p>
+<p>Información del cliente para envío del pedido. </p>
+<p>Instancia de Client con datos de contacto y dirección.</p>
+<p>Se cumplimenta cuando el usuario inicia el checkout. Se copia en el momento de la compra para mantener historial. </p>
 
 </div>
 </div>
@@ -275,7 +303,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Fecha de creación del carrito. </p>
+<p>Fecha y hora de creación del carrito. </p>
+<p>Fecha en formato UTC.</p>
+<p>Se establece automáticamente al crear el carrito. Se usa para auditoría y para mostrar historial. </p>
 
 </div>
 </div>
@@ -299,7 +329,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Identificador único del carrito (Custom ID). </p>
+<p>Identificador único del carrito con formato personalizado. </p>
+<p>String con ID generado automáticamente (ejemplo: "CART-2024-00001").</p>
+<p>Se genera automáticamente mediante GenerateCustomIdAtribute en el momento de creación. Es la clave primaria de la entidad. </p>
 
 </div>
 </div>
@@ -323,7 +355,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Indica si el carrito ya ha sido comprado (convertido en pedido). </p>
+<p>Indica si el carrito ha sido convertido en un pedido completado. </p>
+<p>True si el pedido fue pagado y completado, false si está activo.</p>
+<p>Cuando es true, el carrito se considera un pedido histórico y no puede ser modificado. Es el flag principal para distinguir entre carrito activo y pedido. </p>
 
 </div>
 </div>
@@ -347,7 +381,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Precio total del carrito. </p>
+<p>Importe total del carrito. </p>
+<p>Double con la suma de TotalPrice de todas las líneas.</p>
+<p>Se calcula y persiste para optimizar consultas de display. Incluye el precio de los productos (sin impuestos adicionales). </p>
 
 </div>
 </div>
@@ -371,7 +407,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Cantidad total de productos en el carrito. </p>
+<p>Cantidad total de productos (suma de quantities). </p>
+<p>Entero con la suma de cantidades de todas las líneas.</p>
+<p>Se calcula y persiste para evitar recalcular en cada consulta. Se actualiza automáticamente al añadir/eliminar productos. </p>
 
 </div>
 </div>
@@ -395,7 +433,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Fecha de la última actualización del carrito. </p>
+<p>Fecha y hora de la última modificación. </p>
+<p>Fecha en formato UTC.</p>
+<p>Se actualiza cada vez que se modifica el carrito (añadir, quitar productos, etc.). Útil para caché y para detectar cambios. </p>
 
 </div>
 </div>
@@ -419,7 +459,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>ID del usuario propietario del carrito. </p>
+<p>Identificador del usuario propietario del carrito. </p>
+<p>Long con el ID del usuario.</p>
+<p>Relación con la tabla de usuarios. Cada usuario puede tener múltiples carritos (activos e históricos). </p>
 
 </div>
 </div>

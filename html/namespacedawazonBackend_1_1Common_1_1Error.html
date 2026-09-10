@@ -83,6 +83,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funciones</h2></td></tr>
 <tr class="memitem:a8482be91378a7c14de0d6c92b8990029" id="r_a8482be91378a7c14de0d6c92b8990029"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedawazonBackend_1_1Common_1_1Error.html#a8482be91378a7c14de0d6c92b8990029">DomainError</a> (string Message)</td></tr>
+<tr class="memdesc:a8482be91378a7c14de0d6c92b8990029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Record abstracto base para errores de dominio en la aplicación.  <br /></td></tr>
 <tr class="separator:a8482be91378a7c14de0d6c92b8990029"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentación de funciones</h2>
@@ -110,6 +111,34 @@ Funciones</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Record abstracto base para errores de dominio en la aplicación. </p>
+<p>Este record sirve como base para todos los errores del dominio. Utiliza el patrón Result para manejo funcional de errores.</p>
+<p><b>Uso:</b></p>
+<p>Se combina con <code>CSharpFunctionalExtensions.Result&lt;T, TError&gt;</code> para retornar errores de forma segura en lugar de lanzar excepciones.</p>
+<p><b>Jerarquía:</b></p>
+<div class="fragment"><div class="line"><a class="code hl_function" href="namespacedawazonBackend_1_1Common_1_1Error.html#a8482be91378a7c14de0d6c92b8990029">DomainError</a> (base abstracta)</div>
+<div class="line">  ├── CartError</div>
+<div class="line">  │     ├── CartNotFoundError</div>
+<div class="line">  │     ├── CartProductQuantityExceededError</div>
+<div class="line">  │     ├── CartAttemptAmountExceededError</div>
+<div class="line">  │     ├── CartUnauthorizedError</div>
+<div class="line">  │     └── CartMinQuantityError</div>
+<div class="line">  ├── ProductError</div>
+<div class="line">  │     ├── ProductNotFoundError</div>
+<div class="line">  │     └── ProductStockInsuficientError</div>
+<div class="line">  └── UserError</div>
+<div class="line">        └── UserNotFoundError</div>
+<div class="ttc" id="anamespacedawazonBackend_1_1Common_1_1Error_html_a8482be91378a7c14de0d6c92b8990029"><div class="ttname"><a href="namespacedawazonBackend_1_1Common_1_1Error.html#a8482be91378a7c14de0d6c92b8990029">dawazonBackend.Common.Error.DomainError</a></div><div class="ttdeci">record DomainError(string Message)</div><div class="ttdoc">Record abstracto base para errores de dominio en la aplicación.</div></div>
+</div><!-- fragment --><p><b>Ejemplo de uso:</b></p>
+<div class="fragment"><div class="line"><span class="keyword">public</span> Task&lt;Result&lt;CartResponseDto, DomainError&gt;&gt; GetByIdAsync(<span class="keywordtype">string</span> <span class="keywordtype">id</span>)</div>
+<div class="line">{</div>
+<div class="line">    var cart = await _repository.FindByIdAsync(<span class="keywordtype">id</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (cart == <span class="keyword">null</span>)</div>
+<div class="line">        <span class="keywordflow">return</span> Result.Failure&lt;CartResponseDto, <a class="code hl_function" href="namespacedawazonBackend_1_1Common_1_1Error.html#a8482be91378a7c14de0d6c92b8990029">DomainError</a>&gt;(</div>
+<div class="line">            <span class="keyword">new</span> CartNotFoundError($<span class="stringliteral">&quot;Carrito con ID {id} no encontrado&quot;</span>));</div>
+<div class="line">    <span class="keywordflow">return</span> cart.ToDto();</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
 </div>
 </div>
 </div><!-- contents -->

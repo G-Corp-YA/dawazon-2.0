@@ -83,7 +83,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funciones</h2></td></tr>
 <tr class="memitem:a3519b3302ae939c917f5dd9262d805ce" id="r_a3519b3302ae939c917f5dd9262d805ce"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedawazonBackend_1_1Common_1_1Database.html#a3519b3302ae939c917f5dd9262d805ce">DawazonDbContext</a> (DbContextOptions&lt; DawazonDbContext &gt; options)</td></tr>
-<tr class="memdesc:a3519b3302ae939c917f5dd9262d805ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contexto de base de datos para la aplicación ProductApi. Define las tablas, relaciones y datos iniciales (seeding).  <br /></td></tr>
+<tr class="memdesc:a3519b3302ae939c917f5dd9262d805ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">DbContext principal para la aplicación Dawazon.  <br /></td></tr>
 <tr class="separator:a3519b3302ae939c917f5dd9262d805ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentación de funciones</h2>
@@ -103,15 +103,60 @@ Funciones</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Contexto de base de datos para la aplicación ProductApi. Define las tablas, relaciones y datos iniciales (seeding). </p>
-<p>Configura el modelo de datos, indices y datos iniciales.</p>
+<p>DbContext principal para la aplicación Dawazon. </p>
+<p>Hereda de IdentityDbContext para integrar autenticación de ASP.NET Core. Configura las entidades del dominio, relaciones, y datos iniciales (seeding).</p>
+<p><b>Características:</b></p>
+<ul>
+<li>
+Hereda de IdentityDbContext para gestión de usuarios y roles </li>
+<li>
+Entidades: Products, Categories, Carts </li>
+<li>
+Owned Types: Client y Address </li>
+<li>
+Seed data para desarrollo y testing </li>
+</ul>
+<p>Configura el modelo de datos: relaciones, índices, conversiones y datos iniciales.</p>
+<p><b>Configuraciones realizadas:</b></p>
+<ol>
+<li>
+<a class="el" href="classdawazonBackend_1_1Users_1_1Models_1_1User.html#ad21182eddd5ecea6ab8d04fb8ad0ee1d" title="Datos del cliente asociados al usuario (dirección, etc.).">User.Client</a> y User.Client.Address: Ownership anidado </li>
+<li>
+<a class="el" href="classdawazonBackend_1_1Users_1_1Models_1_1User.html#a6480813e40cdf3179135a8ce66bb1fa3" title="Productos Favoritos del Usuario.">User.ProductsFavs</a>: Conversión JSON </li>
+<li>
+<a class="el" href="classdawazonBackend_1_1Products_1_1Models_1_1Product.html#a739826e3da12c284a0e85772e0cb917a" title="Lista de URLs de imágenes del producto.">Product.Images</a>: Conversión JSON </li>
+<li>
+<a class="el" href="classdawazonBackend_1_1Products_1_1Models_1_1Product.html#ab0b6e966e3fc4c8933ba52ce0dd66eaf" title="Lista de comentarios asociados al producto.">Product.Comments</a>: Tabla separada ProductComments </li>
+<li>
+<a class="el" href="classdawazonBackend_1_1Products_1_1Models_1_1Product.html#a9a9fe92cf1798dad30e1ee67216dd846" title="Versión del registro para control de concurrencia optimista.">Product.Version</a>: Token de concurrencia (optimistic locking) </li>
+<li>
+<a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#acc359752d3c51278300a502fc170b762" title="Información del cliente para envío del pedido.">Cart.Client</a> y Cart.Client.Address: Ownership anidado </li>
+<li>
+<a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html#a6f72a7bdce17e566e206675b8f1aec27" title="Colección de líneas de productos en el carrito.">Cart.CartLines</a>: Tabla separada con clave compuesta </li>
+</ol>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">modelBuilder</td><td>Constructor de modelos de EF Core.</td></tr>
   </table>
   </dd>
 </dl>
-<p>Método privado para sembrar datos de prueba en la base de datos.</p>
+<p>DbSet para la tabla de Productos.</p>
+<p>DbSet para la tabla de Categorías.</p>
+<p>DbSet para la tabla de Carritos de compra.</p>
+<p>Sembrado de datos iniciales para pruebas y desarrollo.</p>
+<p><b>Datos sembrados:</b></p>
+<ul>
+<li>
+3 Categorías: Figuras, Comics, Ropa </li>
+<li>
+13 Productos de ejemplo </li>
+<li>
+2 Carritos: uno comprado (CART00000001) y uno activo (CART00000002) </li>
+<li>
+Clientes y direcciones asociados </li>
+<li>
+Líneas de ejemplo </li>
+</ul>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">modelBuilder</td><td>Constructor de modelos.</td></tr>

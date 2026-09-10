@@ -80,19 +80,47 @@ $(function() {
   <div class="headertitle"><div class="title">Referencia de la clase dawazonBackend.Cart.Models.Client</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Modelo de dominio que representa la información de un cliente asociado a un carrito o pedido.  
+ <a href="classdawazonBackend_1_1Cart_1_1Models_1_1Client.html#details">Más...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Propiedades</h2></td></tr>
 <tr class="memitem:ad6712f4eac491ad0ebed2f7113294d7f" id="r_ad6712f4eac491ad0ebed2f7113294d7f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Client.html#ad6712f4eac491ad0ebed2f7113294d7f">Name</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:ad6712f4eac491ad0ebed2f7113294d7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre completo del cliente.  <br /></td></tr>
 <tr class="separator:ad6712f4eac491ad0ebed2f7113294d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae91784acf3b05915d52fd60876165eed" id="r_ae91784acf3b05915d52fd60876165eed"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Client.html#ae91784acf3b05915d52fd60876165eed">Email</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:ae91784acf3b05915d52fd60876165eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dirección de correo electrónico del cliente.  <br /></td></tr>
 <tr class="separator:ae91784acf3b05915d52fd60876165eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abde865cf91a4d9b1ec88614d3f87a596" id="r_abde865cf91a4d9b1ec88614d3f87a596"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Client.html#abde865cf91a4d9b1ec88614d3f87a596">Phone</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:abde865cf91a4d9b1ec88614d3f87a596"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número de teléfono móvil del cliente.  <br /></td></tr>
 <tr class="separator:abde865cf91a4d9b1ec88614d3f87a596"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2609ae67c920f974420b3180cef6c7a" id="r_ab2609ae67c920f974420b3180cef6c7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Address.html">Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Client.html#ab2609ae67c920f974420b3180cef6c7a">Address</a> = new()<code> [get, set]</code></td></tr>
+<tr class="memdesc:ab2609ae67c920f974420b3180cef6c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dirección de envío del cliente.  <br /></td></tr>
 <tr class="separator:ab2609ae67c920f974420b3180cef6c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentación de propiedades</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Modelo de dominio que representa la información de un cliente asociado a un carrito o pedido. </p>
+<p>Esta clase contiene los datos personales y de contacto del cliente necesarios para la entrega del pedido.</p>
+<p><b>Relaciones:</b></p>
+<ul>
+<li>
+Un Cart tiene un Client </li>
+<li>
+Address se composiciona dentro de Client </li>
+</ul>
+<p><b>Validaciones:</b></p>
+<ul>
+<li>
+Name: Requerido </li>
+<li>
+Email: Formato válido de email </li>
+<li>
+Phone: Exactly 9 dígitos (formato español) </li>
+<li>
+Address: Requerido, composición de dirección </li>
+</ul>
+</div><h2 class="groupheader">Documentación de propiedades</h2>
 <a id="ab2609ae67c920f974420b3180cef6c7a" name="ab2609ae67c920f974420b3180cef6c7a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab2609ae67c920f974420b3180cef6c7a">&#9670;&#160;</a></span>Address</h2>
 
@@ -112,6 +140,10 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Dirección de envío del cliente. </p>
+<p>Instancia de Address con los datos de dirección.</p>
+<p>Se composiciona (no es una relación de FK) para mantener la integridad. Si el cliente cambia de dirección, los pedidos anteriores mantienen su dirección original. </p>
 
 </div>
 </div>
@@ -135,6 +167,10 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Dirección de correo electrónico del cliente. </p>
+<p>Email válido del cliente.</p>
+<p>Se utiliza para notificaciones del pedido, facturas y comunicación. </p>
+
 </div>
 </div>
 <a id="ad6712f4eac491ad0ebed2f7113294d7f" name="ad6712f4eac491ad0ebed2f7113294d7f"></a>
@@ -157,6 +193,10 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Nombre completo del cliente. </p>
+<p>Nombre del cliente.</p>
+<p>Se utiliza para identificar al cliente y para la etiqueta de envío. </p>
+
 </div>
 </div>
 <a id="abde865cf91a4d9b1ec88614d3f87a596" name="abde865cf91a4d9b1ec88614d3f87a596"></a>
@@ -178,6 +218,10 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Número de teléfono móvil del cliente. </p>
+<p>Número de 9 dígitos en formato español.</p>
+<p>Se utiliza para notificaciones SMS sobre el estado del envío. </p>
 
 </div>
 </div>

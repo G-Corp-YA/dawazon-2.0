@@ -83,12 +83,16 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funciones</h2></td></tr>
 <tr class="memitem:a3b7dbc2bcbbab3191eb9ef49e4afe826" id="r_a3b7dbc2bcbbab3191eb9ef49e4afe826"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedawazonBackend_1_1Products_1_1Models_1_1Dto.html#a3b7dbc2bcbbab3191eb9ef49e4afe826">CommentDto</a> (string userName, string comment, bool recommended, bool verified)</td></tr>
+<tr class="memdesc:a3b7dbc2bcbbab3191eb9ef49e4afe826"><td class="mdescLeft">&#160;</td><td class="mdescRight">DTO para representar un comentario en un producto.  <br /></td></tr>
 <tr class="separator:a3b7dbc2bcbbab3191eb9ef49e4afe826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf5d2bc36384a1086e1e524a385c8f14" id="r_adf5d2bc36384a1086e1e524a385c8f14"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedawazonBackend_1_1Products_1_1Models_1_1Dto.html#adf5d2bc36384a1086e1e524a385c8f14">ProductPatchRequestDto</a> (string? Id, string? Name, [Range(0, double.MaxValue, ErrorMessage=&quot;El precio no puede ser negativo&quot;)] double? Price, string? <a class="el" href="classdawazonBackend_1_1Products_1_1Models_1_1Category.html">Category</a>, string? Description, List&lt; string &gt;? Images, [Range(0, int.MaxValue, ErrorMessage=&quot;La cantidad no puede ser inferior a 0&quot;)] int? Stock, long? CreatorId)</td></tr>
+<tr class="memdesc:adf5d2bc36384a1086e1e524a385c8f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">DTO para actualización parcial de un producto.  <br /></td></tr>
 <tr class="separator:adf5d2bc36384a1086e1e524a385c8f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c183a182379ca217ee19f9f719bf303" id="r_a5c183a182379ca217ee19f9f719bf303"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedawazonBackend_1_1Products_1_1Models_1_1Dto.html#a5c183a182379ca217ee19f9f719bf303">ProductRequestDto</a> (string? Id, [Required(ErrorMessage=&quot;El nombre no puede estar vacío&quot;)] string Name, [Required(ErrorMessage=&quot;El precio no puede estar vacío&quot;)][Range(0, double.MaxValue, ErrorMessage=&quot;El precio no puede ser negativo&quot;)] double Price, [Required(ErrorMessage=&quot;La categoría no puede estar vacía&quot;)] string <a class="el" href="classdawazonBackend_1_1Products_1_1Models_1_1Category.html">Category</a>, [Required(ErrorMessage=&quot;La descripción no puede estar vacía&quot;)] string Description, List&lt; string &gt;? Images, [Range(0, int.MaxValue, ErrorMessage=&quot;La cantidad no puede ser inferior a 0&quot;)] int Stock, long? CreatorId)</td></tr>
+<tr class="memdesc:a5c183a182379ca217ee19f9f719bf303"><td class="mdescLeft">&#160;</td><td class="mdescRight">DTO para crear o actualizar un producto.  <br /></td></tr>
 <tr class="separator:a5c183a182379ca217ee19f9f719bf303"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3bb24c43a25da2166b21f587c7a5794" id="r_aa3bb24c43a25da2166b21f587c7a5794"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedawazonBackend_1_1Products_1_1Models_1_1Dto.html#aa3bb24c43a25da2166b21f587c7a5794">ProductResponseDto</a> (string Id, string Name, double Price, int Stock, string <a class="el" href="classdawazonBackend_1_1Products_1_1Models_1_1Category.html">Category</a>, string Description, List&lt; <a class="el" href="namespacedawazonBackend_1_1Products_1_1Models_1_1Dto.html#a3b7dbc2bcbbab3191eb9ef49e4afe826">CommentDto</a> &gt; Comments, List&lt; string &gt; Images, long CreatorId=0)</td></tr>
+<tr class="memdesc:aa3bb24c43a25da2166b21f587c7a5794"><td class="mdescLeft">&#160;</td><td class="mdescRight">DTO de respuesta para un producto.  <br /></td></tr>
 <tr class="separator:aa3bb24c43a25da2166b21f587c7a5794"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentación de funciones</h2>
@@ -129,6 +133,9 @@ Funciones</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>DTO para representar un comentario en un producto. </p>
+<p>Se utiliza para mostrar los comentarios asociados a un producto. </p>
 
 </div>
 </div>
@@ -194,6 +201,9 @@ Funciones</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>DTO para actualización parcial de un producto. </p>
+<p>Se utiliza en solicitudes PATCH. Todos los campos son opcionales, permitiendo actualizar solo los campos que se deseen modificar. </p>
+
 </div>
 </div>
 <a id="a5c183a182379ca217ee19f9f719bf303" name="a5c183a182379ca217ee19f9f719bf303"></a>
@@ -257,6 +267,9 @@ Funciones</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>DTO para crear o actualizar un producto. </p>
+<p>Se utiliza en las solicitudes POST y PUT de la API de productos. Todos los campos son requeridos excepto Images y CreatorId. </p>
 
 </div>
 </div>
@@ -327,6 +340,9 @@ Funciones</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>DTO de respuesta para un producto. </p>
+<p>Se utiliza para devolver los datos de un producto en la API. Incluye todos los campos del producto más los comentarios asociados. </p>
 
 </div>
 </div>

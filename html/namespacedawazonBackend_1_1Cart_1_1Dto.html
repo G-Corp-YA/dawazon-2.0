@@ -84,16 +84,20 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Clases</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Dto_1_1LineRequestDto.html">LineRequestDto</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data Transfer Object (DTO) utilizado para solicitudes de modificación de líneas de carrito.  <a href="classdawazonBackend_1_1Cart_1_1Dto_1_1LineRequestDto.html#details">Más...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Cart_1_1Dto_1_1SaleLineDto.html">SaleLineDto</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data Transfer Object (DTO) que representa una línea de venta dentro de un carrito de compras.  <a href="classdawazonBackend_1_1Cart_1_1Dto_1_1SaleLineDto.html#details">Más...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funciones</h2></td></tr>
 <tr class="memitem:a33923d588cc12dd171f46627c7fa573c" id="r_a33923d588cc12dd171f46627c7fa573c"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedawazonBackend_1_1Cart_1_1Dto.html#a33923d588cc12dd171f46627c7fa573c">CartResponseDto</a> (string Id, long UserId, bool Purchased, <a class="el" href="namespacedawazonBackend_1_1Cart_1_1Dto.html#a8587c1ba241637a45719276f80914a7d">ClientDto</a> Client, List&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Dto_1_1SaleLineDto.html">SaleLineDto</a> &gt; CartLines, int TotalItems, double Total)</td></tr>
+<tr class="memdesc:a33923d588cc12dd171f46627c7fa573c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data Transfer Object (DTO) que representa la respuesta completa de un carrito de compras.  <br /></td></tr>
 <tr class="separator:a33923d588cc12dd171f46627c7fa573c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8aa614fc56c68b405c222a6d7af17688" id="r_a8aa614fc56c68b405c222a6d7af17688"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedawazonBackend_1_1Cart_1_1Dto.html#a8aa614fc56c68b405c222a6d7af17688">FilterCartDto</a> (long? managerId, bool? isAdmin, bool? purchased, int Page=0, int Size=10, string SortBy=&quot;id&quot;, string Direction=&quot;asc&quot;)</td></tr>
-<tr class="separator:a8aa614fc56c68b405c222a6d7af17688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e88fdf107f4aa7aa4cfe94b4f9403c2" id="r_a3e88fdf107f4aa7aa4cfe94b4f9403c2"><td class="memItemLeft" align="right" valign="top">record&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedawazonBackend_1_1Cart_1_1Dto.html#a3e88fdf107f4aa7aa4cfe94b4f9403c2">FilterCartDto</a> (long? ManagerId, bool? IsAdmin, bool? Purchased, int Page=0, int Size=10, string SortBy=&quot;id&quot;, string Direction=&quot;asc&quot;)</td></tr>
+<tr class="memdesc:a3e88fdf107f4aa7aa4cfe94b4f9403c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data Transfer Object (DTO) utilizado para filtrar, paginar y ordenar consultas de carritos de compras.  <br /></td></tr>
+<tr class="separator:a3e88fdf107f4aa7aa4cfe94b4f9403c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentación de funciones</h2>
 <a id="a33923d588cc12dd171f46627c7fa573c" name="a33923d588cc12dd171f46627c7fa573c"></a>
@@ -152,10 +156,80 @@ Funciones</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Data Transfer Object (DTO) que representa la respuesta completa de un carrito de compras. </p>
+<p>Este DTO es un record que contiene toda la información de un carrito de compras, incluyendo el identificador, usuario, estado de compra, información del cliente, líneas de productos, y totales.</p>
+<p><b>Características:</b></p>
+<ul>
+<li>
+Inmutable: Como record, una vez creado no puede ser modificado. </li>
+<li>
+Igualdad por valor: Dos instancias con los mismos valores son iguales. </li>
+<li>
+Conciso: Utilza la sintaxis primaria constructor para definir propiedades. </li>
+</ul>
+<p><b>Uso típico:</b></p>
+<p>Se utiliza como respuesta en los endpoints de API del módulo de carrito: </p><ul>
+<li>
+GET /cart/{id} - Obtener un carrito específico </li>
+<li>
+GET /cart/user/{userId} - Obtener carrito de un usuario </li>
+<li>
+GET /cart/all - Listar carritos con filtros </li>
+</ul>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Id</td><td>String único que identifica el carrito (ejemplo: "CART-2024-001").</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Este identificador se genera automáticamente al crear el carrito y se utiliza para todas las operaciones subsecuentes. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">UserId</td><td>Identificador numérico del usuario en el sistema.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Relaciona el carrito con el usuario que lo creó y es propietario. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Purchased</td><td>True si el carrito ha sido comprado (pagado), False si está activo.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Cuando un carrito se compra, se marca como Purchased = true y se crea un pedido formal. Los carritos comprados no pueden ser modificados. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Client</td><td>Instancia de ClientDto con la información de envío.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Contiene la dirección de envío, teléfono y email del cliente. Se cumplimenta cuando el usuario finaliza la compra. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">CartLines</td><td>Lista de objetos SaleLineDto representando cada producto.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Cada línea representa un producto diferente en el carrito con su cantidad, precio y estado. La lista puede estar vacía si el carrito no tiene productos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TotalItems</td><td>Entero que representa la suma de cantidades de todas las líneas.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Se calcula sumando la propiedad Quantity de cada línea en CartLines. Es útil para mostrar badges o indicadores de número de artículos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Total</td><td>Decimal con el precio total incluyendo descuentos e impuestos.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Se calcula sumando TotalPrice de todas las líneas del carrito. Este es el amount que el usuario deberá pagar al comprar. </p>
+
 </div>
 </div>
-<a id="a8aa614fc56c68b405c222a6d7af17688" name="a8aa614fc56c68b405c222a6d7af17688"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8aa614fc56c68b405c222a6d7af17688">&#9670;&#160;</a></span>FilterCartDto()</h2>
+<a id="a3e88fdf107f4aa7aa4cfe94b4f9403c2" name="a3e88fdf107f4aa7aa4cfe94b4f9403c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e88fdf107f4aa7aa4cfe94b4f9403c2">&#9670;&#160;</a></span>FilterCartDto()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,19 +238,19 @@ Funciones</h2></td></tr>
           <td class="memname">record dawazonBackend.Cart.Dto.FilterCartDto </td>
           <td>(</td>
           <td class="paramtype">long?&#160;</td>
-          <td class="paramname"><em>managerId</em>, </td>
+          <td class="paramname"><em>ManagerId</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool?&#160;</td>
-          <td class="paramname"><em>isAdmin</em>, </td>
+          <td class="paramname"><em>IsAdmin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool?&#160;</td>
-          <td class="paramname"><em>purchased</em>, </td>
+          <td class="paramname"><em>Purchased</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -209,6 +283,76 @@ Funciones</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Data Transfer Object (DTO) utilizado para filtrar, paginar y ordenar consultas de carritos de compras. </p>
+<p>Este DTO es un record que define los parámetros de búsqueda y paginación cuando se listan carritos desde la API o desde el panel de administración.</p>
+<p><b>Uso típico:</b></p>
+<p>Se utiliza como parámetro de consulta en endpoints como: </p><ul>
+<li>
+GET /cart/all - Listar todos los carritos con filtros </li>
+<li>
+GET /cart/manager/{managerId} - Listar carritos de un manager </li>
+</ul>
+<p><b>Valores por defecto:</b></p>
+<ul>
+<li>
+Page = 0 (primera página) </li>
+<li>
+Size = 10 (10 elementos por página) </li>
+<li>
+SortBy = "id" (ordenar por ID) </li>
+<li>
+Direction = "asc" (orden ascendente) </li>
+</ul>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ManagerId</td><td>Identificador numérico del manager o null para no filtrar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Cuando se proporciona, solo retorna los carritos asignados o procesados por el manager especificado. Útil para el panel de administración. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">IsAdmin</td><td>True para incluir todos los carritos del sistema, false para filtrar por usuario.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Cuando es true, se ignoran las restricciones de usuario y se muestran todos. Requiere que el usuario tenga permisos de administrador. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Purchased</td><td>True para solo carritos comprados, false para solo activos, null para todos.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Permite separar carritos activos (en proceso) de historicos (ya comprados). </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Page</td><td>Entero indicando la página a recuperar. Por defecto 0 (primera página).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Se combina con Size para implementar paginación. La primera página es 0. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Size</td><td>Entero con el número de elementos a devolver. Por defecto 10.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Controla el tamaño de la página de resultados. Valores típicos: 10, 25, 50, 100. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">SortBy</td><td>String con el nombre del campo de ordenación. Por defecto "id".</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Campos comunes: "id", "total", "createAt", "updateAt", "purchased". </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Direction</td><td>"asc" para orden ascendente, "desc" para orden descendente.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Por defecto es ascendente (a-z, 0-9). </p>
 
 </div>
 </div>

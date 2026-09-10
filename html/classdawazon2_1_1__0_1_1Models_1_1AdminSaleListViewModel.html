@@ -81,26 +81,47 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Modelo de vista para el listado de ventas en la administración.  
+<p>ViewModel para el listado de ventas en el panel de administración.  
  <a href="classdawazon2_1_1__0_1_1Models_1_1AdminSaleListViewModel.html#details">Más...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Propiedades</h2></td></tr>
 <tr class="memitem:ade0760e76d64646600d1db7b1edd3dd2" id="r_ade0760e76d64646600d1db7b1edd3dd2"><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Dto_1_1SaleLineDto.html">SaleLineDto</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1AdminSaleListViewModel.html#ade0760e76d64646600d1db7b1edd3dd2">Sales</a> = new List&lt;<a class="el" href="classdawazonBackend_1_1Cart_1_1Dto_1_1SaleLineDto.html">SaleLineDto</a>&gt;()<code> [get, set]</code></td></tr>
+<tr class="memdesc:ade0760e76d64646600d1db7b1edd3dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista de ventas/líneas de pedido.  <br /></td></tr>
 <tr class="separator:ade0760e76d64646600d1db7b1edd3dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af05c812c89f17e66a48a32ef176082a9" id="r_af05c812c89f17e66a48a32ef176082a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1AdminSaleListViewModel.html#af05c812c89f17e66a48a32ef176082a9">PageNumber</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:af05c812c89f17e66a48a32ef176082a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número de página actual (0-indexed).  <br /></td></tr>
 <tr class="separator:af05c812c89f17e66a48a32ef176082a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49969c811b88023ef4df13765167da5c" id="r_a49969c811b88023ef4df13765167da5c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1AdminSaleListViewModel.html#a49969c811b88023ef4df13765167da5c">TotalPages</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a49969c811b88023ef4df13765167da5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número total de páginas.  <br /></td></tr>
 <tr class="separator:a49969c811b88023ef4df13765167da5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a490aa7b2491eaf51f9f53c486f4506f1" id="r_a490aa7b2491eaf51f9f53c486f4506f1"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1AdminSaleListViewModel.html#a490aa7b2491eaf51f9f53c486f4506f1">TotalElements</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a490aa7b2491eaf51f9f53c486f4506f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total de ventas en todas las páginas.  <br /></td></tr>
 <tr class="separator:a490aa7b2491eaf51f9f53c486f4506f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54938ff48b93ee09a0b43b1d42c3f3b0" id="r_a54938ff48b93ee09a0b43b1d42c3f3b0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1AdminSaleListViewModel.html#a54938ff48b93ee09a0b43b1d42c3f3b0">PageSize</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a54938ff48b93ee09a0b43b1d42c3f3b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tamaño de cada página.  <br /></td></tr>
 <tr class="separator:a54938ff48b93ee09a0b43b1d42c3f3b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89329bbca706b4e0651c34546a56dd6d" id="r_a89329bbca706b4e0651c34546a56dd6d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1AdminSaleListViewModel.html#a89329bbca706b4e0651c34546a56dd6d">TotalEarnings</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a89329bbca706b4e0651c34546a56dd6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ganancias totales de todas las ventas.  <br /></td></tr>
 <tr class="separator:a89329bbca706b4e0651c34546a56dd6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>Modelo de vista para el listado de ventas en la administración. </p>
+<div class="textblock"><p>ViewModel para el listado de ventas en el panel de administración. </p>
+<p>Proporciona datos para renderizar el listado de ventas/líneas de pedido.</p>
+<p><b>Dependencias:</b></p>
+<ul>
+<li>
+SaleLineDto: Modelo de línea de venta del backend </li>
+</ul>
+<p><b>Propiedades:</b></p>
+<ul>
+<li>
+Sales: Lista de ventas/líneas </li>
+<li>
+Pagination: PageNumber, TotalPages, TotalElements, PageSize </li>
+<li>
+TotalEarnings: Ganancias totales calculadas </li>
+</ul>
 </div><h2 class="groupheader">Documentación de propiedades</h2>
 <a id="af05c812c89f17e66a48a32ef176082a9" name="af05c812c89f17e66a48a32ef176082a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af05c812c89f17e66a48a32ef176082a9">&#9670;&#160;</a></span>PageNumber</h2>
@@ -121,6 +142,8 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Número de página actual (0-indexed). </p>
 
 </div>
 </div>
@@ -144,6 +167,8 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Tamaño de cada página. </p>
+
 </div>
 </div>
 <a id="ade0760e76d64646600d1db7b1edd3dd2" name="ade0760e76d64646600d1db7b1edd3dd2"></a>
@@ -165,6 +190,8 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Lista de ventas/líneas de pedido. </p>
 
 </div>
 </div>
@@ -188,6 +215,9 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Ganancias totales de todas las ventas. </p>
+<p>Calculado en el backend. </p>
+
 </div>
 </div>
 <a id="a490aa7b2491eaf51f9f53c486f4506f1" name="a490aa7b2491eaf51f9f53c486f4506f1"></a>
@@ -210,6 +240,8 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Total de ventas en todas las páginas. </p>
+
 </div>
 </div>
 <a id="a49969c811b88023ef4df13765167da5c" name="a49969c811b88023ef4df13765167da5c"></a>
@@ -231,6 +263,8 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Número total de páginas. </p>
 
 </div>
 </div>

@@ -82,14 +82,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Generador de identificadores personalizados cortos y aleatorios. Utilizado para IDs de productos, categorías y carritos.  
+<p>Generador de identificadores personalizados cortos y aleatorios.  
  <a href="classdawazonBackend_1_1Common_1_1Utils_1_1IdGenerator.html#details">Más...</a></p>
 <div class="dynheader">
 Diagrama de herencia de dawazonBackend.Common.Utils.IdGenerator</div>
 <div class="dyncontent">
 <div class="center"><img src="classdawazonBackend_1_1Common_1_1Utils_1_1IdGenerator__inherit__graph.png" border="0" usemap="#adawazonBackend_8Common_8Utils_8IdGenerator_inherit__map" alt="Inheritance graph"/></div>
 <map name="adawazonBackend_8Common_8Utils_8IdGenerator_inherit__map" id="adawazonBackend_8Common_8Utils_8IdGenerator_inherit__map">
-<area shape="rect" title="Generador de identificadores personalizados cortos y aleatorios. Utilizado para IDs de productos,..." alt="" coords="5,79,241,119"/>
+<area shape="rect" title="Generador de identificadores personalizados cortos y aleatorios." alt="" coords="5,79,241,119"/>
 <area shape="rect" title=" " alt="" coords="28,5,219,31"/>
 <area shape="poly" title=" " alt="" coords="126,44,126,79,121,79,121,44"/>
 </map>
@@ -99,7 +99,7 @@ Diagrama de colaboración de dawazonBackend.Common.Utils.IdGenerator:</div>
 <div class="dyncontent">
 <div class="center"><img src="classdawazonBackend_1_1Common_1_1Utils_1_1IdGenerator__coll__graph.png" border="0" usemap="#adawazonBackend_8Common_8Utils_8IdGenerator_coll__map" alt="Collaboration graph"/></div>
 <map name="adawazonBackend_8Common_8Utils_8IdGenerator_coll__map" id="adawazonBackend_8Common_8Utils_8IdGenerator_coll__map">
-<area shape="rect" title="Generador de identificadores personalizados cortos y aleatorios. Utilizado para IDs de productos,..." alt="" coords="5,79,241,119"/>
+<area shape="rect" title="Generador de identificadores personalizados cortos y aleatorios." alt="" coords="5,79,241,119"/>
 <area shape="rect" title=" " alt="" coords="28,5,219,31"/>
 <area shape="poly" title=" " alt="" coords="126,44,126,79,121,79,121,44"/>
 </map>
@@ -114,11 +114,29 @@ Métodos públicos</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Propiedades</h2></td></tr>
 <tr class="memitem:a3ba8a488c669fbebfc5010f2efc8ab98" id="r_a3ba8a488c669fbebfc5010f2efc8ab98"><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazonBackend_1_1Common_1_1Utils_1_1IdGenerator.html#a3ba8a488c669fbebfc5010f2efc8ab98">GeneratesTemporaryValues</a><code> [get]</code></td></tr>
+<tr class="memdesc:a3ba8a488c669fbebfc5010f2efc8ab98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indica que este generador crea valores permanentes (no temporales).  <br /></td></tr>
 <tr class="separator:a3ba8a488c669fbebfc5010f2efc8ab98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>Generador de identificadores personalizados cortos y aleatorios. Utilizado para IDs de productos, categorías y carritos. </p>
-</div><h2 class="groupheader">Documentación de funciones miembro</h2>
+<div class="textblock"><p>Generador de identificadores personalizados cortos y aleatorios. </p>
+<p>Implementa ValueGenerator&lt;TValue&gt; de Entity Framework Core. Se utiliza para generar IDs de productos, categorías y carritos de forma automática.</p>
+<p><b>Características:</b></p>
+<ul>
+<li>
+Longitud: 12 caracteres </li>
+<li>
+Caracteres: alfanuméricos + guiones (mayúsculas, minúsculas, números) </li>
+<li>
+Criptográficamente seguro: usa RandomNumberGenerator </li>
+<li>
+Permanente: GeneratesTemporaryValues = false </li>
+</ul>
+<p><b>Ejemplo de uso en EF Core:</b></p>
+<div class="fragment"><div class="line">modelBuilder.Entity&lt;Product&gt;()</div>
+<div class="line">    .Property(p =&gt; p.Id)</div>
+<div class="line">    .HasValueGenerator&lt;<a class="code hl_class" href="classdawazonBackend_1_1Common_1_1Utils_1_1IdGenerator.html">IdGenerator</a>&gt;();</div>
+<div class="ttc" id="aclassdawazonBackend_1_1Common_1_1Utils_1_1IdGenerator_html"><div class="ttname"><a href="classdawazonBackend_1_1Common_1_1Utils_1_1IdGenerator.html">dawazonBackend.Common.Utils.IdGenerator</a></div><div class="ttdoc">Generador de identificadores personalizados cortos y aleatorios.</div><div class="ttdef"><b>Definition</b> IdGenerator.cs:34</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Documentación de funciones miembro</h2>
 <a id="a46600afd6690a9cd799614d2b135b1ac" name="a46600afd6690a9cd799614d2b135b1ac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a46600afd6690a9cd799614d2b135b1ac">&#9670;&#160;</a></span>Next()</h2>
 
@@ -150,7 +168,8 @@ Propiedades</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Devuelve</dt><dd>Una cadena aleatoria única.</dd></dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Una cadena aleatoria única de 12 caracteres.</dd></dl>
+<p>Usa RandomNumberGenerator.Fill para generar bytes criptográficamente seguros. </p>
 
 </div>
 </div>
@@ -175,7 +194,7 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p></p>
+<p>Indica que este generador crea valores permanentes (no temporales). </p>
 
 </div>
 </div>

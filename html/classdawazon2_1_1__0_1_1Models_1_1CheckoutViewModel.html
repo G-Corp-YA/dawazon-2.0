@@ -81,40 +81,68 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>ViewModel para la vista de confirmación de envío antes de pasar a Stripe. Agrupa los datos del carrito (solo lectura) y los datos de cliente/dirección (editables).  
+<p>ViewModel para la vista de confirmación de envío antes de pasar a Stripe.  
  <a href="classdawazon2_1_1__0_1_1Models_1_1CheckoutViewModel.html#details">Más...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Propiedades</h2></td></tr>
 <tr class="memitem:a291da38221645a7d40847707c637d1ed" id="r_a291da38221645a7d40847707c637d1ed"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1CheckoutViewModel.html#a291da38221645a7d40847707c637d1ed">CartId</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a291da38221645a7d40847707c637d1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identificador único del carrito.  <br /></td></tr>
 <tr class="separator:a291da38221645a7d40847707c637d1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a407ecebaa2b34e01886f7c491282cbb4" id="r_a407ecebaa2b34e01886f7c491282cbb4"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="classdawazon2_1_1__0_1_1Models_1_1CartLineViewModel.html">CartLineViewModel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1CheckoutViewModel.html#a407ecebaa2b34e01886f7c491282cbb4">Lines</a> = []<code> [get, set]</code></td></tr>
+<tr class="memdesc:a407ecebaa2b34e01886f7c491282cbb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista de productos en el carrito.  <br /></td></tr>
 <tr class="separator:a407ecebaa2b34e01886f7c491282cbb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7511cd86b35d3ec449c9b47cc13c060" id="r_ab7511cd86b35d3ec449c9b47cc13c060"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1CheckoutViewModel.html#ab7511cd86b35d3ec449c9b47cc13c060">TotalItems</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ab7511cd86b35d3ec449c9b47cc13c060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cantidad total de artículos.  <br /></td></tr>
 <tr class="separator:ab7511cd86b35d3ec449c9b47cc13c060"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbd1d2829428f8f3ea72871440b26e55" id="r_abbd1d2829428f8f3ea72871440b26e55"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1CheckoutViewModel.html#abbd1d2829428f8f3ea72871440b26e55">Total</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:abbd1d2829428f8f3ea72871440b26e55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total monetario del carrito.  <br /></td></tr>
 <tr class="separator:abbd1d2829428f8f3ea72871440b26e55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ff4ab3022c8f5dfc350f7d4393c1bf9" id="r_a2ff4ab3022c8f5dfc350f7d4393c1bf9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1CheckoutViewModel.html#a2ff4ab3022c8f5dfc350f7d4393c1bf9">Name</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a2ff4ab3022c8f5dfc350f7d4393c1bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre completo del cliente.  <br /></td></tr>
 <tr class="separator:a2ff4ab3022c8f5dfc350f7d4393c1bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5118fed2c5d829a67be7be2f9aee87e9" id="r_a5118fed2c5d829a67be7be2f9aee87e9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1CheckoutViewModel.html#a5118fed2c5d829a67be7be2f9aee87e9">Email</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a5118fed2c5d829a67be7be2f9aee87e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Correo electrónico del cliente.  <br /></td></tr>
 <tr class="separator:a5118fed2c5d829a67be7be2f9aee87e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81d49c4f5106236721e83e0bda587a13" id="r_a81d49c4f5106236721e83e0bda587a13"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1CheckoutViewModel.html#a81d49c4f5106236721e83e0bda587a13">Phone</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a81d49c4f5106236721e83e0bda587a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Teléfono de contacto.  <br /></td></tr>
 <tr class="separator:a81d49c4f5106236721e83e0bda587a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31bf9f270b0d7379c96c7cbc9f4ff302" id="r_a31bf9f270b0d7379c96c7cbc9f4ff302"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1CheckoutViewModel.html#a31bf9f270b0d7379c96c7cbc9f4ff302">Street</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a31bf9f270b0d7379c96c7cbc9f4ff302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dirección - Calle.  <br /></td></tr>
 <tr class="separator:a31bf9f270b0d7379c96c7cbc9f4ff302"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b70d145680d2f499e591ac78fb8bd2a" id="r_a3b70d145680d2f499e591ac78fb8bd2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1CheckoutViewModel.html#a3b70d145680d2f499e591ac78fb8bd2a">Number</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a3b70d145680d2f499e591ac78fb8bd2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dirección - Número.  <br /></td></tr>
 <tr class="separator:a3b70d145680d2f499e591ac78fb8bd2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41c8d501299437ff7421a3605fc49535" id="r_a41c8d501299437ff7421a3605fc49535"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1CheckoutViewModel.html#a41c8d501299437ff7421a3605fc49535">City</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a41c8d501299437ff7421a3605fc49535"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dirección - Ciudad.  <br /></td></tr>
 <tr class="separator:a41c8d501299437ff7421a3605fc49535"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2bd91d9681d02b5b03a32d7693f7f0e" id="r_ac2bd91d9681d02b5b03a32d7693f7f0e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1CheckoutViewModel.html#ac2bd91d9681d02b5b03a32d7693f7f0e">Province</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:ac2bd91d9681d02b5b03a32d7693f7f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dirección - Provincia.  <br /></td></tr>
 <tr class="separator:ac2bd91d9681d02b5b03a32d7693f7f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a990b675f8512e5c5f7e80f98097498d7" id="r_a990b675f8512e5c5f7e80f98097498d7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1CheckoutViewModel.html#a990b675f8512e5c5f7e80f98097498d7">Country</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a990b675f8512e5c5f7e80f98097498d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dirección - País.  <br /></td></tr>
 <tr class="separator:a990b675f8512e5c5f7e80f98097498d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a700b1280b15bf411180e2ae26d9fbea2" id="r_a700b1280b15bf411180e2ae26d9fbea2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1CheckoutViewModel.html#a700b1280b15bf411180e2ae26d9fbea2">PostalCode</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a700b1280b15bf411180e2ae26d9fbea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dirección - Código postal.  <br /></td></tr>
 <tr class="separator:a700b1280b15bf411180e2ae26d9fbea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>ViewModel para la vista de confirmación de envío antes de pasar a Stripe. Agrupa los datos del carrito (solo lectura) y los datos de cliente/dirección (editables). </p>
+<div class="textblock"><p>ViewModel para la vista de confirmación de envío antes de pasar a Stripe. </p>
+<p>Agrupa los datos del carrito (solo lectura) y los datos de cliente/dirección (editables).</p>
+<p><b>Dependencias:</b></p>
+<ul>
+<li>
+DataAnnotations: Validaciones </li>
+<li>
+CartLineViewModel: Líneas del carrito </li>
+</ul>
+<p><b>Características:</b></p>
+<ul>
+<li>
+Datos del carrito (lectura): CartId, Lines, TotalItems, Total </li>
+<li>
+Datos de envío (edición): Name, Email, Phone, Dirección </li>
+</ul>
 </div><h2 class="groupheader">Documentación de propiedades</h2>
 <a id="a291da38221645a7d40847707c637d1ed" name="a291da38221645a7d40847707c637d1ed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a291da38221645a7d40847707c637d1ed">&#9670;&#160;</a></span>CartId</h2>
@@ -135,6 +163,8 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Identificador único del carrito. </p>
 
 </div>
 </div>
@@ -158,6 +188,12 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Dirección - Ciudad. </p>
+<ul>
+<li>
+Required: Obligatoria </li>
+</ul>
+
 </div>
 </div>
 <a id="a990b675f8512e5c5f7e80f98097498d7" name="a990b675f8512e5c5f7e80f98097498d7"></a>
@@ -179,6 +215,12 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Dirección - País. </p>
+<ul>
+<li>
+Required: Obligatorio </li>
+</ul>
 
 </div>
 </div>
@@ -202,6 +244,14 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Correo electrónico del cliente. </p>
+<ul>
+<li>
+Required: Obligatorio </li>
+<li>
+EmailAddress: Formato válido </li>
+</ul>
+
 </div>
 </div>
 <a id="a407ecebaa2b34e01886f7c491282cbb4" name="a407ecebaa2b34e01886f7c491282cbb4"></a>
@@ -223,6 +273,8 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Lista de productos en el carrito. </p>
 
 </div>
 </div>
@@ -246,6 +298,12 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Nombre completo del cliente. </p>
+<ul>
+<li>
+Required: Obligatorio </li>
+</ul>
+
 </div>
 </div>
 <a id="a3b70d145680d2f499e591ac78fb8bd2a" name="a3b70d145680d2f499e591ac78fb8bd2a"></a>
@@ -267,6 +325,14 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Dirección - Número. </p>
+<ul>
+<li>
+Required: Obligatorio </li>
+<li>
+Range: 1-99999 </li>
+</ul>
 
 </div>
 </div>
@@ -290,6 +356,14 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Teléfono de contacto. </p>
+<ul>
+<li>
+Required: Obligatorio </li>
+<li>
+RegularExpression: Exactamente 9 dígitos </li>
+</ul>
+
 </div>
 </div>
 <a id="a700b1280b15bf411180e2ae26d9fbea2" name="a700b1280b15bf411180e2ae26d9fbea2"></a>
@@ -311,6 +385,14 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Dirección - Código postal. </p>
+<ul>
+<li>
+Required: Obligatorio </li>
+<li>
+Range: 1000-99999 </li>
+</ul>
 
 </div>
 </div>
@@ -334,6 +416,12 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Dirección - Provincia. </p>
+<ul>
+<li>
+Required: Obligatoria </li>
+</ul>
+
 </div>
 </div>
 <a id="a31bf9f270b0d7379c96c7cbc9f4ff302" name="a31bf9f270b0d7379c96c7cbc9f4ff302"></a>
@@ -355,6 +443,12 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Dirección - Calle. </p>
+<ul>
+<li>
+Required: Obligatorio </li>
+</ul>
 
 </div>
 </div>
@@ -378,6 +472,8 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Total monetario del carrito. </p>
+
 </div>
 </div>
 <a id="ab7511cd86b35d3ec449c9b47cc13c060" name="ab7511cd86b35d3ec449c9b47cc13c060"></a>
@@ -399,6 +495,8 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Cantidad total de artículos. </p>
 
 </div>
 </div>

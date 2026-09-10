@@ -80,19 +80,45 @@ $(function() {
   <div class="headertitle"><div class="title">Referencia de la clase dawazon2._0.Models.RegisterModelView</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>ViewModel para el formulario de registro de nuevo usuario.  
+ <a href="classdawazon2_1_1__0_1_1Models_1_1RegisterModelView.html#details">Más...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Propiedades</h2></td></tr>
 <tr class="memitem:a8df5c4ce886205f0880899ea6ef81fd2" id="r_a8df5c4ce886205f0880899ea6ef81fd2"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1RegisterModelView.html#a8df5c4ce886205f0880899ea6ef81fd2">Username</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a8df5c4ce886205f0880899ea6ef81fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de usuario único.  <br /></td></tr>
 <tr class="separator:a8df5c4ce886205f0880899ea6ef81fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5de8a6bf464bea17e8b4280f2ede5e5c" id="r_a5de8a6bf464bea17e8b4280f2ede5e5c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1RegisterModelView.html#a5de8a6bf464bea17e8b4280f2ede5e5c">Email</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a5de8a6bf464bea17e8b4280f2ede5e5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Correo electrónico único.  <br /></td></tr>
 <tr class="separator:a5de8a6bf464bea17e8b4280f2ede5e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b738a955a8f9ef6081508c27a074fc0" id="r_a3b738a955a8f9ef6081508c27a074fc0"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1RegisterModelView.html#a3b738a955a8f9ef6081508c27a074fc0">Password</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:a3b738a955a8f9ef6081508c27a074fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contraseña del usuario.  <br /></td></tr>
 <tr class="separator:a3b738a955a8f9ef6081508c27a074fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adde8f409b21e55f72ad59b92c6dadf8b" id="r_adde8f409b21e55f72ad59b92c6dadf8b"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdawazon2_1_1__0_1_1Models_1_1RegisterModelView.html#adde8f409b21e55f72ad59b92c6dadf8b">ConfirmPassword</a> = string.Empty<code> [get, set]</code></td></tr>
+<tr class="memdesc:adde8f409b21e55f72ad59b92c6dadf8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Confirmación de contraseña.  <br /></td></tr>
 <tr class="separator:adde8f409b21e55f72ad59b92c6dadf8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentación de propiedades</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>ViewModel para el formulario de registro de nuevo usuario. </p>
+<p>Recoge los datos para crear una nueva cuenta de usuario.</p>
+<p><b>Dependencias:</b></p>
+<ul>
+<li>
+DataAnnotations: Validaciones </li>
+</ul>
+<p><b>Validaciones:</b></p>
+<ul>
+<li>
+Username: Required, MinLength(3), Regex (alphanumeric + underscore) </li>
+<li>
+Email: Required, EmailAddress </li>
+<li>
+Password: Required, MinLength(6) </li>
+<li>
+ConfirmPassword: Required, Compare </li>
+</ul>
+</div><h2 class="groupheader">Documentación de propiedades</h2>
 <a id="adde8f409b21e55f72ad59b92c6dadf8b" name="adde8f409b21e55f72ad59b92c6dadf8b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adde8f409b21e55f72ad59b92c6dadf8b">&#9670;&#160;</a></span>ConfirmPassword</h2>
 
@@ -112,6 +138,14 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Confirmación de contraseña. </p>
+<ul>
+<li>
+Required: Obligatoria </li>
+<li>
+Compare: Debe coincidir con Password </li>
+</ul>
 
 </div>
 </div>
@@ -135,6 +169,14 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Correo electrónico único. </p>
+<ul>
+<li>
+Required: Obligatorio </li>
+<li>
+EmailAddress: Formato válido de email </li>
+</ul>
+
 </div>
 </div>
 <a id="a3b738a955a8f9ef6081508c27a074fc0" name="a3b738a955a8f9ef6081508c27a074fc0"></a>
@@ -157,6 +199,14 @@ Propiedades</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Contraseña del usuario. </p>
+<ul>
+<li>
+Required: Obligatoria </li>
+<li>
+MinLength: Mínimo 6 caracteres </li>
+</ul>
+
 </div>
 </div>
 <a id="a8df5c4ce886205f0880899ea6ef81fd2" name="a8df5c4ce886205f0880899ea6ef81fd2"></a>
@@ -178,6 +228,16 @@ Propiedades</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Nombre de usuario único. </p>
+<ul>
+<li>
+Required: Obligatorio </li>
+<li>
+MinLength: Mínimo 3 caracteres </li>
+<li>
+Regex: Solo letras, números y guiones bajos </li>
+</ul>
 
 </div>
 </div>

@@ -81,21 +81,38 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Servicio para generación y validación de tokens JWT.  
+<p>Interfaz que define el contrato para el servicio de generación y validación de tokens JWT.  
  <a href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtService.html#details">Más...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
 <tr class="memitem:a1b0a269ebef1725587b4cabb1e0bc567" id="r_a1b0a269ebef1725587b4cabb1e0bc567"><td class="memItemLeft" align="right" valign="top">Task&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtService.html#a1b0a269ebef1725587b4cabb1e0bc567">GenerateTokenAsync</a> (<a class="el" href="classdawazonBackend_1_1Users_1_1Models_1_1User.html">User</a> user)</td></tr>
-<tr class="memdesc:a1b0a269ebef1725587b4cabb1e0bc567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera un token JWT para un usuario.  <br /></td></tr>
+<tr class="memdesc:a1b0a269ebef1725587b4cabb1e0bc567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera un token JWT firmado con la información del usuario.  <br /></td></tr>
 <tr class="separator:a1b0a269ebef1725587b4cabb1e0bc567"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a234f8bc367b189d84fd42824cafebde7" id="r_a234f8bc367b189d84fd42824cafebde7"><td class="memItemLeft" align="right" valign="top">string?&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Users_1_1Service_1_1Jwt_1_1IJwtService.html#a234f8bc367b189d84fd42824cafebde7">ValidateToken</a> (string token)</td></tr>
-<tr class="memdesc:a234f8bc367b189d84fd42824cafebde7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida un token JWT.  <br /></td></tr>
+<tr class="memdesc:a234f8bc367b189d84fd42824cafebde7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida un token JWT y extrae el nombre de usuario.  <br /></td></tr>
 <tr class="separator:a234f8bc367b189d84fd42824cafebde7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>Servicio para generación y validación de tokens JWT. </p>
-</div><h2 class="groupheader">Documentación de funciones miembro</h2>
+<div class="textblock"><p>Interfaz que define el contrato para el servicio de generación y validación de tokens JWT. </p>
+<p>Proporciona métodos para crear y verificar tokens de autenticación JWT.</p>
+<p><b>Características:</b></p>
+<ul>
+<li>
+Generación de tokens JWT firmados </li>
+<li>
+Validación de tokens JWT </li>
+<li>
+Extracción de información del usuario </li>
+</ul>
+<p><b>Configuración requerida en appsettings.json:</b></p>
+<div class="fragment"><div class="line"><span class="stringliteral">&quot;Jwt&quot;</span>: {</div>
+<div class="line">  <span class="stringliteral">&quot;Key&quot;</span>: <span class="stringliteral">&quot;tu-clave-secreta-minimo-32-caracteres&quot;</span>,</div>
+<div class="line">  <span class="stringliteral">&quot;Issuer&quot;</span>: <span class="stringliteral">&quot;DawazonApi&quot;</span>,</div>
+<div class="line">  <span class="stringliteral">&quot;Audience&quot;</span>: <span class="stringliteral">&quot;DawazonApi&quot;</span>,</div>
+<div class="line">  <span class="stringliteral">&quot;ExpireMinutes&quot;</span>: 60</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Documentación de funciones miembro</h2>
 <a id="a1b0a269ebef1725587b4cabb1e0bc567" name="a1b0a269ebef1725587b4cabb1e0bc567"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b0a269ebef1725587b4cabb1e0bc567">&#9670;&#160;</a></span>GenerateTokenAsync()</h2>
 
@@ -112,15 +129,48 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Genera un token JWT para un usuario. </p>
+<p>Genera un token JWT firmado con la información del usuario. </p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">user</td><td>Usuario para el token.</td></tr>
+    <tr><td class="paramname">user</td><td>Usuario para el cual generar el token.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Devuelve</dt><dd>Token JWT generado.</dd></dl>
-
+<dl class="section return"><dt>Devuelve</dt><dd>Una cadena que representa el token JWT generado. </dd></dl>
+<p><b>Claims incluidos en el token:</b></p>
+<ul>
+<li>
+Sub: ID del usuario </li>
+<li>
+Name: Nombre del usuario </li>
+<li>
+Email: Correo electrónico del usuario </li>
+<li>
+Role: Rol del usuario </li>
+<li>
+Jti: Identificador único del token </li>
+</ul>
+<p><b>Configuración:</b></p>
+<p>El token se genera con los valores de configuración: </p><ul>
+<li>
+Issuer: Configurable (default: "TiendaApi") </li>
+<li>
+Audience: Configurable (default: "TiendaApi") </li>
+<li>
+Expiration: Configurable en minutos (default: 60) </li>
+<li>
+Algorithm: HMAC-SHA256 </li>
+</ul>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InvalidOperationException</td><td>Se lanza si la clave JWT no está configurada en appsettings.json. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">var user = await userManager.FindByNameAsync(<span class="stringliteral">&quot;john&quot;</span>);</div>
+<div class="line">var token = await jwtService.GenerateTokenAsync(user);</div>
+<div class="line"><span class="comment">// token = &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&quot;</span></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="a234f8bc367b189d84fd42824cafebde7" name="a234f8bc367b189d84fd42824cafebde7"></a>
@@ -139,15 +189,37 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Valida un token JWT. </p>
+<p>Valida un token JWT y extrae el nombre de usuario. </p>
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
-    <tr><td class="paramname">token</td><td>Token a validar.</td></tr>
+    <tr><td class="paramname">token</td><td>Token JWT a validar.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Devuelve</dt><dd>Username del token o null si es inválido.</dd></dl>
-
+<dl class="section return"><dt>Devuelve</dt><dd>El nombre de usuario contenido en el token, o null si el token es inválido. </dd></dl>
+<p><b>Validaciones realizadas:</b></p>
+<ul>
+<li>
+Firma del token </li>
+<li>
+Issuer </li>
+<li>
+Audience </li>
+<li>
+Fecha de expiración </li>
+</ul>
+<p><b>Nota:</b> El método retorna null en caso de cualquier error de validación, incluyendo token expirado, firma inválida, o formato incorrecto.</p>
+<div class="fragment"><div class="line">var token = <span class="stringliteral">&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&quot;</span>;</div>
+<div class="line">var username = jwtService.ValidateToken(token);</div>
+<div class="line"><span class="keywordflow">if</span> (username != <span class="keyword">null</span>)</div>
+<div class="line">{</div>
+<div class="line">    Console.WriteLine($<span class="stringliteral">&quot;Token válido para usuario: {username}&quot;</span>);</div>
+<div class="line">}</div>
+<div class="line"><span class="keywordflow">else</span></div>
+<div class="line">{</div>
+<div class="line">    Console.WriteLine(<span class="stringliteral">&quot;Token inválido o expirado&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <hr/>La documentación de esta interface está generada del siguiente archivo:<ul>

@@ -81,7 +81,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Interfaz para el repositorio de carritos de compra.  
+<p>Interfaz que define el contrato para el repositorio de carritos de compra.  
  <a href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#details">Más...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -93,16 +93,16 @@ Métodos públicos</h2></td></tr>
 <tr class="memdesc:a1237a3f8d37bca4ba5f99cf67ad96fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza el estado de una línea de carrito específica.  <br /></td></tr>
 <tr class="separator:a1237a3f8d37bca4ba5f99cf67ad96fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c8c3851835eda1ecbc3615136f47827" id="r_a5c8c3851835eda1ecbc3615136f47827"><td class="memItemLeft" align="right" valign="top">Task&lt; IEnumerable&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a5c8c3851835eda1ecbc3615136f47827">FindByUserIdAsync</a> (long userId, FilterCartDto filter)</td></tr>
-<tr class="memdesc:a5c8c3851835eda1ecbc3615136f47827"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca carritos asociados a un ID de usuario.  <br /></td></tr>
+<tr class="memdesc:a5c8c3851835eda1ecbc3615136f47827"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca carritos asociados a un ID de usuario con filtros opcionales.  <br /></td></tr>
 <tr class="separator:a5c8c3851835eda1ecbc3615136f47827"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c0ba445db7f504314bf136f3a67b32f" id="r_a8c0ba445db7f504314bf136f3a67b32f"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a8c0ba445db7f504314bf136f3a67b32f">AddCartLineAsync</a> (string cartId, <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html">CartLine</a> cartLine)</td></tr>
-<tr class="memdesc:a8c0ba445db7f504314bf136f3a67b32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Añade una nueva línea de producto a un carrito.  <br /></td></tr>
+<tr class="memdesc:a8c0ba445db7f504314bf136f3a67b32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Añade una nueva línea de producto a un carrito o actualiza la cantidad si ya existe.  <br /></td></tr>
 <tr class="separator:a8c0ba445db7f504314bf136f3a67b32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4dae40c470b63ce876c156d0f4d79c5" id="r_aa4dae40c470b63ce876c156d0f4d79c5"><td class="memItemLeft" align="right" valign="top">Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#aa4dae40c470b63ce876c156d0f4d79c5">RemoveCartLineAsync</a> (string cartId, <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1CartLine.html">CartLine</a> cartLine)</td></tr>
 <tr class="memdesc:aa4dae40c470b63ce876c156d0f4d79c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina una línea de producto de un carrito.  <br /></td></tr>
 <tr class="separator:aa4dae40c470b63ce876c156d0f4d79c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a706933a4d4c1453bc993c212a9ed2099" id="r_a706933a4d4c1453bc993c212a9ed2099"><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a>?&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a706933a4d4c1453bc993c212a9ed2099">FindByUserIdAndPurchasedAsync</a> (long userId, bool purchased)</td></tr>
-<tr class="memdesc:a706933a4d4c1453bc993c212a9ed2099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca un carrito por usuario y estado de compra (usado para recuperar el carrito activo).  <br /></td></tr>
+<tr class="memdesc:a706933a4d4c1453bc993c212a9ed2099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca un carrito por usuario y estado de compra.  <br /></td></tr>
 <tr class="separator:a706933a4d4c1453bc993c212a9ed2099"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bc613f48c80c4e2692203c235648e13" id="r_a2bc613f48c80c4e2692203c235648e13"><td class="memItemLeft" align="right" valign="top">Task&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Models_1_1Cart.html">Models.Cart</a>?&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a2bc613f48c80c4e2692203c235648e13">FindCartByIdAsync</a> (string cartId)</td></tr>
 <tr class="memdesc:a2bc613f48c80c4e2692203c235648e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca un carrito por su identificador único.  <br /></td></tr>
@@ -114,26 +114,40 @@ Métodos públicos</h2></td></tr>
 <tr class="memdesc:a179873cb84f5f9f34b61e1e4dad2e68a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza los datos de un carrito existente.  <br /></td></tr>
 <tr class="separator:a179873cb84f5f9f34b61e1e4dad2e68a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a019261f00d9b2c0ca2b2b5afc470a74a" id="r_a019261f00d9b2c0ca2b2b5afc470a74a"><td class="memItemLeft" align="right" valign="top">Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a019261f00d9b2c0ca2b2b5afc470a74a">UpdateCartScalarsAsync</a> (string cartId, int totalItems, double total)</td></tr>
-<tr class="memdesc:a019261f00d9b2c0ca2b2b5afc470a74a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza únicamente los campos Total y TotalItems de un carrito, sin tocar las líneas de carrito.  <br /></td></tr>
+<tr class="memdesc:a019261f00d9b2c0ca2b2b5afc470a74a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza únicamente los campos Total y TotalItems de un carrito.  <br /></td></tr>
 <tr class="separator:a019261f00d9b2c0ca2b2b5afc470a74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ced11b24a3d481a6b32cd5775f4ae8a" id="r_a5ced11b24a3d481a6b32cd5775f4ae8a"><td class="memItemLeft" align="right" valign="top">Task&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a5ced11b24a3d481a6b32cd5775f4ae8a">DeleteCartAsync</a> (string id)</td></tr>
 <tr class="memdesc:a5ced11b24a3d481a6b32cd5775f4ae8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un carrito de la base de datos.  <br /></td></tr>
 <tr class="separator:a5ced11b24a3d481a6b32cd5775f4ae8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1adee614f5d5d3ae61b36c86f9219510" id="r_a1adee614f5d5d3ae61b36c86f9219510"><td class="memItemLeft" align="right" valign="top">Task&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a1adee614f5d5d3ae61b36c86f9219510">CalculateTotalEarningsAsync</a> (long? managerId, bool isAdmin)</td></tr>
-<tr class="memdesc:a1adee614f5d5d3ae61b36c86f9219510"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula las ganancias acumuladas filtrando opcionalmente por gestor.  <br /></td></tr>
+<tr class="memdesc:a1adee614f5d5d3ae61b36c86f9219510"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula las ganancias acumuladas de ventas.  <br /></td></tr>
 <tr class="separator:a1adee614f5d5d3ae61b36c86f9219510"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04a7c2f6a24e3955459dd4937d9a2dee" id="r_a04a7c2f6a24e3955459dd4937d9a2dee"><td class="memItemLeft" align="right" valign="top">Task&lt;(List&lt; <a class="el" href="classdawazonBackend_1_1Cart_1_1Dto_1_1SaleLineDto.html">SaleLineDto</a> &gt; Items, int TotalCount)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a04a7c2f6a24e3955459dd4937d9a2dee">GetSalesAsLinesAsync</a> (long? managerId, bool isAdmin, FilterDto filter)</td></tr>
 <tr class="memdesc:a04a7c2f6a24e3955459dd4937d9a2dee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene las ventas proyectadas como líneas de pedido individuales.  <br /></td></tr>
 <tr class="separator:a04a7c2f6a24e3955459dd4937d9a2dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae56438885f23f70c6c90837d83e9e1de" id="r_ae56438885f23f70c6c90837d83e9e1de"><td class="memItemLeft" align="right" valign="top">Task&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#ae56438885f23f70c6c90837d83e9e1de">CountNewSalesAsync</a> (long managerId, DateTime since)</td></tr>
-<tr class="memdesc:ae56438885f23f70c6c90837d83e9e1de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cuenta las nuevas líneas de productos vendidas de un gestor desde una fecha específica.  <br /></td></tr>
+<tr class="memdesc:ae56438885f23f70c6c90837d83e9e1de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cuenta las nuevas líneas de productos vendidas de un manager desde una fecha específica.  <br /></td></tr>
 <tr class="separator:ae56438885f23f70c6c90837d83e9e1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f3c69d805d53d9a98564ee3cb36fe21" id="r_a0f3c69d805d53d9a98564ee3cb36fe21"><td class="memItemLeft" align="right" valign="top">Task&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacedawazonBackend_1_1Cart_1_1Repository_1_1ICartRepository.html#a0f3c69d805d53d9a98564ee3cb36fe21">GetTotalSalesCountAsync</a> ()</td></tr>
 <tr class="memdesc:a0f3c69d805d53d9a98564ee3cb36fe21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el número total de ventas realizadas.  <br /></td></tr>
 <tr class="separator:a0f3c69d805d53d9a98564ee3cb36fe21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
-<div class="textblock"><p>Interfaz para el repositorio de carritos de compra. </p>
+<div class="textblock"><p>Interfaz que define el contrato para el repositorio de carritos de compra. </p>
+<p>Esta interfaz sigue el patrón Repository y define todas las operaciones de acceso a datos para la entidad Models.Cart y sus relacionados.</p>
+<p><b>Patrón de diseño:</b></p>
+<p>Utiliza el patrón Repository para abstraer la capa de acceso a datos. Esto permite cambiar la implementación (Entity Framework, Dapper, etc.) sin afectar la capa de servicio.</p>
+<p><b>Principios aplicados:</b></p>
+<ul>
+<li>
+Separation of Concerns: La interfaz define "qué" se hace, no "cómo" </li>
+<li>
+Dependency Inversion: Los servicios dependen de esta abstracción </li>
+<li>
+Single Responsibility: Solo maneja operaciones de Carrito </li>
+</ul>
+<p><b>Implementación:</b></p>
+<p>Ver CartRepository para la implementación con Entity Framework Core. </p>
 </div><h2 class="groupheader">Documentación de funciones miembro</h2>
 <a id="a8c0ba445db7f504314bf136f3a67b32f" name="a8c0ba445db7f504314bf136f3a67b32f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c0ba445db7f504314bf136f3a67b32f">&#9670;&#160;</a></span>AddCartLineAsync()</h2>
@@ -161,7 +175,16 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Añade una nueva línea de producto a un carrito. </p>
+<p>Añade una nueva línea de producto a un carrito o actualiza la cantidad si ya existe. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cartId</td><td>Identificador del carrito.</td></tr>
+    <tr><td class="paramname">cartLine</td><td>Línea de carrito a añadir.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>True si la operación fue exitosa, false si el carrito no existe.</dd></dl>
+<p>Si ya existe una línea con el mismo ProductId, se actualiza la cantidad. En caso contrario, se añade como nueva línea. </p>
 
 </div>
 </div>
@@ -191,7 +214,16 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Calcula las ganancias acumuladas filtrando opcionalmente por gestor. </p>
+<p>Calcula las ganancias acumuladas de ventas. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">managerId</td><td>Filtrar por ID del manager/creador del producto (opcional).</td></tr>
+    <tr><td class="paramname">isAdmin</td><td>Indica si el usuario es administrador.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Suma total de las ganancias.</dd></dl>
+<p>Solo considera carritos comprados (Purchased = true). Si no es admin y no se proporciona managerId, retorna 0. </p>
 
 </div>
 </div>
@@ -221,7 +253,16 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Cuenta las nuevas líneas de productos vendidas de un gestor desde una fecha específica. </p>
+<p>Cuenta las nuevas líneas de productos vendidas de un manager desde una fecha específica. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">managerId</td><td>Identificador del manager.</td></tr>
+    <tr><td class="paramname">since</td><td>Fecha desde la cual contar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Número de ventas nuevas.</dd></dl>
+<p>Solo considera líneas de carritos comprados cuya fecha de última modificación sea posterior a la fecha especificada. </p>
 
 </div>
 </div>
@@ -242,6 +283,14 @@ Métodos públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Crea un nuevo carrito en la base de datos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cart</td><td>Objeto Models.Cart a crear.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El carrito creado con su ID generado.</dd></dl>
+<p>El ID se genera automáticamente mediante el atributo [GenerateCustomIdAtribute]. </p>
 
 </div>
 </div>
@@ -262,6 +311,19 @@ Métodos públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Elimina un carrito de la base de datos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identificador del carrito a eliminar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Task completo.</dd></dl>
+<dl class="exception"><dt>Excepciones</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">Exceptions.CartNotFoundException</td><td>Se lanza si el carrito no existe. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -291,7 +353,16 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Busca un carrito por usuario y estado de compra (usado para recuperar el carrito activo). </p>
+<p>Busca un carrito por usuario y estado de compra. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>Identificador del usuario.</td></tr>
+    <tr><td class="paramname">purchased</td><td>Estado de compra (true = pedido completado, false = carrito activo).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El carrito encontrado o null si no existe.</dd></dl>
+<p>Se utiliza principalmente para recuperar el carrito activo de un usuario. </p>
 
 </div>
 </div>
@@ -321,7 +392,16 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Busca carritos asociados a un ID de usuario. </p>
+<p>Busca carritos asociados a un ID de usuario con filtros opcionales. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>Identificador del usuario.</td></tr>
+    <tr><td class="paramname">filter</td><td>Filtros adicionales de búsqueda.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Enumerable de carritos que cumplen los criterios.</dd></dl>
+<p>Nota: Este método actualmente lanza NotImplementedException. </p>
 
 </div>
 </div>
@@ -342,6 +422,14 @@ Métodos públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Busca un carrito por su identificador único. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cartId</td><td>Identificador del carrito.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El carrito encontrado o null si no existe.</dd></dl>
+<p>Carga automáticamente las líneas de carrito, productos y cliente asociado. </p>
 
 </div>
 </div>
@@ -362,6 +450,14 @@ Métodos públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Obtiene todos los carritos filtrados de forma paginada. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filter</td><td>Objeto <a class="el" href="namespacedawazonBackend_1_1Cart_1_1Dto.html#a3e88fdf107f4aa7aa4cfe94b4f9403c2" title="Data Transfer Object (DTO) utilizado para filtrar, paginar y ordenar consultas de carritos de compras...">FilterCartDto</a> con los filtros, paginación y ordenación.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Tupla con: lista de carritos y total de elementos que cumplen el filtro.</dd></dl>
+<p>Aplica filtros de búsqueda (por purchased, managerId, isAdmin), ordenación dinámica y paginación. Incluye las líneas de carrito y productos relacionados. </p>
 
 </div>
 </div>
@@ -398,6 +494,16 @@ Métodos públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Obtiene las ventas proyectadas como líneas de pedido individuales. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">managerId</td><td>Filtrar por manager (opcional).</td></tr>
+    <tr><td class="paramname">isAdmin</td><td>Indica si el usuario es administrador.</td></tr>
+    <tr><td class="paramname">filter</td><td>Filtros de paginación.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Tupla con lista de SaleLineDto y total de elementos.</dd></dl>
+<p>Aplana las líneas de carritos comprados para mostrarlas como ventas individuales. Incluye información del manager que creó el producto. </p>
 
 </div>
 </div>
@@ -417,6 +523,8 @@ Métodos públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Obtiene el número total de ventas realizadas. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Total de líneas en carritos comprados.</dd></dl>
+<p>Cuenta todas las líneas de todos los carritos con Purchased = true. </p>
 
 </div>
 </div>
@@ -447,6 +555,14 @@ Métodos públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Elimina una línea de producto de un carrito. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cartId</td><td>Identificador del carrito.</td></tr>
+    <tr><td class="paramname">cartLine</td><td>Línea de carrito a eliminar.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>True si la eliminación fue exitosa, false si no se encontró el carrito o la línea.</dd></dl>
 
 </div>
 </div>
@@ -477,6 +593,15 @@ Métodos públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Actualiza los datos de un carrito existente. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identificador del carrito a actualizar.</td></tr>
+    <tr><td class="paramname">cart</td><td>Nuevo datos del carrito.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El carrito actualizado o null si no se encontró.</dd></dl>
+<p>Solo actualiza los campos permitidos (client, totals, purchased, checkout state). No permite modificar las líneas directamente. </p>
 
 </div>
 </div>
@@ -513,6 +638,15 @@ Métodos públicos</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Actualiza el estado de una línea de carrito específica. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identificador del carrito.</td></tr>
+    <tr><td class="paramname">productId</td><td>Identificador del producto.</td></tr>
+    <tr><td class="paramname">status</td><td>Nuevo estado <a class="el" href="namespacedawazonBackend_1_1Cart_1_1Models.html#a0856cbed48b45aaab4fa9a6100820521" title="Enumeración que representa los posibles estados de una línea de pedido en el sistema.">Status</a> para la línea.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>True si la actualización fue exitosa, false si no se encontró el carrito.</dd></dl>
 
 </div>
 </div>
@@ -548,7 +682,16 @@ Métodos públicos</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Actualiza únicamente los campos Total y TotalItems de un carrito, sin tocar las líneas de carrito. </p>
+<p>Actualiza únicamente los campos Total y TotalItems de un carrito. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cartId</td><td>Identificador del carrito.</td></tr>
+    <tr><td class="paramname">totalItems</td><td>Nueva cantidad total de items.</td></tr>
+    <tr><td class="paramname">total</td><td>Nuevo importe total.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Optimización para actualizar solo los valores agregados sin tocar las líneas. </p>
 
 </div>
 </div>
